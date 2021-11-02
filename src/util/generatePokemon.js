@@ -29,7 +29,6 @@ module.exports = async function(id, level) {
         nature,
         ivs,
         evs,
-        raw.moves,
         raw.learned,
         netStats
     );

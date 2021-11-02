@@ -617,7 +617,7 @@ exports.Abilities = {
     "Snow Warning": {
       "desc": "The Pokémon summons a hailstorm when it enters a battle.\r\n"
     },
-    "Solar Power": {
+    "SolarPower": {
       "desc": "Boosts the Sp. Atk stat in harsh sunlight, but HP decreases every turn.\r\n"
     },
     "Solid Rock": {
