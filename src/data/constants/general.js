@@ -1,3 +1,12 @@
+exports.Stats = {
+    hp: "hp",
+    atk: "atk",
+    def: "def",
+    spatk: "spatk",
+    spdef: "spdef",
+    spd: "spd"
+}
+
 exports.Types = {
     normal: "Normal",
     fire: "Fire",
@@ -17,6 +26,10 @@ exports.Types = {
     dragon: "Dragon",
     steel: "Steel",
     fairy: "Fairy"
+}
+
+exports.expRate = {
+    // insert exp rate constant with formula
 }
 
 exports.Natures = {
@@ -46,3 +59,10 @@ exports.Natures = {
     careful: "Careful",
     quirky: "Quirky"
 }
+
+exports.Categories = {
+    physical: "physical",
+    special: "special",
+    status: "status"
+}
+

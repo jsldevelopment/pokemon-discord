@@ -2,7 +2,7 @@ const uuid = require('uuid').v4;
 const rawPokemon = require('../data/models/pokemon-raw.js');
 const Pokemon = require('../objects/Pokemon');
 const calcStats = require('../util/calculateStat');
-const { Natures } = require('../util/constants');
+const { Natures } = require('../data/constants/general');
 
 module.exports = async function(id, level) {
 
