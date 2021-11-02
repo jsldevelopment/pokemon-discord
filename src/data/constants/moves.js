@@ -31,7 +31,7 @@ const { Categories, Types } = require('./general');
         "desc": "Opposing Pokémon are attacked with a spray of harsh acid. This may also lower their Sp. Def stats.",
         "dmg": 40,
         "pp": 30,
-        "type": Types.Poison
+        "type": Types.poison
     },
     "Acid Armor": {
         "acc": 101,
@@ -39,7 +39,7 @@ const { Categories, Types } = require('./general');
         "desc": "The user alters its cellular structure to liquefy itself, sharply raising its Defense stat.",
         "dmg": 0,
         "pp": 20,
-        "type": Types.Poison
+        "type": Types.poison
     },
     "Acid Downpour": {
         "acc": 101,
@@ -47,7 +47,7 @@ const { Categories, Types } = require('./general');
         "desc": "This move can't be used. It's recommended that this move is forgotten. Once forgotten, this move can't be remembered.",
         "dmg": 0,
         "pp": 1,
-        "type": Types.Poison
+        "type": Types.poison
     },
     "Acid Spray": {
         "acc": 100,
@@ -55,7 +55,7 @@ const { Categories, Types } = require('./general');
         "desc": "The user spits fluid that works to melt the target. This harshly lowers the target's Sp. Def stat.",
         "dmg": 40,
         "pp": 20,
-        "type": Types.Poison
+        "type": Types.poison
     },
     "Acrobatics": {
         "acc": 100,
@@ -335,7 +335,7 @@ const { Categories, Types } = require('./general');
         "desc": "In addition to protecting the user from attacks, this move also poisons any attacker that makes direct contact.",
         "dmg": 0,
         "pp": 10,
-        "type": Types.Poison
+        "type": Types.poison
     },
     "Barrage": {
         "acc": 85,
@@ -399,7 +399,7 @@ const { Categories, Types } = require('./general');
         "desc": "The user lets out a damaging belch at the target. The user must eat a held Berry to use this move.",
         "dmg": 120,
         "pp": 10,
-        "type": Types.Poison
+        "type": Types.poison
     },
     "Belly Drum": {
         "acc": 101,
@@ -847,7 +847,7 @@ const { Categories, Types } = require('./general');
         "desc": "The user attacks the target by throwing a clump of special mud. All stat changes are returned to normal.",
         "dmg": 50,
         "pp": 15,
-        "type": Types.Poison
+        "type": Types.poison
     },
     "Close Combat": {
         "acc": 100,
@@ -871,7 +871,7 @@ const { Categories, Types } = require('./general');
         "desc": "The user coils up and concentrates. This raises its Attack and Defense stats as well as its accuracy.",
         "dmg": 0,
         "pp": 20,
-        "type": Types.Poison
+        "type": Types.poison
     },
     "Comet Punch": {
         "acc": 85,
@@ -967,7 +967,7 @@ const { Categories, Types } = require('./general');
         "desc": "The user surrounds everything around it with highly acidic gas and melts away items they hold.",
         "dmg": 0,
         "pp": 40,
-        "type": Types.Poison
+        "type": Types.poison
     },
     "Cosmic Power": {
         "acc": 101,
@@ -1047,7 +1047,7 @@ const { Categories, Types } = require('./general');
         "desc": "A slashing attack with a poisonous blade that may also poison the target. Critical hits land more easily.",
         "dmg": 70,
         "pp": 20,
-        "type": Types.Poison
+        "type": Types.poison
     },
     "Crunch": {
         "acc": 100,
@@ -2255,7 +2255,7 @@ const { Categories, Types } = require('./general');
         "desc": "A Poison-type attack that Gigantamax Garbodor use. This move poisons opponents.",
         "dmg": 0,
         "pp": 10,
-        "type": Types.Poison
+        "type": Types.poison
     },
     "G-Max Meltdown": {
         "acc": 101,
@@ -2415,7 +2415,7 @@ const { Categories, Types } = require('./general');
         "desc": "The user hurls up its stomach acids on the target. The fluid eliminates the effect of the target's Ability.",
         "dmg": 0,
         "pp": 10,
-        "type": Types.Poison
+        "type": Types.poison
     },
     "Gear Grind": {
         "acc": 85,
@@ -2623,7 +2623,7 @@ const { Categories, Types } = require('./general');
         "desc": "The user shoots filthy garbage at the target to attack. This may also poison the target.",
         "dmg": 120,
         "pp": 5,
-        "type": Types.Poison
+        "type": Types.poison
     },
     "Gust": {
         "acc": 100,
@@ -3591,7 +3591,7 @@ const { Categories, Types } = require('./general');
         "desc": "This is a Poison-type attack Dynamax Pokémon use. This raises ally Pokémon's Sp. Atk stats.",
         "dmg": 0,
         "pp": 10,
-        "type": Types.Poison
+        "type": Types.poison
     },
     "Max Overgrowth": {
         "acc": 101,
@@ -4311,7 +4311,7 @@ const { Categories, Types } = require('./general');
         "desc": "The user bites the target with toxic fangs. This may also leave the target badly poisoned.",
         "dmg": 50,
         "pp": 15,
-        "type": Types.Poison
+        "type": Types.poison
     },
     "Poison Gas": {
         "acc": 90,
@@ -4319,7 +4319,7 @@ const { Categories, Types } = require('./general');
         "desc": "A cloud of poison gas is sprayed in the face of opposing Pokémon, poisoning those it hits.",
         "dmg": 0,
         "pp": 40,
-        "type": Types.Poison
+        "type": Types.poison
     },
     "Poison Jab": {
         "acc": 100,
@@ -4327,7 +4327,7 @@ const { Categories, Types } = require('./general');
         "desc": "The target is stabbed with a tentacle, arm, or the like steeped in poison. This may also poison the target.",
         "dmg": 80,
         "pp": 20,
-        "type": Types.Poison
+        "type": Types.poison
     },
     "Poison Powder": {
         "acc": 75,
@@ -4335,7 +4335,7 @@ const { Categories, Types } = require('./general');
         "desc": "The user scatters a cloud of poisonous dust that poisons the target.",
         "dmg": 0,
         "pp": 35,
-        "type": Types.Poison
+        "type": Types.poison
     },
     "Poison Sting": {
         "acc": 100,
@@ -4343,7 +4343,7 @@ const { Categories, Types } = require('./general');
         "desc": "The user stabs the target with a poisonous stinger. This may also poison the target.",
         "dmg": 15,
         "pp": 35,
-        "type": Types.Poison
+        "type": Types.poison
     },
     "Poison Tail": {
         "acc": 100,
@@ -4351,7 +4351,7 @@ const { Categories, Types } = require('./general');
         "desc": "The user hits the target with its tail. This may also poison the target. Critical hits land more easily.",
         "dmg": 50,
         "pp": 25,
-        "type": Types.Poison
+        "type": Types.poison
     },
     "Pollen Puff": {
         "acc": 100,
@@ -4591,7 +4591,7 @@ const { Categories, Types } = require('./general');
         "desc": "The user heals the target's status condition. If the move succeeds, it also restores the user's own HP.",
         "dmg": 0,
         "pp": 20,
-        "type": Types.Poison
+        "type": Types.poison
     },
     "Pursuit": {
         "acc": 100,
@@ -5183,7 +5183,7 @@ const { Categories, Types } = require('./general');
         "desc": "This move inflicts physical or special damage, whichever will be more effective. This may also poison the target.",
         "dmg": 90,
         "pp": 10,
-        "type": Types.Poison
+        "type": Types.poison
     },
     "Shell Smash": {
         "acc": 101,
@@ -5375,7 +5375,7 @@ const { Categories, Types } = require('./general');
         "desc": "Unsanitary sludge is hurled at the target. This may also poison the target.",
         "dmg": 65,
         "pp": 20,
-        "type": Types.Poison
+        "type": Types.poison
     },
     "Sludge Bomb": {
         "acc": 100,
@@ -5383,7 +5383,7 @@ const { Categories, Types } = require('./general');
         "desc": "Unsanitary sludge is hurled at the target. This may also poison the target.",
         "dmg": 90,
         "pp": 10,
-        "type": Types.Poison
+        "type": Types.poison
     },
     "Sludge Wave": {
         "acc": 100,
@@ -5391,7 +5391,7 @@ const { Categories, Types } = require('./general');
         "desc": "The user strikes everything around it by swamping the area with a giant sludge wave. This may also poison those hit.",
         "dmg": 95,
         "pp": 10,
-        "type": Types.Poison
+        "type": Types.poison
     },
     "Smack Down": {
         "acc": 100,
@@ -5423,7 +5423,7 @@ const { Categories, Types } = require('./general');
         "desc": "The target is attacked with a discharge of filthy gases. This may also poison the target.",
         "dmg": 30,
         "pp": 20,
-        "type": Types.Poison
+        "type": Types.poison
     },
     "Smokescreen": {
         "acc": 100,
@@ -6279,7 +6279,7 @@ const { Categories, Types } = require('./general');
         "desc": "A move that leaves the target badly poisoned. Its poison damage worsens every turn.",
         "dmg": 0,
         "pp": 10,
-        "type": Types.Poison
+        "type": Types.poison
     },
     "Toxic Spikes": {
         "acc": 101,
@@ -6287,7 +6287,7 @@ const { Categories, Types } = require('./general');
         "desc": "The user lays a trap of poison spikes at the feet of the opposing team. The spikes will poison opposing Pokémon that switch into battle.",
         "dmg": 0,
         "pp": 20,
-        "type": Types.Poison
+        "type": Types.poison
     },
     "Toxic Thread": {
         "acc": 100,
@@ -6295,7 +6295,7 @@ const { Categories, Types } = require('./general');
         "desc": "The user shoots poisonous threads to poison the target and lower the target's Speed stat.",
         "dmg": 0,
         "pp": 20,
-        "type": Types.Poison
+        "type": Types.poison
     },
     "Transform": {
         "acc": 101,
@@ -6439,7 +6439,7 @@ const { Categories, Types } = require('./general');
         "desc": "Opposing Pokémon are drenched in an odd poisonous liquid. This lowers the Attack, Sp. Atk, and Speed stats of a poisoned target.",
         "dmg": 0,
         "pp": 20,
-        "type": Types.Poison
+        "type": Types.poison
     },
     "Venoshock": {
         "acc": 100,
@@ -6447,7 +6447,7 @@ const { Categories, Types } = require('./general');
         "desc": "The user drenches the target in a special poisonous liquid. This move's power is doubled if the target is poisoned.",
         "dmg": 65,
         "pp": 10,
-        "type": Types.Poison
+        "type": Types.poison
     },
     "Vine Whip": {
         "acc": 100,
