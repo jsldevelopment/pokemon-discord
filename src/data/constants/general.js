@@ -28,8 +28,13 @@ exports.Types = {
     fairy: "Fairy"
 }
 
-exports.expRate = {
-    // insert exp rate constant with formula
+exports.expRates = {
+    erratic: "Erratic",
+    fast: "Fast",
+    mediumFast: "Medium Fast",
+    mediumSlow: "Medium Slow",
+    slow: "Slow",
+    fluctuating: "Fluctuating"
 }
 
 exports.Natures = {

@@ -1,4 +1,4 @@
-const { Types, Stats } = require('../constants/general');
+const { Types, Stats, expRates } = require('../constants/general');
 const { Moves } = require('../constants/moves');
 const { Abilities } = require('../constants/abilities');
 
@@ -10,10 +10,10 @@ module.exports = {
         genderRatio: 88,
         abilities: {
             ability1: {
-                name: Abilities.overgrow
+                name: Abilities.Overgrow
             },
             abilityRatio: 100,
-            abilitySecret: "Chlorophyll"
+            abilitySecret: Abilities.Chlorophyll
         },
         evolves: 16,
         base: {
@@ -25,17 +25,20 @@ module.exports = {
             spd: 45
         },
         moves: {
-            1: Moves.tackle,
-            2: Moves.growl,
+            1: null,
+            2: null,
             3: null,
             4: null
         },
-        learnset: {},
+        learnset: {
+            1: Moves.Tackle,
+            2: Moves.Growl,
+        },
         evYield: {
             stat: Stats.hp,
             amt: 1
         },
-        expRate: "mediumFast",
+        expRate: expRates.mediumFast,
         catchRate: 255
     },
     // 4: {
