@@ -41,7 +41,7 @@ const { Categories, Types } = require('./general');
         "pp": 20,
         "type": Types.poison
     },
-    "Acid Downpour": {
+    "AcidDownpour": {
         "acc": 101,
         "cat": Categories.special,
         "desc": "This move can't be used. It's recommended that this move is forgotten. Once forgotten, this move can't be remembered.",
