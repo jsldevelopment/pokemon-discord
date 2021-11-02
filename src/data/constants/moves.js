@@ -4497,7 +4497,7 @@ const { Categories, Types } = require('./general');
         "pp": 10,
         "type": Types.normal
     },
-    Types.psychic: {
+    "Psychic": {
         "acc": 100,
         "cat": Categories.special,
         "desc": "The target is hit by a strong telekinetic force. This may also lower the target's Sp. Def stat.",
