@@ -1,8 +1,12 @@
+// ext libs
 const uuid = require('uuid').v4;
-const rawPokemon = require('../data/models/pokemon-raw.js');
+// constants
+const rawPokemon = require('../data/constants/Pokemon.js');
+const { Nature } = require('../data/constants/General');
+// objs
 const Pokemon = require('../objects/Pokemon');
+// util fxn
 const calcStats = require('../util/calculateStat');
-const { Nature } = require('../data/constants/general');
 
 module.exports = async function(id, level) {
 
@@ -31,7 +35,7 @@ module.exports = async function(id, level) {
         nature,
         ivs,
         evs,
-        getMoves(raw),
+        getMoves(raw.learnset, level),
         raw.learnset
     );
     
@@ -60,18 +64,39 @@ const getEvs = () => {
         "spd": 0
     }
 }
-// write logic to determine starting moves
-// iterate over the keys for each move in the learnset
-// if 4 or less available moves given the pokemons level, take all available
-// if more than 4, roll for 4 random moves within the available learnset
-// roll until at least 1 damaging move has been added
-const getMoves = () => {
-    return {
-        move1: "none",
-        move2: "none",
-        move3: "none",
-        move4: "none"
+
+const getMoves = (learnset, level) => {
+
+    let generated = false;
+    let movesArr = [];
+
+    while(!generated){
+
+        // filter out moves this pokemon cannot learn
+        let available = learnset.filter(a => a.learned <= level);
+       
+        // if less than 4 available moves, grab them all
+        let x = available.length < 4 ? available.length : 4;
+        
+        // grab all moves available, or if more than 4, a random lot
+        for(let i =0 ; i < x; i++) {
+            let moveNum = (Math.floor(Math.random() * available.length));
+            console.log(`Adding move ${JSON.stringify(available[moveNum].move.name)} to movesList`);
+            movesArr.push(available[moveNum].move);
+            available.splice(moveNum, 1);
+        }
+    
+        // check to ensure at least 1 damaging move is available
+        for(let i = 0; i < movesArr.length; i++){
+            if(movesArr[i].dmg != 0) {
+                generated = true;
+                break;
+            }
+        }
+
     }
+
+    return movesArr;
 }
 
 const getAbility = (raw) => {

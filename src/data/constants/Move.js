@@ -1,4 +1,4 @@
-const { Category, Type } = require('./general');
+const { Category, Type } = require('./General');
 
  exports.Move = {
   "Accelerock": {

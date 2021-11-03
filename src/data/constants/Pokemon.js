@@ -1,12 +1,14 @@
-const { Type, Stat, Rate } = require('../constants/general');
-const { Move } = require('../constants/moves');
-const { Ability } = require('../constants/abilities');
+const { Type, Stat, Rate } = require('./General');
+const { Move } = require('./Move');
+const { Ability } = require('./Ability');
+const { Learnset } = require('./Learnset');
+const { Pokedex } = require('./Pokedex');
 
 module.exports = {
     1: {
         id: 1,
-        name: "Bulbasaur",
-        desc: "There is a plant seed on its back right from the day this Pokémon is born. The seed slowly grows larger.",
+        name: Pokedex[1].name,
+        desc: Pokedex[1].desc,
         types: [
             Type.Grass, 
             Type.Poison
@@ -26,22 +28,7 @@ module.exports = {
             spdef: 65,
             spd: 45
         },
-        learnset: {
-            1: Move.Tackle,
-            2: Move.Growl,
-            3: Move.VineWhip,
-            6: Move.Growth,
-            9: Move.LeechSeed,
-            12: Move.RazorLeaf,
-            15: Move.PoisonPowder,
-            18: Move.SleepPowder,
-            21: Move.TakeDown,
-            24: Move.SweetScent,
-            27: Move.Synthesis,
-            30: Move.WorrySeed,
-            33: Move.DoubleEdge,
-            36: Move.SolarBeam
-        },
+        learnset: Learnset.Bulbasaur.LevelUp,
         evYield: {
             stat: Stat.SPATK,
             amt: 1
@@ -114,22 +101,7 @@ module.exports = {
             spdef: 64,
             spd: 43
         },
-        learnset: {
-            1: Move.Tackle,
-            2: Move.TailWhip,
-            3: Move.WaterGun,
-            6: Move.Withdraw,
-            9: Move.RapidSpin,
-            12: Move.Bite,
-            15: Move.WaterPulse,
-            18: Move.Protect,
-            21: Move.RainDance,
-            24: Move.AquaTail,
-            27: Move.ShellSmash,
-            30: Move.IronDefense,
-            33: Move.HydroPump,
-            36: Move.SkullBash
-        },
+        learnset: "123",
         evYield: {
             stat: Stat.DEF,
             amt: 1
@@ -139,8 +111,8 @@ module.exports = {
     },
     10: {
         id: 10,
-        name: "Caterpie",
-        desc: "For protection, it releases a horrible stench from the antenna on its head to drive away enemies.",
+        name: Pokedex[10].name,
+        desc: Pokedex[10].desc,
         types: [
             Type.Bug
         ],
@@ -159,11 +131,7 @@ module.exports = {
             spdef: 20,
             spd: 45
         },
-        learnset: {
-            1: Move.Tackle,
-            2: Move.StringShot,
-            9: Move.BugBite
-        },
+        learnset: Learnset.Caterpie.LevelUp,
         evYield: {
             stat: Stat.HP,
             amt: 1
