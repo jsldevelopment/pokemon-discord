@@ -1,4 +1,4 @@
-exports.Stats = {
+exports.Stat = {
     hp: "hp",
     atk: "atk",
     def: "def",
@@ -7,7 +7,7 @@ exports.Stats = {
     spd: "spd"
 }
 
-exports.Types = {
+exports.Type = {
     normal: "Normal",
     fire: "Fire",
     water: "Water",
@@ -28,7 +28,7 @@ exports.Types = {
     fairy: "Fairy"
 }
 
-exports.expRates = {
+exports.Rate = {
     erratic: "Erratic",
     fast: "Fast",
     mediumFast: "Medium Fast",
@@ -37,7 +37,7 @@ exports.expRates = {
     fluctuating: "Fluctuating"
 }
 
-exports.Natures = {
+exports.Nature = {
     hardy: "Hardy",
     lonely: "Lonely",
     brave: "Brave",
@@ -65,7 +65,7 @@ exports.Natures = {
     quirky: "Quirky"
 }
 
-exports.Categories = {
+exports.Category = {
     physical: "physical",
     special: "special",
     status: "status"

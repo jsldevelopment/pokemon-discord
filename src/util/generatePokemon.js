@@ -2,13 +2,13 @@ const uuid = require('uuid').v4;
 const rawPokemon = require('../data/models/pokemon-raw.js');
 const Pokemon = require('../objects/Pokemon');
 const calcStats = require('../util/calculateStat');
-const { Natures } = require('../data/constants/general');
+const { Nature } = require('../data/constants/general');
 
 module.exports = async function(id, level) {
 
     let raw = rawPokemon[id];
 
-    const natures = Object.keys(Natures);
+    const natures = Object.keys(Nature);
     const nature = natures[Math.floor(Math.random() * natures.length)];
     
     const ivs = getIvs();
