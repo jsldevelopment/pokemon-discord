@@ -14,6 +14,7 @@ module.exports = async function(id, level) {
     const ivs = getIvs();
     const evs = getEvs();
     const netStats = await calcStats(level, raw.base, nature, ivs, evs);
+    console.log(netStats);
 
     const pokemon = new Pokemon(
         uuid(),
@@ -24,13 +25,14 @@ module.exports = async function(id, level) {
         level,
         raw.evolves,
         raw.base,
+        netStats,
         Math.floor(Math.random() * 101) < raw.genderRatio ? 1 : 0,
-        Math.floor(Math.random() * 101) < raw.abilities.abilityRatio ? raw.abilities.ability1 : raw.abilities.ability2,
+        getAbility(raw),
         nature,
         ivs,
         evs,
-        raw.learned,
-        netStats
+        getMoves(raw),
+        raw.learnset
     );
     
     return pokemon;
@@ -57,4 +59,23 @@ const getEvs = () => {
         "spdef": 0,
         "spd": 0
     }
+}
+// write logic to determine starting moves
+// iterate over the keys for each move in the learnset
+// if 4 or less available moves given the pokemons level, take all available
+// if more than 4, roll for 4 random moves within the available learnset
+// roll until at least 1 damaging move has been added
+const getMoves = () => {
+    return {
+        move1: "none",
+        move2: "none",
+        move3: "none",
+        move4: "none"
+    }
+}
+
+const getAbility = (raw) => {
+    const ab = Math.floor(Math.random() * 101) < raw.abilities.abilityRatio ? raw.abilities.ability1 : raw.abilities.ability2;
+    console.log(ab);
+    return ab;
 }

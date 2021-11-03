@@ -1,73 +1,73 @@
 exports.Stat = {
-    hp: "hp",
-    atk: "atk",
-    def: "def",
-    spatk: "spatk",
-    spdef: "spdef",
-    spd: "spd"
+    HP: "hp",
+    ATK: "atk",
+    DEF: "def",
+    SPATK: "spatk",
+    SPDEF: "spdef",
+    SPD: "spd"
 }
 
 exports.Type = {
-    normal: "Normal",
-    fire: "Fire",
-    water: "Water",
-    grass: "Grass",
-    electric: "Electric",
-    ice: "Ice",
-    fighting: "Fighting",
-    poison: "Poison",
-    ground: "Ground",
-    flying: "Flying",
-    psychic: "Psychic",
-    bug: "Bug",
-    rock: "Rock",
-    ghost: "Ghost",
-    dark: "Dark",
-    dragon: "Dragon",
-    steel: "Steel",
-    fairy: "Fairy"
+    Normal: "Normal",
+    Fire: "Fire",
+    Water: "Water",
+    Grass: "Grass",
+    Electric: "Electric",
+    Ice: "Ice",
+    Fighting: "Fighting",
+    Poison: "Poison",
+    Ground: "Ground",
+    Flying: "Flying",
+    Psychic: "Psychic",
+    Bug: "Bug",
+    Rock: "Rock",
+    Ghost: "Ghost",
+    Dark: "Dark",
+    Dragon: "Dragon",
+    Steel: "Steel",
+    Fairy: "Fairy"
 }
 
 exports.Rate = {
-    erratic: "Erratic",
-    fast: "Fast",
-    mediumFast: "Medium Fast",
-    mediumSlow: "Medium Slow",
-    slow: "Slow",
-    fluctuating: "Fluctuating"
+    Erratic: "Erratic",
+    Fast: "Fast",
+    MediumFast: "Medium Fast",
+    MediumSlow: "Medium Slow",
+    Slow: "Slow",
+    Fluctuating: "Fluctuating"
 }
 
 exports.Nature = {
-    hardy: "Hardy",
-    lonely: "Lonely",
-    brave: "Brave",
-    adamant: "Adamant",
-    naughty: "Naughty",
-    bold: "Bold",
-    docile: "Docile",
-    relaxed: "Relaxed",
-    impish: "Impish",
-    lax: "Lax",
-    timid: "Timid",
-    hasty: "Hasty",
-    serious: "Serious",
-    jolly: "Jolly",
-    naive: "Naive",
-    modest: "Modest",
-    mild: "Mild",
-    quiet: "Quiet",
-    bashful: "Bashful",
-    rash: "Rash",
-    calm: "Calm",
-    gentle: "Gentle",
-    sassy: "Sassy",
-    careful: "Careful",
-    quirky: "Quirky"
+    Hardy: "Hardy",
+    Lonely: "Lonely",
+    Brave: "Brave",
+    Adamant: "Adamant",
+    Naughty: "Naughty",
+    Bold: "Bold",
+    Docile: "Docile",
+    Relaxed: "Relaxed",
+    Impish: "Impish",
+    Lax: "Lax",
+    Timid: "Timid",
+    Hasty: "Hasty",
+    Serious: "Serious",
+    Jolly: "Jolly",
+    Naive: "Naive",
+    Modest: "Modest",
+    Mild: "Mild",
+    Quiet: "Quiet",
+    Bashful: "Bashful",
+    Rash: "Rash",
+    Calm: "Calm",
+    Gentle: "Gentle",
+    Sassy: "Sassy",
+    Careful: "Careful",
+    Quirky: "Quirky"
 }
 
 exports.Category = {
-    physical: "physical",
-    special: "special",
-    status: "status"
+    Physical: "physical",
+    Special: "special",
+    Status: "status"
 }
 

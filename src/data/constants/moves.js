@@ -2,8 +2,8 @@ const { Category, Type } = require('./general');
 
  exports.Move = {
   "Accelerock": {
-      "type": Type.rock,
-      "cat": Category.physical,
+      "type": Type.Rock,
+      "cat": Category.Physical,
       "pp": 20,
       "dmg": 40,
       "acc": 100,
@@ -11,8 +11,8 @@ const { Category, Type } = require('./general');
       "name": "Accelerock"
   },
   "AcidDownpour": {
-      "type": Type.poison,
-      "cat": Category.special,
+      "type": Type.Poison,
+      "cat": Category.Special,
       "pp": 1,
       "dmg": 0,
       "acc": 101,
@@ -20,8 +20,8 @@ const { Category, Type } = require('./general');
       "name": "Acid Downpour"
   },
   "Acrobatics": {
-      "type": Type.flying,
-      "cat": Category.physical,
+      "type": Type.Flying,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 55,
       "acc": 100,
@@ -29,8 +29,8 @@ const { Category, Type } = require('./general');
       "name": "Acrobatics"
   },
   "AerialAce": {
-      "type": Type.flying,
-      "cat": Category.physical,
+      "type": Type.Flying,
+      "cat": Category.Physical,
       "pp": 20,
       "dmg": 60,
       "acc": 101,
@@ -38,8 +38,8 @@ const { Category, Type } = require('./general');
       "name": "Aerial Ace"
   },
   "AllOutPummeling": {
-      "type": Type.fighting,
-      "cat": Category.special,
+      "type": Type.Fighting,
+      "cat": Category.Special,
       "pp": 1,
       "dmg": 0,
       "acc": 101,
@@ -47,8 +47,8 @@ const { Category, Type } = require('./general');
       "name": "All-Out Pummeling"
   },
   "AnchorShot": {
-      "type": Type.steel,
-      "cat": Category.physical,
+      "type": Type.Steel,
+      "cat": Category.Physical,
       "pp": 20,
       "dmg": 80,
       "acc": 100,
@@ -56,8 +56,8 @@ const { Category, Type } = require('./general');
       "name": "Anchor Shot"
   },
   "AquaJet": {
-      "type": Type.water,
-      "cat": Category.physical,
+      "type": Type.Water,
+      "cat": Category.Physical,
       "pp": 20,
       "dmg": 40,
       "acc": 100,
@@ -65,8 +65,8 @@ const { Category, Type } = require('./general');
       "name": "Aqua Jet"
   },
   "AquaTail": {
-      "type": Type.water,
-      "cat": Category.physical,
+      "type": Type.Water,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 90,
       "acc": 90,
@@ -74,8 +74,8 @@ const { Category, Type } = require('./general');
       "name": "Aqua Tail"
   },
   "ArmThrust": {
-      "type": Type.fighting,
-      "cat": Category.physical,
+      "type": Type.Fighting,
+      "cat": Category.Physical,
       "pp": 20,
       "dmg": 15,
       "acc": 100,
@@ -83,8 +83,8 @@ const { Category, Type } = require('./general');
       "name": "Arm Thrust"
   },
   "Assurance": {
-      "type": Type.dark,
-      "cat": Category.physical,
+      "type": Type.Dark,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 60,
       "acc": 100,
@@ -93,7 +93,7 @@ const { Category, Type } = require('./general');
   },
   "Astonish": {
       "type": "ghost",
-      "cat": Category.physical,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 30,
       "acc": 100,
@@ -101,8 +101,8 @@ const { Category, Type } = require('./general');
       "name": "Astonish"
   },
   "AttackOrder": {
-      "type": Type.bug,
-      "cat": Category.physical,
+      "type": Type.Bug,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 90,
       "acc": 100,
@@ -111,7 +111,7 @@ const { Category, Type } = require('./general');
   },
   "AuraWheel": {
       "type": Type.electric,
-      "cat": Category.physical,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 110,
       "acc": 100,
@@ -119,8 +119,8 @@ const { Category, Type } = require('./general');
       "name": "Aura Wheel"
   },
   "Avalanche": {
-      "type": Type.ice,
-      "cat": Category.physical,
+      "type": Type.Ice,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 60,
       "acc": 100,
@@ -128,8 +128,8 @@ const { Category, Type } = require('./general');
       "name": "Avalanche"
   },
   "Barrage": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 20,
       "dmg": 15,
       "acc": 85,
@@ -137,8 +137,8 @@ const { Category, Type } = require('./general');
       "name": "Barrage"
   },
   "BeakBlast": {
-      "type": Type.flying,
-      "cat": Category.physical,
+      "type": Type.Flying,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 100,
       "acc": 100,
@@ -146,8 +146,8 @@ const { Category, Type } = require('./general');
       "name": "Beak Blast"
   },
   "BeatUp": {
-      "type": Type.dark,
-      "cat": Category.physical,
+      "type": Type.Dark,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 0,
       "acc": 100,
@@ -155,8 +155,8 @@ const { Category, Type } = require('./general');
       "name": "Beat Up"
   },
   "BehemothBash": {
-      "type": Type.steel,
-      "cat": Category.physical,
+      "type": Type.Steel,
+      "cat": Category.Physical,
       "pp": 5,
       "dmg": 100,
       "acc": 100,
@@ -164,8 +164,8 @@ const { Category, Type } = require('./general');
       "name": "Behemoth Bash"
   },
   "BehemothBlade": {
-      "type": Type.steel,
-      "cat": Category.physical,
+      "type": Type.Steel,
+      "cat": Category.Physical,
       "pp": 5,
       "dmg": 100,
       "acc": 100,
@@ -173,8 +173,8 @@ const { Category, Type } = require('./general');
       "name": "Behemoth Blade"
   },
   "Bide": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -182,8 +182,8 @@ const { Category, Type } = require('./general');
       "name": "Bide"
   },
   "Bind": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 20,
       "dmg": 15,
       "acc": 85,
@@ -191,8 +191,8 @@ const { Category, Type } = require('./general');
       "name": "Bind"
   },
   "Bite": {
-      "type": Type.dark,
-      "cat": Category.physical,
+      "type": Type.Dark,
+      "cat": Category.Physical,
       "pp": 25,
       "dmg": 60,
       "acc": 100,
@@ -200,8 +200,8 @@ const { Category, Type } = require('./general');
       "name": "Bite"
   },
   "BlackHoleEclipse": {
-      "type": Type.dark,
-      "cat": Category.special,
+      "type": Type.Dark,
+      "cat": Category.Special,
       "pp": 1,
       "dmg": 0,
       "acc": 101,
@@ -209,8 +209,8 @@ const { Category, Type } = require('./general');
       "name": "Black Hole Eclipse"
   },
   "BlazeKick": {
-      "type": Type.fire,
-      "cat": Category.physical,
+      "type": Type.Fire,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 85,
       "acc": 90,
@@ -218,8 +218,8 @@ const { Category, Type } = require('./general');
       "name": "Blaze Kick"
   },
   "BloomDoom": {
-      "type": Type.grass,
-      "cat": Category.special,
+      "type": Type.Grass,
+      "cat": Category.Special,
       "pp": 1,
       "dmg": 0,
       "acc": 101,
@@ -227,8 +227,8 @@ const { Category, Type } = require('./general');
       "name": "Bloom Doom"
   },
   "BodyPress": {
-      "type": Type.fighting,
-      "cat": Category.physical,
+      "type": Type.Fighting,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 80,
       "acc": 100,
@@ -236,8 +236,8 @@ const { Category, Type } = require('./general');
       "name": "Body Press"
   },
   "BodySlam": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 85,
       "acc": 100,
@@ -246,7 +246,7 @@ const { Category, Type } = require('./general');
   },
   "BoltBeak": {
       "type": Type.electric,
-      "cat": Category.physical,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 85,
       "acc": 100,
@@ -255,7 +255,7 @@ const { Category, Type } = require('./general');
   },
   "BoltStrike": {
       "type": Type.electric,
-      "cat": Category.physical,
+      "cat": Category.Physical,
       "pp": 5,
       "dmg": 130,
       "acc": 85,
@@ -263,8 +263,8 @@ const { Category, Type } = require('./general');
       "name": "Bolt Strike"
   },
   "BoneClub": {
-      "type": Type.ground,
-      "cat": Category.physical,
+      "type": Type.Ground,
+      "cat": Category.Physical,
       "pp": 20,
       "dmg": 65,
       "acc": 85,
@@ -272,8 +272,8 @@ const { Category, Type } = require('./general');
       "name": "Bone Club"
   },
   "BoneRush": {
-      "type": Type.ground,
-      "cat": Category.physical,
+      "type": Type.Ground,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 25,
       "acc": 90,
@@ -281,8 +281,8 @@ const { Category, Type } = require('./general');
       "name": "Bone Rush"
   },
   "Bonemerang": {
-      "type": Type.ground,
-      "cat": Category.physical,
+      "type": Type.Ground,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 50,
       "acc": 90,
@@ -290,8 +290,8 @@ const { Category, Type } = require('./general');
       "name": "Bonemerang"
   },
   "Bounce": {
-      "type": Type.flying,
-      "cat": Category.physical,
+      "type": Type.Flying,
+      "cat": Category.Physical,
       "pp": 5,
       "dmg": 85,
       "acc": 85,
@@ -299,8 +299,8 @@ const { Category, Type } = require('./general');
       "name": "Bounce"
   },
   "BranchPoke": {
-      "type": Type.grass,
-      "cat": Category.physical,
+      "type": Type.Grass,
+      "cat": Category.Physical,
       "pp": 40,
       "dmg": 40,
       "acc": 100,
@@ -308,8 +308,8 @@ const { Category, Type } = require('./general');
       "name": "Branch Poke"
   },
   "BraveBird": {
-      "type": Type.flying,
-      "cat": Category.physical,
+      "type": Type.Flying,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 120,
       "acc": 100,
@@ -318,7 +318,7 @@ const { Category, Type } = require('./general');
   },
   "BreakingSwipe": {
       "type": "dragon",
-      "cat": Category.physical,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 60,
       "acc": 100,
@@ -326,8 +326,8 @@ const { Category, Type } = require('./general');
       "name": "Breaking Swipe"
   },
   "BreakneckBlitz": {
-      "type": Type.normal,
-      "cat": Category.special,
+      "type": Type.Normal,
+      "cat": Category.Special,
       "pp": 1,
       "dmg": 0,
       "acc": 101,
@@ -335,8 +335,8 @@ const { Category, Type } = require('./general');
       "name": "Breakneck Blitz"
   },
   "BrickBreak": {
-      "type": Type.fighting,
-      "cat": Category.physical,
+      "type": Type.Fighting,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 75,
       "acc": 100,
@@ -344,8 +344,8 @@ const { Category, Type } = require('./general');
       "name": "Brick Break"
   },
   "BrutalSwing": {
-      "type": Type.dark,
-      "cat": Category.physical,
+      "type": Type.Dark,
+      "cat": Category.Physical,
       "pp": 20,
       "dmg": 60,
       "acc": 100,
@@ -353,8 +353,8 @@ const { Category, Type } = require('./general');
       "name": "Brutal Swing"
   },
   "BugBite": {
-      "type": Type.bug,
-      "cat": Category.physical,
+      "type": Type.Bug,
+      "cat": Category.Physical,
       "pp": 20,
       "dmg": 60,
       "acc": 100,
@@ -362,8 +362,8 @@ const { Category, Type } = require('./general');
       "name": "Bug Bite"
   },
   "Bulldoze": {
-      "type": Type.ground,
-      "cat": Category.physical,
+      "type": Type.Ground,
+      "cat": Category.Physical,
       "pp": 20,
       "dmg": 60,
       "acc": 100,
@@ -371,8 +371,8 @@ const { Category, Type } = require('./general');
       "name": "Bulldoze"
   },
   "BulletPunch": {
-      "type": Type.steel,
-      "cat": Category.physical,
+      "type": Type.Steel,
+      "cat": Category.Physical,
       "pp": 30,
       "dmg": 40,
       "acc": 100,
@@ -380,8 +380,8 @@ const { Category, Type } = require('./general');
       "name": "Bullet Punch"
   },
   "BulletSeed": {
-      "type": Type.grass,
-      "cat": Category.physical,
+      "type": Type.Grass,
+      "cat": Category.Physical,
       "pp": 30,
       "dmg": 25,
       "acc": 100,
@@ -390,7 +390,7 @@ const { Category, Type } = require('./general');
   },
   "Catastropika": {
       "type": Type.electric,
-      "cat": Category.physical,
+      "cat": Category.Physical,
       "pp": 1,
       "dmg": 210,
       "acc": 101,
@@ -398,8 +398,8 @@ const { Category, Type } = require('./general');
       "name": "Catastropika"
   },
   "ChipAway": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 20,
       "dmg": 70,
       "acc": 100,
@@ -407,8 +407,8 @@ const { Category, Type } = require('./general');
       "name": "Chip Away"
   },
   "CircleThrow": {
-      "type": Type.fighting,
-      "cat": Category.physical,
+      "type": Type.Fighting,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 60,
       "acc": 90,
@@ -416,8 +416,8 @@ const { Category, Type } = require('./general');
       "name": "Circle Throw"
   },
   "Clamp": {
-      "type": Type.water,
-      "cat": Category.physical,
+      "type": Type.Water,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 35,
       "acc": 85,
@@ -425,8 +425,8 @@ const { Category, Type } = require('./general');
       "name": "Clamp"
   },
   "CloseCombat": {
-      "type": Type.fighting,
-      "cat": Category.physical,
+      "type": Type.Fighting,
+      "cat": Category.Physical,
       "pp": 5,
       "dmg": 120,
       "acc": 100,
@@ -434,8 +434,8 @@ const { Category, Type } = require('./general');
       "name": "Close Combat"
   },
   "CometPunch": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 18,
       "acc": 85,
@@ -443,8 +443,8 @@ const { Category, Type } = require('./general');
       "name": "Comet Punch"
   },
   "Constrict": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 35,
       "dmg": 10,
       "acc": 100,
@@ -452,8 +452,8 @@ const { Category, Type } = require('./general');
       "name": "Constrict"
   },
   "ContinentalCrush": {
-      "type": Type.rock,
-      "cat": Category.special,
+      "type": Type.Rock,
+      "cat": Category.Special,
       "pp": 1,
       "dmg": 0,
       "acc": 101,
@@ -461,8 +461,8 @@ const { Category, Type } = require('./general');
       "name": "Continental Crush"
   },
   "CorkscrewCrash": {
-      "type": Type.steel,
-      "cat": Category.special,
+      "type": Type.Steel,
+      "cat": Category.Special,
       "pp": 1,
       "dmg": 0,
       "acc": 101,
@@ -470,8 +470,8 @@ const { Category, Type } = require('./general');
       "name": "Corkscrew Crash"
   },
   "Counter": {
-      "type": Type.fighting,
-      "cat": Category.physical,
+      "type": Type.Fighting,
+      "cat": Category.Physical,
       "pp": 20,
       "dmg": 0,
       "acc": 100,
@@ -479,8 +479,8 @@ const { Category, Type } = require('./general');
       "name": "Counter"
   },
   "Covet": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 25,
       "dmg": 60,
       "acc": 100,
@@ -488,8 +488,8 @@ const { Category, Type } = require('./general');
       "name": "Covet"
   },
   "Crabhammer": {
-      "type": Type.water,
-      "cat": Category.physical,
+      "type": Type.Water,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 100,
       "acc": 90,
@@ -497,8 +497,8 @@ const { Category, Type } = require('./general');
       "name": "Crabhammer"
   },
   "CrossChop": {
-      "type": Type.fighting,
-      "cat": Category.physical,
+      "type": Type.Fighting,
+      "cat": Category.Physical,
       "pp": 5,
       "dmg": 100,
       "acc": 80,
@@ -506,8 +506,8 @@ const { Category, Type } = require('./general');
       "name": "Cross Chop"
   },
   "CrossPoison": {
-      "type": Type.poison,
-      "cat": Category.physical,
+      "type": Type.Poison,
+      "cat": Category.Physical,
       "pp": 20,
       "dmg": 70,
       "acc": 100,
@@ -515,8 +515,8 @@ const { Category, Type } = require('./general');
       "name": "Cross Poison"
   },
   "Crunch": {
-      "type": Type.dark,
-      "cat": Category.physical,
+      "type": Type.Dark,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 80,
       "acc": 100,
@@ -524,8 +524,8 @@ const { Category, Type } = require('./general');
       "name": "Crunch"
   },
   "CrushClaw": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 75,
       "acc": 95,
@@ -533,8 +533,8 @@ const { Category, Type } = require('./general');
       "name": "Crush Claw"
   },
   "CrushGrip": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 5,
       "dmg": 0,
       "acc": 100,
@@ -542,8 +542,8 @@ const { Category, Type } = require('./general');
       "name": "Crush Grip"
   },
   "Cut": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 30,
       "dmg": 50,
       "acc": 95,
@@ -551,8 +551,8 @@ const { Category, Type } = require('./general');
       "name": "Cut"
   },
   "DarkestLariat": {
-      "type": Type.dark,
-      "cat": Category.physical,
+      "type": Type.Dark,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 85,
       "acc": 100,
@@ -561,7 +561,7 @@ const { Category, Type } = require('./general');
   },
   "DevastatingDrake": {
       "type": "dragon",
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 1,
       "dmg": 0,
       "acc": 101,
@@ -569,8 +569,8 @@ const { Category, Type } = require('./general');
       "name": "Devastating Drake"
   },
   "DiamondStorm": {
-      "type": Type.rock,
-      "cat": Category.physical,
+      "type": Type.Rock,
+      "cat": Category.Physical,
       "pp": 5,
       "dmg": 100,
       "acc": 95,
@@ -578,8 +578,8 @@ const { Category, Type } = require('./general');
       "name": "Diamond Storm"
   },
   "Dig": {
-      "type": Type.ground,
-      "cat": Category.physical,
+      "type": Type.Ground,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 80,
       "acc": 100,
@@ -587,8 +587,8 @@ const { Category, Type } = require('./general');
       "name": "Dig"
   },
   "Dive": {
-      "type": Type.water,
-      "cat": Category.physical,
+      "type": Type.Water,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 80,
       "acc": 100,
@@ -596,8 +596,8 @@ const { Category, Type } = require('./general');
       "name": "Dive"
   },
   "DizzyPunch": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 70,
       "acc": 100,
@@ -605,8 +605,8 @@ const { Category, Type } = require('./general');
       "name": "Dizzy Punch"
   },
   "DoubleHit": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 35,
       "acc": 90,
@@ -614,8 +614,8 @@ const { Category, Type } = require('./general');
       "name": "Double Hit"
   },
   "DoubleIronBash": {
-      "type": Type.steel,
-      "cat": Category.physical,
+      "type": Type.Steel,
+      "cat": Category.Physical,
       "pp": 5,
       "dmg": 60,
       "acc": 100,
@@ -623,8 +623,8 @@ const { Category, Type } = require('./general');
       "name": "Double Iron Bash"
   },
   "DoubleKick": {
-      "type": Type.fighting,
-      "cat": Category.physical,
+      "type": Type.Fighting,
+      "cat": Category.Physical,
       "pp": 30,
       "dmg": 30,
       "acc": 100,
@@ -632,8 +632,8 @@ const { Category, Type } = require('./general');
       "name": "Double Kick"
   },
   "DoubleSlap": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 15,
       "acc": 85,
@@ -641,8 +641,8 @@ const { Category, Type } = require('./general');
       "name": "Double Slap"
   },
   "DoubleEdge": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 120,
       "acc": 100,
@@ -650,8 +650,8 @@ const { Category, Type } = require('./general');
       "name": "Double-Edge"
   },
   "DragonAscent": {
-      "type": Type.flying,
-      "cat": Category.physical,
+      "type": Type.Flying,
+      "cat": Category.Physical,
       "pp": 5,
       "dmg": 120,
       "acc": 100,
@@ -660,7 +660,7 @@ const { Category, Type } = require('./general');
   },
   "DragonClaw": {
       "type": "dragon",
-      "cat": Category.physical,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 80,
       "acc": 100,
@@ -669,7 +669,7 @@ const { Category, Type } = require('./general');
   },
   "DragonDarts": {
       "type": "dragon",
-      "cat": Category.physical,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 50,
       "acc": 100,
@@ -678,7 +678,7 @@ const { Category, Type } = require('./general');
   },
   "DragonHammer": {
       "type": "dragon",
-      "cat": Category.physical,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 90,
       "acc": 100,
@@ -687,7 +687,7 @@ const { Category, Type } = require('./general');
   },
   "DragonRush": {
       "type": "dragon",
-      "cat": Category.physical,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 100,
       "acc": 75,
@@ -696,7 +696,7 @@ const { Category, Type } = require('./general');
   },
   "DragonTail": {
       "type": "dragon",
-      "cat": Category.physical,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 60,
       "acc": 90,
@@ -704,8 +704,8 @@ const { Category, Type } = require('./general');
       "name": "Dragon Tail"
   },
   "DrainPunch": {
-      "type": Type.fighting,
-      "cat": Category.physical,
+      "type": Type.Fighting,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 75,
       "acc": 100,
@@ -713,8 +713,8 @@ const { Category, Type } = require('./general');
       "name": "Drain Punch"
   },
   "DrillPeck": {
-      "type": Type.flying,
-      "cat": Category.physical,
+      "type": Type.Flying,
+      "cat": Category.Physical,
       "pp": 20,
       "dmg": 80,
       "acc": 100,
@@ -722,8 +722,8 @@ const { Category, Type } = require('./general');
       "name": "Drill Peck"
   },
   "DrillRun": {
-      "type": Type.ground,
-      "cat": Category.physical,
+      "type": Type.Ground,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 80,
       "acc": 95,
@@ -731,8 +731,8 @@ const { Category, Type } = require('./general');
       "name": "Drill Run"
   },
   "DrumBeating": {
-      "type": Type.grass,
-      "cat": Category.physical,
+      "type": Type.Grass,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 80,
       "acc": 100,
@@ -741,7 +741,7 @@ const { Category, Type } = require('./general');
   },
   "DualChop": {
       "type": "dragon",
-      "cat": Category.physical,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 40,
       "acc": 90,
@@ -749,8 +749,8 @@ const { Category, Type } = require('./general');
       "name": "Dual Chop"
   },
   "DualWingbeat": {
-      "type": Type.flying,
-      "cat": Category.physical,
+      "type": Type.Flying,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 40,
       "acc": 90,
@@ -758,8 +758,8 @@ const { Category, Type } = require('./general');
       "name": "Dual Wingbeat"
   },
   "DynamicPunch": {
-      "type": Type.fighting,
-      "cat": Category.physical,
+      "type": Type.Fighting,
+      "cat": Category.Physical,
       "pp": 5,
       "dmg": 100,
       "acc": 50,
@@ -767,8 +767,8 @@ const { Category, Type } = require('./general');
       "name": "Dynamic Punch"
   },
   "Earthquake": {
-      "type": Type.ground,
-      "cat": Category.physical,
+      "type": Type.Ground,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 100,
       "acc": 100,
@@ -776,8 +776,8 @@ const { Category, Type } = require('./general');
       "name": "Earthquake"
   },
   "EggBomb": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 100,
       "acc": 75,
@@ -785,8 +785,8 @@ const { Category, Type } = require('./general');
       "name": "Egg Bomb"
   },
   "Endeavor": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 5,
       "dmg": 0,
       "acc": 100,
@@ -794,8 +794,8 @@ const { Category, Type } = require('./general');
       "name": "Endeavor"
   },
   "Explosion": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 5,
       "dmg": 250,
       "acc": 100,
@@ -803,8 +803,8 @@ const { Category, Type } = require('./general');
       "name": "Explosion"
   },
   "ExtremeSpeed": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 5,
       "dmg": 80,
       "acc": 100,
@@ -812,8 +812,8 @@ const { Category, Type } = require('./general');
       "name": "Extreme Speed"
   },
   "Facade": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 20,
       "dmg": 70,
       "acc": 100,
@@ -821,8 +821,8 @@ const { Category, Type } = require('./general');
       "name": "Facade"
   },
   "FakeOut": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 40,
       "acc": 100,
@@ -830,8 +830,8 @@ const { Category, Type } = require('./general');
       "name": "Fake Out"
   },
   "FalseSurrender": {
-      "type": Type.dark,
-      "cat": Category.physical,
+      "type": Type.Dark,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 80,
       "acc": 101,
@@ -839,8 +839,8 @@ const { Category, Type } = require('./general');
       "name": "False Surrender"
   },
   "FalseSwipe": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 40,
       "dmg": 40,
       "acc": 100,
@@ -848,8 +848,8 @@ const { Category, Type } = require('./general');
       "name": "False Swipe"
   },
   "Feint": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 30,
       "acc": 100,
@@ -857,8 +857,8 @@ const { Category, Type } = require('./general');
       "name": "Feint"
   },
   "FeintAttack": {
-      "type": Type.dark,
-      "cat": Category.physical,
+      "type": Type.Dark,
+      "cat": Category.Physical,
       "pp": 20,
       "dmg": 60,
       "acc": 101,
@@ -866,8 +866,8 @@ const { Category, Type } = require('./general');
       "name": "Feint Attack"
   },
   "FellStinger": {
-      "type": Type.bug,
-      "cat": Category.physical,
+      "type": Type.Bug,
+      "cat": Category.Physical,
       "pp": 25,
       "dmg": 50,
       "acc": 100,
@@ -875,8 +875,8 @@ const { Category, Type } = require('./general');
       "name": "Fell Stinger"
   },
   "FireFang": {
-      "type": Type.fire,
-      "cat": Category.physical,
+      "type": Type.Fire,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 65,
       "acc": 95,
@@ -884,8 +884,8 @@ const { Category, Type } = require('./general');
       "name": "Fire Fang"
   },
   "FireLash": {
-      "type": Type.fire,
-      "cat": Category.physical,
+      "type": Type.Fire,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 80,
       "acc": 100,
@@ -893,8 +893,8 @@ const { Category, Type } = require('./general');
       "name": "Fire Lash"
   },
   "FirePunch": {
-      "type": Type.fire,
-      "cat": Category.physical,
+      "type": Type.Fire,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 75,
       "acc": 100,
@@ -902,8 +902,8 @@ const { Category, Type } = require('./general');
       "name": "Fire Punch"
   },
   "FirstImpression": {
-      "type": Type.bug,
-      "cat": Category.physical,
+      "type": Type.Bug,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 90,
       "acc": 100,
@@ -911,8 +911,8 @@ const { Category, Type } = require('./general');
       "name": "First Impression"
   },
   "FishiousRend": {
-      "type": Type.water,
-      "cat": Category.physical,
+      "type": Type.Water,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 85,
       "acc": 100,
@@ -920,8 +920,8 @@ const { Category, Type } = require('./general');
       "name": "Fishious Rend"
   },
   "Fissure": {
-      "type": Type.ground,
-      "cat": Category.physical,
+      "type": Type.Ground,
+      "cat": Category.Physical,
       "pp": 5,
       "dmg": 0,
       "acc": 30,
@@ -929,8 +929,8 @@ const { Category, Type } = require('./general');
       "name": "Fissure"
   },
   "Flail": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 0,
       "acc": 100,
@@ -938,8 +938,8 @@ const { Category, Type } = require('./general');
       "name": "Flail"
   },
   "FlameCharge": {
-      "type": Type.fire,
-      "cat": Category.physical,
+      "type": Type.Fire,
+      "cat": Category.Physical,
       "pp": 20,
       "dmg": 50,
       "acc": 100,
@@ -947,8 +947,8 @@ const { Category, Type } = require('./general');
       "name": "Flame Charge"
   },
   "FlameWheel": {
-      "type": Type.fire,
-      "cat": Category.physical,
+      "type": Type.Fire,
+      "cat": Category.Physical,
       "pp": 25,
       "dmg": 60,
       "acc": 100,
@@ -956,8 +956,8 @@ const { Category, Type } = require('./general');
       "name": "Flame Wheel"
   },
   "FlareBlitz": {
-      "type": Type.fire,
-      "cat": Category.physical,
+      "type": Type.Fire,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 120,
       "acc": 100,
@@ -965,8 +965,8 @@ const { Category, Type } = require('./general');
       "name": "Flare Blitz"
   },
   "Fling": {
-      "type": Type.dark,
-      "cat": Category.physical,
+      "type": Type.Dark,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 0,
       "acc": 100,
@@ -974,8 +974,8 @@ const { Category, Type } = require('./general');
       "name": "Fling"
   },
   "FlipTurn": {
-      "type": Type.water,
-      "cat": Category.physical,
+      "type": Type.Water,
+      "cat": Category.Physical,
       "pp": 20,
       "dmg": 60,
       "acc": 100,
@@ -983,8 +983,8 @@ const { Category, Type } = require('./general');
       "name": "Flip Turn"
   },
   "FloatyFall": {
-      "type": Type.flying,
-      "cat": Category.physical,
+      "type": Type.Flying,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 90,
       "acc": 95,
@@ -992,8 +992,8 @@ const { Category, Type } = require('./general');
       "name": "Floaty Fall"
   },
   "Fly": {
-      "type": Type.flying,
-      "cat": Category.physical,
+      "type": Type.Flying,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 90,
       "acc": 95,
@@ -1001,8 +1001,8 @@ const { Category, Type } = require('./general');
       "name": "Fly"
   },
   "FlyingPress": {
-      "type": Type.fighting,
-      "cat": Category.physical,
+      "type": Type.Fighting,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 100,
       "acc": 95,
@@ -1010,8 +1010,8 @@ const { Category, Type } = require('./general');
       "name": "Flying Press"
   },
   "FocusPunch": {
-      "type": Type.fighting,
-      "cat": Category.physical,
+      "type": Type.Fighting,
+      "cat": Category.Physical,
       "pp": 20,
       "dmg": 150,
       "acc": 100,
@@ -1019,8 +1019,8 @@ const { Category, Type } = require('./general');
       "name": "Focus Punch"
   },
   "ForcePalm": {
-      "type": Type.fighting,
-      "cat": Category.physical,
+      "type": Type.Fighting,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 60,
       "acc": 100,
@@ -1028,8 +1028,8 @@ const { Category, Type } = require('./general');
       "name": "Force Palm"
   },
   "FoulPlay": {
-      "type": Type.dark,
-      "cat": Category.physical,
+      "type": Type.Dark,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 95,
       "acc": 100,
@@ -1037,8 +1037,8 @@ const { Category, Type } = require('./general');
       "name": "Foul Play"
   },
   "FreezeShock": {
-      "type": Type.ice,
-      "cat": Category.physical,
+      "type": Type.Ice,
+      "cat": Category.Physical,
       "pp": 5,
       "dmg": 140,
       "acc": 90,
@@ -1046,8 +1046,8 @@ const { Category, Type } = require('./general');
       "name": "Freeze Shock"
   },
   "Frustration": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 20,
       "dmg": 0,
       "acc": 100,
@@ -1055,8 +1055,8 @@ const { Category, Type } = require('./general');
       "name": "Frustration"
   },
   "FuryAttack": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 20,
       "dmg": 15,
       "acc": 85,
@@ -1064,8 +1064,8 @@ const { Category, Type } = require('./general');
       "name": "Fury Attack"
   },
   "FuryCutter": {
-      "type": Type.bug,
-      "cat": Category.physical,
+      "type": Type.Bug,
+      "cat": Category.Physical,
       "pp": 20,
       "dmg": 40,
       "acc": 95,
@@ -1073,8 +1073,8 @@ const { Category, Type } = require('./general');
       "name": "Fury Cutter"
   },
   "FurySwipes": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 18,
       "acc": 80,
@@ -1083,7 +1083,7 @@ const { Category, Type } = require('./general');
   },
   "FusionBolt": {
       "type": Type.electric,
-      "cat": Category.physical,
+      "cat": Category.Physical,
       "pp": 5,
       "dmg": 100,
       "acc": 100,
@@ -1091,8 +1091,8 @@ const { Category, Type } = require('./general');
       "name": "Fusion Bolt"
   },
   "GMaxBefuddle": {
-      "type": Type.bug,
-      "cat": Category.physical,
+      "type": Type.Bug,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -1100,8 +1100,8 @@ const { Category, Type } = require('./general');
       "name": "G-Max Befuddle"
   },
   "GMaxCannonade": {
-      "type": Type.water,
-      "cat": Category.physical,
+      "type": Type.Water,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -1109,8 +1109,8 @@ const { Category, Type } = require('./general');
       "name": "G-Max Cannonade"
   },
   "GMaxCentiferno": {
-      "type": Type.fire,
-      "cat": Category.physical,
+      "type": Type.Fire,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -1118,8 +1118,8 @@ const { Category, Type } = require('./general');
       "name": "G-Max Centiferno"
   },
   "GMaxChiStrike": {
-      "type": Type.fighting,
-      "cat": Category.physical,
+      "type": Type.Fighting,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -1127,8 +1127,8 @@ const { Category, Type } = require('./general');
       "name": "G-Max Chi Strike"
   },
   "GMaxCuddle": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -1137,7 +1137,7 @@ const { Category, Type } = require('./general');
   },
   "GMaxDepletion": {
       "type": "dragon",
-      "cat": Category.physical,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -1145,8 +1145,8 @@ const { Category, Type } = require('./general');
       "name": "G-Max Depletion"
   },
   "GMaxDrumSolo": {
-      "type": Type.grass,
-      "cat": Category.physical,
+      "type": Type.Grass,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -1154,8 +1154,8 @@ const { Category, Type } = require('./general');
       "name": "G-Max Drum Solo"
   },
   "GMaxFinale": {
-      "type": Type.fairy,
-      "cat": Category.physical,
+      "type": Type.Fairy,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -1163,8 +1163,8 @@ const { Category, Type } = require('./general');
       "name": "G-Max Finale"
   },
   "GMaxFireball": {
-      "type": Type.fire,
-      "cat": Category.physical,
+      "type": Type.Fire,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -1172,8 +1172,8 @@ const { Category, Type } = require('./general');
       "name": "G-Max Fireball"
   },
   "GMaxFoamBurst": {
-      "type": Type.water,
-      "cat": Category.physical,
+      "type": Type.Water,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -1181,8 +1181,8 @@ const { Category, Type } = require('./general');
       "name": "G-Max Foam Burst"
   },
   "GMaxGoldRush": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -1191,7 +1191,7 @@ const { Category, Type } = require('./general');
   },
   "GMaxGravitas": {
       "type": Type.psychic,
-      "cat": Category.physical,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -1199,8 +1199,8 @@ const { Category, Type } = require('./general');
       "name": "G-Max Gravitas"
   },
   "GMaxHydrosnipe": {
-      "type": Type.water,
-      "cat": Category.physical,
+      "type": Type.Water,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -1208,8 +1208,8 @@ const { Category, Type } = require('./general');
       "name": "G-Max Hydrosnipe"
   },
   "GMaxMalodor": {
-      "type": Type.poison,
-      "cat": Category.physical,
+      "type": Type.Poison,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -1217,8 +1217,8 @@ const { Category, Type } = require('./general');
       "name": "G-Max Malodor"
   },
   "GMaxMeltdown": {
-      "type": Type.steel,
-      "cat": Category.physical,
+      "type": Type.Steel,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -1226,8 +1226,8 @@ const { Category, Type } = require('./general');
       "name": "G-Max Meltdown"
   },
   "GMaxOneBlow": {
-      "type": Type.dark,
-      "cat": Category.physical,
+      "type": Type.Dark,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -1235,8 +1235,8 @@ const { Category, Type } = require('./general');
       "name": "G-Max One Blow"
   },
   "GMaxRapidFlow": {
-      "type": Type.water,
-      "cat": Category.physical,
+      "type": Type.Water,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -1244,8 +1244,8 @@ const { Category, Type } = require('./general');
       "name": "G-Max Rapid Flow"
   },
   "GMaxReplenish": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -1253,8 +1253,8 @@ const { Category, Type } = require('./general');
       "name": "G-Max Replenish"
   },
   "GMaxResonance": {
-      "type": Type.ice,
-      "cat": Category.physical,
+      "type": Type.Ice,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -1262,8 +1262,8 @@ const { Category, Type } = require('./general');
       "name": "G-Max Resonance"
   },
   "GMaxSandblast": {
-      "type": Type.ground,
-      "cat": Category.physical,
+      "type": Type.Ground,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -1271,8 +1271,8 @@ const { Category, Type } = require('./general');
       "name": "G-Max Sandblast"
   },
   "GMaxSmite": {
-      "type": Type.fairy,
-      "cat": Category.physical,
+      "type": Type.Fairy,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -1280,8 +1280,8 @@ const { Category, Type } = require('./general');
       "name": "G-Max Smite"
   },
   "GMaxSnooze": {
-      "type": Type.dark,
-      "cat": Category.physical,
+      "type": Type.Dark,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -1289,8 +1289,8 @@ const { Category, Type } = require('./general');
       "name": "G-Max Snooze"
   },
   "GMaxSteelsurge": {
-      "type": Type.steel,
-      "cat": Category.physical,
+      "type": Type.Steel,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -1298,8 +1298,8 @@ const { Category, Type } = require('./general');
       "name": "G-Max Steelsurge"
   },
   "GMaxStonesurge": {
-      "type": Type.water,
-      "cat": Category.physical,
+      "type": Type.Water,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -1308,7 +1308,7 @@ const { Category, Type } = require('./general');
   },
   "GMaxStunShock": {
       "type": Type.electric,
-      "cat": Category.physical,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -1316,8 +1316,8 @@ const { Category, Type } = require('./general');
       "name": "G-Max Stun Shock"
   },
   "GMaxSweetness": {
-      "type": Type.grass,
-      "cat": Category.physical,
+      "type": Type.Grass,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -1325,8 +1325,8 @@ const { Category, Type } = require('./general');
       "name": "G-Max Sweetness"
   },
   "GMaxTartness": {
-      "type": Type.grass,
-      "cat": Category.physical,
+      "type": Type.Grass,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -1335,7 +1335,7 @@ const { Category, Type } = require('./general');
   },
   "GMaxTerror": {
       "type": "ghost",
-      "cat": Category.physical,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -1343,8 +1343,8 @@ const { Category, Type } = require('./general');
       "name": "G-Max Terror"
   },
   "GMaxVineLash": {
-      "type": Type.grass,
-      "cat": Category.physical,
+      "type": Type.Grass,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -1352,8 +1352,8 @@ const { Category, Type } = require('./general');
       "name": "G-Max Vine Lash"
   },
   "GMaxVolcalith": {
-      "type": Type.rock,
-      "cat": Category.physical,
+      "type": Type.Rock,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -1362,7 +1362,7 @@ const { Category, Type } = require('./general');
   },
   "GMaxVoltCrash": {
       "type": Type.electric,
-      "cat": Category.physical,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -1370,8 +1370,8 @@ const { Category, Type } = require('./general');
       "name": "G-Max Volt Crash"
   },
   "GMaxWildfire": {
-      "type": Type.fire,
-      "cat": Category.physical,
+      "type": Type.Fire,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -1379,8 +1379,8 @@ const { Category, Type } = require('./general');
       "name": "G-Max Wildfire"
   },
   "GMaxWindRage": {
-      "type": Type.flying,
-      "cat": Category.physical,
+      "type": Type.Flying,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -1388,8 +1388,8 @@ const { Category, Type } = require('./general');
       "name": "G-Max Wind Rage"
   },
   "GearGrind": {
-      "type": Type.steel,
-      "cat": Category.physical,
+      "type": Type.Steel,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 50,
       "acc": 85,
@@ -1397,8 +1397,8 @@ const { Category, Type } = require('./general');
       "name": "Gear Grind"
   },
   "GigaImpact": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 5,
       "dmg": 150,
       "acc": 90,
@@ -1407,7 +1407,7 @@ const { Category, Type } = require('./general');
   },
   "GigavoltHavoc": {
       "type": Type.electric,
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 1,
       "dmg": 0,
       "acc": 101,
@@ -1415,8 +1415,8 @@ const { Category, Type } = require('./general');
       "name": "Gigavolt Havoc"
   },
   "GlacialLance": {
-      "type": Type.ice,
-      "cat": Category.physical,
+      "type": Type.Ice,
+      "cat": Category.Physical,
       "pp": 5,
       "dmg": 130,
       "acc": 100,
@@ -1424,8 +1424,8 @@ const { Category, Type } = require('./general');
       "name": "Glacial Lance"
   },
   "GrassyGlide": {
-      "type": Type.grass,
-      "cat": Category.physical,
+      "type": Type.Grass,
+      "cat": Category.Physical,
       "pp": 20,
       "dmg": 70,
       "acc": 100,
@@ -1433,8 +1433,8 @@ const { Category, Type } = require('./general');
       "name": "Grassy Glide"
   },
   "GravApple": {
-      "type": Type.grass,
-      "cat": Category.physical,
+      "type": Type.Grass,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 80,
       "acc": 100,
@@ -1442,8 +1442,8 @@ const { Category, Type } = require('./general');
       "name": "Grav Apple"
   },
   "Guillotine": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 5,
       "dmg": 0,
       "acc": 30,
@@ -1451,8 +1451,8 @@ const { Category, Type } = require('./general');
       "name": "Guillotine"
   },
   "GunkShot": {
-      "type": Type.poison,
-      "cat": Category.physical,
+      "type": Type.Poison,
+      "cat": Category.Physical,
       "pp": 5,
       "dmg": 120,
       "acc": 80,
@@ -1460,8 +1460,8 @@ const { Category, Type } = require('./general');
       "name": "Gunk Shot"
   },
   "GyroBall": {
-      "type": Type.steel,
-      "cat": Category.physical,
+      "type": Type.Steel,
+      "cat": Category.Physical,
       "pp": 5,
       "dmg": 0,
       "acc": 100,
@@ -1469,8 +1469,8 @@ const { Category, Type } = require('./general');
       "name": "Gyro Ball"
   },
   "HammerArm": {
-      "type": Type.fighting,
-      "cat": Category.physical,
+      "type": Type.Fighting,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 100,
       "acc": 90,
@@ -1478,8 +1478,8 @@ const { Category, Type } = require('./general');
       "name": "Hammer Arm"
   },
   "HeadCharge": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 120,
       "acc": 100,
@@ -1487,8 +1487,8 @@ const { Category, Type } = require('./general');
       "name": "Head Charge"
   },
   "HeadSmash": {
-      "type": Type.rock,
-      "cat": Category.physical,
+      "type": Type.Rock,
+      "cat": Category.Physical,
       "pp": 5,
       "dmg": 150,
       "acc": 80,
@@ -1496,8 +1496,8 @@ const { Category, Type } = require('./general');
       "name": "Head Smash"
   },
   "Headbutt": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 70,
       "acc": 100,
@@ -1506,7 +1506,7 @@ const { Category, Type } = require('./general');
   },
   "HeartStamp": {
       "type": Type.psychic,
-      "cat": Category.physical,
+      "cat": Category.Physical,
       "pp": 25,
       "dmg": 60,
       "acc": 100,
@@ -1514,8 +1514,8 @@ const { Category, Type } = require('./general');
       "name": "Heart Stamp"
   },
   "HeatCrash": {
-      "type": Type.fire,
-      "cat": Category.physical,
+      "type": Type.Fire,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 0,
       "acc": 100,
@@ -1523,8 +1523,8 @@ const { Category, Type } = require('./general');
       "name": "Heat Crash"
   },
   "HeavySlam": {
-      "type": Type.steel,
-      "cat": Category.physical,
+      "type": Type.Steel,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 0,
       "acc": 100,
@@ -1532,8 +1532,8 @@ const { Category, Type } = require('./general');
       "name": "Heavy Slam"
   },
   "HighHorsepower": {
-      "type": Type.ground,
-      "cat": Category.physical,
+      "type": Type.Ground,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 95,
       "acc": 95,
@@ -1541,8 +1541,8 @@ const { Category, Type } = require('./general');
       "name": "High Horsepower"
   },
   "HighJumpKick": {
-      "type": Type.fighting,
-      "cat": Category.physical,
+      "type": Type.Fighting,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 130,
       "acc": 90,
@@ -1550,8 +1550,8 @@ const { Category, Type } = require('./general');
       "name": "High Jump Kick"
   },
   "HoldBack": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 40,
       "dmg": 40,
       "acc": 100,
@@ -1559,8 +1559,8 @@ const { Category, Type } = require('./general');
       "name": "Hold Back"
   },
   "HornAttack": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 25,
       "dmg": 65,
       "acc": 100,
@@ -1568,8 +1568,8 @@ const { Category, Type } = require('./general');
       "name": "Horn Attack"
   },
   "HornDrill": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 5,
       "dmg": 0,
       "acc": 30,
@@ -1577,8 +1577,8 @@ const { Category, Type } = require('./general');
       "name": "Horn Drill"
   },
   "HornLeech": {
-      "type": Type.grass,
-      "cat": Category.physical,
+      "type": Type.Grass,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 75,
       "acc": 100,
@@ -1586,8 +1586,8 @@ const { Category, Type } = require('./general');
       "name": "Horn Leech"
   },
   "HydroVortex": {
-      "type": Type.water,
-      "cat": Category.special,
+      "type": Type.Water,
+      "cat": Category.Special,
       "pp": 1,
       "dmg": 0,
       "acc": 101,
@@ -1595,8 +1595,8 @@ const { Category, Type } = require('./general');
       "name": "Hydro Vortex"
   },
   "HyperFang": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 80,
       "acc": 90,
@@ -1604,8 +1604,8 @@ const { Category, Type } = require('./general');
       "name": "Hyper Fang"
   },
   "HyperspaceFury": {
-      "type": Type.dark,
-      "cat": Category.physical,
+      "type": Type.Dark,
+      "cat": Category.Physical,
       "pp": 5,
       "dmg": 100,
       "acc": 101,
@@ -1613,8 +1613,8 @@ const { Category, Type } = require('./general');
       "name": "Hyperspace Fury"
   },
   "IceBall": {
-      "type": Type.ice,
-      "cat": Category.physical,
+      "type": Type.Ice,
+      "cat": Category.Physical,
       "pp": 20,
       "dmg": 30,
       "acc": 90,
@@ -1622,8 +1622,8 @@ const { Category, Type } = require('./general');
       "name": "Ice Ball"
   },
   "IceFang": {
-      "type": Type.ice,
-      "cat": Category.physical,
+      "type": Type.Ice,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 65,
       "acc": 95,
@@ -1631,8 +1631,8 @@ const { Category, Type } = require('./general');
       "name": "Ice Fang"
   },
   "IceHammer": {
-      "type": Type.ice,
-      "cat": Category.physical,
+      "type": Type.Ice,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 100,
       "acc": 90,
@@ -1640,8 +1640,8 @@ const { Category, Type } = require('./general');
       "name": "Ice Hammer"
   },
   "IcePunch": {
-      "type": Type.ice,
-      "cat": Category.physical,
+      "type": Type.Ice,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 75,
       "acc": 100,
@@ -1649,8 +1649,8 @@ const { Category, Type } = require('./general');
       "name": "Ice Punch"
   },
   "IceShard": {
-      "type": Type.ice,
-      "cat": Category.physical,
+      "type": Type.Ice,
+      "cat": Category.Physical,
       "pp": 30,
       "dmg": 40,
       "acc": 100,
@@ -1658,8 +1658,8 @@ const { Category, Type } = require('./general');
       "name": "Ice Shard"
   },
   "IcicleCrash": {
-      "type": Type.ice,
-      "cat": Category.physical,
+      "type": Type.Ice,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 85,
       "acc": 90,
@@ -1667,8 +1667,8 @@ const { Category, Type } = require('./general');
       "name": "Icicle Crash"
   },
   "IcicleSpear": {
-      "type": Type.ice,
-      "cat": Category.physical,
+      "type": Type.Ice,
+      "cat": Category.Physical,
       "pp": 30,
       "dmg": 25,
       "acc": 100,
@@ -1676,8 +1676,8 @@ const { Category, Type } = require('./general');
       "name": "Icicle Spear"
   },
   "InfernoOverdrive": {
-      "type": Type.fire,
-      "cat": Category.special,
+      "type": Type.Fire,
+      "cat": Category.Special,
       "pp": 1,
       "dmg": 0,
       "acc": 101,
@@ -1685,8 +1685,8 @@ const { Category, Type } = require('./general');
       "name": "Inferno Overdrive"
   },
   "IronHead": {
-      "type": Type.steel,
-      "cat": Category.physical,
+      "type": Type.Steel,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 80,
       "acc": 100,
@@ -1694,8 +1694,8 @@ const { Category, Type } = require('./general');
       "name": "Iron Head"
   },
   "IronTail": {
-      "type": Type.steel,
-      "cat": Category.physical,
+      "type": Type.Steel,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 100,
       "acc": 75,
@@ -1703,8 +1703,8 @@ const { Category, Type } = require('./general');
       "name": "Iron Tail"
   },
   "JawLock": {
-      "type": Type.dark,
-      "cat": Category.physical,
+      "type": Type.Dark,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 80,
       "acc": 100,
@@ -1712,8 +1712,8 @@ const { Category, Type } = require('./general');
       "name": "Jaw Lock"
   },
   "JumpKick": {
-      "type": Type.fighting,
-      "cat": Category.physical,
+      "type": Type.Fighting,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 100,
       "acc": 95,
@@ -1721,8 +1721,8 @@ const { Category, Type } = require('./general');
       "name": "Jump Kick"
   },
   "KarateChop": {
-      "type": Type.fighting,
-      "cat": Category.physical,
+      "type": Type.Fighting,
+      "cat": Category.Physical,
       "pp": 25,
       "dmg": 50,
       "acc": 100,
@@ -1730,8 +1730,8 @@ const { Category, Type } = require('./general');
       "name": "Karate Chop"
   },
   "KnockOff": {
-      "type": Type.dark,
-      "cat": Category.physical,
+      "type": Type.Dark,
+      "cat": Category.Physical,
       "pp": 20,
       "dmg": 65,
       "acc": 100,
@@ -1739,8 +1739,8 @@ const { Category, Type } = require('./general');
       "name": "Knock Off"
   },
   "LandsWrath": {
-      "type": Type.ground,
-      "cat": Category.physical,
+      "type": Type.Ground,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 90,
       "acc": 100,
@@ -1748,8 +1748,8 @@ const { Category, Type } = require('./general');
       "name": "Land's Wrath"
   },
   "LashOut": {
-      "type": Type.dark,
-      "cat": Category.physical,
+      "type": Type.Dark,
+      "cat": Category.Physical,
       "pp": 5,
       "dmg": 75,
       "acc": 100,
@@ -1757,8 +1757,8 @@ const { Category, Type } = require('./general');
       "name": "Lash Out"
   },
   "LastResort": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 5,
       "dmg": 140,
       "acc": 100,
@@ -1766,8 +1766,8 @@ const { Category, Type } = require('./general');
       "name": "Last Resort"
   },
   "LeafBlade": {
-      "type": Type.grass,
-      "cat": Category.physical,
+      "type": Type.Grass,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 90,
       "acc": 100,
@@ -1775,8 +1775,8 @@ const { Category, Type } = require('./general');
       "name": "Leaf Blade"
   },
   "Leafage": {
-      "type": Type.grass,
-      "cat": Category.physical,
+      "type": Type.Grass,
+      "cat": Category.Physical,
       "pp": 40,
       "dmg": 40,
       "acc": 100,
@@ -1784,8 +1784,8 @@ const { Category, Type } = require('./general');
       "name": "Leafage"
   },
   "LeechLife": {
-      "type": Type.bug,
-      "cat": Category.physical,
+      "type": Type.Bug,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 80,
       "acc": 100,
@@ -1793,8 +1793,8 @@ const { Category, Type } = require('./general');
       "name": "Leech Life"
   },
   "Let'sSnuggleForever": {
-      "type": Type.fairy,
-      "cat": Category.physical,
+      "type": Type.Fairy,
+      "cat": Category.Physical,
       "pp": 1,
       "dmg": 190,
       "acc": 101,
@@ -1803,7 +1803,7 @@ const { Category, Type } = require('./general');
   },
   "Lick": {
       "type": "ghost",
-      "cat": Category.physical,
+      "cat": Category.Physical,
       "pp": 30,
       "dmg": 30,
       "acc": 100,
@@ -1811,8 +1811,8 @@ const { Category, Type } = require('./general');
       "name": "Lick"
   },
   "Liquidation": {
-      "type": Type.water,
-      "cat": Category.physical,
+      "type": Type.Water,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 85,
       "acc": 100,
@@ -1820,8 +1820,8 @@ const { Category, Type } = require('./general');
       "name": "Liquidation"
   },
   "LowKick": {
-      "type": Type.fighting,
-      "cat": Category.physical,
+      "type": Type.Fighting,
+      "cat": Category.Physical,
       "pp": 20,
       "dmg": 0,
       "acc": 100,
@@ -1829,8 +1829,8 @@ const { Category, Type } = require('./general');
       "name": "Low Kick"
   },
   "LowSweep": {
-      "type": Type.fighting,
-      "cat": Category.physical,
+      "type": Type.Fighting,
+      "cat": Category.Physical,
       "pp": 20,
       "dmg": 65,
       "acc": 100,
@@ -1838,8 +1838,8 @@ const { Category, Type } = require('./general');
       "name": "Low Sweep"
   },
   "Lunge": {
-      "type": Type.bug,
-      "cat": Category.physical,
+      "type": Type.Bug,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 80,
       "acc": 100,
@@ -1847,8 +1847,8 @@ const { Category, Type } = require('./general');
       "name": "Lunge"
   },
   "MachPunch": {
-      "type": Type.fighting,
-      "cat": Category.physical,
+      "type": Type.Fighting,
+      "cat": Category.Physical,
       "pp": 30,
       "dmg": 40,
       "acc": 100,
@@ -1856,8 +1856,8 @@ const { Category, Type } = require('./general');
       "name": "Mach Punch"
   },
   "MagnetBomb": {
-      "type": Type.steel,
-      "cat": Category.physical,
+      "type": Type.Steel,
+      "cat": Category.Physical,
       "pp": 20,
       "dmg": 60,
       "acc": 101,
@@ -1865,8 +1865,8 @@ const { Category, Type } = require('./general');
       "name": "Magnet Bomb"
   },
   "Magnitude": {
-      "type": Type.ground,
-      "cat": Category.physical,
+      "type": Type.Ground,
+      "cat": Category.Physical,
       "pp": 30,
       "dmg": 0,
       "acc": 100,
@@ -1874,8 +1874,8 @@ const { Category, Type } = require('./general');
       "name": "Magnitude"
   },
   "MaliciousMoonsault": {
-      "type": Type.dark,
-      "cat": Category.physical,
+      "type": Type.Dark,
+      "cat": Category.Physical,
       "pp": 1,
       "dmg": 180,
       "acc": 101,
@@ -1883,8 +1883,8 @@ const { Category, Type } = require('./general');
       "name": "Malicious Moonsault"
   },
   "MaxAirstream": {
-      "type": Type.flying,
-      "cat": Category.physical,
+      "type": Type.Flying,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -1892,8 +1892,8 @@ const { Category, Type } = require('./general');
       "name": "Max Airstream"
   },
   "MaxDarkness": {
-      "type": Type.dark,
-      "cat": Category.physical,
+      "type": Type.Dark,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -1901,8 +1901,8 @@ const { Category, Type } = require('./general');
       "name": "Max Darkness"
   },
   "MaxFlare": {
-      "type": Type.fire,
-      "cat": Category.physical,
+      "type": Type.Fire,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -1910,8 +1910,8 @@ const { Category, Type } = require('./general');
       "name": "Max Flare"
   },
   "MaxFlutterby": {
-      "type": Type.bug,
-      "cat": Category.physical,
+      "type": Type.Bug,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -1919,8 +1919,8 @@ const { Category, Type } = require('./general');
       "name": "Max Flutterby"
   },
   "MaxGeyser": {
-      "type": Type.water,
-      "cat": Category.physical,
+      "type": Type.Water,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -1928,8 +1928,8 @@ const { Category, Type } = require('./general');
       "name": "Max Geyser"
   },
   "MaxHailstorm": {
-      "type": Type.ice,
-      "cat": Category.physical,
+      "type": Type.Ice,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -1937,8 +1937,8 @@ const { Category, Type } = require('./general');
       "name": "Max Hailstorm"
   },
   "MaxKnuckle": {
-      "type": Type.fighting,
-      "cat": Category.physical,
+      "type": Type.Fighting,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -1947,7 +1947,7 @@ const { Category, Type } = require('./general');
   },
   "MaxLightning": {
       "type": Type.electric,
-      "cat": Category.physical,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -1956,7 +1956,7 @@ const { Category, Type } = require('./general');
   },
   "MaxMindstorm": {
       "type": Type.psychic,
-      "cat": Category.physical,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -1964,8 +1964,8 @@ const { Category, Type } = require('./general');
       "name": "Max Mindstorm"
   },
   "MaxOoze": {
-      "type": Type.poison,
-      "cat": Category.physical,
+      "type": Type.Poison,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -1973,8 +1973,8 @@ const { Category, Type } = require('./general');
       "name": "Max Ooze"
   },
   "MaxOvergrowth": {
-      "type": Type.grass,
-      "cat": Category.physical,
+      "type": Type.Grass,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -1983,7 +1983,7 @@ const { Category, Type } = require('./general');
   },
   "MaxPhantasm": {
       "type": "ghost",
-      "cat": Category.physical,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -1991,8 +1991,8 @@ const { Category, Type } = require('./general');
       "name": "Max Phantasm"
   },
   "MaxQuake": {
-      "type": Type.ground,
-      "cat": Category.physical,
+      "type": Type.Ground,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -2000,8 +2000,8 @@ const { Category, Type } = require('./general');
       "name": "Max Quake"
   },
   "MaxRockfall": {
-      "type": Type.rock,
-      "cat": Category.physical,
+      "type": Type.Rock,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -2009,8 +2009,8 @@ const { Category, Type } = require('./general');
       "name": "Max Rockfall"
   },
   "MaxStarfall": {
-      "type": Type.fairy,
-      "cat": Category.physical,
+      "type": Type.Fairy,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -2018,8 +2018,8 @@ const { Category, Type } = require('./general');
       "name": "Max Starfall"
   },
   "MaxSteelspike": {
-      "type": Type.steel,
-      "cat": Category.physical,
+      "type": Type.Steel,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -2027,8 +2027,8 @@ const { Category, Type } = require('./general');
       "name": "Max Steelspike"
   },
   "MaxStrike": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -2037,7 +2037,7 @@ const { Category, Type } = require('./general');
   },
   "MaxWyrmwind": {
       "type": "dragon",
-      "cat": Category.physical,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -2045,8 +2045,8 @@ const { Category, Type } = require('./general');
       "name": "Max Wyrmwind"
   },
   "MegaKick": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 5,
       "dmg": 120,
       "acc": 75,
@@ -2054,8 +2054,8 @@ const { Category, Type } = require('./general');
       "name": "Mega Kick"
   },
   "MegaPunch": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 20,
       "dmg": 80,
       "acc": 85,
@@ -2063,8 +2063,8 @@ const { Category, Type } = require('./general');
       "name": "Mega Punch"
   },
   "Megahorn": {
-      "type": Type.bug,
-      "cat": Category.physical,
+      "type": Type.Bug,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 120,
       "acc": 85,
@@ -2072,8 +2072,8 @@ const { Category, Type } = require('./general');
       "name": "Megahorn"
   },
   "MetalBurst": {
-      "type": Type.steel,
-      "cat": Category.physical,
+      "type": Type.Steel,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 0,
       "acc": 100,
@@ -2081,8 +2081,8 @@ const { Category, Type } = require('./general');
       "name": "Metal Burst"
   },
   "MetalClaw": {
-      "type": Type.steel,
-      "cat": Category.physical,
+      "type": Type.Steel,
+      "cat": Category.Physical,
       "pp": 35,
       "dmg": 50,
       "acc": 95,
@@ -2090,8 +2090,8 @@ const { Category, Type } = require('./general');
       "name": "Metal Claw"
   },
   "MeteorAssault": {
-      "type": Type.fighting,
-      "cat": Category.physical,
+      "type": Type.Fighting,
+      "cat": Category.Physical,
       "pp": 5,
       "dmg": 150,
       "acc": 100,
@@ -2099,8 +2099,8 @@ const { Category, Type } = require('./general');
       "name": "Meteor Assault"
   },
   "MeteorMash": {
-      "type": Type.steel,
-      "cat": Category.physical,
+      "type": Type.Steel,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 90,
       "acc": 90,
@@ -2108,8 +2108,8 @@ const { Category, Type } = require('./general');
       "name": "Meteor Mash"
   },
   "MultiAttack": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 120,
       "acc": 100,
@@ -2117,8 +2117,8 @@ const { Category, Type } = require('./general');
       "name": "Multi-Attack"
   },
   "NaturalGift": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 0,
       "acc": 100,
@@ -2126,8 +2126,8 @@ const { Category, Type } = require('./general');
       "name": "Natural Gift"
   },
   "NeedleArm": {
-      "type": Type.grass,
-      "cat": Category.physical,
+      "type": Type.Grass,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 60,
       "acc": 100,
@@ -2136,7 +2136,7 @@ const { Category, Type } = require('./general');
   },
   "NeverEndingNightmare": {
       "type": "ghost",
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 1,
       "dmg": 0,
       "acc": 101,
@@ -2144,8 +2144,8 @@ const { Category, Type } = require('./general');
       "name": "Never-Ending Nightmare"
   },
   "NightSlash": {
-      "type": Type.dark,
-      "cat": Category.physical,
+      "type": Type.Dark,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 70,
       "acc": 100,
@@ -2154,7 +2154,7 @@ const { Category, Type } = require('./general');
   },
   "Nuzzle": {
       "type": Type.electric,
-      "cat": Category.physical,
+      "cat": Category.Physical,
       "pp": 20,
       "dmg": 20,
       "acc": 100,
@@ -2163,7 +2163,7 @@ const { Category, Type } = require('./general');
   },
   "Outrage": {
       "type": "dragon",
-      "cat": Category.physical,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 120,
       "acc": 100,
@@ -2171,8 +2171,8 @@ const { Category, Type } = require('./general');
       "name": "Outrage"
   },
   "PayDay": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 20,
       "dmg": 40,
       "acc": 100,
@@ -2180,8 +2180,8 @@ const { Category, Type } = require('./general');
       "name": "Pay Day"
   },
   "Payback": {
-      "type": Type.dark,
-      "cat": Category.physical,
+      "type": Type.Dark,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 50,
       "acc": 100,
@@ -2189,8 +2189,8 @@ const { Category, Type } = require('./general');
       "name": "Payback"
   },
   "Peck": {
-      "type": Type.flying,
-      "cat": Category.physical,
+      "type": Type.Flying,
+      "cat": Category.Physical,
       "pp": 35,
       "dmg": 35,
       "acc": 100,
@@ -2198,8 +2198,8 @@ const { Category, Type } = require('./general');
       "name": "Peck"
   },
   "PetalBlizzard": {
-      "type": Type.grass,
-      "cat": Category.physical,
+      "type": Type.Grass,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 90,
       "acc": 100,
@@ -2208,7 +2208,7 @@ const { Category, Type } = require('./general');
   },
   "PhantomForce": {
       "type": "ghost",
-      "cat": Category.physical,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 90,
       "acc": 100,
@@ -2216,8 +2216,8 @@ const { Category, Type } = require('./general');
       "name": "Phantom Force"
   },
   "PinMissile": {
-      "type": Type.bug,
-      "cat": Category.physical,
+      "type": Type.Bug,
+      "cat": Category.Physical,
       "pp": 20,
       "dmg": 25,
       "acc": 95,
@@ -2226,7 +2226,7 @@ const { Category, Type } = require('./general');
   },
   "PlasmaFists": {
       "type": Type.electric,
-      "cat": Category.physical,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 100,
       "acc": 100,
@@ -2234,8 +2234,8 @@ const { Category, Type } = require('./general');
       "name": "Plasma Fists"
   },
   "PlayRough": {
-      "type": Type.fairy,
-      "cat": Category.physical,
+      "type": Type.Fairy,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 90,
       "acc": 90,
@@ -2243,8 +2243,8 @@ const { Category, Type } = require('./general');
       "name": "Play Rough"
   },
   "Pluck": {
-      "type": Type.flying,
-      "cat": Category.physical,
+      "type": Type.Flying,
+      "cat": Category.Physical,
       "pp": 20,
       "dmg": 60,
       "acc": 100,
@@ -2252,8 +2252,8 @@ const { Category, Type } = require('./general');
       "name": "Pluck"
   },
   "PoisonFang": {
-      "type": Type.poison,
-      "cat": Category.physical,
+      "type": Type.Poison,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 50,
       "acc": 100,
@@ -2261,8 +2261,8 @@ const { Category, Type } = require('./general');
       "name": "Poison Fang"
   },
   "PoisonJab": {
-      "type": Type.poison,
-      "cat": Category.physical,
+      "type": Type.Poison,
+      "cat": Category.Physical,
       "pp": 20,
       "dmg": 80,
       "acc": 100,
@@ -2270,8 +2270,8 @@ const { Category, Type } = require('./general');
       "name": "Poison Jab"
   },
   "PoisonSting": {
-      "type": Type.poison,
-      "cat": Category.physical,
+      "type": Type.Poison,
+      "cat": Category.Physical,
       "pp": 35,
       "dmg": 15,
       "acc": 100,
@@ -2279,8 +2279,8 @@ const { Category, Type } = require('./general');
       "name": "Poison Sting"
   },
   "PoisonTail": {
-      "type": Type.poison,
-      "cat": Category.physical,
+      "type": Type.Poison,
+      "cat": Category.Physical,
       "pp": 25,
       "dmg": 50,
       "acc": 100,
@@ -2289,7 +2289,7 @@ const { Category, Type } = require('./general');
   },
   "Poltergeist": {
       "type": "ghost",
-      "cat": Category.physical,
+      "cat": Category.Physical,
       "pp": 5,
       "dmg": 110,
       "acc": 90,
@@ -2297,8 +2297,8 @@ const { Category, Type } = require('./general');
       "name": "Poltergeist"
   },
   "Pound": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 35,
       "dmg": 40,
       "acc": 100,
@@ -2306,8 +2306,8 @@ const { Category, Type } = require('./general');
       "name": "Pound"
   },
   "PowerTrip": {
-      "type": Type.dark,
-      "cat": Category.physical,
+      "type": Type.Dark,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 20,
       "acc": 100,
@@ -2315,8 +2315,8 @@ const { Category, Type } = require('./general');
       "name": "Power Trip"
   },
   "PowerWhip": {
-      "type": Type.grass,
-      "cat": Category.physical,
+      "type": Type.Grass,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 120,
       "acc": 85,
@@ -2324,8 +2324,8 @@ const { Category, Type } = require('./general');
       "name": "Power Whip"
   },
   "PowerUpPunch": {
-      "type": Type.fighting,
-      "cat": Category.physical,
+      "type": Type.Fighting,
+      "cat": Category.Physical,
       "pp": 20,
       "dmg": 40,
       "acc": 100,
@@ -2333,8 +2333,8 @@ const { Category, Type } = require('./general');
       "name": "Power-Up Punch"
   },
   "PrecipiceBlades": {
-      "type": Type.ground,
-      "cat": Category.physical,
+      "type": Type.Ground,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 120,
       "acc": 85,
@@ -2342,8 +2342,8 @@ const { Category, Type } = require('./general');
       "name": "Precipice Blades"
   },
   "Present": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 0,
       "acc": 90,
@@ -2352,7 +2352,7 @@ const { Category, Type } = require('./general');
   },
   "PsychicFangs": {
       "type": Type.psychic,
-      "cat": Category.physical,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 85,
       "acc": 100,
@@ -2361,7 +2361,7 @@ const { Category, Type } = require('./general');
   },
   "PsychoCut": {
       "type": Type.psychic,
-      "cat": Category.physical,
+      "cat": Category.Physical,
       "pp": 20,
       "dmg": 70,
       "acc": 100,
@@ -2369,8 +2369,8 @@ const { Category, Type } = require('./general');
       "name": "Psycho Cut"
   },
   "PulverizingPancake": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 1,
       "dmg": 210,
       "acc": 101,
@@ -2378,8 +2378,8 @@ const { Category, Type } = require('./general');
       "name": "Pulverizing Pancake"
   },
   "Punishment": {
-      "type": Type.dark,
-      "cat": Category.physical,
+      "type": Type.Dark,
+      "cat": Category.Physical,
       "pp": 5,
       "dmg": 0,
       "acc": 100,
@@ -2387,8 +2387,8 @@ const { Category, Type } = require('./general');
       "name": "Punishment"
   },
   "Pursuit": {
-      "type": Type.dark,
-      "cat": Category.physical,
+      "type": Type.Dark,
+      "cat": Category.Physical,
       "pp": 20,
       "dmg": 40,
       "acc": 100,
@@ -2396,8 +2396,8 @@ const { Category, Type } = require('./general');
       "name": "Pursuit"
   },
   "PyroBall": {
-      "type": Type.fire,
-      "cat": Category.physical,
+      "type": Type.Fire,
+      "cat": Category.Physical,
       "pp": 5,
       "dmg": 120,
       "acc": 90,
@@ -2405,8 +2405,8 @@ const { Category, Type } = require('./general');
       "name": "Pyro Ball"
   },
   "QuickAttack": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 30,
       "dmg": 40,
       "acc": 100,
@@ -2414,8 +2414,8 @@ const { Category, Type } = require('./general');
       "name": "Quick Attack"
   },
   "Rage": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 20,
       "dmg": 20,
       "acc": 100,
@@ -2423,8 +2423,8 @@ const { Category, Type } = require('./general');
       "name": "Rage"
   },
   "RapidSpin": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 40,
       "dmg": 50,
       "acc": 100,
@@ -2432,8 +2432,8 @@ const { Category, Type } = require('./general');
       "name": "Rapid Spin"
   },
   "RazorLeaf": {
-      "type": Type.grass,
-      "cat": Category.physical,
+      "type": Type.Grass,
+      "cat": Category.Physical,
       "pp": 25,
       "dmg": 55,
       "acc": 95,
@@ -2441,8 +2441,8 @@ const { Category, Type } = require('./general');
       "name": "Razor Leaf"
   },
   "RazorShell": {
-      "type": Type.water,
-      "cat": Category.physical,
+      "type": Type.Water,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 75,
       "acc": 95,
@@ -2450,8 +2450,8 @@ const { Category, Type } = require('./general');
       "name": "Razor Shell"
   },
   "Retaliate": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 5,
       "dmg": 70,
       "acc": 100,
@@ -2459,8 +2459,8 @@ const { Category, Type } = require('./general');
       "name": "Retaliate"
   },
   "Return": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 20,
       "dmg": 0,
       "acc": 100,
@@ -2468,8 +2468,8 @@ const { Category, Type } = require('./general');
       "name": "Return"
   },
   "Revenge": {
-      "type": Type.fighting,
-      "cat": Category.physical,
+      "type": Type.Fighting,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 60,
       "acc": 100,
@@ -2477,8 +2477,8 @@ const { Category, Type } = require('./general');
       "name": "Revenge"
   },
   "Reversal": {
-      "type": Type.fighting,
-      "cat": Category.physical,
+      "type": Type.Fighting,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 0,
       "acc": 100,
@@ -2486,8 +2486,8 @@ const { Category, Type } = require('./general');
       "name": "Reversal"
   },
   "RockBlast": {
-      "type": Type.rock,
-      "cat": Category.physical,
+      "type": Type.Rock,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 25,
       "acc": 90,
@@ -2495,8 +2495,8 @@ const { Category, Type } = require('./general');
       "name": "Rock Blast"
   },
   "RockClimb": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 20,
       "dmg": 90,
       "acc": 85,
@@ -2504,8 +2504,8 @@ const { Category, Type } = require('./general');
       "name": "Rock Climb"
   },
   "RockSlide": {
-      "type": Type.rock,
-      "cat": Category.physical,
+      "type": Type.Rock,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 75,
       "acc": 90,
@@ -2513,8 +2513,8 @@ const { Category, Type } = require('./general');
       "name": "Rock Slide"
   },
   "RockSmash": {
-      "type": Type.fighting,
-      "cat": Category.physical,
+      "type": Type.Fighting,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 40,
       "acc": 100,
@@ -2522,8 +2522,8 @@ const { Category, Type } = require('./general');
       "name": "Rock Smash"
   },
   "RockThrow": {
-      "type": Type.rock,
-      "cat": Category.physical,
+      "type": Type.Rock,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 50,
       "acc": 90,
@@ -2531,8 +2531,8 @@ const { Category, Type } = require('./general');
       "name": "Rock Throw"
   },
   "RockTomb": {
-      "type": Type.rock,
-      "cat": Category.physical,
+      "type": Type.Rock,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 60,
       "acc": 95,
@@ -2540,8 +2540,8 @@ const { Category, Type } = require('./general');
       "name": "Rock Tomb"
   },
   "RockWrecker": {
-      "type": Type.rock,
-      "cat": Category.physical,
+      "type": Type.Rock,
+      "cat": Category.Physical,
       "pp": 5,
       "dmg": 150,
       "acc": 90,
@@ -2549,8 +2549,8 @@ const { Category, Type } = require('./general');
       "name": "Rock Wrecker"
   },
   "RollingKick": {
-      "type": Type.fighting,
-      "cat": Category.physical,
+      "type": Type.Fighting,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 60,
       "acc": 85,
@@ -2558,8 +2558,8 @@ const { Category, Type } = require('./general');
       "name": "Rolling Kick"
   },
   "Rollout": {
-      "type": Type.rock,
-      "cat": Category.physical,
+      "type": Type.Rock,
+      "cat": Category.Physical,
       "pp": 20,
       "dmg": 30,
       "acc": 90,
@@ -2567,8 +2567,8 @@ const { Category, Type } = require('./general');
       "name": "Rollout"
   },
   "SacredFire": {
-      "type": Type.fire,
-      "cat": Category.physical,
+      "type": Type.Fire,
+      "cat": Category.Physical,
       "pp": 5,
       "dmg": 100,
       "acc": 95,
@@ -2576,8 +2576,8 @@ const { Category, Type } = require('./general');
       "name": "Sacred Fire"
   },
   "SacredSword": {
-      "type": Type.fighting,
-      "cat": Category.physical,
+      "type": Type.Fighting,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 90,
       "acc": 100,
@@ -2585,8 +2585,8 @@ const { Category, Type } = require('./general');
       "name": "Sacred Sword"
   },
   "SandTomb": {
-      "type": Type.ground,
-      "cat": Category.physical,
+      "type": Type.Ground,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 35,
       "acc": 85,
@@ -2594,8 +2594,8 @@ const { Category, Type } = require('./general');
       "name": "Sand Tomb"
   },
   "SappySeed": {
-      "type": Type.grass,
-      "cat": Category.physical,
+      "type": Type.Grass,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 100,
       "acc": 90,
@@ -2603,8 +2603,8 @@ const { Category, Type } = require('./general');
       "name": "Sappy Seed"
   },
   "SavageSpinOut": {
-      "type": Type.bug,
-      "cat": Category.special,
+      "type": Type.Bug,
+      "cat": Category.Special,
       "pp": 1,
       "dmg": 0,
       "acc": 101,
@@ -2613,7 +2613,7 @@ const { Category, Type } = require('./general');
   },
   "ScaleShot": {
       "type": "dragon",
-      "cat": Category.physical,
+      "cat": Category.Physical,
       "pp": 20,
       "dmg": 25,
       "acc": 90,
@@ -2621,8 +2621,8 @@ const { Category, Type } = require('./general');
       "name": "Scale Shot"
   },
   "Scratch": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 35,
       "dmg": 40,
       "acc": 100,
@@ -2630,8 +2630,8 @@ const { Category, Type } = require('./general');
       "name": "Scratch"
   },
   "SearingSunrazeSmash": {
-      "type": Type.steel,
-      "cat": Category.physical,
+      "type": Type.Steel,
+      "cat": Category.Physical,
       "pp": 1,
       "dmg": 200,
       "acc": 101,
@@ -2639,8 +2639,8 @@ const { Category, Type } = require('./general');
       "name": "Searing Sunraze Smash"
   },
   "SecretPower": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 20,
       "dmg": 70,
       "acc": 100,
@@ -2648,8 +2648,8 @@ const { Category, Type } = require('./general');
       "name": "Secret Power"
   },
   "SeedBomb": {
-      "type": Type.grass,
-      "cat": Category.physical,
+      "type": Type.Grass,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 80,
       "acc": 100,
@@ -2657,8 +2657,8 @@ const { Category, Type } = require('./general');
       "name": "Seed Bomb"
   },
   "SeismicToss": {
-      "type": Type.fighting,
-      "cat": Category.physical,
+      "type": Type.Fighting,
+      "cat": Category.Physical,
       "pp": 20,
       "dmg": 0,
       "acc": 100,
@@ -2666,8 +2666,8 @@ const { Category, Type } = require('./general');
       "name": "Seismic Toss"
   },
   "SelfDestruct": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 5,
       "dmg": 200,
       "acc": 100,
@@ -2676,7 +2676,7 @@ const { Category, Type } = require('./general');
   },
   "ShadowBone": {
       "type": "ghost",
-      "cat": Category.physical,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 85,
       "acc": 100,
@@ -2685,7 +2685,7 @@ const { Category, Type } = require('./general');
   },
   "ShadowClaw": {
       "type": "ghost",
-      "cat": Category.physical,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 70,
       "acc": 100,
@@ -2694,7 +2694,7 @@ const { Category, Type } = require('./general');
   },
   "ShadowForce": {
       "type": "ghost",
-      "cat": Category.physical,
+      "cat": Category.Physical,
       "pp": 5,
       "dmg": 120,
       "acc": 100,
@@ -2703,7 +2703,7 @@ const { Category, Type } = require('./general');
   },
   "ShadowPunch": {
       "type": "ghost",
-      "cat": Category.physical,
+      "cat": Category.Physical,
       "pp": 20,
       "dmg": 60,
       "acc": 101,
@@ -2712,7 +2712,7 @@ const { Category, Type } = require('./general');
   },
   "ShadowSneak": {
       "type": "ghost",
-      "cat": Category.physical,
+      "cat": Category.Physical,
       "pp": 30,
       "dmg": 40,
       "acc": 100,
@@ -2721,7 +2721,7 @@ const { Category, Type } = require('./general');
   },
   "ShatteredPsyche": {
       "type": Type.psychic,
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 1,
       "dmg": 0,
       "acc": 101,
@@ -2730,7 +2730,7 @@ const { Category, Type } = require('./general');
   },
   "SinisterArrowRaid": {
       "type": "ghost",
-      "cat": Category.physical,
+      "cat": Category.Physical,
       "pp": 1,
       "dmg": 180,
       "acc": 101,
@@ -2738,8 +2738,8 @@ const { Category, Type } = require('./general');
       "name": "Sinister Arrow Raid"
   },
   "SizzlySlide": {
-      "type": Type.fire,
-      "cat": Category.physical,
+      "type": Type.Fire,
+      "cat": Category.Physical,
       "pp": 20,
       "dmg": 60,
       "acc": 100,
@@ -2747,8 +2747,8 @@ const { Category, Type } = require('./general');
       "name": "Sizzly Slide"
   },
   "SkitterSmack": {
-      "type": Type.bug,
-      "cat": Category.physical,
+      "type": Type.Bug,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 70,
       "acc": 90,
@@ -2756,8 +2756,8 @@ const { Category, Type } = require('./general');
       "name": "Skitter Smack"
   },
   "SkullBash": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 130,
       "acc": 100,
@@ -2765,8 +2765,8 @@ const { Category, Type } = require('./general');
       "name": "Skull Bash"
   },
   "SkyAttack": {
-      "type": Type.flying,
-      "cat": Category.physical,
+      "type": Type.Flying,
+      "cat": Category.Physical,
       "pp": 5,
       "dmg": 140,
       "acc": 90,
@@ -2774,8 +2774,8 @@ const { Category, Type } = require('./general');
       "name": "Sky Attack"
   },
   "SkyDrop": {
-      "type": Type.flying,
-      "cat": Category.physical,
+      "type": Type.Flying,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 60,
       "acc": 100,
@@ -2783,8 +2783,8 @@ const { Category, Type } = require('./general');
       "name": "Sky Drop"
   },
   "SkyUppercut": {
-      "type": Type.fighting,
-      "cat": Category.physical,
+      "type": Type.Fighting,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 85,
       "acc": 90,
@@ -2792,8 +2792,8 @@ const { Category, Type } = require('./general');
       "name": "Sky Uppercut"
   },
   "Slam": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 20,
       "dmg": 80,
       "acc": 75,
@@ -2801,8 +2801,8 @@ const { Category, Type } = require('./general');
       "name": "Slam"
   },
   "Slash": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 20,
       "dmg": 70,
       "acc": 100,
@@ -2810,8 +2810,8 @@ const { Category, Type } = require('./general');
       "name": "Slash"
   },
   "SmackDown": {
-      "type": Type.rock,
-      "cat": Category.physical,
+      "type": Type.Rock,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 50,
       "acc": 100,
@@ -2819,8 +2819,8 @@ const { Category, Type } = require('./general');
       "name": "Smack Down"
   },
   "SmartStrike": {
-      "type": Type.steel,
-      "cat": Category.physical,
+      "type": Type.Steel,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 70,
       "acc": 101,
@@ -2828,8 +2828,8 @@ const { Category, Type } = require('./general');
       "name": "Smart Strike"
   },
   "SmellingSalts": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 70,
       "acc": 100,
@@ -2837,8 +2837,8 @@ const { Category, Type } = require('./general');
       "name": "Smelling Salts"
   },
   "SnapTrap": {
-      "type": Type.grass,
-      "cat": Category.physical,
+      "type": Type.Grass,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 35,
       "acc": 100,
@@ -2846,8 +2846,8 @@ const { Category, Type } = require('./general');
       "name": "Snap Trap"
   },
   "SolarBlade": {
-      "type": Type.grass,
-      "cat": Category.physical,
+      "type": Type.Grass,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 125,
       "acc": 100,
@@ -2856,7 +2856,7 @@ const { Category, Type } = require('./general');
   },
   "SoulStealing7StarStrike": {
       "type": "ghost",
-      "cat": Category.physical,
+      "cat": Category.Physical,
       "pp": 1,
       "dmg": 195,
       "acc": 101,
@@ -2865,7 +2865,7 @@ const { Category, Type } = require('./general');
   },
   "Spark": {
       "type": Type.electric,
-      "cat": Category.physical,
+      "cat": Category.Physical,
       "pp": 20,
       "dmg": 65,
       "acc": 100,
@@ -2874,7 +2874,7 @@ const { Category, Type } = require('./general');
   },
   "SpectralThief": {
       "type": "ghost",
-      "cat": Category.physical,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 90,
       "acc": 100,
@@ -2882,8 +2882,8 @@ const { Category, Type } = require('./general');
       "name": "Spectral Thief"
   },
   "SpikeCannon": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 20,
       "acc": 100,
@@ -2891,8 +2891,8 @@ const { Category, Type } = require('./general');
       "name": "Spike Cannon"
   },
   "SpiritBreak": {
-      "type": Type.fairy,
-      "cat": Category.physical,
+      "type": Type.Fairy,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 75,
       "acc": 100,
@@ -2901,7 +2901,7 @@ const { Category, Type } = require('./general');
   },
   "SpiritShackle": {
       "type": "ghost",
-      "cat": Category.physical,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 80,
       "acc": 100,
@@ -2909,8 +2909,8 @@ const { Category, Type } = require('./general');
       "name": "Spirit Shackle"
   },
   "SplinteredStormshards": {
-      "type": Type.rock,
-      "cat": Category.physical,
+      "type": Type.Rock,
+      "cat": Category.Physical,
       "pp": 1,
       "dmg": 190,
       "acc": 101,
@@ -2918,8 +2918,8 @@ const { Category, Type } = require('./general');
       "name": "Splintered Stormshards"
   },
   "Steamroller": {
-      "type": Type.bug,
-      "cat": Category.physical,
+      "type": Type.Bug,
+      "cat": Category.Physical,
       "pp": 20,
       "dmg": 65,
       "acc": 100,
@@ -2927,8 +2927,8 @@ const { Category, Type } = require('./general');
       "name": "Steamroller"
   },
   "SteelRoller": {
-      "type": Type.steel,
-      "cat": Category.physical,
+      "type": Type.Steel,
+      "cat": Category.Physical,
       "pp": 5,
       "dmg": 130,
       "acc": 100,
@@ -2936,8 +2936,8 @@ const { Category, Type } = require('./general');
       "name": "Steel Roller"
   },
   "SteelWing": {
-      "type": Type.steel,
-      "cat": Category.physical,
+      "type": Type.Steel,
+      "cat": Category.Physical,
       "pp": 25,
       "dmg": 70,
       "acc": 90,
@@ -2945,8 +2945,8 @@ const { Category, Type } = require('./general');
       "name": "Steel Wing"
   },
   "Stomp": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 20,
       "dmg": 65,
       "acc": 100,
@@ -2954,8 +2954,8 @@ const { Category, Type } = require('./general');
       "name": "Stomp"
   },
   "StompingTantrum": {
-      "type": Type.ground,
-      "cat": Category.physical,
+      "type": Type.Ground,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 75,
       "acc": 100,
@@ -2963,8 +2963,8 @@ const { Category, Type } = require('./general');
       "name": "Stomping Tantrum"
   },
   "StoneEdge": {
-      "type": Type.rock,
-      "cat": Category.physical,
+      "type": Type.Rock,
+      "cat": Category.Physical,
       "pp": 5,
       "dmg": 100,
       "acc": 80,
@@ -2972,8 +2972,8 @@ const { Category, Type } = require('./general');
       "name": "Stone Edge"
   },
   "StormThrow": {
-      "type": Type.fighting,
-      "cat": Category.physical,
+      "type": Type.Fighting,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 60,
       "acc": 100,
@@ -2981,8 +2981,8 @@ const { Category, Type } = require('./general');
       "name": "Storm Throw"
   },
   "Strength": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 80,
       "acc": 100,
@@ -2990,8 +2990,8 @@ const { Category, Type } = require('./general');
       "name": "Strength"
   },
   "Struggle": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 1,
       "dmg": 50,
       "acc": 101,
@@ -2999,8 +2999,8 @@ const { Category, Type } = require('./general');
       "name": "Struggle"
   },
   "Submission": {
-      "type": Type.fighting,
-      "cat": Category.physical,
+      "type": Type.Fighting,
+      "cat": Category.Physical,
       "pp": 20,
       "dmg": 80,
       "acc": 80,
@@ -3008,8 +3008,8 @@ const { Category, Type } = require('./general');
       "name": "Submission"
   },
   "SubzeroSlammer": {
-      "type": Type.ice,
-      "cat": Category.special,
+      "type": Type.Ice,
+      "cat": Category.Special,
       "pp": 1,
       "dmg": 0,
       "acc": 101,
@@ -3017,8 +3017,8 @@ const { Category, Type } = require('./general');
       "name": "Subzero Slammer"
   },
   "SuckerPunch": {
-      "type": Type.dark,
-      "cat": Category.physical,
+      "type": Type.Dark,
+      "cat": Category.Physical,
       "pp": 5,
       "dmg": 70,
       "acc": 100,
@@ -3026,8 +3026,8 @@ const { Category, Type } = require('./general');
       "name": "Sucker Punch"
   },
   "SunsteelStrike": {
-      "type": Type.steel,
-      "cat": Category.physical,
+      "type": Type.Steel,
+      "cat": Category.Physical,
       "pp": 5,
       "dmg": 100,
       "acc": 100,
@@ -3035,8 +3035,8 @@ const { Category, Type } = require('./general');
       "name": "Sunsteel Strike"
   },
   "SuperFang": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 0,
       "acc": 90,
@@ -3044,8 +3044,8 @@ const { Category, Type } = require('./general');
       "name": "Super Fang"
   },
   "Superpower": {
-      "type": Type.fighting,
-      "cat": Category.physical,
+      "type": Type.Fighting,
+      "cat": Category.Physical,
       "pp": 5,
       "dmg": 120,
       "acc": 100,
@@ -3053,8 +3053,8 @@ const { Category, Type } = require('./general');
       "name": "Superpower"
   },
   "SupersonicSkystrike": {
-      "type": Type.flying,
-      "cat": Category.special,
+      "type": Type.Flying,
+      "cat": Category.Special,
       "pp": 1,
       "dmg": 0,
       "acc": 101,
@@ -3062,8 +3062,8 @@ const { Category, Type } = require('./general');
       "name": "Supersonic Skystrike"
   },
   "SurgingStrikes": {
-      "type": Type.water,
-      "cat": Category.physical,
+      "type": Type.Water,
+      "cat": Category.Physical,
       "pp": 5,
       "dmg": 25,
       "acc": 100,
@@ -3071,8 +3071,8 @@ const { Category, Type } = require('./general');
       "name": "Surging Strikes"
   },
   "Tackle": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 35,
       "dmg": 40,
       "acc": 100,
@@ -3080,8 +3080,8 @@ const { Category, Type } = require('./general');
       "name": "Tackle"
   },
   "TailSlap": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 25,
       "acc": 85,
@@ -3089,8 +3089,8 @@ const { Category, Type } = require('./general');
       "name": "Tail Slap"
   },
   "TakeDown": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 20,
       "dmg": 90,
       "acc": 85,
@@ -3098,8 +3098,8 @@ const { Category, Type } = require('./general');
       "name": "Take Down"
   },
   "TectonicRage": {
-      "type": Type.ground,
-      "cat": Category.special,
+      "type": Type.Ground,
+      "cat": Category.Special,
       "pp": 1,
       "dmg": 0,
       "acc": 101,
@@ -3107,8 +3107,8 @@ const { Category, Type } = require('./general');
       "name": "Tectonic Rage"
   },
   "Thief": {
-      "type": Type.dark,
-      "cat": Category.physical,
+      "type": Type.Dark,
+      "cat": Category.Physical,
       "pp": 25,
       "dmg": 60,
       "acc": 100,
@@ -3116,8 +3116,8 @@ const { Category, Type } = require('./general');
       "name": "Thief"
   },
   "ThousandArrows": {
-      "type": Type.ground,
-      "cat": Category.physical,
+      "type": Type.Ground,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 90,
       "acc": 100,
@@ -3125,8 +3125,8 @@ const { Category, Type } = require('./general');
       "name": "Thousand Arrows"
   },
   "ThousandWaves": {
-      "type": Type.ground,
-      "cat": Category.physical,
+      "type": Type.Ground,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 90,
       "acc": 100,
@@ -3134,8 +3134,8 @@ const { Category, Type } = require('./general');
       "name": "Thousand Waves"
   },
   "Thrash": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 120,
       "acc": 100,
@@ -3143,8 +3143,8 @@ const { Category, Type } = require('./general');
       "name": "Thrash"
   },
   "ThroatChop": {
-      "type": Type.dark,
-      "cat": Category.physical,
+      "type": Type.Dark,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 80,
       "acc": 100,
@@ -3153,7 +3153,7 @@ const { Category, Type } = require('./general');
   },
   "ThunderFang": {
       "type": Type.electric,
-      "cat": Category.physical,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 65,
       "acc": 95,
@@ -3162,7 +3162,7 @@ const { Category, Type } = require('./general');
   },
   "ThunderPunch": {
       "type": Type.electric,
-      "cat": Category.physical,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 75,
       "acc": 100,
@@ -3170,8 +3170,8 @@ const { Category, Type } = require('./general');
       "name": "Thunder Punch"
   },
   "ThunderousKick": {
-      "type": Type.fighting,
-      "cat": Category.physical,
+      "type": Type.Fighting,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 90,
       "acc": 100,
@@ -3179,8 +3179,8 @@ const { Category, Type } = require('./general');
       "name": "Thunderous Kick"
   },
   "TripleAxel": {
-      "type": Type.ice,
-      "cat": Category.physical,
+      "type": Type.Ice,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 20,
       "acc": 90,
@@ -3188,8 +3188,8 @@ const { Category, Type } = require('./general');
       "name": "Triple Axel"
   },
   "TripleKick": {
-      "type": Type.fighting,
-      "cat": Category.physical,
+      "type": Type.Fighting,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 10,
       "acc": 90,
@@ -3197,8 +3197,8 @@ const { Category, Type } = require('./general');
       "name": "Triple Kick"
   },
   "TropKick": {
-      "type": Type.grass,
-      "cat": Category.physical,
+      "type": Type.Grass,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 70,
       "acc": 100,
@@ -3206,8 +3206,8 @@ const { Category, Type } = require('./general');
       "name": "Trop Kick"
   },
   "Twineedle": {
-      "type": Type.bug,
-      "cat": Category.physical,
+      "type": Type.Bug,
+      "cat": Category.Physical,
       "pp": 20,
       "dmg": 25,
       "acc": 100,
@@ -3215,8 +3215,8 @@ const { Category, Type } = require('./general');
       "name": "Twineedle"
   },
   "TwinkleTackle": {
-      "type": Type.fairy,
-      "cat": Category.special,
+      "type": Type.Fairy,
+      "cat": Category.Special,
       "pp": 1,
       "dmg": 0,
       "acc": 101,
@@ -3224,8 +3224,8 @@ const { Category, Type } = require('./general');
       "name": "Twinkle Tackle"
   },
   "Uturn": {
-      "type": Type.bug,
-      "cat": Category.physical,
+      "type": Type.Bug,
+      "cat": Category.Physical,
       "pp": 20,
       "dmg": 70,
       "acc": 100,
@@ -3233,8 +3233,8 @@ const { Category, Type } = require('./general');
       "name": "U-turn"
   },
   "Vcreate": {
-      "type": Type.fire,
-      "cat": Category.physical,
+      "type": Type.Fire,
+      "cat": Category.Physical,
       "pp": 5,
       "dmg": 180,
       "acc": 95,
@@ -3242,8 +3242,8 @@ const { Category, Type } = require('./general');
       "name": "V-create"
   },
   "VeeveeVolley": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 20,
       "dmg": 0,
       "acc": 101,
@@ -3251,8 +3251,8 @@ const { Category, Type } = require('./general');
       "name": "Veevee Volley"
   },
   "VineWhip": {
-      "type": Type.grass,
-      "cat": Category.physical,
+      "type": Type.Grass,
+      "cat": Category.Physical,
       "pp": 25,
       "dmg": 45,
       "acc": 100,
@@ -3260,8 +3260,8 @@ const { Category, Type } = require('./general');
       "name": "Vine Whip"
   },
   "ViseGrip": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 30,
       "dmg": 55,
       "acc": 100,
@@ -3269,8 +3269,8 @@ const { Category, Type } = require('./general');
       "name": "Vise Grip"
   },
   "VitalThrow": {
-      "type": Type.fighting,
-      "cat": Category.physical,
+      "type": Type.Fighting,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 70,
       "acc": 101,
@@ -3279,7 +3279,7 @@ const { Category, Type } = require('./general');
   },
   "VoltTackle": {
       "type": Type.electric,
-      "cat": Category.physical,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 120,
       "acc": 100,
@@ -3287,8 +3287,8 @@ const { Category, Type } = require('./general');
       "name": "Volt Tackle"
   },
   "WakeUpSlap": {
-      "type": Type.fighting,
-      "cat": Category.physical,
+      "type": Type.Fighting,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 70,
       "acc": 100,
@@ -3296,8 +3296,8 @@ const { Category, Type } = require('./general');
       "name": "Wake-Up Slap"
   },
   "Waterfall": {
-      "type": Type.water,
-      "cat": Category.physical,
+      "type": Type.Water,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 80,
       "acc": 100,
@@ -3305,8 +3305,8 @@ const { Category, Type } = require('./general');
       "name": "Waterfall"
   },
   "WickedBlow": {
-      "type": Type.dark,
-      "cat": Category.physical,
+      "type": Type.Dark,
+      "cat": Category.Physical,
       "pp": 5,
       "dmg": 80,
       "acc": 100,
@@ -3315,7 +3315,7 @@ const { Category, Type } = require('./general');
   },
   "WildCharge": {
       "type": Type.electric,
-      "cat": Category.physical,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 90,
       "acc": 100,
@@ -3323,8 +3323,8 @@ const { Category, Type } = require('./general');
       "name": "Wild Charge"
   },
   "WingAttack": {
-      "type": Type.flying,
-      "cat": Category.physical,
+      "type": Type.Flying,
+      "cat": Category.Physical,
       "pp": 35,
       "dmg": 60,
       "acc": 100,
@@ -3332,8 +3332,8 @@ const { Category, Type } = require('./general');
       "name": "Wing Attack"
   },
   "WoodHammer": {
-      "type": Type.grass,
-      "cat": Category.physical,
+      "type": Type.Grass,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 120,
       "acc": 100,
@@ -3341,8 +3341,8 @@ const { Category, Type } = require('./general');
       "name": "Wood Hammer"
   },
   "Wrap": {
-      "type": Type.normal,
-      "cat": Category.physical,
+      "type": Type.Normal,
+      "cat": Category.Physical,
       "pp": 20,
       "dmg": 15,
       "acc": 90,
@@ -3350,8 +3350,8 @@ const { Category, Type } = require('./general');
       "name": "Wrap"
   },
   "XScissor": {
-      "type": Type.bug,
-      "cat": Category.physical,
+      "type": Type.Bug,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 80,
       "acc": 100,
@@ -3360,7 +3360,7 @@ const { Category, Type } = require('./general');
   },
   "ZenHeadbutt": {
       "type": Type.psychic,
-      "cat": Category.physical,
+      "cat": Category.Physical,
       "pp": 15,
       "dmg": 80,
       "acc": 90,
@@ -3369,7 +3369,7 @@ const { Category, Type } = require('./general');
   },
   "ZingZap": {
       "type": Type.electric,
-      "cat": Category.physical,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 80,
       "acc": 100,
@@ -3378,7 +3378,7 @@ const { Category, Type } = require('./general');
   },
   "ZippyZap": {
       "type": Type.electric,
-      "cat": Category.physical,
+      "cat": Category.Physical,
       "pp": 10,
       "dmg": 80,
       "acc": 100,
@@ -3387,7 +3387,7 @@ const { Category, Type } = require('./general');
   },
   "10000000VoltThunderbolt": {
       "type": Type.electric,
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 1,
       "dmg": 195,
       "acc": 101,
@@ -3395,8 +3395,8 @@ const { Category, Type } = require('./general');
       "name": "10,000,000 Volt Thunderbolt"
   },
   "Absorb": {
-      "type": Type.grass,
-      "cat": Category.special,
+      "type": Type.Grass,
+      "cat": Category.Special,
       "pp": 25,
       "dmg": 20,
       "acc": 100,
@@ -3404,8 +3404,8 @@ const { Category, Type } = require('./general');
       "name": "Absorb"
   },
   "Acid": {
-      "type": Type.poison,
-      "cat": Category.special,
+      "type": Type.Poison,
+      "cat": Category.Special,
       "pp": 30,
       "dmg": 40,
       "acc": 100,
@@ -3413,8 +3413,8 @@ const { Category, Type } = require('./general');
       "name": "Acid"
   },
   "AcidSpray": {
-      "type": Type.poison,
-      "cat": Category.special,
+      "type": Type.Poison,
+      "cat": Category.Special,
       "pp": 20,
       "dmg": 40,
       "acc": 100,
@@ -3422,8 +3422,8 @@ const { Category, Type } = require('./general');
       "name": "Acid Spray"
   },
   "Aeroblast": {
-      "type": Type.flying,
-      "cat": Category.special,
+      "type": Type.Flying,
+      "cat": Category.Special,
       "pp": 5,
       "dmg": 100,
       "acc": 95,
@@ -3431,8 +3431,8 @@ const { Category, Type } = require('./general');
       "name": "Aeroblast"
   },
   "AirCutter": {
-      "type": Type.flying,
-      "cat": Category.special,
+      "type": Type.Flying,
+      "cat": Category.Special,
       "pp": 25,
       "dmg": 60,
       "acc": 95,
@@ -3440,8 +3440,8 @@ const { Category, Type } = require('./general');
       "name": "Air Cutter"
   },
   "AirSlash": {
-      "type": Type.flying,
-      "cat": Category.special,
+      "type": Type.Flying,
+      "cat": Category.Special,
       "pp": 15,
       "dmg": 75,
       "acc": 95,
@@ -3449,8 +3449,8 @@ const { Category, Type } = require('./general');
       "name": "Air Slash"
   },
   "AncientPower": {
-      "type": Type.rock,
-      "cat": Category.special,
+      "type": Type.Rock,
+      "cat": Category.Special,
       "pp": 5,
       "dmg": 60,
       "acc": 100,
@@ -3458,8 +3458,8 @@ const { Category, Type } = require('./general');
       "name": "Ancient Power"
   },
   "AppleAcid": {
-      "type": Type.grass,
-      "cat": Category.special,
+      "type": Type.Grass,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 80,
       "acc": 100,
@@ -3468,7 +3468,7 @@ const { Category, Type } = require('./general');
   },
   "AstralBarrage": {
       "type": "ghost",
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 5,
       "dmg": 120,
       "acc": 100,
@@ -3476,8 +3476,8 @@ const { Category, Type } = require('./general');
       "name": "Astral Barrage"
   },
   "AuraSphere": {
-      "type": Type.fighting,
-      "cat": Category.special,
+      "type": Type.Fighting,
+      "cat": Category.Special,
       "pp": 20,
       "dmg": 80,
       "acc": 101,
@@ -3485,8 +3485,8 @@ const { Category, Type } = require('./general');
       "name": "Aura Sphere"
   },
   "AuroraBeam": {
-      "type": Type.ice,
-      "cat": Category.special,
+      "type": Type.Ice,
+      "cat": Category.Special,
       "pp": 20,
       "dmg": 65,
       "acc": 100,
@@ -3494,8 +3494,8 @@ const { Category, Type } = require('./general');
       "name": "Aurora Beam"
   },
   "BaddyBad": {
-      "type": Type.dark,
-      "cat": Category.special,
+      "type": Type.Dark,
+      "cat": Category.Special,
       "pp": 15,
       "dmg": 80,
       "acc": 95,
@@ -3503,8 +3503,8 @@ const { Category, Type } = require('./general');
       "name": "Baddy Bad"
   },
   "Belch": {
-      "type": Type.poison,
-      "cat": Category.special,
+      "type": Type.Poison,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 120,
       "acc": 90,
@@ -3512,8 +3512,8 @@ const { Category, Type } = require('./general');
       "name": "Belch"
   },
   "BlastBurn": {
-      "type": Type.fire,
-      "cat": Category.special,
+      "type": Type.Fire,
+      "cat": Category.Special,
       "pp": 5,
       "dmg": 150,
       "acc": 90,
@@ -3521,8 +3521,8 @@ const { Category, Type } = require('./general');
       "name": "Blast Burn"
   },
   "Blizzard": {
-      "type": Type.ice,
-      "cat": Category.special,
+      "type": Type.Ice,
+      "cat": Category.Special,
       "pp": 5,
       "dmg": 110,
       "acc": 70,
@@ -3530,8 +3530,8 @@ const { Category, Type } = require('./general');
       "name": "Blizzard"
   },
   "BlueFlare": {
-      "type": Type.fire,
-      "cat": Category.special,
+      "type": Type.Fire,
+      "cat": Category.Special,
       "pp": 5,
       "dmg": 130,
       "acc": 85,
@@ -3539,8 +3539,8 @@ const { Category, Type } = require('./general');
       "name": "Blue Flare"
   },
   "Boomburst": {
-      "type": Type.normal,
-      "cat": Category.special,
+      "type": Type.Normal,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 140,
       "acc": 100,
@@ -3548,8 +3548,8 @@ const { Category, Type } = require('./general');
       "name": "Boomburst"
   },
   "BouncyBubble": {
-      "type": Type.water,
-      "cat": Category.special,
+      "type": Type.Water,
+      "cat": Category.Special,
       "pp": 20,
       "dmg": 60,
       "acc": 100,
@@ -3557,8 +3557,8 @@ const { Category, Type } = require('./general');
       "name": "Bouncy Bubble"
   },
   "Brine": {
-      "type": Type.water,
-      "cat": Category.special,
+      "type": Type.Water,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 65,
       "acc": 100,
@@ -3566,8 +3566,8 @@ const { Category, Type } = require('./general');
       "name": "Brine"
   },
   "Bubble": {
-      "type": Type.water,
-      "cat": Category.special,
+      "type": Type.Water,
+      "cat": Category.Special,
       "pp": 30,
       "dmg": 40,
       "acc": 100,
@@ -3575,8 +3575,8 @@ const { Category, Type } = require('./general');
       "name": "Bubble"
   },
   "BubbleBeam": {
-      "type": Type.water,
-      "cat": Category.special,
+      "type": Type.Water,
+      "cat": Category.Special,
       "pp": 20,
       "dmg": 65,
       "acc": 100,
@@ -3584,8 +3584,8 @@ const { Category, Type } = require('./general');
       "name": "Bubble Beam"
   },
   "BugBuzz": {
-      "type": Type.bug,
-      "cat": Category.special,
+      "type": Type.Bug,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 90,
       "acc": 100,
@@ -3593,8 +3593,8 @@ const { Category, Type } = require('./general');
       "name": "Bug Buzz"
   },
   "BurnUp": {
-      "type": Type.fire,
-      "cat": Category.special,
+      "type": Type.Fire,
+      "cat": Category.Special,
       "pp": 5,
       "dmg": 130,
       "acc": 100,
@@ -3602,8 +3602,8 @@ const { Category, Type } = require('./general');
       "name": "Burn Up"
   },
   "BurningJealousy": {
-      "type": Type.fire,
-      "cat": Category.special,
+      "type": Type.Fire,
+      "cat": Category.Special,
       "pp": 5,
       "dmg": 70,
       "acc": 100,
@@ -3612,7 +3612,7 @@ const { Category, Type } = require('./general');
   },
   "BuzzyBuzz": {
       "type": Type.electric,
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 20,
       "dmg": 60,
       "acc": 100,
@@ -3621,7 +3621,7 @@ const { Category, Type } = require('./general');
   },
   "ChargeBeam": {
       "type": Type.electric,
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 50,
       "acc": 90,
@@ -3629,8 +3629,8 @@ const { Category, Type } = require('./general');
       "name": "Charge Beam"
   },
   "Chatter": {
-      "type": Type.flying,
-      "cat": Category.special,
+      "type": Type.Flying,
+      "cat": Category.Special,
       "pp": 20,
       "dmg": 65,
       "acc": 100,
@@ -3639,7 +3639,7 @@ const { Category, Type } = require('./general');
   },
   "ClangingScales": {
       "type": "dragon",
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 5,
       "dmg": 110,
       "acc": 100,
@@ -3648,7 +3648,7 @@ const { Category, Type } = require('./general');
   },
   "ClangorousSoulblaze": {
       "type": "dragon",
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 1,
       "dmg": 185,
       "acc": 101,
@@ -3656,8 +3656,8 @@ const { Category, Type } = require('./general');
       "name": "Clangorous Soulblaze"
   },
   "ClearSmog": {
-      "type": Type.poison,
-      "cat": Category.special,
+      "type": Type.Poison,
+      "cat": Category.Special,
       "pp": 15,
       "dmg": 50,
       "acc": 101,
@@ -3666,7 +3666,7 @@ const { Category, Type } = require('./general');
   },
   "Confusion": {
       "type": Type.psychic,
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 25,
       "dmg": 50,
       "acc": 100,
@@ -3675,7 +3675,7 @@ const { Category, Type } = require('./general');
   },
   "CoreEnforcer": {
       "type": "dragon",
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 100,
       "acc": 100,
@@ -3683,8 +3683,8 @@ const { Category, Type } = require('./general');
       "name": "Core Enforcer"
   },
   "DarkPulse": {
-      "type": Type.dark,
-      "cat": Category.special,
+      "type": Type.Dark,
+      "cat": Category.Special,
       "pp": 15,
       "dmg": 80,
       "acc": 100,
@@ -3692,8 +3692,8 @@ const { Category, Type } = require('./general');
       "name": "Dark Pulse"
   },
   "DazzlingGleam": {
-      "type": Type.fairy,
-      "cat": Category.special,
+      "type": Type.Fairy,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 80,
       "acc": 100,
@@ -3701,8 +3701,8 @@ const { Category, Type } = require('./general');
       "name": "Dazzling Gleam"
   },
   "DisarmingVoice": {
-      "type": Type.fairy,
-      "cat": Category.special,
+      "type": Type.Fairy,
+      "cat": Category.Special,
       "pp": 15,
       "dmg": 40,
       "acc": 101,
@@ -3711,7 +3711,7 @@ const { Category, Type } = require('./general');
   },
   "Discharge": {
       "type": Type.electric,
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 15,
       "dmg": 80,
       "acc": 100,
@@ -3719,8 +3719,8 @@ const { Category, Type } = require('./general');
       "name": "Discharge"
   },
   "DoomDesire": {
-      "type": Type.steel,
-      "cat": Category.special,
+      "type": Type.Steel,
+      "cat": Category.Special,
       "pp": 5,
       "dmg": 140,
       "acc": 100,
@@ -3729,7 +3729,7 @@ const { Category, Type } = require('./general');
   },
   "DracoMeteor": {
       "type": "dragon",
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 5,
       "dmg": 130,
       "acc": 90,
@@ -3738,7 +3738,7 @@ const { Category, Type } = require('./general');
   },
   "DragonBreath": {
       "type": "dragon",
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 20,
       "dmg": 60,
       "acc": 100,
@@ -3747,7 +3747,7 @@ const { Category, Type } = require('./general');
   },
   "DragonEnergy": {
       "type": "dragon",
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 5,
       "dmg": 150,
       "acc": 100,
@@ -3756,7 +3756,7 @@ const { Category, Type } = require('./general');
   },
   "DragonPulse": {
       "type": "dragon",
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 85,
       "acc": 100,
@@ -3765,7 +3765,7 @@ const { Category, Type } = require('./general');
   },
   "DragonRage": {
       "type": "dragon",
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 0,
       "acc": 100,
@@ -3773,8 +3773,8 @@ const { Category, Type } = require('./general');
       "name": "Dragon Rage"
   },
   "DrainingKiss": {
-      "type": Type.fairy,
-      "cat": Category.special,
+      "type": Type.Fairy,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 50,
       "acc": 100,
@@ -3783,7 +3783,7 @@ const { Category, Type } = require('./general');
   },
   "DreamEater": {
       "type": Type.psychic,
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 15,
       "dmg": 100,
       "acc": 100,
@@ -3792,7 +3792,7 @@ const { Category, Type } = require('./general');
   },
   "DynamaxCannon": {
       "type": "dragon",
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 5,
       "dmg": 100,
       "acc": 100,
@@ -3800,8 +3800,8 @@ const { Category, Type } = require('./general');
       "name": "Dynamax Cannon"
   },
   "EarthPower": {
-      "type": Type.ground,
-      "cat": Category.special,
+      "type": Type.Ground,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 90,
       "acc": 100,
@@ -3809,8 +3809,8 @@ const { Category, Type } = require('./general');
       "name": "Earth Power"
   },
   "EchoedVoice": {
-      "type": Type.normal,
-      "cat": Category.special,
+      "type": Type.Normal,
+      "cat": Category.Special,
       "pp": 15,
       "dmg": 40,
       "acc": 100,
@@ -3819,7 +3819,7 @@ const { Category, Type } = require('./general');
   },
   "EerieSpell": {
       "type": Type.psychic,
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 5,
       "dmg": 80,
       "acc": 100,
@@ -3828,7 +3828,7 @@ const { Category, Type } = require('./general');
   },
   "ElectroBall": {
       "type": Type.electric,
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 0,
       "acc": 100,
@@ -3837,7 +3837,7 @@ const { Category, Type } = require('./general');
   },
   "Electroweb": {
       "type": Type.electric,
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 15,
       "dmg": 55,
       "acc": 95,
@@ -3845,8 +3845,8 @@ const { Category, Type } = require('./general');
       "name": "Electroweb"
   },
   "Ember": {
-      "type": Type.fire,
-      "cat": Category.special,
+      "type": Type.Fire,
+      "cat": Category.Special,
       "pp": 25,
       "dmg": 40,
       "acc": 100,
@@ -3854,8 +3854,8 @@ const { Category, Type } = require('./general');
       "name": "Ember"
   },
   "EnergyBall": {
-      "type": Type.grass,
-      "cat": Category.special,
+      "type": Type.Grass,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 90,
       "acc": 100,
@@ -3863,8 +3863,8 @@ const { Category, Type } = require('./general');
       "name": "Energy Ball"
   },
   "Eruption": {
-      "type": Type.fire,
-      "cat": Category.special,
+      "type": Type.Fire,
+      "cat": Category.Special,
       "pp": 5,
       "dmg": 150,
       "acc": 100,
@@ -3873,7 +3873,7 @@ const { Category, Type } = require('./general');
   },
   "Eternabeam": {
       "type": "dragon",
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 5,
       "dmg": 160,
       "acc": 90,
@@ -3882,7 +3882,7 @@ const { Category, Type } = require('./general');
   },
   "ExpandingForce": {
       "type": Type.psychic,
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 80,
       "acc": 100,
@@ -3891,7 +3891,7 @@ const { Category, Type } = require('./general');
   },
   "Extrasensory": {
       "type": Type.psychic,
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 20,
       "dmg": 80,
       "acc": 100,
@@ -3899,8 +3899,8 @@ const { Category, Type } = require('./general');
       "name": "Extrasensory"
   },
   "FairyWind": {
-      "type": Type.fairy,
-      "cat": Category.special,
+      "type": Type.Fairy,
+      "cat": Category.Special,
       "pp": 30,
       "dmg": 40,
       "acc": 100,
@@ -3908,8 +3908,8 @@ const { Category, Type } = require('./general');
       "name": "Fairy Wind"
   },
   "FieryDance": {
-      "type": Type.fire,
-      "cat": Category.special,
+      "type": Type.Fire,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 80,
       "acc": 100,
@@ -3917,8 +3917,8 @@ const { Category, Type } = require('./general');
       "name": "Fiery Dance"
   },
   "FieryWrath": {
-      "type": Type.dark,
-      "cat": Category.special,
+      "type": Type.Dark,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 90,
       "acc": 100,
@@ -3926,8 +3926,8 @@ const { Category, Type } = require('./general');
       "name": "Fiery Wrath"
   },
   "FinalGambit": {
-      "type": Type.fighting,
-      "cat": Category.special,
+      "type": Type.Fighting,
+      "cat": Category.Special,
       "pp": 5,
       "dmg": 0,
       "acc": 100,
@@ -3935,8 +3935,8 @@ const { Category, Type } = require('./general');
       "name": "Final Gambit"
   },
   "FireBlast": {
-      "type": Type.fire,
-      "cat": Category.special,
+      "type": Type.Fire,
+      "cat": Category.Special,
       "pp": 5,
       "dmg": 110,
       "acc": 85,
@@ -3944,8 +3944,8 @@ const { Category, Type } = require('./general');
       "name": "Fire Blast"
   },
   "FirePledge": {
-      "type": Type.fire,
-      "cat": Category.special,
+      "type": Type.Fire,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 80,
       "acc": 100,
@@ -3953,8 +3953,8 @@ const { Category, Type } = require('./general');
       "name": "Fire Pledge"
   },
   "FireSpin": {
-      "type": Type.fire,
-      "cat": Category.special,
+      "type": Type.Fire,
+      "cat": Category.Special,
       "pp": 15,
       "dmg": 35,
       "acc": 85,
@@ -3962,8 +3962,8 @@ const { Category, Type } = require('./general');
       "name": "Fire Spin"
   },
   "FlameBurst": {
-      "type": Type.fire,
-      "cat": Category.special,
+      "type": Type.Fire,
+      "cat": Category.Special,
       "pp": 15,
       "dmg": 70,
       "acc": 100,
@@ -3971,8 +3971,8 @@ const { Category, Type } = require('./general');
       "name": "Flame Burst"
   },
   "Flamethrower": {
-      "type": Type.fire,
-      "cat": Category.special,
+      "type": Type.Fire,
+      "cat": Category.Special,
       "pp": 15,
       "dmg": 90,
       "acc": 100,
@@ -3980,8 +3980,8 @@ const { Category, Type } = require('./general');
       "name": "Flamethrower"
   },
   "FlashCannon": {
-      "type": Type.steel,
-      "cat": Category.special,
+      "type": Type.Steel,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 80,
       "acc": 100,
@@ -3989,8 +3989,8 @@ const { Category, Type } = require('./general');
       "name": "Flash Cannon"
   },
   "FleurCannon": {
-      "type": Type.fairy,
-      "cat": Category.special,
+      "type": Type.Fairy,
+      "cat": Category.Special,
       "pp": 5,
       "dmg": 130,
       "acc": 90,
@@ -3998,8 +3998,8 @@ const { Category, Type } = require('./general');
       "name": "Fleur Cannon"
   },
   "FocusBlast": {
-      "type": Type.fighting,
-      "cat": Category.special,
+      "type": Type.Fighting,
+      "cat": Category.Special,
       "pp": 5,
       "dmg": 120,
       "acc": 70,
@@ -4007,8 +4007,8 @@ const { Category, Type } = require('./general');
       "name": "Focus Blast"
   },
   "FreezeDry": {
-      "type": Type.ice,
-      "cat": Category.special,
+      "type": Type.Ice,
+      "cat": Category.Special,
       "pp": 20,
       "dmg": 70,
       "acc": 100,
@@ -4017,7 +4017,7 @@ const { Category, Type } = require('./general');
   },
   "FreezingGlare": {
       "type": Type.psychic,
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 90,
       "acc": 100,
@@ -4025,8 +4025,8 @@ const { Category, Type } = require('./general');
       "name": "Freezing Glare"
   },
   "FreezyFrost": {
-      "type": Type.ice,
-      "cat": Category.special,
+      "type": Type.Ice,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 100,
       "acc": 90,
@@ -4034,8 +4034,8 @@ const { Category, Type } = require('./general');
       "name": "Freezy Frost"
   },
   "FrenzyPlant": {
-      "type": Type.grass,
-      "cat": Category.special,
+      "type": Type.Grass,
+      "cat": Category.Special,
       "pp": 5,
       "dmg": 150,
       "acc": 90,
@@ -4043,8 +4043,8 @@ const { Category, Type } = require('./general');
       "name": "Frenzy Plant"
   },
   "FrostBreath": {
-      "type": Type.ice,
-      "cat": Category.special,
+      "type": Type.Ice,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 60,
       "acc": 90,
@@ -4052,8 +4052,8 @@ const { Category, Type } = require('./general');
       "name": "Frost Breath"
   },
   "FusionFlare": {
-      "type": Type.fire,
-      "cat": Category.special,
+      "type": Type.Fire,
+      "cat": Category.Special,
       "pp": 5,
       "dmg": 100,
       "acc": 100,
@@ -4062,7 +4062,7 @@ const { Category, Type } = require('./general');
   },
   "FutureSight": {
       "type": Type.psychic,
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 120,
       "acc": 100,
@@ -4071,7 +4071,7 @@ const { Category, Type } = require('./general');
   },
   "GenesisSupernova": {
       "type": Type.psychic,
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 1,
       "dmg": 185,
       "acc": 101,
@@ -4079,8 +4079,8 @@ const { Category, Type } = require('./general');
       "name": "Genesis Supernova"
   },
   "GigaDrain": {
-      "type": Type.grass,
-      "cat": Category.special,
+      "type": Type.Grass,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 75,
       "acc": 100,
@@ -4088,8 +4088,8 @@ const { Category, Type } = require('./general');
       "name": "Giga Drain"
   },
   "Glaciate": {
-      "type": Type.ice,
-      "cat": Category.special,
+      "type": Type.Ice,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 65,
       "acc": 95,
@@ -4098,7 +4098,7 @@ const { Category, Type } = require('./general');
   },
   "GlitzyGlow": {
       "type": Type.psychic,
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 15,
       "dmg": 80,
       "acc": 95,
@@ -4106,8 +4106,8 @@ const { Category, Type } = require('./general');
       "name": "Glitzy Glow"
   },
   "GrassKnot": {
-      "type": Type.grass,
-      "cat": Category.special,
+      "type": Type.Grass,
+      "cat": Category.Special,
       "pp": 20,
       "dmg": 0,
       "acc": 100,
@@ -4115,8 +4115,8 @@ const { Category, Type } = require('./general');
       "name": "Grass Knot"
   },
   "GrassPledge": {
-      "type": Type.grass,
-      "cat": Category.special,
+      "type": Type.Grass,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 80,
       "acc": 100,
@@ -4124,8 +4124,8 @@ const { Category, Type } = require('./general');
       "name": "Grass Pledge"
   },
   "GuardianofAlola": {
-      "type": Type.fairy,
-      "cat": Category.special,
+      "type": Type.Fairy,
+      "cat": Category.Special,
       "pp": 1,
       "dmg": 0,
       "acc": 101,
@@ -4133,8 +4133,8 @@ const { Category, Type } = require('./general');
       "name": "Guardian of Alola"
   },
   "Gust": {
-      "type": Type.flying,
-      "cat": Category.special,
+      "type": Type.Flying,
+      "cat": Category.Special,
       "pp": 35,
       "dmg": 40,
       "acc": 100,
@@ -4142,8 +4142,8 @@ const { Category, Type } = require('./general');
       "name": "Gust"
   },
   "HeatWave": {
-      "type": Type.fire,
-      "cat": Category.special,
+      "type": Type.Fire,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 95,
       "acc": 90,
@@ -4152,7 +4152,7 @@ const { Category, Type } = require('./general');
   },
   "Hex": {
       "type": "ghost",
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 65,
       "acc": 100,
@@ -4160,8 +4160,8 @@ const { Category, Type } = require('./general');
       "name": "Hex"
   },
   "HiddenPower": {
-      "type": Type.normal,
-      "cat": Category.special,
+      "type": Type.Normal,
+      "cat": Category.Special,
       "pp": 15,
       "dmg": 60,
       "acc": 100,
@@ -4169,8 +4169,8 @@ const { Category, Type } = require('./general');
       "name": "Hidden Power"
   },
   "Hurricane": {
-      "type": Type.flying,
-      "cat": Category.special,
+      "type": Type.Flying,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 110,
       "acc": 70,
@@ -4178,8 +4178,8 @@ const { Category, Type } = require('./general');
       "name": "Hurricane"
   },
   "HydroCannon": {
-      "type": Type.water,
-      "cat": Category.special,
+      "type": Type.Water,
+      "cat": Category.Special,
       "pp": 5,
       "dmg": 150,
       "acc": 90,
@@ -4187,8 +4187,8 @@ const { Category, Type } = require('./general');
       "name": "Hydro Cannon"
   },
   "HydroPump": {
-      "type": Type.water,
-      "cat": Category.special,
+      "type": Type.Water,
+      "cat": Category.Special,
       "pp": 5,
       "dmg": 110,
       "acc": 80,
@@ -4196,8 +4196,8 @@ const { Category, Type } = require('./general');
       "name": "Hydro Pump"
   },
   "HyperBeam": {
-      "type": Type.normal,
-      "cat": Category.special,
+      "type": Type.Normal,
+      "cat": Category.Special,
       "pp": 5,
       "dmg": 150,
       "acc": 90,
@@ -4205,8 +4205,8 @@ const { Category, Type } = require('./general');
       "name": "Hyper Beam"
   },
   "HyperVoice": {
-      "type": Type.normal,
-      "cat": Category.special,
+      "type": Type.Normal,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 90,
       "acc": 100,
@@ -4215,7 +4215,7 @@ const { Category, Type } = require('./general');
   },
   "HyperspaceHole": {
       "type": Type.psychic,
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 5,
       "dmg": 80,
       "acc": 101,
@@ -4223,8 +4223,8 @@ const { Category, Type } = require('./general');
       "name": "Hyperspace Hole"
   },
   "IceBeam": {
-      "type": Type.ice,
-      "cat": Category.special,
+      "type": Type.Ice,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 90,
       "acc": 100,
@@ -4232,8 +4232,8 @@ const { Category, Type } = require('./general');
       "name": "Ice Beam"
   },
   "IceBurn": {
-      "type": Type.ice,
-      "cat": Category.special,
+      "type": Type.Ice,
+      "cat": Category.Special,
       "pp": 5,
       "dmg": 140,
       "acc": 90,
@@ -4241,8 +4241,8 @@ const { Category, Type } = require('./general');
       "name": "Ice Burn"
   },
   "IcyWind": {
-      "type": Type.ice,
-      "cat": Category.special,
+      "type": Type.Ice,
+      "cat": Category.Special,
       "pp": 15,
       "dmg": 55,
       "acc": 95,
@@ -4250,8 +4250,8 @@ const { Category, Type } = require('./general');
       "name": "Icy Wind"
   },
   "Incinerate": {
-      "type": Type.fire,
-      "cat": Category.special,
+      "type": Type.Fire,
+      "cat": Category.Special,
       "pp": 15,
       "dmg": 60,
       "acc": 100,
@@ -4259,8 +4259,8 @@ const { Category, Type } = require('./general');
       "name": "Incinerate"
   },
   "Inferno": {
-      "type": Type.fire,
-      "cat": Category.special,
+      "type": Type.Fire,
+      "cat": Category.Special,
       "pp": 5,
       "dmg": 100,
       "acc": 50,
@@ -4268,8 +4268,8 @@ const { Category, Type } = require('./general');
       "name": "Inferno"
   },
   "Infestation": {
-      "type": Type.bug,
-      "cat": Category.special,
+      "type": Type.Bug,
+      "cat": Category.Special,
       "pp": 20,
       "dmg": 20,
       "acc": 100,
@@ -4277,8 +4277,8 @@ const { Category, Type } = require('./general');
       "name": "Infestation"
   },
   "Judgment": {
-      "type": Type.normal,
-      "cat": Category.special,
+      "type": Type.Normal,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 100,
       "acc": 100,
@@ -4286,8 +4286,8 @@ const { Category, Type } = require('./general');
       "name": "Judgment"
   },
   "LavaPlume": {
-      "type": Type.fire,
-      "cat": Category.special,
+      "type": Type.Fire,
+      "cat": Category.Special,
       "pp": 15,
       "dmg": 80,
       "acc": 100,
@@ -4295,8 +4295,8 @@ const { Category, Type } = require('./general');
       "name": "Lava Plume"
   },
   "LeafStorm": {
-      "type": Type.grass,
-      "cat": Category.special,
+      "type": Type.Grass,
+      "cat": Category.Special,
       "pp": 5,
       "dmg": 130,
       "acc": 90,
@@ -4304,8 +4304,8 @@ const { Category, Type } = require('./general');
       "name": "Leaf Storm"
   },
   "LeafTornado": {
-      "type": Type.grass,
-      "cat": Category.special,
+      "type": Type.Grass,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 65,
       "acc": 90,
@@ -4314,7 +4314,7 @@ const { Category, Type } = require('./general');
   },
   "LightThatBurnstheSky": {
       "type": Type.psychic,
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 1,
       "dmg": 200,
       "acc": 101,
@@ -4322,8 +4322,8 @@ const { Category, Type } = require('./general');
       "name": "Light That Burns the Sky"
   },
   "LightofRuin": {
-      "type": Type.fairy,
-      "cat": Category.special,
+      "type": Type.Fairy,
+      "cat": Category.Special,
       "pp": 5,
       "dmg": 140,
       "acc": 90,
@@ -4332,7 +4332,7 @@ const { Category, Type } = require('./general');
   },
   "LusterPurge": {
       "type": Type.psychic,
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 5,
       "dmg": 70,
       "acc": 100,
@@ -4340,8 +4340,8 @@ const { Category, Type } = require('./general');
       "name": "Luster Purge"
   },
   "MagicalLeaf": {
-      "type": Type.grass,
-      "cat": Category.special,
+      "type": Type.Grass,
+      "cat": Category.Special,
       "pp": 20,
       "dmg": 60,
       "acc": 101,
@@ -4349,8 +4349,8 @@ const { Category, Type } = require('./general');
       "name": "Magical Leaf"
   },
   "MagmaStorm": {
-      "type": Type.fire,
-      "cat": Category.special,
+      "type": Type.Fire,
+      "cat": Category.Special,
       "pp": 5,
       "dmg": 100,
       "acc": 75,
@@ -4358,8 +4358,8 @@ const { Category, Type } = require('./general');
       "name": "Magma Storm"
   },
   "MegaDrain": {
-      "type": Type.grass,
-      "cat": Category.special,
+      "type": Type.Grass,
+      "cat": Category.Special,
       "pp": 15,
       "dmg": 40,
       "acc": 100,
@@ -4368,7 +4368,7 @@ const { Category, Type } = require('./general');
   },
   "MenacingMoonrazeMaelstrom": {
       "type": "ghost",
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 1,
       "dmg": 200,
       "acc": 101,
@@ -4376,8 +4376,8 @@ const { Category, Type } = require('./general');
       "name": "Menacing Moonraze Maelstrom"
   },
   "MeteorBeam": {
-      "type": Type.rock,
-      "cat": Category.special,
+      "type": Type.Rock,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 120,
       "acc": 90,
@@ -4385,8 +4385,8 @@ const { Category, Type } = require('./general');
       "name": "Meteor Beam"
   },
   "MindBlown": {
-      "type": Type.fire,
-      "cat": Category.special,
+      "type": Type.Fire,
+      "cat": Category.Special,
       "pp": 5,
       "dmg": 150,
       "acc": 100,
@@ -4395,7 +4395,7 @@ const { Category, Type } = require('./general');
   },
   "MirrorCoat": {
       "type": Type.psychic,
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 20,
       "dmg": 0,
       "acc": 100,
@@ -4403,8 +4403,8 @@ const { Category, Type } = require('./general');
       "name": "Mirror Coat"
   },
   "MirrorShot": {
-      "type": Type.steel,
-      "cat": Category.special,
+      "type": Type.Steel,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 65,
       "acc": 85,
@@ -4413,7 +4413,7 @@ const { Category, Type } = require('./general');
   },
   "MistBall": {
       "type": Type.psychic,
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 5,
       "dmg": 70,
       "acc": 100,
@@ -4421,8 +4421,8 @@ const { Category, Type } = require('./general');
       "name": "Mist Ball"
   },
   "MistyExplosion": {
-      "type": Type.fairy,
-      "cat": Category.special,
+      "type": Type.Fairy,
+      "cat": Category.Special,
       "pp": 5,
       "dmg": 100,
       "acc": 100,
@@ -4430,8 +4430,8 @@ const { Category, Type } = require('./general');
       "name": "Misty Explosion"
   },
   "Moonblast": {
-      "type": Type.fairy,
-      "cat": Category.special,
+      "type": Type.Fairy,
+      "cat": Category.Special,
       "pp": 15,
       "dmg": 95,
       "acc": 100,
@@ -4440,7 +4440,7 @@ const { Category, Type } = require('./general');
   },
   "MoongeistBeam": {
       "type": "ghost",
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 5,
       "dmg": 100,
       "acc": 100,
@@ -4448,8 +4448,8 @@ const { Category, Type } = require('./general');
       "name": "Moongeist Beam"
   },
   "MudBomb": {
-      "type": Type.ground,
-      "cat": Category.special,
+      "type": Type.Ground,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 65,
       "acc": 85,
@@ -4457,8 +4457,8 @@ const { Category, Type } = require('./general');
       "name": "Mud Bomb"
   },
   "MudShot": {
-      "type": Type.ground,
-      "cat": Category.special,
+      "type": Type.Ground,
+      "cat": Category.Special,
       "pp": 15,
       "dmg": 55,
       "acc": 95,
@@ -4466,8 +4466,8 @@ const { Category, Type } = require('./general');
       "name": "Mud Shot"
   },
   "MudSlap": {
-      "type": Type.ground,
-      "cat": Category.special,
+      "type": Type.Ground,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 20,
       "acc": 100,
@@ -4475,8 +4475,8 @@ const { Category, Type } = require('./general');
       "name": "Mud-Slap"
   },
   "MuddyWater": {
-      "type": Type.water,
-      "cat": Category.special,
+      "type": Type.Water,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 90,
       "acc": 85,
@@ -4484,8 +4484,8 @@ const { Category, Type } = require('./general');
       "name": "Muddy Water"
   },
   "MysticalFire": {
-      "type": Type.fire,
-      "cat": Category.special,
+      "type": Type.Fire,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 75,
       "acc": 100,
@@ -4493,8 +4493,8 @@ const { Category, Type } = require('./general');
       "name": "Mystical Fire"
   },
   "Nature'sMadness": {
-      "type": Type.fairy,
-      "cat": Category.special,
+      "type": Type.Fairy,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 0,
       "acc": 90,
@@ -4502,8 +4502,8 @@ const { Category, Type } = require('./general');
       "name": "Nature's Madness"
   },
   "NightDaze": {
-      "type": Type.dark,
-      "cat": Category.special,
+      "type": Type.Dark,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 85,
       "acc": 95,
@@ -4512,7 +4512,7 @@ const { Category, Type } = require('./general');
   },
   "NightShade": {
       "type": "ghost",
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 15,
       "dmg": 0,
       "acc": 100,
@@ -4520,8 +4520,8 @@ const { Category, Type } = require('./general');
       "name": "Night Shade"
   },
   "OblivionWing": {
-      "type": Type.flying,
-      "cat": Category.special,
+      "type": Type.Flying,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 80,
       "acc": 100,
@@ -4529,8 +4529,8 @@ const { Category, Type } = require('./general');
       "name": "Oblivion Wing"
   },
   "OceanicOperetta": {
-      "type": Type.water,
-      "cat": Category.special,
+      "type": Type.Water,
+      "cat": Category.Special,
       "pp": 1,
       "dmg": 195,
       "acc": 101,
@@ -4538,8 +4538,8 @@ const { Category, Type } = require('./general');
       "name": "Oceanic Operetta"
   },
   "Octazooka": {
-      "type": Type.water,
-      "cat": Category.special,
+      "type": Type.Water,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 65,
       "acc": 85,
@@ -4548,7 +4548,7 @@ const { Category, Type } = require('./general');
   },
   "OminousWind": {
       "type": "ghost",
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 5,
       "dmg": 60,
       "acc": 100,
@@ -4556,8 +4556,8 @@ const { Category, Type } = require('./general');
       "name": "Ominous Wind"
   },
   "OriginPulse": {
-      "type": Type.water,
-      "cat": Category.special,
+      "type": Type.Water,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 110,
       "acc": 85,
@@ -4566,7 +4566,7 @@ const { Category, Type } = require('./general');
   },
   "Overdrive": {
       "type": Type.electric,
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 80,
       "acc": 100,
@@ -4574,8 +4574,8 @@ const { Category, Type } = require('./general');
       "name": "Overdrive"
   },
   "Overheat": {
-      "type": Type.fire,
-      "cat": Category.special,
+      "type": Type.Fire,
+      "cat": Category.Special,
       "pp": 5,
       "dmg": 130,
       "acc": 90,
@@ -4584,7 +4584,7 @@ const { Category, Type } = require('./general');
   },
   "ParabolicCharge": {
       "type": Type.electric,
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 20,
       "dmg": 65,
       "acc": 100,
@@ -4592,8 +4592,8 @@ const { Category, Type } = require('./general');
       "name": "Parabolic Charge"
   },
   "PetalDance": {
-      "type": Type.grass,
-      "cat": Category.special,
+      "type": Type.Grass,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 120,
       "acc": 100,
@@ -4602,7 +4602,7 @@ const { Category, Type } = require('./general');
   },
   "PhotonGeyser": {
       "type": Type.psychic,
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 5,
       "dmg": 100,
       "acc": 100,
@@ -4611,7 +4611,7 @@ const { Category, Type } = require('./general');
   },
   "PikaPapow": {
       "type": Type.electric,
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 20,
       "dmg": 0,
       "acc": 101,
@@ -4619,8 +4619,8 @@ const { Category, Type } = require('./general');
       "name": "Pika Papow"
   },
   "PollenPuff": {
-      "type": Type.bug,
-      "cat": Category.special,
+      "type": Type.Bug,
+      "cat": Category.Special,
       "pp": 15,
       "dmg": 90,
       "acc": 100,
@@ -4628,8 +4628,8 @@ const { Category, Type } = require('./general');
       "name": "Pollen Puff"
   },
   "PowderSnow": {
-      "type": Type.ice,
-      "cat": Category.special,
+      "type": Type.Ice,
+      "cat": Category.Special,
       "pp": 25,
       "dmg": 40,
       "acc": 100,
@@ -4637,8 +4637,8 @@ const { Category, Type } = require('./general');
       "name": "Powder Snow"
   },
   "PowerGem": {
-      "type": Type.rock,
-      "cat": Category.special,
+      "type": Type.Rock,
+      "cat": Category.Special,
       "pp": 20,
       "dmg": 80,
       "acc": 100,
@@ -4647,7 +4647,7 @@ const { Category, Type } = require('./general');
   },
   "PrismaticLaser": {
       "type": Type.psychic,
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 160,
       "acc": 100,
@@ -4656,7 +4656,7 @@ const { Category, Type } = require('./general');
   },
   "Psybeam": {
       "type": Type.psychic,
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 20,
       "dmg": 65,
       "acc": 100,
@@ -4665,7 +4665,7 @@ const { Category, Type } = require('./general');
   },
   "Psychic": {
       "type": Type.psychic,
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 90,
       "acc": 100,
@@ -4674,7 +4674,7 @@ const { Category, Type } = require('./general');
   },
   "PsychoBoost": {
       "type": Type.psychic,
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 5,
       "dmg": 140,
       "acc": 90,
@@ -4683,7 +4683,7 @@ const { Category, Type } = require('./general');
   },
   "Psyshock": {
       "type": Type.psychic,
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 80,
       "acc": 100,
@@ -4692,7 +4692,7 @@ const { Category, Type } = require('./general');
   },
   "Psystrike": {
       "type": Type.psychic,
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 100,
       "acc": 100,
@@ -4701,7 +4701,7 @@ const { Category, Type } = require('./general');
   },
   "Psywave": {
       "type": Type.psychic,
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 15,
       "dmg": 0,
       "acc": 100,
@@ -4709,8 +4709,8 @@ const { Category, Type } = require('./general');
       "name": "Psywave"
   },
   "RazorWind": {
-      "type": Type.normal,
-      "cat": Category.special,
+      "type": Type.Normal,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 80,
       "acc": 100,
@@ -4718,8 +4718,8 @@ const { Category, Type } = require('./general');
       "name": "Razor Wind"
   },
   "RelicSong": {
-      "type": Type.normal,
-      "cat": Category.special,
+      "type": Type.Normal,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 75,
       "acc": 100,
@@ -4727,8 +4727,8 @@ const { Category, Type } = require('./general');
       "name": "Relic Song"
   },
   "RevelationDance": {
-      "type": Type.normal,
-      "cat": Category.special,
+      "type": Type.Normal,
+      "cat": Category.Special,
       "pp": 15,
       "dmg": 90,
       "acc": 100,
@@ -4737,7 +4737,7 @@ const { Category, Type } = require('./general');
   },
   "RisingVoltage": {
       "type": Type.electric,
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 20,
       "dmg": 70,
       "acc": 100,
@@ -4746,7 +4746,7 @@ const { Category, Type } = require('./general');
   },
   "RoarofTime": {
       "type": "dragon",
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 5,
       "dmg": 150,
       "acc": 90,
@@ -4754,8 +4754,8 @@ const { Category, Type } = require('./general');
       "name": "Roar of Time"
   },
   "Round": {
-      "type": Type.normal,
-      "cat": Category.special,
+      "type": Type.Normal,
+      "cat": Category.Special,
       "pp": 15,
       "dmg": 60,
       "acc": 100,
@@ -4763,8 +4763,8 @@ const { Category, Type } = require('./general');
       "name": "Round"
   },
   "Scald": {
-      "type": Type.water,
-      "cat": Category.special,
+      "type": Type.Water,
+      "cat": Category.Special,
       "pp": 15,
       "dmg": 80,
       "acc": 100,
@@ -4772,8 +4772,8 @@ const { Category, Type } = require('./general');
       "name": "Scald"
   },
   "ScorchingSands": {
-      "type": Type.ground,
-      "cat": Category.special,
+      "type": Type.Ground,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 70,
       "acc": 100,
@@ -4781,8 +4781,8 @@ const { Category, Type } = require('./general');
       "name": "Scorching Sands"
   },
   "SearingShot": {
-      "type": Type.fire,
-      "cat": Category.special,
+      "type": Type.Fire,
+      "cat": Category.Special,
       "pp": 5,
       "dmg": 100,
       "acc": 100,
@@ -4790,8 +4790,8 @@ const { Category, Type } = require('./general');
       "name": "Searing Shot"
   },
   "SecretSword": {
-      "type": Type.fighting,
-      "cat": Category.special,
+      "type": Type.Fighting,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 85,
       "acc": 100,
@@ -4799,8 +4799,8 @@ const { Category, Type } = require('./general');
       "name": "Secret Sword"
   },
   "SeedFlare": {
-      "type": Type.grass,
-      "cat": Category.special,
+      "type": Type.Grass,
+      "cat": Category.Special,
       "pp": 5,
       "dmg": 120,
       "acc": 85,
@@ -4809,7 +4809,7 @@ const { Category, Type } = require('./general');
   },
   "ShadowBall": {
       "type": "ghost",
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 15,
       "dmg": 80,
       "acc": 100,
@@ -4817,8 +4817,8 @@ const { Category, Type } = require('./general');
       "name": "Shadow Ball"
   },
   "SheerCold": {
-      "type": Type.ice,
-      "cat": Category.special,
+      "type": Type.Ice,
+      "cat": Category.Special,
       "pp": 5,
       "dmg": 0,
       "acc": 30,
@@ -4826,8 +4826,8 @@ const { Category, Type } = require('./general');
       "name": "Sheer Cold"
   },
   "ShellSideArm": {
-      "type": Type.poison,
-      "cat": Category.special,
+      "type": Type.Poison,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 90,
       "acc": 100,
@@ -4835,8 +4835,8 @@ const { Category, Type } = require('./general');
       "name": "Shell Side Arm"
   },
   "ShellTrap": {
-      "type": Type.fire,
-      "cat": Category.special,
+      "type": Type.Fire,
+      "cat": Category.Special,
       "pp": 5,
       "dmg": 150,
       "acc": 100,
@@ -4845,7 +4845,7 @@ const { Category, Type } = require('./general');
   },
   "ShockWave": {
       "type": Type.electric,
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 20,
       "dmg": 60,
       "acc": 101,
@@ -4853,8 +4853,8 @@ const { Category, Type } = require('./general');
       "name": "Shock Wave"
   },
   "SignalBeam": {
-      "type": Type.bug,
-      "cat": Category.special,
+      "type": Type.Bug,
+      "cat": Category.Special,
       "pp": 15,
       "dmg": 75,
       "acc": 100,
@@ -4862,8 +4862,8 @@ const { Category, Type } = require('./general');
       "name": "Signal Beam"
   },
   "SilverWind": {
-      "type": Type.bug,
-      "cat": Category.special,
+      "type": Type.Bug,
+      "cat": Category.Special,
       "pp": 5,
       "dmg": 60,
       "acc": 100,
@@ -4871,8 +4871,8 @@ const { Category, Type } = require('./general');
       "name": "Silver Wind"
   },
   "Sludge": {
-      "type": Type.poison,
-      "cat": Category.special,
+      "type": Type.Poison,
+      "cat": Category.Special,
       "pp": 20,
       "dmg": 65,
       "acc": 100,
@@ -4880,8 +4880,8 @@ const { Category, Type } = require('./general');
       "name": "Sludge"
   },
   "SludgeBomb": {
-      "type": Type.poison,
-      "cat": Category.special,
+      "type": Type.Poison,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 90,
       "acc": 100,
@@ -4889,8 +4889,8 @@ const { Category, Type } = require('./general');
       "name": "Sludge Bomb"
   },
   "SludgeWave": {
-      "type": Type.poison,
-      "cat": Category.special,
+      "type": Type.Poison,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 95,
       "acc": 100,
@@ -4898,8 +4898,8 @@ const { Category, Type } = require('./general');
       "name": "Sludge Wave"
   },
   "Smog": {
-      "type": Type.poison,
-      "cat": Category.special,
+      "type": Type.Poison,
+      "cat": Category.Special,
       "pp": 20,
       "dmg": 30,
       "acc": 70,
@@ -4907,8 +4907,8 @@ const { Category, Type } = require('./general');
       "name": "Smog"
   },
   "Snarl": {
-      "type": Type.dark,
-      "cat": Category.special,
+      "type": Type.Dark,
+      "cat": Category.Special,
       "pp": 15,
       "dmg": 55,
       "acc": 95,
@@ -4916,8 +4916,8 @@ const { Category, Type } = require('./general');
       "name": "Snarl"
   },
   "SnipeShot": {
-      "type": Type.water,
-      "cat": Category.special,
+      "type": Type.Water,
+      "cat": Category.Special,
       "pp": 15,
       "dmg": 80,
       "acc": 100,
@@ -4925,8 +4925,8 @@ const { Category, Type } = require('./general');
       "name": "Snipe Shot"
   },
   "Snore": {
-      "type": Type.normal,
-      "cat": Category.special,
+      "type": Type.Normal,
+      "cat": Category.Special,
       "pp": 15,
       "dmg": 50,
       "acc": 100,
@@ -4934,8 +4934,8 @@ const { Category, Type } = require('./general');
       "name": "Snore"
   },
   "SolarBeam": {
-      "type": Type.grass,
-      "cat": Category.special,
+      "type": Type.Grass,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 120,
       "acc": 100,
@@ -4943,8 +4943,8 @@ const { Category, Type } = require('./general');
       "name": "Solar Beam"
   },
   "SonicBoom": {
-      "type": Type.normal,
-      "cat": Category.special,
+      "type": Type.Normal,
+      "cat": Category.Special,
       "pp": 20,
       "dmg": 0,
       "acc": 90,
@@ -4953,7 +4953,7 @@ const { Category, Type } = require('./general');
   },
   "SpacialRend": {
       "type": "dragon",
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 5,
       "dmg": 100,
       "acc": 95,
@@ -4961,8 +4961,8 @@ const { Category, Type } = require('./general');
       "name": "Spacial Rend"
   },
   "SparklingAria": {
-      "type": Type.water,
-      "cat": Category.special,
+      "type": Type.Water,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 90,
       "acc": 100,
@@ -4970,8 +4970,8 @@ const { Category, Type } = require('./general');
       "name": "Sparkling Aria"
   },
   "SparklySwirl": {
-      "type": Type.fairy,
-      "cat": Category.special,
+      "type": Type.Fairy,
+      "cat": Category.Special,
       "pp": 5,
       "dmg": 120,
       "acc": 85,
@@ -4979,8 +4979,8 @@ const { Category, Type } = require('./general');
       "name": "Sparkly Swirl"
   },
   "SpitUp": {
-      "type": Type.normal,
-      "cat": Category.special,
+      "type": Type.Normal,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 0,
       "acc": 100,
@@ -4988,8 +4988,8 @@ const { Category, Type } = require('./general');
       "name": "Spit Up"
   },
   "SplishySplash": {
-      "type": Type.water,
-      "cat": Category.special,
+      "type": Type.Water,
+      "cat": Category.Special,
       "pp": 15,
       "dmg": 90,
       "acc": 100,
@@ -4997,8 +4997,8 @@ const { Category, Type } = require('./general');
       "name": "Splishy Splash"
   },
   "SteamEruption": {
-      "type": Type.water,
-      "cat": Category.special,
+      "type": Type.Water,
+      "cat": Category.Special,
       "pp": 5,
       "dmg": 110,
       "acc": 95,
@@ -5006,8 +5006,8 @@ const { Category, Type } = require('./general');
       "name": "Steam Eruption"
   },
   "SteelBeam": {
-      "type": Type.steel,
-      "cat": Category.special,
+      "type": Type.Steel,
+      "cat": Category.Special,
       "pp": 5,
       "dmg": 140,
       "acc": 95,
@@ -5016,7 +5016,7 @@ const { Category, Type } = require('./general');
   },
   "StokedSparksurfer": {
       "type": Type.electric,
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 1,
       "dmg": 175,
       "acc": 101,
@@ -5025,7 +5025,7 @@ const { Category, Type } = require('./general');
   },
   "StoredPower": {
       "type": Type.psychic,
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 20,
       "acc": 100,
@@ -5033,8 +5033,8 @@ const { Category, Type } = require('./general');
       "name": "Stored Power"
   },
   "StrangeSteam": {
-      "type": Type.fairy,
-      "cat": Category.special,
+      "type": Type.Fairy,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 90,
       "acc": 95,
@@ -5042,8 +5042,8 @@ const { Category, Type } = require('./general');
       "name": "Strange Steam"
   },
   "StruggleBug": {
-      "type": Type.bug,
-      "cat": Category.special,
+      "type": Type.Bug,
+      "cat": Category.Special,
       "pp": 20,
       "dmg": 50,
       "acc": 100,
@@ -5051,8 +5051,8 @@ const { Category, Type } = require('./general');
       "name": "Struggle Bug"
   },
   "Surf": {
-      "type": Type.water,
-      "cat": Category.special,
+      "type": Type.Water,
+      "cat": Category.Special,
       "pp": 15,
       "dmg": 90,
       "acc": 100,
@@ -5060,8 +5060,8 @@ const { Category, Type } = require('./general');
       "name": "Surf"
   },
   "Swift": {
-      "type": Type.normal,
-      "cat": Category.special,
+      "type": Type.Normal,
+      "cat": Category.Special,
       "pp": 20,
       "dmg": 60,
       "acc": 101,
@@ -5070,7 +5070,7 @@ const { Category, Type } = require('./general');
   },
   "Synchronoise": {
       "type": Type.psychic,
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 120,
       "acc": 100,
@@ -5078,8 +5078,8 @@ const { Category, Type } = require('./general');
       "name": "Synchronoise"
   },
   "TechnoBlast": {
-      "type": Type.normal,
-      "cat": Category.special,
+      "type": Type.Normal,
+      "cat": Category.Special,
       "pp": 5,
       "dmg": 120,
       "acc": 100,
@@ -5087,8 +5087,8 @@ const { Category, Type } = require('./general');
       "name": "Techno Blast"
   },
   "TerrainPulse": {
-      "type": Type.normal,
-      "cat": Category.special,
+      "type": Type.Normal,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 50,
       "acc": 100,
@@ -5097,7 +5097,7 @@ const { Category, Type } = require('./general');
   },
   "Thunder": {
       "type": Type.electric,
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 110,
       "acc": 70,
@@ -5106,7 +5106,7 @@ const { Category, Type } = require('./general');
   },
   "ThunderCage": {
       "type": Type.electric,
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 15,
       "dmg": 80,
       "acc": 90,
@@ -5115,7 +5115,7 @@ const { Category, Type } = require('./general');
   },
   "ThunderShock": {
       "type": Type.electric,
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 30,
       "dmg": 40,
       "acc": 100,
@@ -5124,7 +5124,7 @@ const { Category, Type } = require('./general');
   },
   "Thunderbolt": {
       "type": Type.electric,
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 15,
       "dmg": 90,
       "acc": 100,
@@ -5132,8 +5132,8 @@ const { Category, Type } = require('./general');
       "name": "Thunderbolt"
   },
   "TriAttack": {
-      "type": Type.normal,
-      "cat": Category.special,
+      "type": Type.Normal,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 80,
       "acc": 100,
@@ -5141,8 +5141,8 @@ const { Category, Type } = require('./general');
       "name": "Tri Attack"
   },
   "TrumpCard": {
-      "type": Type.normal,
-      "cat": Category.special,
+      "type": Type.Normal,
+      "cat": Category.Special,
       "pp": 5,
       "dmg": 0,
       "acc": 101,
@@ -5151,7 +5151,7 @@ const { Category, Type } = require('./general');
   },
   "Twister": {
       "type": "dragon",
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 20,
       "dmg": 40,
       "acc": 100,
@@ -5159,8 +5159,8 @@ const { Category, Type } = require('./general');
       "name": "Twister"
   },
   "Uproar": {
-      "type": Type.normal,
-      "cat": Category.special,
+      "type": Type.Normal,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 90,
       "acc": 100,
@@ -5168,8 +5168,8 @@ const { Category, Type } = require('./general');
       "name": "Uproar"
   },
   "VacuumWave": {
-      "type": Type.fighting,
-      "cat": Category.special,
+      "type": Type.Fighting,
+      "cat": Category.Special,
       "pp": 30,
       "dmg": 40,
       "acc": 100,
@@ -5177,8 +5177,8 @@ const { Category, Type } = require('./general');
       "name": "Vacuum Wave"
   },
   "Venoshock": {
-      "type": Type.poison,
-      "cat": Category.special,
+      "type": Type.Poison,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 65,
       "acc": 100,
@@ -5187,7 +5187,7 @@ const { Category, Type } = require('./general');
   },
   "VoltSwitch": {
       "type": Type.electric,
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 20,
       "dmg": 70,
       "acc": 100,
@@ -5195,8 +5195,8 @@ const { Category, Type } = require('./general');
       "name": "Volt Switch"
   },
   "WaterGun": {
-      "type": Type.water,
-      "cat": Category.special,
+      "type": Type.Water,
+      "cat": Category.Special,
       "pp": 25,
       "dmg": 40,
       "acc": 100,
@@ -5204,8 +5204,8 @@ const { Category, Type } = require('./general');
       "name": "Water Gun"
   },
   "WaterPledge": {
-      "type": Type.water,
-      "cat": Category.special,
+      "type": Type.Water,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 80,
       "acc": 100,
@@ -5213,8 +5213,8 @@ const { Category, Type } = require('./general');
       "name": "Water Pledge"
   },
   "WaterPulse": {
-      "type": Type.water,
-      "cat": Category.special,
+      "type": Type.Water,
+      "cat": Category.Special,
       "pp": 20,
       "dmg": 60,
       "acc": 100,
@@ -5222,8 +5222,8 @@ const { Category, Type } = require('./general');
       "name": "Water Pulse"
   },
   "WaterShuriken": {
-      "type": Type.water,
-      "cat": Category.special,
+      "type": Type.Water,
+      "cat": Category.Special,
       "pp": 20,
       "dmg": 15,
       "acc": 100,
@@ -5231,8 +5231,8 @@ const { Category, Type } = require('./general');
       "name": "Water Shuriken"
   },
   "WaterSpout": {
-      "type": Type.water,
-      "cat": Category.special,
+      "type": Type.Water,
+      "cat": Category.Special,
       "pp": 5,
       "dmg": 150,
       "acc": 100,
@@ -5240,8 +5240,8 @@ const { Category, Type } = require('./general');
       "name": "Water Spout"
   },
   "WeatherBall": {
-      "type": Type.normal,
-      "cat": Category.special,
+      "type": Type.Normal,
+      "cat": Category.Special,
       "pp": 10,
       "dmg": 50,
       "acc": 100,
@@ -5249,8 +5249,8 @@ const { Category, Type } = require('./general');
       "name": "Weather Ball"
   },
   "Whirlpool": {
-      "type": Type.water,
-      "cat": Category.special,
+      "type": Type.Water,
+      "cat": Category.Special,
       "pp": 15,
       "dmg": 35,
       "acc": 85,
@@ -5258,8 +5258,8 @@ const { Category, Type } = require('./general');
       "name": "Whirlpool"
   },
   "WringOut": {
-      "type": Type.normal,
-      "cat": Category.special,
+      "type": Type.Normal,
+      "cat": Category.Special,
       "pp": 5,
       "dmg": 0,
       "acc": 100,
@@ -5268,7 +5268,7 @@ const { Category, Type } = require('./general');
   },
   "ZapCannon": {
       "type": Type.electric,
-      "cat": Category.special,
+      "cat": Category.Special,
       "pp": 5,
       "dmg": 120,
       "acc": 50,
@@ -5276,8 +5276,8 @@ const { Category, Type } = require('./general');
       "name": "Zap Cannon"
   },
   "AcidArmor": {
-      "type": Type.poison,
-      "cat": Category.status,
+      "type": Type.Poison,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 101,
@@ -5285,8 +5285,8 @@ const { Category, Type } = require('./general');
       "name": "Acid Armor"
   },
   "Acupressure": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 30,
       "dmg": 0,
       "acc": 101,
@@ -5294,8 +5294,8 @@ const { Category, Type } = require('./general');
       "name": "Acupressure"
   },
   "AfterYou": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 15,
       "dmg": 0,
       "acc": 101,
@@ -5304,7 +5304,7 @@ const { Category, Type } = require('./general');
   },
   "Agility": {
       "type": Type.psychic,
-      "cat": Category.status,
+      "cat": Category.Status,
       "pp": 30,
       "dmg": 0,
       "acc": 101,
@@ -5313,7 +5313,7 @@ const { Category, Type } = require('./general');
   },
   "AllySwitch": {
       "type": Type.psychic,
-      "cat": Category.status,
+      "cat": Category.Status,
       "pp": 15,
       "dmg": 0,
       "acc": 101,
@@ -5322,7 +5322,7 @@ const { Category, Type } = require('./general');
   },
   "Amnesia": {
       "type": Type.psychic,
-      "cat": Category.status,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 101,
@@ -5330,8 +5330,8 @@ const { Category, Type } = require('./general');
       "name": "Amnesia"
   },
   "AquaRing": {
-      "type": Type.water,
-      "cat": Category.status,
+      "type": Type.Water,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 101,
@@ -5339,8 +5339,8 @@ const { Category, Type } = require('./general');
       "name": "Aqua Ring"
   },
   "Aromatherapy": {
-      "type": Type.grass,
-      "cat": Category.status,
+      "type": Type.Grass,
+      "cat": Category.Status,
       "pp": 5,
       "dmg": 0,
       "acc": 101,
@@ -5348,8 +5348,8 @@ const { Category, Type } = require('./general');
       "name": "Aromatherapy"
   },
   "AromaticMist": {
-      "type": Type.fairy,
-      "cat": Category.status,
+      "type": Type.Fairy,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 101,
@@ -5357,8 +5357,8 @@ const { Category, Type } = require('./general');
       "name": "Aromatic Mist"
   },
   "Assist": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 101,
@@ -5366,8 +5366,8 @@ const { Category, Type } = require('./general');
       "name": "Assist"
   },
   "Attract": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 15,
       "dmg": 0,
       "acc": 100,
@@ -5375,8 +5375,8 @@ const { Category, Type } = require('./general');
       "name": "Attract"
   },
   "AuroraVeil": {
-      "type": Type.ice,
-      "cat": Category.status,
+      "type": Type.Ice,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 101,
@@ -5384,8 +5384,8 @@ const { Category, Type } = require('./general');
       "name": "Aurora Veil"
   },
   "Autotomize": {
-      "type": Type.steel,
-      "cat": Category.status,
+      "type": Type.Steel,
+      "cat": Category.Status,
       "pp": 15,
       "dmg": 0,
       "acc": 101,
@@ -5393,8 +5393,8 @@ const { Category, Type } = require('./general');
       "name": "Autotomize"
   },
   "BabyDollEyes": {
-      "type": Type.fairy,
-      "cat": Category.status,
+      "type": Type.Fairy,
+      "cat": Category.Status,
       "pp": 30,
       "dmg": 0,
       "acc": 100,
@@ -5402,8 +5402,8 @@ const { Category, Type } = require('./general');
       "name": "Baby-Doll Eyes"
   },
   "BanefulBunker": {
-      "type": Type.poison,
-      "cat": Category.status,
+      "type": Type.Poison,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -5412,7 +5412,7 @@ const { Category, Type } = require('./general');
   },
   "Barrier": {
       "type": Type.psychic,
-      "cat": Category.status,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 101,
@@ -5420,8 +5420,8 @@ const { Category, Type } = require('./general');
       "name": "Barrier"
   },
   "BatonPass": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 40,
       "dmg": 0,
       "acc": 101,
@@ -5429,8 +5429,8 @@ const { Category, Type } = require('./general');
       "name": "Baton Pass"
   },
   "BellyDrum": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -5438,8 +5438,8 @@ const { Category, Type } = require('./general');
       "name": "Belly Drum"
   },
   "Bestow": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 15,
       "dmg": 0,
       "acc": 101,
@@ -5447,8 +5447,8 @@ const { Category, Type } = require('./general');
       "name": "Bestow"
   },
   "Block": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 5,
       "dmg": 0,
       "acc": 101,
@@ -5456,8 +5456,8 @@ const { Category, Type } = require('./general');
       "name": "Block"
   },
   "BulkUp": {
-      "type": Type.fighting,
-      "cat": Category.status,
+      "type": Type.Fighting,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 101,
@@ -5466,7 +5466,7 @@ const { Category, Type } = require('./general');
   },
   "CalmMind": {
       "type": Type.psychic,
-      "cat": Category.status,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 101,
@@ -5474,8 +5474,8 @@ const { Category, Type } = require('./general');
       "name": "Calm Mind"
   },
   "Camouflage": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 101,
@@ -5483,8 +5483,8 @@ const { Category, Type } = require('./general');
       "name": "Camouflage"
   },
   "Captivate": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 100,
@@ -5492,8 +5492,8 @@ const { Category, Type } = require('./general');
       "name": "Captivate"
   },
   "Celebrate": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 40,
       "dmg": 0,
       "acc": 101,
@@ -5502,7 +5502,7 @@ const { Category, Type } = require('./general');
   },
   "Charge": {
       "type": Type.electric,
-      "cat": Category.status,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 101,
@@ -5510,8 +5510,8 @@ const { Category, Type } = require('./general');
       "name": "Charge"
   },
   "Charm": {
-      "type": Type.fairy,
-      "cat": Category.status,
+      "type": Type.Fairy,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 100,
@@ -5520,7 +5520,7 @@ const { Category, Type } = require('./general');
   },
   "ClangorousSoul": {
       "type": "dragon",
-      "cat": Category.status,
+      "cat": Category.Status,
       "pp": 5,
       "dmg": 0,
       "acc": 100,
@@ -5528,8 +5528,8 @@ const { Category, Type } = require('./general');
       "name": "Clangorous Soul"
   },
   "Coaching": {
-      "type": Type.fighting,
-      "cat": Category.status,
+      "type": Type.Fighting,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": null,
@@ -5537,8 +5537,8 @@ const { Category, Type } = require('./general');
       "name": "Coaching"
   },
   "Coil": {
-      "type": Type.poison,
-      "cat": Category.status,
+      "type": Type.Poison,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 101,
@@ -5546,8 +5546,8 @@ const { Category, Type } = require('./general');
       "name": "Coil"
   },
   "Confide": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 101,
@@ -5556,7 +5556,7 @@ const { Category, Type } = require('./general');
   },
   "ConfuseRay": {
       "type": "ghost",
-      "cat": Category.status,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 100,
@@ -5564,8 +5564,8 @@ const { Category, Type } = require('./general');
       "name": "Confuse Ray"
   },
   "Conversion": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 30,
       "dmg": 0,
       "acc": 101,
@@ -5573,8 +5573,8 @@ const { Category, Type } = require('./general');
       "name": "Conversion"
   },
   "Conversion2": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 30,
       "dmg": 0,
       "acc": 101,
@@ -5582,8 +5582,8 @@ const { Category, Type } = require('./general');
       "name": "Conversion 2"
   },
   "Copycat": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 101,
@@ -5591,8 +5591,8 @@ const { Category, Type } = require('./general');
       "name": "Copycat"
   },
   "CorrosiveGas": {
-      "type": Type.poison,
-      "cat": Category.status,
+      "type": Type.Poison,
+      "cat": Category.Status,
       "pp": 40,
       "dmg": 0,
       "acc": 100,
@@ -5601,7 +5601,7 @@ const { Category, Type } = require('./general');
   },
   "CosmicPower": {
       "type": Type.psychic,
-      "cat": Category.status,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 101,
@@ -5609,8 +5609,8 @@ const { Category, Type } = require('./general');
       "name": "Cosmic Power"
   },
   "CottonGuard": {
-      "type": Type.grass,
-      "cat": Category.status,
+      "type": Type.Grass,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -5618,8 +5618,8 @@ const { Category, Type } = require('./general');
       "name": "Cotton Guard"
   },
   "CottonSpore": {
-      "type": Type.grass,
-      "cat": Category.status,
+      "type": Type.Grass,
+      "cat": Category.Status,
       "pp": 40,
       "dmg": 0,
       "acc": 100,
@@ -5627,8 +5627,8 @@ const { Category, Type } = require('./general');
       "name": "Cotton Spore"
   },
   "CourtChange": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 100,
@@ -5636,8 +5636,8 @@ const { Category, Type } = require('./general');
       "name": "Court Change"
   },
   "CraftyShield": {
-      "type": Type.fairy,
-      "cat": Category.status,
+      "type": Type.Fairy,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -5646,7 +5646,7 @@ const { Category, Type } = require('./general');
   },
   "Curse": {
       "type": "ghost",
-      "cat": Category.status,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -5654,8 +5654,8 @@ const { Category, Type } = require('./general');
       "name": "Curse"
   },
   "DarkVoid": {
-      "type": Type.dark,
-      "cat": Category.status,
+      "type": Type.Dark,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 50,
@@ -5663,8 +5663,8 @@ const { Category, Type } = require('./general');
       "name": "Dark Void"
   },
   "Decorate": {
-      "type": Type.fairy,
-      "cat": Category.status,
+      "type": Type.Fairy,
+      "cat": Category.Status,
       "pp": 15,
       "dmg": 0,
       "acc": 101,
@@ -5672,8 +5672,8 @@ const { Category, Type } = require('./general');
       "name": "Decorate"
   },
   "DefendOrder": {
-      "type": Type.bug,
-      "cat": Category.status,
+      "type": Type.Bug,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -5681,8 +5681,8 @@ const { Category, Type } = require('./general');
       "name": "Defend Order"
   },
   "DefenseCurl": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 40,
       "dmg": 0,
       "acc": 101,
@@ -5690,8 +5690,8 @@ const { Category, Type } = require('./general');
       "name": "Defense Curl"
   },
   "Defog": {
-      "type": Type.flying,
-      "cat": Category.status,
+      "type": Type.Flying,
+      "cat": Category.Status,
       "pp": 15,
       "dmg": 0,
       "acc": 101,
@@ -5700,7 +5700,7 @@ const { Category, Type } = require('./general');
   },
   "DestinyBond": {
       "type": "ghost",
-      "cat": Category.status,
+      "cat": Category.Status,
       "pp": 5,
       "dmg": 0,
       "acc": 101,
@@ -5708,8 +5708,8 @@ const { Category, Type } = require('./general');
       "name": "Destiny Bond"
   },
   "Detect": {
-      "type": Type.fighting,
-      "cat": Category.status,
+      "type": Type.Fighting,
+      "cat": Category.Status,
       "pp": 5,
       "dmg": 0,
       "acc": 101,
@@ -5717,8 +5717,8 @@ const { Category, Type } = require('./general');
       "name": "Detect"
   },
   "Disable": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 100,
@@ -5726,8 +5726,8 @@ const { Category, Type } = require('./general');
       "name": "Disable"
   },
   "DoubleTeam": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 15,
       "dmg": 0,
       "acc": 101,
@@ -5736,7 +5736,7 @@ const { Category, Type } = require('./general');
   },
   "DragonDance": {
       "type": "dragon",
-      "cat": Category.status,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 101,
@@ -5745,7 +5745,7 @@ const { Category, Type } = require('./general');
   },
   "EerieImpulse": {
       "type": Type.electric,
-      "cat": Category.status,
+      "cat": Category.Status,
       "pp": 15,
       "dmg": 0,
       "acc": 100,
@@ -5754,7 +5754,7 @@ const { Category, Type } = require('./general');
   },
   "ElectricTerrain": {
       "type": Type.electric,
-      "cat": Category.status,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -5763,7 +5763,7 @@ const { Category, Type } = require('./general');
   },
   "Electrify": {
       "type": Type.electric,
-      "cat": Category.status,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 101,
@@ -5771,8 +5771,8 @@ const { Category, Type } = require('./general');
       "name": "Electrify"
   },
   "Embargo": {
-      "type": Type.dark,
-      "cat": Category.status,
+      "type": Type.Dark,
+      "cat": Category.Status,
       "pp": 15,
       "dmg": 0,
       "acc": 100,
@@ -5780,8 +5780,8 @@ const { Category, Type } = require('./general');
       "name": "Embargo"
   },
   "Encore": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 5,
       "dmg": 0,
       "acc": 100,
@@ -5789,8 +5789,8 @@ const { Category, Type } = require('./general');
       "name": "Encore"
   },
   "Endure": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -5798,8 +5798,8 @@ const { Category, Type } = require('./general');
       "name": "Endure"
   },
   "Entrainment": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 15,
       "dmg": 0,
       "acc": 100,
@@ -5807,8 +5807,8 @@ const { Category, Type } = require('./general');
       "name": "Entrainment"
   },
   "ExtremeEvoboost": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 1,
       "dmg": 0,
       "acc": 101,
@@ -5816,8 +5816,8 @@ const { Category, Type } = require('./general');
       "name": "Extreme Evoboost"
   },
   "FairyLock": {
-      "type": Type.fairy,
-      "cat": Category.status,
+      "type": Type.Fairy,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -5825,8 +5825,8 @@ const { Category, Type } = require('./general');
       "name": "Fairy Lock"
   },
   "FakeTears": {
-      "type": Type.dark,
-      "cat": Category.status,
+      "type": Type.Dark,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 100,
@@ -5834,8 +5834,8 @@ const { Category, Type } = require('./general');
       "name": "Fake Tears"
   },
   "FeatherDance": {
-      "type": Type.flying,
-      "cat": Category.status,
+      "type": Type.Flying,
+      "cat": Category.Status,
       "pp": 15,
       "dmg": 0,
       "acc": 100,
@@ -5843,8 +5843,8 @@ const { Category, Type } = require('./general');
       "name": "Feather Dance"
   },
   "Flash": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 100,
@@ -5852,8 +5852,8 @@ const { Category, Type } = require('./general');
       "name": "Flash"
   },
   "Flatter": {
-      "type": Type.dark,
-      "cat": Category.status,
+      "type": Type.Dark,
+      "cat": Category.Status,
       "pp": 15,
       "dmg": 0,
       "acc": 100,
@@ -5861,8 +5861,8 @@ const { Category, Type } = require('./general');
       "name": "Flatter"
   },
   "FloralHealing": {
-      "type": Type.fairy,
-      "cat": Category.status,
+      "type": Type.Fairy,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -5870,8 +5870,8 @@ const { Category, Type } = require('./general');
       "name": "Floral Healing"
   },
   "FlowerShield": {
-      "type": Type.fairy,
-      "cat": Category.status,
+      "type": Type.Fairy,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -5879,8 +5879,8 @@ const { Category, Type } = require('./general');
       "name": "Flower Shield"
   },
   "FocusEnergy": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 30,
       "dmg": 0,
       "acc": 101,
@@ -5888,8 +5888,8 @@ const { Category, Type } = require('./general');
       "name": "Focus Energy"
   },
   "FollowMe": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 101,
@@ -5897,8 +5897,8 @@ const { Category, Type } = require('./general');
       "name": "Follow Me"
   },
   "Foresight": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 40,
       "dmg": 0,
       "acc": 101,
@@ -5906,8 +5906,8 @@ const { Category, Type } = require('./general');
       "name": "Foresight"
   },
   "Forest'sCurse": {
-      "type": Type.grass,
-      "cat": Category.status,
+      "type": Type.Grass,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 100,
@@ -5915,8 +5915,8 @@ const { Category, Type } = require('./general');
       "name": "Forest's Curse"
   },
   "GastroAcid": {
-      "type": Type.poison,
-      "cat": Category.status,
+      "type": Type.Poison,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 100,
@@ -5924,8 +5924,8 @@ const { Category, Type } = require('./general');
       "name": "Gastro Acid"
   },
   "GearUp": {
-      "type": Type.steel,
-      "cat": Category.status,
+      "type": Type.Steel,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 101,
@@ -5933,8 +5933,8 @@ const { Category, Type } = require('./general');
       "name": "Gear Up"
   },
   "Geomancy": {
-      "type": Type.fairy,
-      "cat": Category.status,
+      "type": Type.Fairy,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -5942,8 +5942,8 @@ const { Category, Type } = require('./general');
       "name": "Geomancy"
   },
   "Glare": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 30,
       "dmg": 0,
       "acc": 100,
@@ -5951,8 +5951,8 @@ const { Category, Type } = require('./general');
       "name": "Glare"
   },
   "GrassWhistle": {
-      "type": Type.grass,
-      "cat": Category.status,
+      "type": Type.Grass,
+      "cat": Category.Status,
       "pp": 15,
       "dmg": 0,
       "acc": 55,
@@ -5960,8 +5960,8 @@ const { Category, Type } = require('./general');
       "name": "Grass Whistle"
   },
   "GrassyTerrain": {
-      "type": Type.grass,
-      "cat": Category.status,
+      "type": Type.Grass,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -5970,7 +5970,7 @@ const { Category, Type } = require('./general');
   },
   "Gravity": {
       "type": Type.psychic,
-      "cat": Category.status,
+      "cat": Category.Status,
       "pp": 5,
       "dmg": 0,
       "acc": 101,
@@ -5978,8 +5978,8 @@ const { Category, Type } = require('./general');
       "name": "Gravity"
   },
   "Growl": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 40,
       "dmg": 0,
       "acc": 100,
@@ -5987,8 +5987,8 @@ const { Category, Type } = require('./general');
       "name": "Growl"
   },
   "Growth": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 101,
@@ -5997,7 +5997,7 @@ const { Category, Type } = require('./general');
   },
   "Grudge": {
       "type": "ghost",
-      "cat": Category.status,
+      "cat": Category.Status,
       "pp": 5,
       "dmg": 0,
       "acc": 101,
@@ -6006,7 +6006,7 @@ const { Category, Type } = require('./general');
   },
   "GuardSplit": {
       "type": Type.psychic,
-      "cat": Category.status,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -6015,7 +6015,7 @@ const { Category, Type } = require('./general');
   },
   "GuardSwap": {
       "type": Type.psychic,
-      "cat": Category.status,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -6023,8 +6023,8 @@ const { Category, Type } = require('./general');
       "name": "Guard Swap"
   },
   "Hail": {
-      "type": Type.ice,
-      "cat": Category.status,
+      "type": Type.Ice,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -6032,8 +6032,8 @@ const { Category, Type } = require('./general');
       "name": "Hail"
   },
   "HappyHour": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 30,
       "dmg": 0,
       "acc": 101,
@@ -6041,8 +6041,8 @@ const { Category, Type } = require('./general');
       "name": "Happy Hour"
   },
   "Harden": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 30,
       "dmg": 0,
       "acc": 101,
@@ -6050,8 +6050,8 @@ const { Category, Type } = require('./general');
       "name": "Harden"
   },
   "Haze": {
-      "type": Type.ice,
-      "cat": Category.status,
+      "type": Type.Ice,
+      "cat": Category.Status,
       "pp": 30,
       "dmg": 0,
       "acc": 101,
@@ -6059,8 +6059,8 @@ const { Category, Type } = require('./general');
       "name": "Haze"
   },
   "HealBell": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 5,
       "dmg": 0,
       "acc": 101,
@@ -6069,7 +6069,7 @@ const { Category, Type } = require('./general');
   },
   "HealBlock": {
       "type": Type.psychic,
-      "cat": Category.status,
+      "cat": Category.Status,
       "pp": 15,
       "dmg": 0,
       "acc": 100,
@@ -6077,8 +6077,8 @@ const { Category, Type } = require('./general');
       "name": "Heal Block"
   },
   "HealOrder": {
-      "type": Type.bug,
-      "cat": Category.status,
+      "type": Type.Bug,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -6087,7 +6087,7 @@ const { Category, Type } = require('./general');
   },
   "HealPulse": {
       "type": Type.psychic,
-      "cat": Category.status,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -6096,7 +6096,7 @@ const { Category, Type } = require('./general');
   },
   "HealingWish": {
       "type": Type.psychic,
-      "cat": Category.status,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -6105,7 +6105,7 @@ const { Category, Type } = require('./general');
   },
   "HeartSwap": {
       "type": Type.psychic,
-      "cat": Category.status,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -6113,8 +6113,8 @@ const { Category, Type } = require('./general');
       "name": "Heart Swap"
   },
   "HelpingHand": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 101,
@@ -6122,8 +6122,8 @@ const { Category, Type } = require('./general');
       "name": "Helping Hand"
   },
   "HoldHands": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 40,
       "dmg": 0,
       "acc": 101,
@@ -6131,8 +6131,8 @@ const { Category, Type } = require('./general');
       "name": "Hold Hands"
   },
   "HoneClaws": {
-      "type": Type.dark,
-      "cat": Category.status,
+      "type": Type.Dark,
+      "cat": Category.Status,
       "pp": 15,
       "dmg": 0,
       "acc": 101,
@@ -6140,8 +6140,8 @@ const { Category, Type } = require('./general');
       "name": "Hone Claws"
   },
   "Howl": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 40,
       "dmg": 0,
       "acc": 101,
@@ -6150,7 +6150,7 @@ const { Category, Type } = require('./general');
   },
   "Hypnosis": {
       "type": Type.psychic,
-      "cat": Category.status,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 60,
@@ -6159,7 +6159,7 @@ const { Category, Type } = require('./general');
   },
   "Imprison": {
       "type": Type.psychic,
-      "cat": Category.status,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -6167,8 +6167,8 @@ const { Category, Type } = require('./general');
       "name": "Imprison"
   },
   "Ingrain": {
-      "type": Type.grass,
-      "cat": Category.status,
+      "type": Type.Grass,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 101,
@@ -6177,7 +6177,7 @@ const { Category, Type } = require('./general');
   },
   "Instruct": {
       "type": Type.psychic,
-      "cat": Category.status,
+      "cat": Category.Status,
       "pp": 15,
       "dmg": 0,
       "acc": 101,
@@ -6186,7 +6186,7 @@ const { Category, Type } = require('./general');
   },
   "IonDeluge": {
       "type": Type.electric,
-      "cat": Category.status,
+      "cat": Category.Status,
       "pp": 25,
       "dmg": 0,
       "acc": 101,
@@ -6194,8 +6194,8 @@ const { Category, Type } = require('./general');
       "name": "Ion Deluge"
   },
   "IronDefense": {
-      "type": Type.steel,
-      "cat": Category.status,
+      "type": Type.Steel,
+      "cat": Category.Status,
       "pp": 15,
       "dmg": 0,
       "acc": 101,
@@ -6203,8 +6203,8 @@ const { Category, Type } = require('./general');
       "name": "Iron Defense"
   },
   "JungleHealing": {
-      "type": Type.grass,
-      "cat": Category.status,
+      "type": Type.Grass,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -6213,7 +6213,7 @@ const { Category, Type } = require('./general');
   },
   "Kinesis": {
       "type": Type.psychic,
-      "cat": Category.status,
+      "cat": Category.Status,
       "pp": 15,
       "dmg": 0,
       "acc": 80,
@@ -6221,8 +6221,8 @@ const { Category, Type } = require('./general');
       "name": "Kinesis"
   },
   "King'sShield": {
-      "type": Type.steel,
-      "cat": Category.status,
+      "type": Type.Steel,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -6230,8 +6230,8 @@ const { Category, Type } = require('./general');
       "name": "King's Shield"
   },
   "LaserFocus": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 30,
       "dmg": 0,
       "acc": 101,
@@ -6239,8 +6239,8 @@ const { Category, Type } = require('./general');
       "name": "Laser Focus"
   },
   "LeechSeed": {
-      "type": Type.grass,
-      "cat": Category.status,
+      "type": Type.Grass,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 90,
@@ -6248,8 +6248,8 @@ const { Category, Type } = require('./general');
       "name": "Leech Seed"
   },
   "Leer": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 30,
       "dmg": 0,
       "acc": 100,
@@ -6257,8 +6257,8 @@ const { Category, Type } = require('./general');
       "name": "Leer"
   },
   "LifeDew": {
-      "type": Type.water,
-      "cat": Category.status,
+      "type": Type.Water,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -6267,7 +6267,7 @@ const { Category, Type } = require('./general');
   },
   "LightScreen": {
       "type": Type.psychic,
-      "cat": Category.status,
+      "cat": Category.Status,
       "pp": 30,
       "dmg": 0,
       "acc": 101,
@@ -6275,8 +6275,8 @@ const { Category, Type } = require('./general');
       "name": "Light Screen"
   },
   "LockOn": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 5,
       "dmg": 0,
       "acc": 101,
@@ -6284,8 +6284,8 @@ const { Category, Type } = require('./general');
       "name": "Lock-On"
   },
   "LovelyKiss": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 75,
@@ -6293,8 +6293,8 @@ const { Category, Type } = require('./general');
       "name": "Lovely Kiss"
   },
   "LuckyChant": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 30,
       "dmg": 0,
       "acc": 101,
@@ -6303,7 +6303,7 @@ const { Category, Type } = require('./general');
   },
   "LunarDance": {
       "type": Type.psychic,
-      "cat": Category.status,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -6312,7 +6312,7 @@ const { Category, Type } = require('./general');
   },
   "MagicCoat": {
       "type": Type.psychic,
-      "cat": Category.status,
+      "cat": Category.Status,
       "pp": 15,
       "dmg": 0,
       "acc": 101,
@@ -6321,7 +6321,7 @@ const { Category, Type } = require('./general');
   },
   "MagicPowder": {
       "type": Type.psychic,
-      "cat": Category.status,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 100,
@@ -6330,7 +6330,7 @@ const { Category, Type } = require('./general');
   },
   "MagicRoom": {
       "type": Type.psychic,
-      "cat": Category.status,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -6339,7 +6339,7 @@ const { Category, Type } = require('./general');
   },
   "MagnetRise": {
       "type": Type.electric,
-      "cat": Category.status,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -6348,7 +6348,7 @@ const { Category, Type } = require('./general');
   },
   "MagneticFlux": {
       "type": Type.electric,
-      "cat": Category.status,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 101,
@@ -6356,8 +6356,8 @@ const { Category, Type } = require('./general');
       "name": "Magnetic Flux"
   },
   "MatBlock": {
-      "type": Type.fighting,
-      "cat": Category.status,
+      "type": Type.Fighting,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -6365,8 +6365,8 @@ const { Category, Type } = require('./general');
       "name": "Mat Block"
   },
   "MaxGuard": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -6374,8 +6374,8 @@ const { Category, Type } = require('./general');
       "name": "Max Guard"
   },
   "MeFirst": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 101,
@@ -6383,8 +6383,8 @@ const { Category, Type } = require('./general');
       "name": "Me First"
   },
   "MeanLook": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 5,
       "dmg": 0,
       "acc": 101,
@@ -6393,7 +6393,7 @@ const { Category, Type } = require('./general');
   },
   "Meditate": {
       "type": Type.psychic,
-      "cat": Category.status,
+      "cat": Category.Status,
       "pp": 40,
       "dmg": 0,
       "acc": 101,
@@ -6401,8 +6401,8 @@ const { Category, Type } = require('./general');
       "name": "Meditate"
   },
   "Memento": {
-      "type": Type.dark,
-      "cat": Category.status,
+      "type": Type.Dark,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 100,
@@ -6410,8 +6410,8 @@ const { Category, Type } = require('./general');
       "name": "Memento"
   },
   "MetalSound": {
-      "type": Type.steel,
-      "cat": Category.status,
+      "type": Type.Steel,
+      "cat": Category.Status,
       "pp": 40,
       "dmg": 0,
       "acc": 85,
@@ -6419,8 +6419,8 @@ const { Category, Type } = require('./general');
       "name": "Metal Sound"
   },
   "Metronome": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -6428,8 +6428,8 @@ const { Category, Type } = require('./general');
       "name": "Metronome"
   },
   "MilkDrink": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -6437,8 +6437,8 @@ const { Category, Type } = require('./general');
       "name": "Milk Drink"
   },
   "Mimic": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -6446,8 +6446,8 @@ const { Category, Type } = require('./general');
       "name": "Mimic"
   },
   "MindReader": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 5,
       "dmg": 0,
       "acc": 101,
@@ -6455,8 +6455,8 @@ const { Category, Type } = require('./general');
       "name": "Mind Reader"
   },
   "Minimize": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -6465,7 +6465,7 @@ const { Category, Type } = require('./general');
   },
   "MiracleEye": {
       "type": Type.psychic,
-      "cat": Category.status,
+      "cat": Category.Status,
       "pp": 40,
       "dmg": 0,
       "acc": 101,
@@ -6473,8 +6473,8 @@ const { Category, Type } = require('./general');
       "name": "Miracle Eye"
   },
   "MirrorMove": {
-      "type": Type.flying,
-      "cat": Category.status,
+      "type": Type.Flying,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 101,
@@ -6482,8 +6482,8 @@ const { Category, Type } = require('./general');
       "name": "Mirror Move"
   },
   "Mist": {
-      "type": Type.ice,
-      "cat": Category.status,
+      "type": Type.Ice,
+      "cat": Category.Status,
       "pp": 30,
       "dmg": 0,
       "acc": 101,
@@ -6491,8 +6491,8 @@ const { Category, Type } = require('./general');
       "name": "Mist"
   },
   "MistyTerrain": {
-      "type": Type.fairy,
-      "cat": Category.status,
+      "type": Type.Fairy,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -6500,8 +6500,8 @@ const { Category, Type } = require('./general');
       "name": "Misty Terrain"
   },
   "Moonlight": {
-      "type": Type.fairy,
-      "cat": Category.status,
+      "type": Type.Fairy,
+      "cat": Category.Status,
       "pp": 5,
       "dmg": 0,
       "acc": 101,
@@ -6509,8 +6509,8 @@ const { Category, Type } = require('./general');
       "name": "Moonlight"
   },
   "MorningSun": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 5,
       "dmg": 0,
       "acc": 101,
@@ -6518,8 +6518,8 @@ const { Category, Type } = require('./general');
       "name": "Morning Sun"
   },
   "MudSport": {
-      "type": Type.ground,
-      "cat": Category.status,
+      "type": Type.Ground,
+      "cat": Category.Status,
       "pp": 15,
       "dmg": 0,
       "acc": 101,
@@ -6527,8 +6527,8 @@ const { Category, Type } = require('./general');
       "name": "Mud Sport"
   },
   "NastyPlot": {
-      "type": Type.dark,
-      "cat": Category.status,
+      "type": Type.Dark,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 101,
@@ -6536,8 +6536,8 @@ const { Category, Type } = require('./general');
       "name": "Nasty Plot"
   },
   "NaturePower": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 101,
@@ -6546,7 +6546,7 @@ const { Category, Type } = require('./general');
   },
   "Nightmare": {
       "type": "ghost",
-      "cat": Category.status,
+      "cat": Category.Status,
       "pp": 15,
       "dmg": 0,
       "acc": 100,
@@ -6554,8 +6554,8 @@ const { Category, Type } = require('./general');
       "name": "Nightmare"
   },
   "NoRetreat": {
-      "type": Type.fighting,
-      "cat": Category.status,
+      "type": Type.Fighting,
+      "cat": Category.Status,
       "pp": 5,
       "dmg": 0,
       "acc": 101,
@@ -6563,8 +6563,8 @@ const { Category, Type } = require('./general');
       "name": "No Retreat"
   },
   "NobleRoar": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 30,
       "dmg": 0,
       "acc": 100,
@@ -6572,8 +6572,8 @@ const { Category, Type } = require('./general');
       "name": "Noble Roar"
   },
   "Obstruct": {
-      "type": Type.dark,
-      "cat": Category.status,
+      "type": Type.Dark,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 100,
@@ -6581,8 +6581,8 @@ const { Category, Type } = require('./general');
       "name": "Obstruct"
   },
   "Octolock": {
-      "type": Type.fighting,
-      "cat": Category.status,
+      "type": Type.Fighting,
+      "cat": Category.Status,
       "pp": 15,
       "dmg": 0,
       "acc": 100,
@@ -6590,8 +6590,8 @@ const { Category, Type } = require('./general');
       "name": "Octolock"
   },
   "OdorSleuth": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 40,
       "dmg": 0,
       "acc": 101,
@@ -6599,8 +6599,8 @@ const { Category, Type } = require('./general');
       "name": "Odor Sleuth"
   },
   "PainSplit": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 101,
@@ -6608,8 +6608,8 @@ const { Category, Type } = require('./general');
       "name": "Pain Split"
   },
   "PartingShot": {
-      "type": Type.dark,
-      "cat": Category.status,
+      "type": Type.Dark,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 100,
@@ -6617,8 +6617,8 @@ const { Category, Type } = require('./general');
       "name": "Parting Shot"
   },
   "PerishSong": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 5,
       "dmg": 0,
       "acc": 101,
@@ -6626,8 +6626,8 @@ const { Category, Type } = require('./general');
       "name": "Perish Song"
   },
   "PlayNice": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 101,
@@ -6635,8 +6635,8 @@ const { Category, Type } = require('./general');
       "name": "Play Nice"
   },
   "PoisonGas": {
-      "type": Type.poison,
-      "cat": Category.status,
+      "type": Type.Poison,
+      "cat": Category.Status,
       "pp": 40,
       "dmg": 0,
       "acc": 90,
@@ -6644,8 +6644,8 @@ const { Category, Type } = require('./general');
       "name": "Poison Gas"
   },
   "PoisonPowder": {
-      "type": Type.poison,
-      "cat": Category.status,
+      "type": Type.Poison,
+      "cat": Category.Status,
       "pp": 35,
       "dmg": 0,
       "acc": 75,
@@ -6653,8 +6653,8 @@ const { Category, Type } = require('./general');
       "name": "Poison Powder"
   },
   "Powder": {
-      "type": Type.bug,
-      "cat": Category.status,
+      "type": Type.Bug,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 100,
@@ -6663,7 +6663,7 @@ const { Category, Type } = require('./general');
   },
   "PowerSplit": {
       "type": Type.psychic,
-      "cat": Category.status,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -6672,7 +6672,7 @@ const { Category, Type } = require('./general');
   },
   "PowerSwap": {
       "type": Type.psychic,
-      "cat": Category.status,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -6681,7 +6681,7 @@ const { Category, Type } = require('./general');
   },
   "PowerTrick": {
       "type": Type.psychic,
-      "cat": Category.status,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -6689,8 +6689,8 @@ const { Category, Type } = require('./general');
       "name": "Power Trick"
   },
   "Protect": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -6698,8 +6698,8 @@ const { Category, Type } = require('./general');
       "name": "Protect"
   },
   "PsychUp": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -6708,7 +6708,7 @@ const { Category, Type } = require('./general');
   },
   "PsychicTerrain": {
       "type": Type.psychic,
-      "cat": Category.status,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -6717,7 +6717,7 @@ const { Category, Type } = require('./general');
   },
   "PsychoShift": {
       "type": Type.psychic,
-      "cat": Category.status,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 100,
@@ -6725,8 +6725,8 @@ const { Category, Type } = require('./general');
       "name": "Psycho Shift"
   },
   "Purify": {
-      "type": Type.poison,
-      "cat": Category.status,
+      "type": Type.Poison,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 101,
@@ -6734,8 +6734,8 @@ const { Category, Type } = require('./general');
       "name": "Purify"
   },
   "Quash": {
-      "type": Type.dark,
-      "cat": Category.status,
+      "type": Type.Dark,
+      "cat": Category.Status,
       "pp": 15,
       "dmg": 0,
       "acc": 100,
@@ -6743,8 +6743,8 @@ const { Category, Type } = require('./general');
       "name": "Quash"
   },
   "QuickGuard": {
-      "type": Type.fighting,
-      "cat": Category.status,
+      "type": Type.Fighting,
+      "cat": Category.Status,
       "pp": 15,
       "dmg": 0,
       "acc": 101,
@@ -6752,8 +6752,8 @@ const { Category, Type } = require('./general');
       "name": "Quick Guard"
   },
   "QuiverDance": {
-      "type": Type.bug,
-      "cat": Category.status,
+      "type": Type.Bug,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 101,
@@ -6761,8 +6761,8 @@ const { Category, Type } = require('./general');
       "name": "Quiver Dance"
   },
   "RagePowder": {
-      "type": Type.bug,
-      "cat": Category.status,
+      "type": Type.Bug,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 101,
@@ -6770,8 +6770,8 @@ const { Category, Type } = require('./general');
       "name": "Rage Powder"
   },
   "RainDance": {
-      "type": Type.water,
-      "cat": Category.status,
+      "type": Type.Water,
+      "cat": Category.Status,
       "pp": 5,
       "dmg": 0,
       "acc": 101,
@@ -6779,8 +6779,8 @@ const { Category, Type } = require('./general');
       "name": "Rain Dance"
   },
   "Recover": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -6788,8 +6788,8 @@ const { Category, Type } = require('./general');
       "name": "Recover"
   },
   "Recycle": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -6798,7 +6798,7 @@ const { Category, Type } = require('./general');
   },
   "Reflect": {
       "type": Type.psychic,
-      "cat": Category.status,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 101,
@@ -6806,8 +6806,8 @@ const { Category, Type } = require('./general');
       "name": "Reflect"
   },
   "ReflectType": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 15,
       "dmg": 0,
       "acc": 101,
@@ -6815,8 +6815,8 @@ const { Category, Type } = require('./general');
       "name": "Reflect Type"
   },
   "Refresh": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 101,
@@ -6825,7 +6825,7 @@ const { Category, Type } = require('./general');
   },
   "Rest": {
       "type": Type.psychic,
-      "cat": Category.status,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -6833,8 +6833,8 @@ const { Category, Type } = require('./general');
       "name": "Rest"
   },
   "Roar": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 101,
@@ -6842,8 +6842,8 @@ const { Category, Type } = require('./general');
       "name": "Roar"
   },
   "RockPolish": {
-      "type": Type.rock,
-      "cat": Category.status,
+      "type": Type.Rock,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 101,
@@ -6852,7 +6852,7 @@ const { Category, Type } = require('./general');
   },
   "RolePlay": {
       "type": Type.psychic,
-      "cat": Category.status,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -6860,8 +6860,8 @@ const { Category, Type } = require('./general');
       "name": "Role Play"
   },
   "Roost": {
-      "type": Type.flying,
-      "cat": Category.status,
+      "type": Type.Flying,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -6869,8 +6869,8 @@ const { Category, Type } = require('./general');
       "name": "Roost"
   },
   "Rototiller": {
-      "type": Type.ground,
-      "cat": Category.status,
+      "type": Type.Ground,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -6878,8 +6878,8 @@ const { Category, Type } = require('./general');
       "name": "Rototiller"
   },
   "Safeguard": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 25,
       "dmg": 0,
       "acc": 101,
@@ -6887,8 +6887,8 @@ const { Category, Type } = require('./general');
       "name": "Safeguard"
   },
   "SandAttack": {
-      "type": Type.ground,
-      "cat": Category.status,
+      "type": Type.Ground,
+      "cat": Category.Status,
       "pp": 15,
       "dmg": 0,
       "acc": 100,
@@ -6896,8 +6896,8 @@ const { Category, Type } = require('./general');
       "name": "Sand Attack"
   },
   "Sandstorm": {
-      "type": Type.rock,
-      "cat": Category.status,
+      "type": Type.Rock,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -6905,8 +6905,8 @@ const { Category, Type } = require('./general');
       "name": "Sandstorm"
   },
   "ScaryFace": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 100,
@@ -6914,8 +6914,8 @@ const { Category, Type } = require('./general');
       "name": "Scary Face"
   },
   "Screech": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 40,
       "dmg": 0,
       "acc": 85,
@@ -6923,8 +6923,8 @@ const { Category, Type } = require('./general');
       "name": "Screech"
   },
   "Sharpen": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 30,
       "dmg": 0,
       "acc": 101,
@@ -6932,8 +6932,8 @@ const { Category, Type } = require('./general');
       "name": "Sharpen"
   },
   "ShellSmash": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 15,
       "dmg": 0,
       "acc": 101,
@@ -6941,8 +6941,8 @@ const { Category, Type } = require('./general');
       "name": "Shell Smash"
   },
   "ShiftGear": {
-      "type": Type.steel,
-      "cat": Category.status,
+      "type": Type.Steel,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -6950,8 +6950,8 @@ const { Category, Type } = require('./general');
       "name": "Shift Gear"
   },
   "ShoreUp": {
-      "type": Type.ground,
-      "cat": Category.status,
+      "type": Type.Ground,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -6959,8 +6959,8 @@ const { Category, Type } = require('./general');
       "name": "Shore Up"
   },
   "SimpleBeam": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 15,
       "dmg": 0,
       "acc": 100,
@@ -6968,8 +6968,8 @@ const { Category, Type } = require('./general');
       "name": "Simple Beam"
   },
   "Sing": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 15,
       "dmg": 0,
       "acc": 55,
@@ -6977,8 +6977,8 @@ const { Category, Type } = require('./general');
       "name": "Sing"
   },
   "Sketch": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 1,
       "dmg": 0,
       "acc": 101,
@@ -6987,7 +6987,7 @@ const { Category, Type } = require('./general');
   },
   "SkillSwap": {
       "type": Type.psychic,
-      "cat": Category.status,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -6995,8 +6995,8 @@ const { Category, Type } = require('./general');
       "name": "Skill Swap"
   },
   "SlackOff": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -7004,8 +7004,8 @@ const { Category, Type } = require('./general');
       "name": "Slack Off"
   },
   "SleepPowder": {
-      "type": Type.grass,
-      "cat": Category.status,
+      "type": Type.Grass,
+      "cat": Category.Status,
       "pp": 15,
       "dmg": 0,
       "acc": 75,
@@ -7013,8 +7013,8 @@ const { Category, Type } = require('./general');
       "name": "Sleep Powder"
   },
   "SleepTalk": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -7022,8 +7022,8 @@ const { Category, Type } = require('./general');
       "name": "Sleep Talk"
   },
   "Smokescreen": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 100,
@@ -7031,8 +7031,8 @@ const { Category, Type } = require('./general');
       "name": "Smokescreen"
   },
   "Snatch": {
-      "type": Type.dark,
-      "cat": Category.status,
+      "type": Type.Dark,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -7040,8 +7040,8 @@ const { Category, Type } = require('./general');
       "name": "Snatch"
   },
   "Soak": {
-      "type": Type.water,
-      "cat": Category.status,
+      "type": Type.Water,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 100,
@@ -7049,8 +7049,8 @@ const { Category, Type } = require('./general');
       "name": "Soak"
   },
   "SoftBoiled": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -7059,7 +7059,7 @@ const { Category, Type } = require('./general');
   },
   "SpeedSwap": {
       "type": Type.psychic,
-      "cat": Category.status,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -7067,8 +7067,8 @@ const { Category, Type } = require('./general');
       "name": "Speed Swap"
   },
   "SpiderWeb": {
-      "type": Type.bug,
-      "cat": Category.status,
+      "type": Type.Bug,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -7076,8 +7076,8 @@ const { Category, Type } = require('./general');
       "name": "Spider Web"
   },
   "Spikes": {
-      "type": Type.ground,
-      "cat": Category.status,
+      "type": Type.Ground,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 101,
@@ -7085,8 +7085,8 @@ const { Category, Type } = require('./general');
       "name": "Spikes"
   },
   "SpikyShield": {
-      "type": Type.grass,
-      "cat": Category.status,
+      "type": Type.Grass,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -7095,7 +7095,7 @@ const { Category, Type } = require('./general');
   },
   "Spite": {
       "type": "ghost",
-      "cat": Category.status,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 100,
@@ -7103,8 +7103,8 @@ const { Category, Type } = require('./general');
       "name": "Spite"
   },
   "Splash": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 40,
       "dmg": 0,
       "acc": 101,
@@ -7112,8 +7112,8 @@ const { Category, Type } = require('./general');
       "name": "Splash"
   },
   "Spore": {
-      "type": Type.grass,
-      "cat": Category.status,
+      "type": Type.Grass,
+      "cat": Category.Status,
       "pp": 15,
       "dmg": 0,
       "acc": 100,
@@ -7121,8 +7121,8 @@ const { Category, Type } = require('./general');
       "name": "Spore"
   },
   "Spotlight": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 15,
       "dmg": 0,
       "acc": 101,
@@ -7130,8 +7130,8 @@ const { Category, Type } = require('./general');
       "name": "Spotlight"
   },
   "StealthRock": {
-      "type": Type.rock,
-      "cat": Category.status,
+      "type": Type.Rock,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 101,
@@ -7139,8 +7139,8 @@ const { Category, Type } = require('./general');
       "name": "Stealth Rock"
   },
   "StickyWeb": {
-      "type": Type.bug,
-      "cat": Category.status,
+      "type": Type.Bug,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 101,
@@ -7148,8 +7148,8 @@ const { Category, Type } = require('./general');
       "name": "Sticky Web"
   },
   "Stockpile": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 101,
@@ -7157,8 +7157,8 @@ const { Category, Type } = require('./general');
       "name": "Stockpile"
   },
   "StrengthSap": {
-      "type": Type.grass,
-      "cat": Category.status,
+      "type": Type.Grass,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 100,
@@ -7166,8 +7166,8 @@ const { Category, Type } = require('./general');
       "name": "Strength Sap"
   },
   "StringShot": {
-      "type": Type.bug,
-      "cat": Category.status,
+      "type": Type.Bug,
+      "cat": Category.Status,
       "pp": 40,
       "dmg": 0,
       "acc": 95,
@@ -7175,8 +7175,8 @@ const { Category, Type } = require('./general');
       "name": "String Shot"
   },
   "StuffCheeks": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -7184,8 +7184,8 @@ const { Category, Type } = require('./general');
       "name": "Stuff Cheeks"
   },
   "StunSpore": {
-      "type": Type.grass,
-      "cat": Category.status,
+      "type": Type.Grass,
+      "cat": Category.Status,
       "pp": 30,
       "dmg": 0,
       "acc": 75,
@@ -7193,8 +7193,8 @@ const { Category, Type } = require('./general');
       "name": "Stun Spore"
   },
   "Substitute": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -7202,8 +7202,8 @@ const { Category, Type } = require('./general');
       "name": "Substitute"
   },
   "SunnyDay": {
-      "type": Type.fire,
-      "cat": Category.status,
+      "type": Type.Fire,
+      "cat": Category.Status,
       "pp": 5,
       "dmg": 0,
       "acc": 101,
@@ -7211,8 +7211,8 @@ const { Category, Type } = require('./general');
       "name": "Sunny Day"
   },
   "Supersonic": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 55,
@@ -7220,8 +7220,8 @@ const { Category, Type } = require('./general');
       "name": "Supersonic"
   },
   "Swagger": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 15,
       "dmg": 0,
       "acc": 85,
@@ -7229,8 +7229,8 @@ const { Category, Type } = require('./general');
       "name": "Swagger"
   },
   "Swallow": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -7238,8 +7238,8 @@ const { Category, Type } = require('./general');
       "name": "Swallow"
   },
   "SweetKiss": {
-      "type": Type.fairy,
-      "cat": Category.status,
+      "type": Type.Fairy,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 75,
@@ -7247,8 +7247,8 @@ const { Category, Type } = require('./general');
       "name": "Sweet Kiss"
   },
   "SweetScent": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 100,
@@ -7256,8 +7256,8 @@ const { Category, Type } = require('./general');
       "name": "Sweet Scent"
   },
   "Switcheroo": {
-      "type": Type.dark,
-      "cat": Category.status,
+      "type": Type.Dark,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 100,
@@ -7265,8 +7265,8 @@ const { Category, Type } = require('./general');
       "name": "Switcheroo"
   },
   "SwordsDance": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 101,
@@ -7274,8 +7274,8 @@ const { Category, Type } = require('./general');
       "name": "Swords Dance"
   },
   "Synthesis": {
-      "type": Type.grass,
-      "cat": Category.status,
+      "type": Type.Grass,
+      "cat": Category.Status,
       "pp": 5,
       "dmg": 0,
       "acc": 101,
@@ -7283,8 +7283,8 @@ const { Category, Type } = require('./general');
       "name": "Synthesis"
   },
   "TailGlow": {
-      "type": Type.bug,
-      "cat": Category.status,
+      "type": Type.Bug,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 101,
@@ -7292,8 +7292,8 @@ const { Category, Type } = require('./general');
       "name": "Tail Glow"
   },
   "TailWhip": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 30,
       "dmg": 0,
       "acc": 100,
@@ -7301,8 +7301,8 @@ const { Category, Type } = require('./general');
       "name": "Tail Whip"
   },
   "Tailwind": {
-      "type": Type.flying,
-      "cat": Category.status,
+      "type": Type.Flying,
+      "cat": Category.Status,
       "pp": 15,
       "dmg": 0,
       "acc": 101,
@@ -7310,8 +7310,8 @@ const { Category, Type } = require('./general');
       "name": "Tailwind"
   },
   "TarShot": {
-      "type": Type.rock,
-      "cat": Category.status,
+      "type": Type.Rock,
+      "cat": Category.Status,
       "pp": 15,
       "dmg": 0,
       "acc": 100,
@@ -7319,8 +7319,8 @@ const { Category, Type } = require('./general');
       "name": "Tar Shot"
   },
   "Taunt": {
-      "type": Type.dark,
-      "cat": Category.status,
+      "type": Type.Dark,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 100,
@@ -7328,8 +7328,8 @@ const { Category, Type } = require('./general');
       "name": "Taunt"
   },
   "TearfulLook": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 101,
@@ -7337,8 +7337,8 @@ const { Category, Type } = require('./general');
       "name": "Tearful Look"
   },
   "Teatime": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -7346,8 +7346,8 @@ const { Category, Type } = require('./general');
       "name": "Teatime"
   },
   "TeeterDance": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 100,
@@ -7356,7 +7356,7 @@ const { Category, Type } = require('./general');
   },
   "Telekinesis": {
       "type": Type.psychic,
-      "cat": Category.status,
+      "cat": Category.Status,
       "pp": 15,
       "dmg": 0,
       "acc": 101,
@@ -7365,7 +7365,7 @@ const { Category, Type } = require('./general');
   },
   "Teleport": {
       "type": Type.psychic,
-      "cat": Category.status,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 101,
@@ -7374,7 +7374,7 @@ const { Category, Type } = require('./general');
   },
   "ThunderWave": {
       "type": Type.electric,
-      "cat": Category.status,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 90,
@@ -7382,8 +7382,8 @@ const { Category, Type } = require('./general');
       "name": "Thunder Wave"
   },
   "Tickle": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 100,
@@ -7391,8 +7391,8 @@ const { Category, Type } = require('./general');
       "name": "Tickle"
   },
   "TopsyTurvy": {
-      "type": Type.dark,
-      "cat": Category.status,
+      "type": Type.Dark,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 101,
@@ -7400,8 +7400,8 @@ const { Category, Type } = require('./general');
       "name": "Topsy-Turvy"
   },
   "Torment": {
-      "type": Type.dark,
-      "cat": Category.status,
+      "type": Type.Dark,
+      "cat": Category.Status,
       "pp": 15,
       "dmg": 0,
       "acc": 100,
@@ -7409,8 +7409,8 @@ const { Category, Type } = require('./general');
       "name": "Torment"
   },
   "Toxic": {
-      "type": Type.poison,
-      "cat": Category.status,
+      "type": Type.Poison,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 90,
@@ -7418,8 +7418,8 @@ const { Category, Type } = require('./general');
       "name": "Toxic"
   },
   "ToxicSpikes": {
-      "type": Type.poison,
-      "cat": Category.status,
+      "type": Type.Poison,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 101,
@@ -7427,8 +7427,8 @@ const { Category, Type } = require('./general');
       "name": "Toxic Spikes"
   },
   "ToxicThread": {
-      "type": Type.poison,
-      "cat": Category.status,
+      "type": Type.Poison,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 100,
@@ -7436,8 +7436,8 @@ const { Category, Type } = require('./general');
       "name": "Toxic Thread"
   },
   "Transform": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -7446,7 +7446,7 @@ const { Category, Type } = require('./general');
   },
   "Trick": {
       "type": Type.psychic,
-      "cat": Category.status,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 100,
@@ -7455,7 +7455,7 @@ const { Category, Type } = require('./general');
   },
   "TrickRoom": {
       "type": Type.psychic,
-      "cat": Category.status,
+      "cat": Category.Status,
       "pp": 5,
       "dmg": 0,
       "acc": 101,
@@ -7464,7 +7464,7 @@ const { Category, Type } = require('./general');
   },
   "TrickorTreat": {
       "type": "ghost",
-      "cat": Category.status,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 100,
@@ -7472,8 +7472,8 @@ const { Category, Type } = require('./general');
       "name": "Trick-or-Treat"
   },
   "VenomDrench": {
-      "type": Type.poison,
-      "cat": Category.status,
+      "type": Type.Poison,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 100,
@@ -7481,8 +7481,8 @@ const { Category, Type } = require('./general');
       "name": "Venom Drench"
   },
   "WaterSport": {
-      "type": Type.water,
-      "cat": Category.status,
+      "type": Type.Water,
+      "cat": Category.Status,
       "pp": 15,
       "dmg": 0,
       "acc": 101,
@@ -7490,8 +7490,8 @@ const { Category, Type } = require('./general');
       "name": "Water Sport"
   },
   "Whirlwind": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 20,
       "dmg": 0,
       "acc": 101,
@@ -7499,8 +7499,8 @@ const { Category, Type } = require('./general');
       "name": "Whirlwind"
   },
   "WideGuard": {
-      "type": Type.rock,
-      "cat": Category.status,
+      "type": Type.Rock,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -7508,8 +7508,8 @@ const { Category, Type } = require('./general');
       "name": "Wide Guard"
   },
   "WillOWisp": {
-      "type": Type.fire,
-      "cat": Category.status,
+      "type": Type.Fire,
+      "cat": Category.Status,
       "pp": 15,
       "dmg": 0,
       "acc": 85,
@@ -7517,8 +7517,8 @@ const { Category, Type } = require('./general');
       "name": "Will-O-Wisp"
   },
   "Wish": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -7526,8 +7526,8 @@ const { Category, Type } = require('./general');
       "name": "Wish"
   },
   "Withdraw": {
-      "type": Type.water,
-      "cat": Category.status,
+      "type": Type.Water,
+      "cat": Category.Status,
       "pp": 40,
       "dmg": 0,
       "acc": 101,
@@ -7536,7 +7536,7 @@ const { Category, Type } = require('./general');
   },
   "WonderRoom": {
       "type": Type.psychic,
-      "cat": Category.status,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
@@ -7544,8 +7544,8 @@ const { Category, Type } = require('./general');
       "name": "Wonder Room"
   },
   "WorkUp": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 30,
       "dmg": 0,
       "acc": 101,
@@ -7553,8 +7553,8 @@ const { Category, Type } = require('./general');
       "name": "Work Up"
   },
   "WorrySeed": {
-      "type": Type.grass,
-      "cat": Category.status,
+      "type": Type.Grass,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 100,
@@ -7562,8 +7562,8 @@ const { Category, Type } = require('./general');
       "name": "Worry Seed"
   },
   "Yawn": {
-      "type": Type.normal,
-      "cat": Category.status,
+      "type": Type.Normal,
+      "cat": Category.Status,
       "pp": 10,
       "dmg": 0,
       "acc": 101,
