@@ -64,6 +64,38 @@ exports.Learnset = {
             }
         ]
     },
+    "Charmander": {
+        "LevelUp": [
+            {
+                move: Move.Tackle,
+                learned: 1
+            },
+            {
+                move: Move.StringShot,
+                learned: 1
+            },
+            {
+                move: Move.BugBite,
+                learned: 9
+            }
+        ]
+    },
+    "Squirtle": {
+        "LevelUp": [
+            {
+                move: Move.Tackle,
+                learned: 1
+            },
+            {
+                move: Move.StringShot,
+                learned: 1
+            },
+            {
+                move: Move.BugBite,
+                learned: 9
+            }
+        ]
+    },
     "Caterpie": {
         "LevelUp": [
             {
@@ -79,5 +111,37 @@ exports.Learnset = {
                 learned: 9
             }
         ]
-    }
+    },
+    "Weedle": {
+        "LevelUp": [
+            {
+                move: Move.Tackle,
+                learned: 1
+            },
+            {
+                move: Move.StringShot,
+                learned: 1
+            },
+            {
+                move: Move.BugBite,
+                learned: 9
+            }
+        ]
+    },
+    "Pikachu": {
+        "LevelUp": [
+            {
+                move: Move.Tackle,
+                learned: 1
+            },
+            {
+                move: Move.StringShot,
+                learned: 1
+            },
+            {
+                move: Move.BugBite,
+                learned: 9
+            }
+        ]
+    },
 }

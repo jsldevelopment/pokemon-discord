@@ -20,14 +20,14 @@ const profBot = {
         // used to hold data for users mid registration process
         const registeringUsers = new Collection();
 
-        discordClient.once('ready', async () => {
+        discordClient.once('ready', async() => {
             console.log(`profBot: ready to serve ${userMap.size} users`);
         });
 
         discordClient.on('guildMemberAdd', async member => {
             let messageManager = new MessageManager(discordClient);
             await messageManager.sendDirectMessage(
-                member, 
+                member,
                 messages["msgWelcome"]
             );
         });
@@ -45,7 +45,7 @@ const profBot = {
             if (interaction.isCommand()) {
 
                 const cmdId = interaction.commandName;
-                
+
                 if (cmdId === 'profile') {
 
                     await interaction.deferReply();
@@ -57,47 +57,47 @@ const profBot = {
 
                 if (cmdId === 'team') {
 
-                    if(currentUser.party[interaction.options.getSubcommand() - 1]){
+                    if (currentUser.party[interaction.options.getSubcommand() - 1]) {
                         const resMessage = await messages.msgShowPokemon(currentUser.party[interaction.options.getSubcommand() - 1]);
                         messageManager.replyEphemeralMessage(resMessage);
                     } else {
                         messageManager.replyNoPokemonInSlot();
                     }
-                    
-                }   
+
+                }
 
             } else if (interaction.isMessageComponent()) {
-                    
+
                 let messageManager = new MessageManager(discordClient);
                 messageManager.setInteraction(interaction);
 
                 const userId = interaction.user.id;
                 const memObj = await getMember(discordClient, userId);
                 const label = interaction.customId;
-                
+
                 messageManager.setButtonDetails();
 
                 // TODO: clean up and standardize these methods
-                if (label === 'beginRegistration'){
+                if (label === 'beginRegistration') {
 
                     await messageManager.deleteThisMessage();
                     await messageManager.sendDirectMessage(memObj, messages.msgSelectAvatar);
                     registeringUsers.set(userId, { id: userId });
 
-                } else if (label.match(/selectAvatar[1-9]*/)) {
+                } else if (label.match(/selectAvatar\|[1-9]*/)) {
 
                     await messageManager.deleteThisMessage();
                     await messageManager.sendDirectMessage(memObj, messages.msgSelectStarter);
-                    registeringUsers.set(userId, { ...registeringUsers.get(userId), avatar: label.charAt(label.length-1) });
+                    registeringUsers.set(userId, {...registeringUsers.get(userId), avatar: label.charAt(label.length - 1) });
 
-                } else if (label.match(/selectStarter[1-9]*/)) {
+                } else if (label.match(/selectStarter\|[1-9]*/)) {
 
                     await messageManager.deleteThisMessage();
-                    let starter1gen = await generatePokemon(label.charAt(label.length-1), 20);
-                    queries.insertPokemon(dbClient, { owner_id: userId,  pokemon_id: starter1gen.uuid, pokemon: starter1gen });
-                    registeringUsers.set(userId, { ...registeringUsers.get(userId), starter: starter1gen });
+                    let starter1gen = await generatePokemon(label.split("|")[1], 20);
+                    queries.insertPokemon(dbClient, { owner_id: userId, pokemon_id: starter1gen.uuid, pokemon: starter1gen });
+                    registeringUsers.set(userId, {...registeringUsers.get(userId), starter: starter1gen });
                     await messageManager.sendDirectMessage(memObj, messages.msgConfirmRegistration);
-                    
+
                 } else if (label === 'confirmRegistration') {
 
                     await messageManager.deleteThisMessage();

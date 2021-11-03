@@ -14,11 +14,10 @@ module.exports = async function(id, level) {
 
     const natures = Object.keys(Nature);
     const nature = natures[Math.floor(Math.random() * natures.length)];
-    
+
     const ivs = getIvs();
     const evs = getEvs();
     const netStats = await calcStats(level, raw.base, nature, ivs, evs);
-    console.log(netStats);
 
     const pokemon = new Pokemon(
         uuid(),
@@ -38,7 +37,7 @@ module.exports = async function(id, level) {
         getMoves(raw.learnset, level),
         raw.learnset
     );
-    
+
     return pokemon;
 
 }
@@ -70,25 +69,25 @@ const getMoves = (learnset, level) => {
     let generated = false;
     let movesArr = [];
 
-    while(!generated){
+    while (!generated) {
 
         // filter out moves this pokemon cannot learn
         let available = learnset.filter(a => a.learned <= level);
-       
+
         // if less than 4 available moves, grab them all
         let x = available.length < 4 ? available.length : 4;
-        
+
         // grab all moves available, or if more than 4, a random lot
-        for(let i =0 ; i < x; i++) {
+        for (let i = 0; i < x; i++) {
             let moveNum = (Math.floor(Math.random() * available.length));
             console.log(`Adding move ${JSON.stringify(available[moveNum].move.name)} to movesList`);
             movesArr.push(available[moveNum].move);
             available.splice(moveNum, 1);
         }
-    
+
         // check to ensure at least 1 damaging move is available
-        for(let i = 0; i < movesArr.length; i++){
-            if(movesArr[i].dmg != 0) {
+        for (let i = 0; i < movesArr.length; i++) {
+            if (movesArr[i].dmg != 0) {
                 generated = true;
                 break;
             }

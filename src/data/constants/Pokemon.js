@@ -1,5 +1,4 @@
 const { Type, Stat, Rate } = require('./General');
-const { Move } = require('./Move');
 const { Ability } = require('./Ability');
 const { Learnset } = require('./Learnset');
 const { Pokedex } = require('./Pokedex');
@@ -10,7 +9,7 @@ module.exports = {
         name: Pokedex[1].name,
         desc: Pokedex[1].desc,
         types: [
-            Type.Grass, 
+            Type.Grass,
             Type.Poison
         ],
         genderRatio: 88,
@@ -38,8 +37,8 @@ module.exports = {
     },
     4: {
         id: 4,
-        name: "Charmander",
-        desc: "It has a preference for hot things. When it rains, steam is said to spout from the tip of its tail.",
+        name: Pokedex[4].name,
+        desc: Pokedex[4].desc,
         types: [
             Type.Fire,
         ],
@@ -58,20 +57,7 @@ module.exports = {
             spdef: 50,
             spd: 65
         },
-        learnset: {
-            1: Move.Scratch,
-            2: Move.Growl,
-            4: Move.Ember,
-            8: Move.Smokescreen,
-            12: Move.DragonBreath,
-            17: Move.FireFang,
-            20: Move.Slash,
-            24: Move.Flamethrower,
-            28: Move.ScaryFace,
-            32: Move.FireSpin,
-            36: Move.Inferno,
-            40: Move.FlareBlitz
-        },
+        learnset: Learnset.Charmander.LevelUp,
         evYield: {
             stat: Stat.SPATK,
             amt: 1
@@ -81,8 +67,8 @@ module.exports = {
     },
     7: {
         id: 7,
-        name: "Squirtle",
-        desc: "When it feels threatened, it draws its limbs inside its shell and sprays water from its mouth.",
+        name: Pokedex[7].name,
+        desc: Pokedex[7].desc,
         types: [
             Type.Water,
         ],
@@ -101,7 +87,7 @@ module.exports = {
             spdef: 64,
             spd: 43
         },
-        learnset: "123",
+        learnset: Learnset.Squirtle.LevelUp,
         evYield: {
             stat: Stat.DEF,
             amt: 1
@@ -111,8 +97,8 @@ module.exports = {
     },
     10: {
         id: 10,
-        name: Pokedex[10].name,
-        desc: Pokedex[10].desc,
+        name: Pokedex[7].name,
+        desc: Pokedex[7].desc,
         types: [
             Type.Bug
         ],
@@ -141,8 +127,8 @@ module.exports = {
     },
     13: {
         id: 13,
-        name: "Weedle",
-        desc: "Beware of the sharp stinger on its head. It hides in grass and bushes where it eats leaves.",
+        name: Pokedex[7].name,
+        desc: Pokedex[7].desc,
         types: [
             Type.Bug,
             Type.Poison
@@ -162,16 +148,43 @@ module.exports = {
             spdef: 20,
             spd: 50
         },
-        learnset: {
-            1: Move.PoisonSting,
-            2: Move.StringShot,
-            9: Move.BugBite
-        },
+        learnset: Learnset.Weedle.LevelUp,
         evYield: {
             stat: Stat.SPD,
             amt: 1
         },
         expRate: Rate.MediumFast,
         catchRate: 255
+    },
+    25: {
+        id: 25,
+        name: Pokedex[7].name,
+        desc: Pokedex[7].desc,
+        types: [
+            Type.Electric,
+        ],
+        genderRatio: 50,
+        abilities: {
+            ability1: Ability.Static,
+            abilityRatio: 100,
+            abilitySecret: Ability.LightningRod
+        },
+        // TODO: handle stone evos
+        evolves: 16,
+        base: {
+            hp: 35,
+            atk: 55,
+            def: 40,
+            spatk: 50,
+            spdef: 50,
+            spd: 90
+        },
+        learnset: Learnset.Pikachu.LevelUp,
+        evYield: {
+            stat: Stat.SPD,
+            amt: 2
+        },
+        expRate: Rate.MediumSlow,
+        catchRate: 45
     }
 }
