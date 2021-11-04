@@ -51,6 +51,7 @@ class MessaageManager {
         
     }
     
+    // update this to send a message id and then delete that message id on finish loading
     async sendLoadingMessage (member) {
         
         await member.send({ content: 'Please wait...' })

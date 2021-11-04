@@ -58,9 +58,11 @@ const catchBot = {
 
                 if (btnId.match(/attackPokemon[1-9]*/)){
 
-                    await messageManager.deleteThisMessage();
+                    // await messageManager.deleteThisMessage();
                     console.log('Begin battle...');
-                    // IMPLEMENT BATTLE LOGIC
+                    const generated = await generatePokemon(10, 5);
+                    const message = await messages.msgStartBattle(generated, userId);
+                    await messageManager.updateMessage(message);
 
                 } else if (btnId.match(/swapPokemon[1-9]*/)){
 
