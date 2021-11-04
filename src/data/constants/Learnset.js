@@ -1,8 +1,7 @@
-const { Move } =  require('./Move');
+const { Move } = require('./Move');
 exports.Learnset = {
     "Bulbasaur": {
-        "LevelUp": [
-            {
+        "LevelUp": [{
                 move: Move.Tackle,
                 learned: 1
             },
@@ -64,10 +63,9 @@ exports.Learnset = {
             }
         ]
     },
-    "Charmander": {
-        "LevelUp": [
-            {
-                move: Move.Scratch,
+    "Ivysaur": {
+        "LevelUp": [{
+                move: Move.Tackle,
                 learned: 1
             },
             {
@@ -75,6 +73,61 @@ exports.Learnset = {
                 learned: 1
             },
             {
+                move: Move.VineWhip,
+                learned: 1
+            },
+            {
+                move: Move.Growth,
+                learned: 1
+            },
+            {
+                move: Move.LeechSeed,
+                learned: 9
+            },
+            {
+                move: Move.RazorLeaf,
+                learned: 12
+            },
+            {
+                move: Move.PoisonPowder,
+                learned: 15
+            },
+            {
+                move: Move.SleepPowder,
+                learned: 15
+            },
+            {
+                move: Move.SeedBomb,
+                learned: 20
+            },
+            {
+                move: Move.TakeDown,
+                learned: 25
+            },
+            {
+                move: Move.SweetScent,
+                learned: 30
+            },
+            {
+                move: Move.Synthesis,
+                learned: 33
+            },
+            {
+                move: Move.WorrySeed,
+                learned: 40
+            },
+            {
+                move: Move.DoubleEdge,
+                learned: 45
+            },
+            {
+                move: Move.SolarBeam,
+                learned: 50
+            }
+        ]
+    },
+    "Charmander": {
+        "LevelUp": [{
                 move: Move.Ember,
                 learned: 4
             },
@@ -117,8 +170,7 @@ exports.Learnset = {
         ]
     },
     "Squirtle": {
-        "LevelUp": [
-            {
+        "LevelUp": [{
                 move: Move.Tackle,
                 learned: 1
             },
@@ -177,8 +229,7 @@ exports.Learnset = {
         ]
     },
     "Caterpie": {
-        "LevelUp": [
-            {
+        "LevelUp": [{
                 move: Move.Tackle,
                 learned: 1
             },
@@ -193,8 +244,7 @@ exports.Learnset = {
         ]
     },
     "Weedle": {
-        "LevelUp": [
-            {
+        "LevelUp": [{
                 move: Move.Tackle,
                 learned: 1
             },
@@ -209,8 +259,7 @@ exports.Learnset = {
         ]
     },
     "Pikachu": {
-        "LevelUp": [
-            {
+        "LevelUp": [{
                 move: Move.PlayNice,
                 learned: 1
             },
@@ -291,5 +340,5 @@ exports.Learnset = {
                 learned: 44
             }
         ]
-    },
+    }
 }

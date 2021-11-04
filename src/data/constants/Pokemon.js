@@ -2,8 +2,10 @@ const { Type, Stat, Rate } = require('./General');
 const { Ability } = require('./Ability');
 const { Learnset } = require('./Learnset');
 const { Pokedex } = require('./Pokedex');
+const Pokemon = require('../../objects/Pokemon');
 
 module.exports = {
+    // bulbasaur
     1: {
         id: 1,
         name: Pokedex[1].name,
@@ -18,8 +20,18 @@ module.exports = {
             abilityRatio: 100,
             abilitySecret: Ability.Chlorophyll
         },
+<<<<<<< Updated upstream
         evolves: 16,
         // TODO: evolves into
+=======
+        evolution: {
+            evolves: true,
+            method: {
+                level: 16,
+                next: 2
+            }
+        },
+>>>>>>> Stashed changes
         base: {
             hp: 45,
             atk: 49,
@@ -30,12 +42,82 @@ module.exports = {
         },
         learnset: Learnset.Bulbasaur.LevelUp,
         evYield: {
-            stat: Stat.SPATK,
+            evYield: [{ stat: Stat.SPATK, amt: 1 }],
             amt: 1
         },
         expRate: Rate.MediumSlow,
         catchRate: 45
     },
+    // ivysaur
+    2: {
+        id: 2,
+        name: Pokedex[2].name,
+        desc: Pokedex[2].desc,
+        types: [
+            Type.Grass,
+            Type.Poison
+        ],
+        genderRatio: 88,
+        abilities: {
+            ability1: Ability.Overgrow,
+            abilityRatio: 100,
+            abilitySecret: Ability.Chlorophyll
+        },
+        evolution: {
+            evolves: true,
+            method: {
+                level: 32,
+                next: 3
+            }
+        },
+        base: {
+            hp: 60,
+            atk: 62,
+            def: 63,
+            spatk: 80,
+            spdef: 80,
+            spd: 60
+        },
+        learnset: Learnset.Ivysaur.LevelUp,
+        evYield: {
+            evYield: [{ stat: Stat.SPATK, amt: 1 }, { stat: Stat.SPDEF, amt: 1 }],
+            amt: 1
+        },
+        expRate: Rate.MediumSlow,
+        catchRate: 45
+    },
+    // venusaur
+    3: {
+        id: 3,
+        name: Pokedex[3].name,
+        desc: Pokedex[3].desc,
+        types: [
+            Type.Grass,
+            Type.Poison
+        ],
+        genderRatio: 88,
+        abilities: {
+            ability1: Ability.Overgrow,
+            abilityRatio: 100,
+            abilitySecret: Ability.Chlorophyll
+        },
+        evolution: {
+            evolves: false
+        },
+        base: {
+            hp: 80,
+            atk: 82,
+            def: 83,
+            spatk: 100,
+            spdef: 100,
+            spd: 80
+        },
+        learnset: Learnset.Ivysaur.LevelUp,
+        evYield: [{ stat: Stat.SPATK, amt: 2 }, { stat: Stat.SPDEF, amt: 1 }],
+        expRate: Rate.MediumSlow,
+        catchRate: 45
+    },
+    // charmander
     4: {
         id: 4,
         name: Pokedex[4].name,
@@ -49,7 +131,13 @@ module.exports = {
             abilityRatio: 100,
             abilitySecret: Ability.SolarPower
         },
-        evolves: 16,
+        evolution: {
+            evolves: true,
+            method: {
+                level: 16,
+                next: 5
+            }
+        },
         base: {
             hp: 39,
             atk: 52,
@@ -60,13 +148,145 @@ module.exports = {
         },
         learnset: Learnset.Charmander.LevelUp,
         evYield: {
-            stat: Stat.SPATK,
+            evYield: [{ stat: Stat.SPATK, amt: 1 }],
+            amt: 1
+        },
+        expRate: Rate.MediumSlow,
+        catchRate: 45
+    },
+    5: {
+        id: 4,
+        name: Pokedex[5].name,
+        desc: Pokedex[5].desc,
+        types: [
+            Type.Fire,
+        ],
+        genderRatio: 88,
+        abilities: {
+            ability1: Ability.Blaze,
+            abilityRatio: 100,
+            abilitySecret: Ability.SolarPower
+        },
+        evolution: {
+            evolves: true,
+            method: {
+                level: 32,
+                next: 6
+            }
+        },
+        base: {
+            hp: 58,
+            atk: 64,
+            def: 58,
+            spatk: 80,
+            spdef: 65,
+            spd: 80
+        },
+        learnset: Learnset.Charmeleon.LevelUp,
+        evYield: {
+            evYield: [{ stat: Stat.SPATK, amt: 1 }],
+            amt: 1
+        },
+        expRate: Rate.MediumSlow,
+        catchRate: 45
+    },
+    6: {
+        id: 4,
+        name: Pokedex[4].name,
+        desc: Pokedex[4].desc,
+        types: [
+            Type.Fire,
+        ],
+        genderRatio: 88,
+        abilities: {
+            ability1: Ability.Blaze,
+            abilityRatio: 100,
+            abilitySecret: Ability.SolarPower
+        },
+        evolution: {
+            evolves: true,
+            method: {
+                level: 16,
+                next: 5
+            }
+        },
+        base: {
+            hp: 39,
+            atk: 52,
+            def: 43,
+            spatk: 60,
+            spdef: 50,
+            spd: 65
+        },
+        learnset: Learnset.Charmander.LevelUp,
+        evYield: {
+            evYield: [{ stat: Stat.SPATK, amt: 1 }],
             amt: 1
         },
         expRate: Rate.MediumSlow,
         catchRate: 45
     },
     7: {
+        id: 7,
+        name: Pokedex[7].name,
+        desc: Pokedex[7].desc,
+        types: [
+            Type.Water,
+        ],
+        genderRatio: 88,
+        abilities: {
+            ability1: Ability.Torrent,
+            abilityRatio: 100,
+            abilitySecret: Ability.RainDish
+        },
+        evolves: 16,
+        base: {
+            hp: 44,
+            atk: 48,
+            def: 65,
+            spatk: 50,
+            spdef: 64,
+            spd: 43
+        },
+        learnset: Learnset.Squirtle.LevelUp,
+        evYield: {
+            stat: Stat.DEF,
+            amt: 1
+        },
+        expRate: Rate.MediumSlow,
+        catchRate: 45
+    },
+    8: {
+        id: 7,
+        name: Pokedex[7].name,
+        desc: Pokedex[7].desc,
+        types: [
+            Type.Water,
+        ],
+        genderRatio: 88,
+        abilities: {
+            ability1: Ability.Torrent,
+            abilityRatio: 100,
+            abilitySecret: Ability.RainDish
+        },
+        evolves: 16,
+        base: {
+            hp: 44,
+            atk: 48,
+            def: 65,
+            spatk: 50,
+            spdef: 64,
+            spd: 43
+        },
+        learnset: Learnset.Squirtle.LevelUp,
+        evYield: {
+            stat: Stat.DEF,
+            amt: 1
+        },
+        expRate: Rate.MediumSlow,
+        catchRate: 45
+    },
+    9: {
         id: 7,
         name: Pokedex[7].name,
         desc: Pokedex[7].desc,
@@ -126,13 +346,19 @@ module.exports = {
         expRate: Rate.MediumFast,
         catchRate: 255
     },
+<<<<<<< Updated upstream
     13: {
         id: 13,
         name: Pokedex[13].name,
         desc: Pokedex[13].desc,
+=======
+    11: {
+        id: 10,
+        name: Pokedex[7].name,
+        desc: Pokedex[7].desc,
+>>>>>>> Stashed changes
         types: [
-            Type.Bug,
-            Type.Poison
+            Type.Bug
         ],
         genderRatio: 50,
         abilities: {
@@ -142,16 +368,46 @@ module.exports = {
         },
         evolves: 7,
         base: {
-            hp: 40,
-            atk: 35,
-            def: 30,
+            hp: 45,
+            atk: 30,
+            def: 35,
             spatk: 20,
             spdef: 20,
-            spd: 50
+            spd: 45
         },
-        learnset: Learnset.Weedle.LevelUp,
+        learnset: Learnset.Caterpie.LevelUp,
         evYield: {
-            stat: Stat.SPD,
+            stat: Stat.HP,
+            amt: 1
+        },
+        expRate: Rate.MediumFast,
+        catchRate: 255
+    },
+    12: {
+        id: 10,
+        name: Pokedex[7].name,
+        desc: Pokedex[7].desc,
+        types: [
+            Type.Bug
+        ],
+        genderRatio: 50,
+        abilities: {
+            ability1: Ability.ShieldDust,
+            abilityRatio: 100,
+            abilitySecret: Ability.RunAway
+        },
+        evolves: 7,
+        base: {
+            hp: 45,
+            atk: 30,
+            def: 35,
+            spatk: 20,
+            spdef: 20,
+            spd: 45
+        },
+        learnset: Learnset.Caterpie.LevelUp,
+        evYield: {
+            stat: Stat.HP,
             amt: 1
         },
         expRate: Rate.MediumFast,
