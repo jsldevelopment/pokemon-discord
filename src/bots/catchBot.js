@@ -14,7 +14,7 @@ const catchBot = {
 
         let messageManager = new MessageManager(discordClient);
 
-        discordClient.once('ready', async () => {
+        discordClient.once('ready', async() => {
             console.log(`catchBot: ready to serve ${userMap.size} users`);
         });
 
@@ -30,8 +30,10 @@ const catchBot = {
                 messageManager.setCommandDetails();
                 const cmdId = interaction.commandName;
 
+                // each search area should check what 'route' the user is in
+                // and pull based on that
                 if (cmdId === 'search') {
-                    
+
                     if (currentUser.isInBattle) return await messageManager.replyAlreadyInBattle();
 
                     // currently hard coded to encounter caterpie
@@ -56,7 +58,7 @@ const catchBot = {
                 // guard clause to prevent users from interacting with prompts they did not initiate
                 if (currentUser.id != btnId.split('|')[1]) return messageManager.replyNotYourBattle();
 
-                if (btnId.match(/attackPokemon[1-9]*/)){
+                if (btnId.match(/attackPokemon[1-9]*/)) {
 
                     // await messageManager.deleteThisMessage();
                     console.log('Begin battle...');
@@ -64,13 +66,13 @@ const catchBot = {
                     const message = await messages.msgStartBattle(generated, userId);
                     await messageManager.updateMessage(message);
 
-                } else if (btnId.match(/swapPokemon[1-9]*/)){
+                } else if (btnId.match(/swapPokemon[1-9]*/)) {
 
                     await messageManager.deleteThisMessage();
                     console.log('Swapping pokemon...');
                     // IMPLEMENT SWAP LOGIC
 
-                } else if (btnId.match(/catchPokemon[1-9]*/)){
+                } else if (btnId.match(/catchPokemon[1-9]*/)) {
 
                     // implement logic for catch rates etc
                     await messageManager.deleteThisMessage();
@@ -81,8 +83,8 @@ const catchBot = {
                     currentUser.battling = {};
 
 
-                } else if (btnId.match(/runPokemon[1-9]*/)){
-                    
+                } else if (btnId.match(/runPokemon[1-9]*/)) {
+
                     await messageManager.deleteThisMessage();
                     // reset user battle settings
                     currentUser.isInBattle = false;
