@@ -67,16 +67,52 @@ exports.Learnset = {
     "Charmander": {
         "LevelUp": [
             {
-                move: Move.Tackle,
+                move: Move.Scratch,
                 learned: 1
             },
             {
-                move: Move.StringShot,
+                move: Move.Growl,
                 learned: 1
             },
             {
-                move: Move.BugBite,
-                learned: 9
+                move: Move.Ember,
+                learned: 4
+            },
+            {
+                move: Move.Smokescreen,
+                learned: 8
+            },
+            {
+                move: Move.DragonBreath,
+                learned: 12
+            },
+            {
+                move: Move.FireFang,
+                learned: 17
+            },
+            {
+                move: Move.Slash,
+                learned: 20
+            },
+            {
+                move: Move.Flamethrower,
+                learned: 24
+            },
+            {
+                move: Move.ScaryFace,
+                learned: 28
+            },
+            {
+                move: Move.FireSpin,
+                learned: 32
+            },
+            {
+                move: Move.Inferno,
+                learned: 36
+            },
+            {
+                move: Move.FlareBlitz,
+                learned: 40
             }
         ]
     },
@@ -87,12 +123,56 @@ exports.Learnset = {
                 learned: 1
             },
             {
-                move: Move.StringShot,
+                move: Move.TailWhip,
                 learned: 1
             },
             {
-                move: Move.BugBite,
+                move: Move.WaterGun,
+                learned: 3
+            },
+            {
+                move: Move.Withdraw,
+                learned: 6
+            },
+            {
+                move: Move.RapidSpin,
                 learned: 9
+            },
+            {
+                move: Move.Bite,
+                learned: 12
+            },
+            {
+                move: Move.WaterPulse,
+                learned: 15
+            },
+            {
+                move: Move.Protect,
+                learned: 18
+            },
+            {
+                move: Move.RainDance,
+                learned: 21
+            },
+            {
+                move: Move.AquaTail,
+                learned: 24
+            },
+            {
+                move: Move.ShellSmash,
+                learned: 27
+            },
+            {
+                move: Move.IronDefense,
+                learned: 30
+            },
+            {
+                move: Move.HydroPump,
+                learned: 33
+            },
+            {
+                move: Move.SkullBash,
+                learned: 36
             }
         ]
     },
@@ -131,16 +211,84 @@ exports.Learnset = {
     "Pikachu": {
         "LevelUp": [
             {
-                move: Move.Tackle,
+                move: Move.PlayNice,
                 learned: 1
             },
             {
-                move: Move.StringShot,
+                move: Move.SweetKiss,
                 learned: 1
             },
             {
-                move: Move.BugBite,
-                learned: 9
+                move: Move.Nuzzle,
+                learned: 1
+            },
+            {
+                move: Move.NastyPlot,
+                learned: 1
+            },
+            {
+                move: Move.Charm,
+                learned: 1
+            },
+            {
+                move: Move.ThunderShock,
+                learned: 1
+            },
+            {
+                move: Move.TailWhip,
+                learned: 1
+            },
+            {
+                move: Move.Growl,
+                learned: 1
+            },
+            {
+                move: Move.QuickAttack,
+                learned: 1
+            },
+            {
+                move: Move.ThunderWave,
+                learned: 4
+            },
+            {
+                move: Move.DoubleTeam,
+                learned: 8
+            },
+            {
+                move: Move.ElectroBall,
+                learned: 12
+            },
+            {
+                move: Move.Feint,
+                learned: 16
+            },
+            {
+                move: Move.Spark,
+                learned: 20
+            },
+            {
+                move: Move.Agility,
+                learned: 24
+            },
+            {
+                move: Move.Slam,
+                learned: 28
+            },
+            {
+                move: Move.Discharge,
+                learned: 32
+            },
+            {
+                move: Move.Thunderbolt,
+                learned: 36
+            },
+            {
+                move: Move.LightScreen,
+                learned: 40
+            },
+            {
+                move: Move.Thunder,
+                learned: 44
             }
         ]
     },

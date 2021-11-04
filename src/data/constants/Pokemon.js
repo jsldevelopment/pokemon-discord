@@ -19,6 +19,7 @@ module.exports = {
             abilitySecret: Ability.Chlorophyll
         },
         evolves: 16,
+        // TODO: evolves into
         base: {
             hp: 45,
             atk: 49,
@@ -97,8 +98,8 @@ module.exports = {
     },
     10: {
         id: 10,
-        name: Pokedex[7].name,
-        desc: Pokedex[7].desc,
+        name: Pokedex[10].name,
+        desc: Pokedex[10].desc,
         types: [
             Type.Bug
         ],
@@ -127,8 +128,8 @@ module.exports = {
     },
     13: {
         id: 13,
-        name: Pokedex[7].name,
-        desc: Pokedex[7].desc,
+        name: Pokedex[13].name,
+        desc: Pokedex[13].desc,
         types: [
             Type.Bug,
             Type.Poison
@@ -158,8 +159,8 @@ module.exports = {
     },
     25: {
         id: 25,
-        name: Pokedex[7].name,
-        desc: Pokedex[7].desc,
+        name: Pokedex[25].name,
+        desc: Pokedex[25].desc,
         types: [
             Type.Electric,
         ],
