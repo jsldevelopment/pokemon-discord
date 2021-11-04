@@ -48,9 +48,9 @@ const messages = {
         }
     },
 
-    msgStartBattle: async function(pokemon, id) {
-        const file = new MessageAttachment(`./src/data/img/icons/${pokemon.id}.png`);
-        const embed = [embeds.battleStartEmbed(pokemon)];
+    msgStartBattle: async function(currentPokemon, opPokemon, id) {
+        const file = new MessageAttachment(`./src/data/img/icons/${opPokemon.id}.png`);
+        const embed = [embeds.battleStartEmbed(currentPokemon, opPokemon)];
         const embedRows = buttons.rowBattle(id);
         return {
             embeds: embed,

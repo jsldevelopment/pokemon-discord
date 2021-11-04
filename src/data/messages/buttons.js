@@ -62,29 +62,29 @@ const buttons = {
         .setCustomId('confirmRegistration')
         .setStyle('PRIMARY')
         .setLabel('Confirm'),
-    btnAttack: (id) => {
+    btnFight: (id) => {
         return new MessageButton()
-            .setCustomId('attackPokemon|' + id)
+            .setCustomId('fight|' + id)
             .setStyle('PRIMARY')
-            .setLabel('Attack')
+            .setLabel('Fight')
     },
-    btnSwap: (id) => {
+    btnParty: (id) => {
         return new MessageButton()
-            .setCustomId('swapPokemon|' + id)
+            .setCustomId('party|' + id)
             .setStyle('PRIMARY')
-            .setLabel('Swap')
+            .setLabel('Party')
     },
-    btnCatch: (id) => {
+    btnItem: (id) => {
         return new MessageButton()
-            .setCustomId('catchPokemon|' + id)
+            .setCustomId('item|' + id)
             .setStyle('PRIMARY')
-            .setLabel('Catch')
+            .setLabel('Items')
     },
     btnRun: (id) => {
         return new MessageButton()
-            .setCustomId('runPokemon|' + id)
+            .setCustomId('run|' + id)
             .setStyle('PRIMARY')
-            .setLabel('Run')
+            .setLabel('Run Away')
     }
 
 }
@@ -97,9 +97,9 @@ const buttonRows = {
     rowConfirmRegistration: new MessageActionRow().addComponents(buttons.btnConfirmRegistration),
     rowBattle: (id) => {
         return new MessageActionRow().addComponents(
-            buttons.btnAttack(id),
-            buttons.btnSwap(id),
-            buttons.btnCatch(id),
+            buttons.btnFight(id),
+            buttons.btnParty(id),
+            buttons.btnItem(id),
             buttons.btnRun(id))
     }
 

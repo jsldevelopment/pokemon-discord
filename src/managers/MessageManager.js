@@ -1,7 +1,7 @@
 class MessaageManager {
 
     // set initial interaction deets
-    constructor (client) {
+    constructor(client) {
         this.client = client;
     }
 
@@ -9,74 +9,74 @@ class MessaageManager {
         this.interaction = interaction;
     }
 
-    setButtonDetails(){
+    setButtonDetails() {
         this.message = this.interaction.message.id;
         this.author = this.interaction.message.author.id;
         this.channel = this.interaction.message.channelId;
     }
 
-    setCommandDetails(){
+    setCommandDetails() {
         this.channel = this.interaction.channelId;
     }
 
     // general messaging
-    async replyMessage (message) {
-    
+    async replyMessage(message) {
+
         await this.interaction.reply(message);
 
     }
 
-    async replyEphemeralMessage (message) {
+    async replyEphemeralMessage(message) {
 
-        await this.interaction.reply({ ...message, ephemeral: true });
+        await this.interaction.reply({...message, ephemeral: true });
 
     }
 
-    async updateMessage (message) {
+    async updateMessage(message) {
 
         await this.interaction.update(message);
-    
+
     }
 
-    async editMessage (message) {
+    async editMessage(message) {
 
         await this.interaction.editReply(message);
-    
+
     }
-    
-    
-    async sendDirectMessage (member, message) {
-        
+
+
+    async sendDirectMessage(member, message) {
+
         await member.send(message);
-        
+
     }
-    
+
     // update this to send a message id and then delete that message id on finish loading
-    async sendLoadingMessage (member) {
-        
+    async sendLoadingMessage(member) {
+
         await member.send({ content: 'Please wait...' })
             .then((res) => {
                 this.loadingMessageId = res.id;
             })
-        
-    }
-    
-    // predefined messages
-    async sendRegisteredMessage (member) {
-        
-        await member.send({ content: 'You have been succesfully registered.' });
-        
+
     }
 
-    async sendCapturedBroadcast (user, pokemon) {
+    // predefined messages
+    async sendRegisteredMessage(member) {
+
+        await member.send({ content: 'You have been succesfully registered.' });
+
+    }
+
+    async sendCapturedBroadcast(user, pokemon) {
 
         const channel = await this.getChannel();
         channel.send({ content: `${user.username} has succesfully caught a level ${pokemon.level} ${pokemon.name}` });
-        
+
     }
 
     // delete functions
-    async deleteThisMessage () {
+    async deleteThisMessage() {
 
         this.client.channels.fetch(this.channel)
             .then((ch) => {
@@ -85,7 +85,7 @@ class MessaageManager {
                 }).then(messages => {
                     const msgs = messages.filter(m => m.author.id === this.author)
                     msgs.forEach(m => {
-                        if(m.id === this.message){
+                        if (m.id === this.message) {
                             m.delete();
                         }
                     })
@@ -93,7 +93,7 @@ class MessaageManager {
             })
     }
 
-    async deleteLoadingMessage () {
+    async deleteLoadingMessage() {
 
         const channel = await this.getChannel();
         await channel.fetch(this.loadingMessageId).then((msg) => {
@@ -103,20 +103,28 @@ class MessaageManager {
     }
 
     // CONST EPHEMERAL ALERT MESSAGES
-    async replyAlreadyInBattle () {
-        await this.interaction.reply({ content: "Please exit your current battle before searching for another..." , ephemeral: true });
+    async replyAlreadyInBattle() {
+        await this.interaction.reply({ content: "Please exit your current battle before searching for another...", ephemeral: true });
     }
 
-    async replyNotYourBattle () {
+    async replyNotYourBattle() {
         await this.interaction.reply({ content: "This is not your battle!", ephemeral: true });
     }
 
-    async replyNoPokemonInSlot () {
+    async replyNoPokemonInSlot() {
         await this.interaction.reply({ content: "You don't have a pokemon in that slot!", ephemeral: true });
     }
 
+    async couldntGetAway(message) {
+        await this.interaction.update(message);
+    }
+
+    async gotAwaySafely() {
+        await this.interaction.reply({ content: "Got away safely!", ephemeral: true });
+    }
+
     //util
-    async getChannel(){
+    async getChannel() {
         return await this.client.channels.fetch(this.channel);
     }
 

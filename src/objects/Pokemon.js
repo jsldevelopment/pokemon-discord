@@ -14,10 +14,11 @@ class Pokemon {
         this.name = name;
         this.id = id;
         this.types = types;
-        this.level = level; 
+        this.level = level;
         this.evolves = evolves;
         this.base = base;
         this.stats = stats;
+        this.currentStats = stats;
         this.gender = gender;
         this.ability = ability;
         this.nature = nature;
@@ -25,7 +26,7 @@ class Pokemon {
         this.evs = evs;
         this.moves = moves;
         this.learnset = learnset;
-        
+
     }
 
 }

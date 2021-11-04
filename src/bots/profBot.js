@@ -94,6 +94,7 @@ const profBot = {
 
                     await messageManager.deleteThisMessage();
                     let starter1gen = await generatePokemon(label.split("|")[1], 20);
+                    starter1gen.currentStats = starter1gen.stats;
                     queries.insertPokemon(dbClient, { owner_id: userId, pokemon_id: starter1gen.uuid, pokemon: starter1gen });
                     registeringUsers.set(userId, {...registeringUsers.get(userId), starter: starter1gen });
                     await messageManager.sendDirectMessage(memObj, messages.msgConfirmRegistration);
