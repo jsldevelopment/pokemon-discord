@@ -2,6 +2,7 @@ const { MessageActionRow, MessageButton } = require('discord.js');
 
 const buttons = {
 
+    // REGISTRATION BUTTONS
     btnBeginRegistration: new MessageButton()
         .setCustomId('beginRegistration')
         .setStyle('PRIMARY')
@@ -62,6 +63,7 @@ const buttons = {
         .setCustomId('confirmRegistration')
         .setStyle('PRIMARY')
         .setLabel('Confirm'),
+    // BATTLE START MESSAGES
     btnFight: (id) => {
         return new MessageButton()
             .setCustomId('fight|' + id)
@@ -85,6 +87,88 @@ const buttons = {
             .setCustomId('run|' + id)
             .setStyle('PRIMARY')
             .setLabel('Run Away')
+    },
+    // ITEMS 
+    btnCatch: (id) => {
+        return new MessageButton()
+            .setCustomId('catch|' + id)
+            .setStyle('PRIMARY')
+            .setLabel('PokeBall')
+    },
+    btnHeal: (id) => {
+        return new MessageButton()
+            .setCustomId('heal|' + id)
+            .setStyle('PRIMARY')
+            .setLabel('Potion')
+    },
+    // MOVES
+    btnMove1: (id) => {
+        return new MessageButton()
+            .setCustomId('catch|' + id)
+            .setStyle('PRIMARY')
+            .setLabel('PokeBall')
+    },
+    btnMove2: (id) => {
+        return new MessageButton()
+            .setCustomId('heal|' + id)
+            .setStyle('PRIMARY')
+            .setLabel('Potion')
+    },
+    btnMove3: (id) => {
+        return new MessageButton()
+            .setCustomId('heal|' + id)
+            .setStyle('PRIMARY')
+            .setLabel('Potion')
+    },
+    btnMove4: (id) => {
+        return new MessageButton()
+            .setCustomId('heal|' + id)
+            .setStyle('PRIMARY')
+            .setLabel('Potion')
+    },
+    // PARTY BUTTONS
+    btnParty1: (id) => {
+        return new MessageButton()
+            .setCustomId('catch|' + id)
+            .setStyle('PRIMARY')
+            .setLabel('PokeBall')
+    },
+    btnParty2: (id) => {
+        return new MessageButton()
+            .setCustomId('heal|' + id)
+            .setStyle('PRIMARY')
+            .setLabel('Potion')
+    },
+    btnParty3: (id) => {
+        return new MessageButton()
+            .setCustomId('heal|' + id)
+            .setStyle('PRIMARY')
+            .setLabel('Potion')
+    },
+    btnParty4: (id) => {
+        return new MessageButton()
+            .setCustomId('heal|' + id)
+            .setStyle('PRIMARY')
+            .setLabel('Potion')
+    },
+    btnParty5: (id) => {
+        return new MessageButton()
+            .setCustomId('heal|' + id)
+            .setStyle('PRIMARY')
+            .setLabel('Potion')
+    },
+    btnParty6: (id) => {
+        return new MessageButton()
+            .setCustomId('heal|' + id)
+            .setStyle('PRIMARY')
+            .setLabel('Potion')
+    },
+    // GO BACK TO BATTLE MENU
+    btnBack: (id) => {
+        return new MessageButton()
+            .setCustomId('back|' + id)
+            .setStyle('PRIMARY')
+            .setLabel('Back')
     }
 
 }
@@ -101,8 +185,25 @@ const buttonRows = {
             buttons.btnParty(id),
             buttons.btnItem(id),
             buttons.btnRun(id))
+    },
+    rowItem: (id) => {
+        return new MessageActionRow().addComponents(
+            buttons.btnCatch(id),
+            buttons.btnHeal(id),
+            buttons.btnBack(id))
+    },
+    rowParty: (id) => {
+        return new MessageActionRow().addComponents(
+            buttons.btnCatch(id),
+            buttons.btnHeal(id),
+            buttons.btnBack(id))
+    },
+    rowFight: (id) => {
+        return new MessageActionRow().addComponents(
+            buttons.btnCatch(id),
+            buttons.btnHeal(id),
+            buttons.btnBack(id))
     }
-
 }
 
 exports.buttons = buttonRows;

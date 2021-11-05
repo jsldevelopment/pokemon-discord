@@ -38,27 +38,71 @@ const messages = {
     },
 
     msgShowPokemon: async function(pokemon) {
-        console.log(pokemon);
         const file = new MessageAttachment(`./src/data/img/icons/${pokemon.id}.png`);
         const embed = [embeds.pokemonEmbed(pokemon)];
-        // console.log(embed);
         return {
             embeds: embed,
             files: [file]
         }
     },
 
-    msgStartBattle: async function(currentPokemon, opPokemon, id) {
+    msgBattle: async function(currentPokemon, opPokemon, id, description) {
         const file = new MessageAttachment(`./src/data/img/icons/${opPokemon.id}.png`);
         const embed = [embeds.battleStartEmbed(currentPokemon, opPokemon)];
         const embedRows = buttons.rowBattle(id);
+        if (description) {
+            embed[0].description = description;
+        }
+        return {
+            embeds: embed,
+            components: [embedRows],
+            files: [file]
+        }
+    },
+
+    msgItems: async function(currentPokemon, opPokemon, id, description) {
+        const file = new MessageAttachment(`./src/data/img/icons/${opPokemon.id}.png`);
+        const embed = [embeds.battleStartEmbed(currentPokemon, opPokemon)];
+        const embedRows = buttons.rowItem(id);
+        if (description) {
+            embed[0].description = description;
+        }
+        return {
+            embeds: embed,
+            components: [embedRows],
+            files: [file]
+        }
+    },
+
+    msgParty: async function(currentPokemon, opPokemon, id, description) {
+        const file = new MessageAttachment(`./src/data/img/icons/${opPokemon.id}.png`);
+        const embed = [embeds.battleStartEmbed(currentPokemon, opPokemon)];
+        // generate rows based on team members
+        const embedRows = buttons.rowItem(id);
+        if (description) {
+            embed[0].description = description;
+        }
+        return {
+            embeds: embed,
+            components: [embedRows],
+            files: [file]
+        }
+    },
+
+    msgFight: async function(currentPokemon, opPokemon, id, description) {
+        const file = new MessageAttachment(`./src/data/img/icons/${opPokemon.id}.png`);
+        const embed = [embeds.battleStartEmbed(currentPokemon, opPokemon)];
+        // generate rows based on available moves
+        const embedRows = buttons.rowItem(id);
+        if (description) {
+            embed[0].description = description;
+        }
         return {
             embeds: embed,
             components: [embedRows],
             files: [file]
         }
     }
-
 }
 
 module.exports = messages;

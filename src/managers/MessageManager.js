@@ -44,6 +44,17 @@ class MessaageManager {
 
     }
 
+    async deferUpdate() {
+
+        await this.interaction.deferUpdate();
+
+    }
+
+    async deferReply() {
+
+        await this.interaction.deferReply();
+
+    }
 
     async sendDirectMessage(member, message) {
 
@@ -72,6 +83,13 @@ class MessaageManager {
 
         const channel = await this.getChannel();
         channel.send({ content: `${user.username} has succesfully caught a level ${pokemon.level} ${pokemon.name}` });
+
+    }
+
+    async sendRunAwayBroadcast(user, pokemon) {
+
+        const channel = await this.getChannel();
+        channel.send({ content: `${user.username} has fled from a level ${pokemon.level} ${pokemon.name}` });
 
     }
 
@@ -119,8 +137,8 @@ class MessaageManager {
         await this.interaction.update(message);
     }
 
-    async gotAwaySafely() {
-        await this.interaction.reply({ content: "Got away safely!", ephemeral: true });
+    async gotAwaySafely(message) {
+        await this.interaction.editReply({...message });
     }
 
     //util

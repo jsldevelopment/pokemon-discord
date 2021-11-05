@@ -80,7 +80,6 @@ const getMoves = (learnset, level) => {
         // grab all moves available, or if more than 4, a random lot
         for (let i = 0; i < x; i++) {
             let moveNum = (Math.floor(Math.random() * available.length));
-            console.log(`Adding move ${JSON.stringify(available[moveNum].move.name)} to movesList`);
             movesArr.push(available[moveNum].move);
             available.splice(moveNum, 1);
         }
@@ -100,6 +99,5 @@ const getMoves = (learnset, level) => {
 
 const getAbility = (raw) => {
     const ab = Math.floor(Math.random() * 101) < raw.abilities.abilityRatio ? raw.abilities.ability1 : raw.abilities.ability2;
-    console.log(ab);
     return ab;
 }

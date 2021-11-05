@@ -3,6 +3,7 @@ const MessageManager = require('../managers/MessageManager');
 
 // fxns
 const generatePokemon = require('../util/generatePokemon.js');
+const { sleep } = require('../util/getDiscordInfo');
 
 // data
 const messages = require('../data/messages/messages.js');
@@ -41,85 +42,97 @@ const catchBot = {
                     // check again for level
                     const generated = await generatePokemon(wildPokemon, 5);
                     // start encounter between user and generated mon
-                    const message = await messages.msgStartBattle(currentUser.party[0], generated, userId);
+                    const message = await messages.msgBattle(currentUser.party[0], generated, userId, "What will you do?");
                     // reply with battle prompt
                     await messageManager.replyMessage(message);
 
                     // lock user into battle
                     currentUser.isInBattle = true;
-                    currentUser.battling = generated;
-                    currentUser.escapeAttempts = 0;
+                    currentUser.battling = {
+                        opponent: generated,
+                        turns: 0,
+                        escapes: 0
+                    }
 
                 }
 
             } else if (interaction.isMessageComponent()) {
 
                 const btnId = interaction.customId;
+                let curPokemon;
+                let opPokemon;
 
                 messageManager.setButtonDetails();
 
                 // guard clause to prevent users from interacting with prompts they did not initiate
                 if (currentUser.id != btnId.split('|')[1]) return messageManager.replyNotYourBattle();
 
+                // if user is in battle, grab a reference to both pokemon
+                if (currentUser.battling) {
+                    curPokemon = currentUser.party[0];
+                    opPokemon = currentUser.battling.opponent;
+                }
+
                 if (btnId.match(/fight\|[1-9]*/)) {
 
-                    // bring up moves list
-                    // await messageManager.deleteThisMessage();
-                    console.log('Begin battle...');
-                    const generated = await generatePokemon(10, 5);
-                    const message = await messages.msgStartBattle(generated, userId);
-                    await messageManager.updateMessage(message);
+                    // bring up item menu
+                    const message = await messages.msgItems(curPokemon, opPokemon, userId, "Use which item?");
+                    await interaction.update(message);
 
                 } else if (btnId.match(/party\|[1-9]*/)) {
 
-                    // bring up list of party members
-
-                    await messageManager.deleteThisMessage();
-                    console.log('Swapping pokemon...');
-                    // IMPLEMENT SWAP LOGIC
+                    // bring up item menu
+                    const message = await messages.msgItems(curPokemon, opPokemon, userId, "Use which item?");
+                    await interaction.update(message);
 
                 } else if (btnId.match(/item\|[1-9]*/)) {
 
                     // bring up item menu
+                    const message = await messages.msgItems(curPokemon, opPokemon, userId, "Use which item?");
+                    await interaction.update(message);
 
-                    // implement logic for catch rates etc
-                    await messageManager.deleteThisMessage();
-                    currentUser.party[currentUser.party.length] = currentUser.battling;
-                    await messageManager.sendCapturedBroadcast(currentUser, currentUser.battling);
-                    // reset user battle settings
-                    currentUser.isInBattle = false;
-                    currentUser.battling = {};
-
+                    // lets get this working today  
                 } else if (btnId.match(/run\|[1-9]*/)) {
 
-                    const curPokemon = currentUser.party[0];
-                    const opPokemon = currentUser.battling;
-                    // logic to check speeds
-                    console.log("Your speed " + curPokemon.stats.spd);
-                    console.log("Enemy speed " + opPokemon.stats.spd);
+                    // attempt to run away
+                    interaction.deferUpdate();
+                    await sleep(500);
+                    const message = await messages.msgBattle(curPokemon, opPokemon, userId, "Attempting to run away...");
+                    await interaction.editReply(message);
 
+                    let escaped = (((currentUser.party[0].stats.spd * 128) / currentUser.battling.opponent.stats.spd) + 30 * currentUser.battling.escapes) % 256;
+                    console.log(`Escape attempt ${currentUser.battling.escapes} : ${escaped}`);
+                    await sleep(1500);
 
-
-                    // formula for escape
-                    // revise this
-                    let escaped = (((currentUser.party[0].stats.spd * 128) / currentUser.battling.stats.spd) + 30 * currentUser.escapeAttempts) % 256;
-                    console.log(`Escape attempt ${currentUser.escapeAttempts}`);
                     if (Math.random() * 101 < escaped) {
+
                         await messageManager.deleteThisMessage();
-                        await messageManager.gotAwaySafely();
-                        // reset user battle settings
-                        currentUser.isInBattle = false;
-                        currentUser.battling = {};
+                        await messageManager.sendRunAwayBroadcast(currentUser, opPokemon);
+                        resetUser(currentUser);
+
                     } else {
-                        currentUser.escapeAttempts++;
-                        const message = await messages.msgStartBattle(curPokemon, opPokemon, userId);
-                        await messageManager.couldntGetAway(message);
+
+                        currentUser.battling.escapes++;
+                        const message = await messages.msgBattle(curPokemon, opPokemon, userId, "Couldn't get away!");
+                        await interaction.editReply(message);
+
                     }
 
+                } else if (btnId.match(/back\|[1-9]*/)) {
+
+                    const message = await messages.msgBattle(curPokemon, opPokemon, userId, "What will you do?");
+                    await interaction.update(message);
 
                 }
             }
+
         });
+
+        const resetUser = (user) => {
+
+            user.isInBattle = false;
+            user.battling = {}
+        }
 
         discordClient.login(token);
 

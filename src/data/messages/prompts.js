@@ -207,7 +207,7 @@ const battleStartEmbed = (curPokemon, opPokemon) => {
     return {
         color: promptColors[opPokemon.types[0]],
         title: `A wild Lvl. ${opPokemon.level} ${opPokemon.name} appears...`,
-        description: " ",
+        description: "The battle begins...",
         thumbnail: {
             url: `attachment://${opPokemon.id}.png`,
         },
@@ -226,6 +226,11 @@ const battleStartEmbed = (curPokemon, opPokemon) => {
     }
 }
 
+// create prompt for pokemon
+const gotAwayEmbed = {
+    description: "Got away safely!"
+}
+
 const promptColors = {
     "grass": 0x249225,
     "bug": 0x61E9AA
@@ -240,6 +245,7 @@ module.exports = {
         embedConfirm,
         profileEmbed,
         pokemonEmbed,
-        battleStartEmbed
+        battleStartEmbed,
+        gotAwayEmbed
     }
 };

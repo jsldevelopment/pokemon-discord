@@ -1,26 +1,26 @@
 const { guildId } = require('../../config.json');
 
-module.exports = {
+exports.getGuild = async function(client) {
 
-    getGuild: async function(client) {
+    if (!client) return;
+    return await client.guilds.cache.get(guildId);
 
-        if(!client) return;
-        return await client.guilds.cache.get(guildId);
-
-    },
-    
-    getMember: async function(client, id) {
-        
-        if(!client) return;
-        return member = await client.guilds.cache.get(guildId).members.fetch(id);
-
-    },
-
-    getRole: async function(client, roleId) {
-
-        if(!client) return;
-        return await client.guilds.cache.get(guildId).roles.cache.find(role => role.name === roleId);
-        
-    }
 }
-        
+
+exports.getMember = async function(client, id) {
+
+    if (!client) return;
+    return member = await client.guilds.cache.get(guildId).members.fetch(id);
+
+}
+
+exports.getRole = async function(client, roleId) {
+
+    if (!client) return;
+    return await client.guilds.cache.get(guildId).roles.cache.find(role => role.name === roleId);
+
+}
+
+exports.sleep = function(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
