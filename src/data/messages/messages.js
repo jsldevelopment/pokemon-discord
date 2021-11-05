@@ -74,11 +74,11 @@ const messages = {
         }
     },
 
-    msgParty: async function(currentPokemon, opPokemon, id, description) {
+    msgParty: async function(curPokemon, party, opPokemon, id, description) {
         const file = new MessageAttachment(`./src/data/img/icons/${opPokemon.id}.png`);
-        const embed = [embeds.battleStartEmbed(currentPokemon, opPokemon)];
+        const embed = [embeds.battleStartEmbed(curPokemon, opPokemon)];
         // generate rows based on team members
-        const embedRows = buttons.rowItem(id);
+        const embedRows = buttons.rowParty(party, id);
         if (description) {
             embed[0].description = description;
         }
@@ -93,7 +93,7 @@ const messages = {
         const file = new MessageAttachment(`./src/data/img/icons/${opPokemon.id}.png`);
         const embed = [embeds.battleStartEmbed(currentPokemon, opPokemon)];
         // generate rows based on available moves
-        const embedRows = buttons.rowItem(id);
+        const embedRows = buttons.rowFight(currentPokemon, id);
         if (description) {
             embed[0].description = description;
         }

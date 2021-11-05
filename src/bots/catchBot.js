@@ -75,26 +75,22 @@ const catchBot = {
 
                 if (btnId.match(/fight\|[1-9]*/)) {
 
-                    // bring up item menu
-                    const message = await messages.msgItems(curPokemon, opPokemon, userId, "Use which item?");
+                    const message = await messages.msgFight(curPokemon, opPokemon, userId, "Pick a move!");
                     await interaction.update(message);
 
                 } else if (btnId.match(/party\|[1-9]*/)) {
 
-                    // bring up item menu
-                    const message = await messages.msgItems(curPokemon, opPokemon, userId, "Use which item?");
+                    console.log('here');
+                    const message = await messages.msgParty(curPokemon, currentUser.party.slice(1), opPokemon, userId, "Select a pokemon!");
                     await interaction.update(message);
 
                 } else if (btnId.match(/item\|[1-9]*/)) {
 
-                    // bring up item menu
                     const message = await messages.msgItems(curPokemon, opPokemon, userId, "Use which item?");
                     await interaction.update(message);
 
-                    // lets get this working today  
                 } else if (btnId.match(/run\|[1-9]*/)) {
 
-                    // attempt to run away
                     interaction.deferUpdate();
                     await sleep(500);
                     const message = await messages.msgBattle(curPokemon, opPokemon, userId, "Attempting to run away...");
@@ -122,6 +118,16 @@ const catchBot = {
 
                     const message = await messages.msgBattle(curPokemon, opPokemon, userId, "What will you do?");
                     await interaction.update(message);
+
+                } else if (btnId.match(/catch\|[1-9]*/)) {
+
+                    // implement logic for catch rates etc
+                    await messageManager.deleteThisMessage();
+                    currentUser.party[currentUser.party.length] = currentUser.battling;
+                    await messageManager.sendCapturedBroadcast(currentUser, currentUser.battling);
+                    // reset user battle settings
+                    currentUser.isInBattle = false;
+                    currentUser.battling = {};
 
                 }
             }
