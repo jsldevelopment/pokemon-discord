@@ -1,4 +1,5 @@
-class MessaageManager {
+const { buttons } = require('../data/messages/buttons');
+class MessageManager {
 
     // set initial interaction deets
     constructor(client) {
@@ -146,6 +147,29 @@ class MessaageManager {
         return await this.client.channels.fetch(this.channel);
     }
 
+    // thread stuff
+    async createThread(user, battle) {
+
+        const thisChannel = await this.getChannel();
+
+        const hook = await thisChannel.createWebhook('test-hook', {
+            type: 3,
+            avatar: 'https://i.imgur.com/AfFp7pu.png',
+        });
+
+        const thread = await thisChannel.threads.create({
+            name: `${user.name}'s battle --'`,
+            autoArchiveDuration: 60,
+        });
+
+        const msg = await hook.send({
+            content: "test content",
+            embeds: battle.embeds,
+            components: battle.components,
+            threadId: thread.id.toString()
+        })
+
+    }
 }
 
-module.exports = MessaageManager;
+module.exports = MessageManager;
