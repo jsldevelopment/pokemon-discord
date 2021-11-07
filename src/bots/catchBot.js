@@ -1,6 +1,6 @@
 // objs
 const MessageManager = require('../managers/MessageManager');
-const { WebhookClient } = require('discord.js');
+const WebhookManager = require('../managers/WebhookManager');
 
 // fxns
 const generatePokemon = require('../util/generatePokemon.js');
@@ -9,17 +9,25 @@ const { sleep } = require('../util/getDiscordInfo');
 // data
 const messages = require('../data/messages/messages.js');
 const userMap = require('../data/userMap.js');
-const { catchWebhookId, catchWebhookToken } = require('../../config.json');
 
 const catchBot = {
 
     start: function(discordClient, dbClient, token, guild) {
 
-        const webhookClient = new WebhookClient({ id: catchWebhookId, token: catchWebhookToken });
         let messageManager = new MessageManager(discordClient);
 
         discordClient.once('ready', async() => {
+
             console.log(`catchBot: ready to serve ${userMap.size} users`);
+            // delete all previous created hooks on load
+            console.log('cleaning up previous hooks');
+
+            // get clients
+            this.webhookManager = new WebhookManager(discordClient, guild);
+            // await webhookManager.clearHooks("901552865607319562");
+            // await webhookManager.clearHooks("906591928114614344");
+            // await webhookManager.createHook("906591928114614344");
+
         });
 
         discordClient.on('interactionCreate', async interaction => {
@@ -47,8 +55,12 @@ const catchBot = {
                     const generated = await generatePokemon(wildPokemon, 5);
                     // start encounter between user and generated mon
                     const message = await messages.msgBattle(currentUser.party[0], generated, userId, "What will you do?");
-                    // reply with battle prompt
-                    await messageManager.createThread(currentUser, message);
+                    // // reply with battle prompt]
+                    await messageManager.replyMessage({ content: "Battle Found!", ephemeral: true });
+                    // console.log(newMessage);
+                    const threadId = await messageManager.createThread(currentUser);
+                    const hook = await this.webhookManager.getHook(interaction.channelId);
+                    await hook.send({...message, threadId: threadId });
 
                     // lock user into battle
                     currentUser.isInBattle = true;
@@ -107,8 +119,9 @@ const catchBot = {
                     if (Math.random() * 101 < escaped) {
 
                         await messageManager.deleteThisMessage();
-                        await messageManager.sendRunAwayBroadcast(currentUser, opPokemon);
-                        resetUser(currentUser);
+                        // await messageManager.sendRunAwayBroadcast(currentUser, opPokemon);
+                        await messageManager.endBattle(currentUser.username);
+                        // resetUser(currentUser);
 
                     } else {
 

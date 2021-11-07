@@ -1,4 +1,4 @@
-const { buttons } = require('../data/messages/buttons');
+const { getGuild } = require('../util/getDiscordInfo');
 class MessageManager {
 
     // set initial interaction deets
@@ -23,7 +23,7 @@ class MessageManager {
     // general messaging
     async replyMessage(message) {
 
-        await this.interaction.reply(message);
+        return await this.interaction.reply({...message, fetchReply: true });
 
     }
 
@@ -148,28 +148,32 @@ class MessageManager {
     }
 
     // thread stuff
-    async createThread(user, battle) {
+    async createThread(user) {
 
         const thisChannel = await this.getChannel();
 
-        const hook = await thisChannel.createWebhook('test-hook', {
-            type: 3,
-            avatar: 'https://i.imgur.com/AfFp7pu.png',
-        });
-
         const thread = await thisChannel.threads.create({
-            name: `${user.name}'s battle --'`,
-            autoArchiveDuration: 60,
+            name: `${user.username}'s battle --`,
+            autoArchiveDuration: 60
         });
 
-        const msg = await hook.send({
-            content: "test content",
-            embeds: battle.embeds,
-            components: battle.components,
-            threadId: thread.id.toString()
-        })
+        return thread.id;
 
     }
+
+    async endBattle(name) {
+
+        const thisChannel = await this.getChannel();
+        await thisChannel.delete();
+        // console.log(`delete ${name}'s battle...'`);
+        // // remove from cache here
+        // // const thread = await thisChannel.threads.find(x => x.name === `${name}'s battle --`);
+        // const thread = await thisChannel.threads;
+        // console.log(thread);
+        // await thread.delete();
+
+    }
+
 }
 
 module.exports = MessageManager;
