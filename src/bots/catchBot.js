@@ -19,14 +19,10 @@ const catchBot = {
         discordClient.once('ready', async() => {
 
             console.log(`catchBot: ready to serve ${userMap.size} users`);
-            // delete all previous created hooks on load
-            console.log('cleaning up previous hooks');
 
-            // get clients
             this.webhookManager = new WebhookManager(discordClient, guild);
-            // await webhookManager.clearHooks("901552865607319562");
-            // await webhookManager.clearHooks("906591928114614344");
-            // await webhookManager.createHook("906591928114614344");
+            // we need a system for deleting and creating webhooks AS NEEDED by users in channel
+
 
         });
 
