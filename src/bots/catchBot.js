@@ -14,8 +14,6 @@ const catchBot = {
 
     start: function(discordClient, dbClient, token, guild) {
 
-        let messageManager = new MessageManager(discordClient);
-
         discordClient.once('ready', async() => {
 
             console.log(`catchBot: ready to serve ${userMap.size} users`);
@@ -23,34 +21,30 @@ const catchBot = {
             this.webhookManager = new WebhookManager(discordClient, guild);
             // we need a system for deleting and creating webhooks AS NEEDED by users in channel
 
-
         });
 
         discordClient.on('interactionCreate', async interaction => {
 
+            console.log("catch " + interaction);
+            const messageManager = new MessageManager({ client: discordClient, interaction: interaction });
 
-            messageManager.setInteraction(interaction);
-
-            const userId = interaction.user.id;
-            const currentUser = userMap.get(userId);
+            const currentUser = userMap.get(interaction.user.id);
 
             if (interaction.isCommand()) {
 
-                messageManager.setCommandDetails();
                 const cmdId = interaction.commandName;
 
                 // each search area should check what 'route' the user is in
                 // and pull based on that
                 if (cmdId === 'search') {
 
+                    // do we need to await here?
                     if (currentUser.isInBattle) return await messageManager.replyAlreadyInBattle();
 
-                    // generate encounter probabilty based on route data
-                    const wildPokemon = (Math.random() * 10) < 6 ? 10 : 396;
                     // check again for level
-                    const generated = await generatePokemon(wildPokemon, 5);
+                    const generated = await generatePokemon((Math.random() * 10) < 6 ? 10 : 396, 5);
                     // start encounter between user and generated mon
-                    const message = await messages.msgBattle(currentUser.party[0], generated, userId, "What will you do?");
+                    const message = await messages.msgBattle(currentUser.party[0], generated, currentUser.id, "What will you do?");
                     // // reply with battle prompt]
                     await messageManager.replyMessage({ content: "Battle Found!", ephemeral: true });
                     // console.log(newMessage);
@@ -74,8 +68,6 @@ const catchBot = {
                 let curPokemon;
                 let opPokemon;
 
-                messageManager.setButtonDetails();
-
                 // guard clause to prevent users from interacting with prompts they did not initiate
                 if (currentUser.id != btnId.split('|')[1]) return messageManager.replyNotYourBattle();
 
@@ -87,25 +79,25 @@ const catchBot = {
 
                 if (btnId.match(/fight\|[1-9]*/)) {
 
-                    const message = await messages.msgFight(curPokemon, opPokemon, userId, "Pick a move!");
+                    const message = await messages.msgFight(curPokemon, opPokemon, currentUser.id, "Pick a move!");
                     await interaction.update(message);
 
                 } else if (btnId.match(/party\|[1-9]*/)) {
 
                     console.log('here');
-                    const message = await messages.msgParty(curPokemon, currentUser.party.slice(1), opPokemon, userId, "Select a pokemon!");
+                    const message = await messages.msgParty(curPokemon, currentUser.party.slice(1), opPokemon, currentUser.id, "Select a pokemon!");
                     await interaction.update(message);
 
                 } else if (btnId.match(/item\|[1-9]*/)) {
 
-                    const message = await messages.msgItems(curPokemon, opPokemon, userId, "Use which item?");
+                    const message = await messages.msgItems(curPokemon, opPokemon, currentUser.id, "Use which item?");
                     await interaction.update(message);
 
                 } else if (btnId.match(/run\|[1-9]*/)) {
 
                     interaction.deferUpdate();
                     await sleep(500);
-                    const message = await messages.msgBattle(curPokemon, opPokemon, userId, "Attempting to run away...");
+                    const message = await messages.msgBattle(curPokemon, opPokemon, currentUser.id, "Attempting to run away...");
                     await interaction.editReply(message);
 
                     let escaped = (((currentUser.party[0].stats.spd * 128) / currentUser.battling.opponent.stats.spd) + 30 * currentUser.battling.escapes) % 256;
@@ -115,21 +107,22 @@ const catchBot = {
                     if (Math.random() * 101 < escaped) {
 
                         await messageManager.deleteThisMessage();
+                        // TOOD: clean this up
                         // await messageManager.sendRunAwayBroadcast(currentUser, opPokemon);
-                        await messageManager.endBattle(currentUser.username);
+                        // await messageManager.endBattle(currentUser.username);
                         // resetUser(currentUser);
 
                     } else {
 
                         currentUser.battling.escapes++;
-                        const message = await messages.msgBattle(curPokemon, opPokemon, userId, "Couldn't get away!");
+                        const message = await messages.msgBattle(curPokemon, opPokemon, currentUser.id, "Couldn't get away!");
                         await interaction.editReply(message);
 
                     }
 
                 } else if (btnId.match(/back\|[1-9]*/)) {
 
-                    const message = await messages.msgBattle(curPokemon, opPokemon, userId, "What will you do?");
+                    const message = await messages.msgBattle(curPokemon, opPokemon, currentUser.id, "What will you do?");
                     await interaction.update(message);
 
                 } else if (btnId.match(/catch\|[1-9]*/)) {

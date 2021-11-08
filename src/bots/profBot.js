@@ -14,7 +14,6 @@ const userMap = require('../data/userMap.js');
 
 const profBot = {
 
-
     start: function(discordClient, dbClient, token, guild) {
 
         // used to hold data for users mid registration process
@@ -34,16 +33,15 @@ const profBot = {
 
         discordClient.on('interactionCreate', async interaction => {
 
-            let messageManager = new MessageManager({ client: discordClient, interaction: interaction });
-
-            // messageManager.setInteraction();
+            console.log("prof " + interaction);
+            const messageManager = new MessageManager({ client: discordClient, interaction: interaction });
 
             // grab the user id and perform lookup on map for every interaction
             const userId = interaction.user.id;
             const currentUser = userMap.get(userId);
 
             if (interaction.isCommand()) {
-
+                
                 const cmdId = interaction.commandName;
 
                 if (cmdId === 'profile') {

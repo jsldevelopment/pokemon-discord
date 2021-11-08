@@ -1,25 +1,42 @@
 class MessageManager {
 
-    // set initial interaction deets
-    constructor({ client = null, interaction = null }) {
-        if (client)         this.client = client;
-        if (interaction)    this.interaction = interaction;
-    }
+    /**
+     * set initial reference to instantiating client and interaction
+     * @param {Client|Interaction} param0 
+     */    
+    constructor(options = {}) {
+        /**
+         * the client that instantiated this manager
+         * @name client
+         */
+        if (options.client) this.client = options.client;
+        /**
+         * the interaction that instantiated this manager
+         * @name interaction
+         */
+        if (options.interaction) {
 
+            this.interaction = options.interaction;
+                
+            if (this.interaction.isCommand()) {
 
-    setButtonDetails() {
-        this.message = this.interaction.message.id;
-        this.author = this.interaction.message.author.id;
-        this.channel = this.interaction.message.channelId;
-    }
+                this.channel = this.interaction.channelId
 
-    setCommandDetails() {
-        this.channel = this.interaction.channelId;
+            } else if (this.interaction.isMessageComponent()) {
+                
+                this.message = this.interaction.message.id,
+                this.author = this.interaction.message.author.id,
+                this.channel = this.interaction.message.channelId
+
+            }
+
+        }
     }
 
     // general messaging
     async replyMessage(message) {
 
+        // do we need to await here?
         return await this.interaction.reply({...message, fetchReply: true });
 
     }
@@ -141,6 +158,7 @@ class MessageManager {
 
     //util
     async getChannel() {
+        console.log(this.client.channels);
         return await this.client.channels.fetch(this.channel);
     }
 
