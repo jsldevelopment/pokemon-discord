@@ -3,7 +3,7 @@ class MessageManager {
     /**
      * set initial reference to instantiating client and interaction
      * @param {Client|Interaction} param0 
-     */    
+     */
     constructor(options = {}) {
         /**
          * the client that instantiated this manager
@@ -17,16 +17,16 @@ class MessageManager {
         if (options.interaction) {
 
             this.interaction = options.interaction;
-                
+
             if (this.interaction.isCommand()) {
 
                 this.channel = this.interaction.channelId
 
             } else if (this.interaction.isMessageComponent()) {
-                
+
                 this.message = this.interaction.message.id,
-                this.author = this.interaction.message.author.id,
-                this.channel = this.interaction.message.channelId
+                    this.author = this.interaction.message.author.id,
+                    this.channel = this.interaction.message.channelId
 
             }
 
@@ -162,13 +162,17 @@ class MessageManager {
         return await this.client.channels.fetch(this.channel);
     }
 
+    async getParentChannel(channelId) {
+        return await this.client.channels.fetch(channelId);
+    }
+
     // thread stuff
     async createThread(user) {
 
         const thisChannel = await this.getChannel();
 
         const thread = await thisChannel.threads.create({
-            name: `${user.username}'s battle --`,
+            name: `${user.username}s battle --`,
             autoArchiveDuration: 60
         });
 
@@ -176,16 +180,16 @@ class MessageManager {
 
     }
 
-    async endBattle(name) {
+    async endBattle(name, route) {
 
-        const thisChannel = await this.getChannel();
-        await thisChannel.delete();
-        // console.log(`delete ${name}'s battle...'`);
-        // // remove from cache here
-        // // const thread = await thisChannel.threads.find(x => x.name === `${name}'s battle --`);
-        // const thread = await thisChannel.threads;
-        // console.log(thread);
-        // await thread.delete();
+        const thisChannel = await this.getParentChannel(route);
+        const threads = thisChannel.threads.cache;
+        // this works but it leaves behind the "bot started a thread" message
+        threads.forEach(async(thread) => {
+            if (thread.name === `${name}s battle --`) {
+                await thread.delete();
+            }
+        })
 
     }
 

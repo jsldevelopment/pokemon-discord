@@ -24,11 +24,16 @@ class WebhookManager {
         console.log(`${channel.name}-hook created`);
     }
 
-    async getHook(channelId) {
+    async getFirstHook(channelId) {
         const channel3 = await this.client.channels.fetch(channelId);
         const hooks = await channel3.fetchWebhooks();
         return hooks.first();
+    }
 
+
+    async getAllHooks(channelId) {
+        const channel3 = await this.client.channels.fetch(channelId);
+        return await channel3.fetchWebhooks();
     }
 }
 

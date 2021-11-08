@@ -18,42 +18,55 @@ const catchBot = {
 
             console.log(`catchBot: ready to serve ${userMap.size} users`);
 
+            // IMPORTANT: this is a placeholder system for managing hooks in testing
+            // this will need to be completely overhauled to allow for hooks to be created dynamically
+            // in each available channel, as needed
+            // instantiate webhooks manager
             this.webhookManager = new WebhookManager(discordClient, guild);
-            // we need a system for deleting and creating webhooks AS NEEDED by users in channel
+            // get all hooks for associated channel
+            // TODO: move channel ids to a json property - channel name, value - channel id
+            const hooks = await this.webhookManager.getAllHooks("907300358672482336");
+            // if a hook currentyl exist, do NOT create another one
+            if (!hooks.size) {
+                await this.webhookManager.createHook("907300358672482336");
+                console.log("Hook created.");
+            }
 
         });
 
         discordClient.on('interactionCreate', async interaction => {
 
-            console.log("catch " + interaction);
+            // instantiate the message manager and grab the calling user from the map
             const messageManager = new MessageManager({ client: discordClient, interaction: interaction });
-
             const currentUser = userMap.get(interaction.user.id);
+            // TODO: thread check -- no interaction via threads
 
             if (interaction.isCommand()) {
 
                 const cmdId = interaction.commandName;
 
-                // each search area should check what 'route' the user is in
-                // and pull based on that
                 if (cmdId === 'search') {
 
                     // do we need to await here?
                     if (currentUser.isInBattle) return await messageManager.replyAlreadyInBattle();
 
-                    // check again for level
+                    // generate mon and create reply message
                     const generated = await generatePokemon((Math.random() * 10) < 6 ? 10 : 396, 5);
-                    // start encounter between user and generated mon
                     const message = await messages.msgBattle(currentUser.party[0], generated, currentUser.id, "What will you do?");
-                    // // reply with battle prompt]
-                    await messageManager.replyMessage({ content: "Battle Found!", ephemeral: true });
-                    // console.log(newMessage);
+
+                    // deletes the initial bot reply to the command without the command failing
+                    const deferMsg = await interaction.deferReply({ fetchReply: true });
+                    deferMsg.delete();
+
+                    // kick off new thread for battle and use webhook to send intiial command
                     const threadId = await messageManager.createThread(currentUser);
-                    const hook = await this.webhookManager.getHook(interaction.channelId);
+                    const hook = await this.webhookManager.getFirstHook(interaction.channelId);
                     await hook.send({...message, threadId: threadId });
 
                     // lock user into battle
+                    // make this into a method
                     currentUser.isInBattle = true;
+                    currentUser.route = interaction.channelId;
                     currentUser.battling = {
                         opponent: generated,
                         turns: 0,
@@ -106,11 +119,14 @@ const catchBot = {
 
                     if (Math.random() * 101 < escaped) {
 
+                        // this works
                         await messageManager.deleteThisMessage();
-                        // TOOD: clean this up
+                        // this works
+                        await messageManager.endBattle(currentUser.username, currentUser.route);
+                        // this fails
                         // await messageManager.sendRunAwayBroadcast(currentUser, opPokemon);
-                        // await messageManager.endBattle(currentUser.username);
-                        // resetUser(currentUser);
+                        currentUser.isInBattle = false;
+                        currentUser.battling = {};
 
                     } else {
 
