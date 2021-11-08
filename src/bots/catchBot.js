@@ -27,11 +27,11 @@ const catchBot = {
             this.threadManager = new ThreadManager(discordClient);
             // get all hooks for associated channel
             // TODO: move channel ids to a json property - channel name, value - channel id
-            const hooks = await this.webhookManager.getAllHooks("907300358672482336");
+            const hooks = await this.webhookManager.getAllHooks("907384532351725608");
             console.log(hooks.size);
             // if a hook currentyl exist, do NOT create another one
             if (!hooks.size) {
-                await this.webhookManager.createHook("907300358672482336");
+                await this.webhookManager.createHook("907384532351725608");
                 console.log("Hook created.");
             }
 
@@ -42,7 +42,6 @@ const catchBot = {
             // instantiate the message manager and grab the calling user from the map
             const messageManager = new MessageManager({ client: discordClient, interaction: interaction });
             const currentUser = userMap.get(interaction.user.id);
-            // TODO: thread check -- no interaction via threads
 
             if (interaction.isCommand()) {
 
@@ -50,14 +49,20 @@ const catchBot = {
 
                 if (cmdId === 'search') {
 
-                    // do we need to await here?
-                    if (currentUser.isInBattle) return await messageManager.replyAlreadyInBattle();
+                    if (currentUser.isInBattle) return messageManager.replyAlreadyInBattle();
 
                     // generate mon and create reply message
                     const generated = await generatePokemon((Math.random() * 10) < 6 ? 10 : 396, 5);
                     const message = await messages.msgBattle(currentUser.party[0], generated, currentUser.id, "What will you do?");
 
+                    // set user battle options here so we can use them on the thread
                     currentUser.route = interaction.channelId;
+                    currentUser.isInBattle = true;
+                    currentUser.battling = {
+                        opponent: generated,
+                        turns: 0,
+                        escapes: 0
+                    }
 
                     // deletes the initial bot reply to the command without the command failing
                     const deferMsg = await interaction.deferReply({ fetchReply: true });
@@ -67,15 +72,6 @@ const catchBot = {
                     const threadId = await this.threadManager.createThread(currentUser);
                     const hook = (await this.webhookManager.getAllHooks(currentUser.route)).first();
                     await hook.send({...message, threadId: threadId });
-
-                    // lock user into battle
-                    // make this into a method
-                    currentUser.isInBattle = true;
-                    currentUser.battling = {
-                        opponent: generated,
-                        turns: 0,
-                        escapes: 0
-                    }
 
                 }
 
@@ -124,10 +120,8 @@ const catchBot = {
                     if (Math.random() * 101 < escaped) {
 
                         await this.threadManager.deleteThread(currentUser);
-                        // this fails
                         await messageManager.sendRunAwayBroadcast(currentUser, opPokemon);
-                        currentUser.isInBattle = false;
-                        currentUser.battling = {};
+                        resetUser(currentUser);
 
                     } else {
 
@@ -148,9 +142,7 @@ const catchBot = {
                     await messageManager.deleteThisMessage();
                     currentUser.party[currentUser.party.length] = currentUser.battling;
                     await messageManager.sendCapturedBroadcast(currentUser, currentUser.battling);
-                    // reset user battle settings
-                    currentUser.isInBattle = false;
-                    currentUser.battling = {};
+                    resetUser(currentUser);
 
                 }
             }

@@ -23,7 +23,7 @@ const profBot = {
             console.log(`profBot: ready to serve ${userMap.size} users`);
         });
 
-        discordClient.on('guildMemberAdd', async (member) => {
+        discordClient.on('guildMemberAdd', async(member) => {
             const messageManager = new MessageManager({ client: discordClient });
             messageManager.sendDirectMessage(
                 member,
@@ -33,31 +33,27 @@ const profBot = {
 
         discordClient.on('interactionCreate', async interaction => {
 
-            console.log("prof " + interaction);
+            // instantiate the message manager and grab the calling user from the map
             const messageManager = new MessageManager({ client: discordClient, interaction: interaction });
-
-            // grab the user id and perform lookup on map for every interaction
-            const userId = interaction.user.id;
-            const currentUser = userMap.get(userId);
+            const currentUser = userMap.get(interaction.user.id);
 
             if (interaction.isCommand()) {
-                
+
                 const cmdId = interaction.commandName;
 
                 if (cmdId === 'profile') {
 
                     await interaction.deferReply();
-                    const result = userMap.get(userId);
-                    const resMessage = await messages.msgShowProfile(result);
-                    await messageManager.editMessage(resMessage);
+                    const profileMsg = await messages.msgShowProfile(currentUser);
+                    await messageManager.editMessage(profileMsg);
 
                 }
 
                 if (cmdId === 'team') {
 
                     if (currentUser.party[interaction.options.getSubcommand() - 1]) {
-                        const resMessage = await messages.msgShowPokemon(currentUser.party[interaction.options.getSubcommand() - 1]);
-                        messageManager.replyEphemeralMessage(resMessage);
+                        const partyMemberMsg = await messages.msgShowPokemon(currentUser.party[interaction.options.getSubcommand() - 1]);
+                        messageManager.replyEphemeralMessage(partyMemberMsg);
                     } else {
                         messageManager.replyNoPokemonInSlot();
                     }
@@ -66,49 +62,43 @@ const profBot = {
 
             } else if (interaction.isMessageComponent()) {
 
-                let messageManager = new MessageManager(discordClient);
-                messageManager.setInteraction(interaction);
-
-                const userId = interaction.user.id;
-                const memObj = await getMember(discordClient, userId);
                 const label = interaction.customId;
 
-                messageManager.setButtonDetails();
+                const member = await getMember(discordClient, currentUser.id);
 
                 // TODO: clean up and standardize these methods
                 if (label === 'beginRegistration') {
 
                     await messageManager.deleteThisMessage();
-                    await messageManager.sendDirectMessage(memObj, messages.msgSelectAvatar);
-                    registeringUsers.set(userId, { id: userId });
+                    await messageManager.sendDirectMessage(member, messages.msgSelectAvatar);
+                    registeringUsers.set(currentUser.id, { id: currentUser.id });
 
                 } else if (label.match(/selectAvatar\|[1-9]*/)) {
 
                     await messageManager.deleteThisMessage();
-                    await messageManager.sendDirectMessage(memObj, messages.msgSelectStarter);
-                    registeringUsers.set(userId, {...registeringUsers.get(userId), avatar: label.charAt(label.length - 1) });
+                    await messageManager.sendDirectMessage(member, messages.msgSelectStarter);
+                    registeringUsers.set(currentUser.id, {...registeringUsers.get(currentUser.id), avatar: label.charAt(label.length - 1) });
 
                 } else if (label.match(/selectStarter\|[1-9]*/)) {
 
                     await messageManager.deleteThisMessage();
                     let starter1gen = await generatePokemon(label.split("|")[1], 20);
                     starter1gen.currentStats = starter1gen.stats;
-                    queries.insertPokemon(dbClient, { owner_id: userId, pokemon_id: starter1gen.uuid, pokemon: starter1gen });
-                    registeringUsers.set(userId, {...registeringUsers.get(userId), starter: starter1gen });
-                    await messageManager.sendDirectMessage(memObj, messages.msgConfirmRegistration);
+                    queries.insertPokemon(dbClient, { owner_id: currentUser.id, pokemon_id: starter1gen.uuid, pokemon: starter1gen });
+                    registeringUsers.set(currentUser.id, {...registeringUsers.get(currentUser.id), starter: starter1gen });
+                    await messageManager.sendDirectMessage(member, messages.msgConfirmRegistration);
 
                 } else if (label === 'confirmRegistration') {
 
                     await messageManager.deleteThisMessage();
-                    await messageManager.sendLoadingMessage(memObj);
-                    const finalUser = new User(interaction.user.id, memObj.user.username, registeringUsers.get(userId).avatar, registeringUsers.get(userId).starter);
+                    await messageManager.sendLoadingMessage(member);
+                    const finalUser = new User(interaction.user.id, member.user.username, registeringUsers.get(currentUser.id).avatar, registeringUsers.get(currentUser.id).starter);
                     await queries.insertUser(dbClient, interaction.user.id, finalUser);
-                    // add fully created User object to user map and remove json from registeringUsers list
-                    userMap.set(userId, finalUser);
-                    registeringUsers.delete(userId);
-                    memObj.roles.add(await getRole(discordClient, "trainer"));
+                    userMap.set(currentUser.id, finalUser);
+                    registeringUsers.delete(currentUser.id);
+                    member.roles.add(await getRole(discordClient, "trainer"));
                     await messageManager.deleteLoadingMessage();
-                    await messageManager.sendRegisteredMessage(memObj);
+                    await messageManager.sendRegisteredMessage(member);
 
                 }
             }
