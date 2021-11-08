@@ -20,23 +20,23 @@ const profBot = {
         // used to hold data for users mid registration process
         const registeringUsers = new Collection();
 
-        discordClient.once('ready', async() => {
+        discordClient.once('ready', () => {
             console.log(`profBot: ready to serve ${userMap.size} users`);
         });
 
-        discordClient.on('guildMemberAdd', async member => {
-            let messageManager = new MessageManager(discordClient);
-            await messageManager.sendDirectMessage(
+        discordClient.on('guildMemberAdd', async (member) => {
+            const messageManager = new MessageManager({ client: discordClient });
+            messageManager.sendDirectMessage(
                 member,
-                messages["msgWelcome"]
+                messages.msgWelcome
             );
         });
 
         discordClient.on('interactionCreate', async interaction => {
 
-            let messageManager = new MessageManager(discordClient);
+            let messageManager = new MessageManager({ client: discordClient, interaction: interaction });
 
-            messageManager.setInteraction(interaction);
+            // messageManager.setInteraction();
 
             // grab the user id and perform lookup on map for every interaction
             const userId = interaction.user.id;

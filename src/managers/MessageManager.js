@@ -1,14 +1,11 @@
-const { getGuild } = require('../util/getDiscordInfo');
 class MessageManager {
 
     // set initial interaction deets
-    constructor(client) {
-        this.client = client;
+    constructor({ client = null, interaction = null }) {
+        if (client)         this.client = client;
+        if (interaction)    this.interaction = interaction;
     }
 
-    setInteraction(interaction) {
-        this.interaction = interaction;
-    }
 
     setButtonDetails() {
         this.message = this.interaction.message.id;
