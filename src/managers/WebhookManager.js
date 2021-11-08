@@ -1,39 +1,49 @@
+const { getChannel } = require('../util/getDiscordInfo');
+
 class WebhookManager {
 
-    constructor(client, guildId) {
+    /**
+     * set initial reference to instantiating client
+     * @param {Client} client
+     */
+    constructor(client) {
+        /**
+         * the client that instantiated this manager
+         * @name client
+         */
         this.client = client;
-        this.guild = this.client.guilds.cache.get(guildId);
     }
 
-    async clearHooks(channelId) {
-        const channel2 = await this.client.channels.fetch(channelId);
-        const hooks = await channel2.fetchWebhooks();
-        console.log(`fetched ${hooks.size} webhooks`);
+    /**
+     * clears all existing hooks from a given channel
+     * @param {String} id the id of the channel containing the given hooks
+     */
+    async clearHooks(id) {
+        const hooks = await this.getAllHooks(id);
         hooks.forEach((hook) => {
             hook.delete({ reason: "cleanup on start" })
                 .then(console.log("deleted hook"));
         });
     }
 
-    async createHook(channelId) {
-        const channel = await this.client.channels.fetch(channelId);
+    /**
+     * creates a new webhook in this channel
+     * @param {String} id the id of the channel containing the given hooks
+     */
+    async createHook(id) {
+        const channel = await getChannel(this.client, id);
         await channel.createWebhook(`${channel.name}-hook`, {
             type: 3,
             avatar: 'https://i.imgur.com/AfFp7pu.png'
-        })
-        console.log(`${channel.name}-hook created`);
+        });
     }
 
-    async getFirstHook(channelId) {
-        const channel3 = await this.client.channels.fetch(channelId);
-        const hooks = await channel3.fetchWebhooks();
-        return hooks.first();
-    }
-
-
-    async getAllHooks(channelId) {
-        const channel3 = await this.client.channels.fetch(channelId);
-        return await channel3.fetchWebhooks();
+    /**
+     * gets all hooks from a channel
+     * @param {String} id the id of the channel containing the given hooks
+     */
+    async getAllHooks(id) {
+        return await (await getChannel(this.client, id)).fetchWebhooks();
     }
 }
 

@@ -1,3 +1,5 @@
+const { getChannel } = require('../util/getDiscordInfo');
+
 class MessageManager {
 
     /**
@@ -87,25 +89,19 @@ class MessageManager {
 
     }
 
-    // predefined messages
+    /**
+     * predefined messages to be sent - only the content of these messages should be edited
+     */
     async sendRegisteredMessage(member) {
-
         await member.send({ content: 'You have been succesfully registered.' });
-
     }
 
     async sendCapturedBroadcast(user, pokemon) {
-
-        const channel = await this.getChannel();
-        channel.send({ content: `${user.username} has succesfully caught a level ${pokemon.level} ${pokemon.name}` });
-
+        (await getChannel(this.client, user.route)).send({ content: `${user.username} has caught a level ${pokemon.level} ${pokemon.name}` });
     }
 
     async sendRunAwayBroadcast(user, pokemon) {
-
-        const channel = await this.getChannel();
-        channel.send({ content: `${user.username} has fled from a level ${pokemon.level} ${pokemon.name}` });
-
+        (await getChannel(this.client, user.route)).send({ content: `${user.username} has fled from a level ${pokemon.level} ${pokemon.name}` });
     }
 
     // delete functions
@@ -127,15 +123,12 @@ class MessageManager {
     }
 
     async deleteLoadingMessage() {
-
-        const channel = await this.getChannel();
-        await channel.fetch(this.loadingMessageId).then((msg) => {
-            msg.delete();
-        });
-
+        (await (await getChannel(this.client, this.channel)).fetch(this.loadingMessageId)).delete();
     }
 
-    // CONST EPHEMERAL ALERT MESSAGES
+    /**
+     * ephemeral alert messages
+     */
     async replyAlreadyInBattle() {
         await this.interaction.reply({ content: "Please exit your current battle before searching for another...", ephemeral: true });
     }
@@ -154,43 +147,6 @@ class MessageManager {
 
     async gotAwaySafely(message) {
         await this.interaction.editReply({...message });
-    }
-
-    //util
-    async getChannel() {
-        console.log(this.client.channels);
-        return await this.client.channels.fetch(this.channel);
-    }
-
-    async getParentChannel(channelId) {
-        return await this.client.channels.fetch(channelId);
-    }
-
-    // thread stuff
-    async createThread(user) {
-
-        const thisChannel = await this.getChannel();
-
-        const thread = await thisChannel.threads.create({
-            name: `${user.username}s battle --`,
-            autoArchiveDuration: 60
-        });
-
-        return thread.id;
-
-    }
-
-    async endBattle(name, route) {
-
-        const thisChannel = await this.getParentChannel(route);
-        const threads = thisChannel.threads.cache;
-        // this works but it leaves behind the "bot started a thread" message
-        threads.forEach(async(thread) => {
-            if (thread.name === `${name}s battle --`) {
-                await thread.delete();
-            }
-        })
-
     }
 
 }

@@ -21,6 +21,10 @@ exports.getRole = async function(client, roleId) {
 
 }
 
+exports.getChannel = async function(client, id) {
+    return await client.channels.fetch(id);
+}
+
 exports.sleep = function(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
