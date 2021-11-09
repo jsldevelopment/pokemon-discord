@@ -46,16 +46,25 @@ const messages = {
         }
     },
 
-    msgBattle: async function(currentPokemon, opPokemon, id, description) {
+    msgBattle: async function(currentPokemon, opPokemon, id, description, disabled) {
         const file = new MessageAttachment(`./src/data/img/icons/${opPokemon.id}.png`);
         const embed = [embeds.battleStartEmbed(currentPokemon, opPokemon)];
-        const embedRows = buttons.rowBattle(id);
+        const embedRowA = buttons.rowBattleA(id);
+        const embedRowB = buttons.rowBattleB(id);
+        if (disabled) {
+            embedRowA.components.forEach((row) => {
+                row.setDisabled(true);
+            })
+            embedRowB.components.forEach((row) => {
+                row.setDisabled(true);
+            })
+        }
         if (description) {
             embed[0].description = description;
         }
         return {
             embeds: embed,
-            components: [embedRows],
+            components: [embedRowA, embedRowB],
             files: [file]
         }
     },

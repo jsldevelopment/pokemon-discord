@@ -27,11 +27,11 @@ const catchBot = {
             this.threadManager = new ThreadManager(discordClient);
             // get all hooks for associated channel
             // TODO: move channel ids to a json property - channel name, value - channel id
-            const hooks = await this.webhookManager.getAllHooks("907384532351725608");
+            const hooks = await this.webhookManager.getAllHooks("907722445128097805");
             console.log(hooks.size);
             // if a hook currentyl exist, do NOT create another one
             if (!hooks.size) {
-                await this.webhookManager.createHook("907384532351725608");
+                await this.webhookManager.createHook("907722445128097805", "Battle:");
                 console.log("Hook created.");
             }
 
@@ -41,6 +41,7 @@ const catchBot = {
 
             // instantiate the message manager and grab the calling user from the map
             const messageManager = new MessageManager({ client: discordClient, interaction: interaction });
+            console.log(interaction.user.id);
             const currentUser = userMap.get(interaction.user.id);
 
             if (interaction.isCommand()) {
@@ -58,6 +59,7 @@ const catchBot = {
                     // set user battle options here so we can use them on the thread
                     currentUser.route = interaction.channelId;
                     currentUser.isInBattle = true;
+                    currentUser.inputSelected = false;
                     currentUser.battling = {
                         opponent: generated,
                         turns: 0,
@@ -77,6 +79,9 @@ const catchBot = {
 
             } else if (interaction.isMessageComponent()) {
 
+                if (currentUser.inputSelected) return;
+
+                // lock btns
                 const btnId = interaction.customId;
                 let curPokemon;
                 let opPokemon;
@@ -108,9 +113,10 @@ const catchBot = {
 
                 } else if (btnId.match(/run\|[1-9]*/)) {
 
+                    currentUser.inputSelected = true;
                     interaction.deferUpdate();
                     await sleep(500);
-                    const message = await messages.msgBattle(curPokemon, opPokemon, currentUser.id, "Attempting to run away...");
+                    const message = await messages.msgBattle(curPokemon, opPokemon, currentUser.id, "Attempting to run away...", true);
                     await interaction.editReply(message);
 
                     let escaped = (((currentUser.party[0].stats.spd * 128) / currentUser.battling.opponent.stats.spd) + 30 * currentUser.battling.escapes) % 256;
@@ -119,6 +125,7 @@ const catchBot = {
 
                     if (Math.random() * 101 < escaped) {
 
+                        // delete the message as soon as this is available
                         await this.threadManager.deleteThread(currentUser);
                         await messageManager.sendRunAwayBroadcast(currentUser, opPokemon);
                         resetUser(currentUser);
@@ -128,6 +135,8 @@ const catchBot = {
                         currentUser.battling.escapes++;
                         const message = await messages.msgBattle(curPokemon, opPokemon, currentUser.id, "Couldn't get away!");
                         await interaction.editReply(message);
+                        // unlock buttons
+                        currentUser.inputSelected = false;
 
                     }
 
@@ -153,6 +162,7 @@ const catchBot = {
 
             user.isInBattle = false;
             user.battling = {}
+            user.inputSelected = false;
         }
 
         discordClient.login(token);

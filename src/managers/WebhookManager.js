@@ -1,5 +1,7 @@
 const { getChannel } = require('../util/getDiscordInfo');
 
+
+
 class WebhookManager {
 
     /**
@@ -30,11 +32,11 @@ class WebhookManager {
      * creates a new webhook in this channel
      * @param {String} id the id of the channel containing the given hooks
      */
-    async createHook(id) {
+    async createHook(id, name) {
         const channel = await getChannel(this.client, id);
-        await channel.createWebhook(`${channel.name}-hook`, {
+        await channel.createWebhook(name, {
             type: 3,
-            avatar: 'https://i.imgur.com/AfFp7pu.png'
+            avatar: 'src/data/img/pokeball.png'
         });
     }
 

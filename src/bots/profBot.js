@@ -36,6 +36,7 @@ const profBot = {
             // instantiate the message manager and grab the calling user from the map
             const messageManager = new MessageManager({ client: discordClient, interaction: interaction });
             const currentUser = userMap.get(interaction.user.id);
+            const registeringUser = registeringUsers.get(interaction.user.id);
 
             if (interaction.isCommand()) {
 
@@ -64,38 +65,38 @@ const profBot = {
 
                 const label = interaction.customId;
 
-                const member = await getMember(discordClient, currentUser.id);
+                const member = await getMember(discordClient, interaction.user.id);
 
                 // TODO: clean up and standardize these methods
                 if (label === 'beginRegistration') {
 
                     await messageManager.deleteThisMessage();
                     await messageManager.sendDirectMessage(member, messages.msgSelectAvatar);
-                    registeringUsers.set(currentUser.id, { id: currentUser.id });
+                    registeringUsers.set(interaction.user.id, { id: interaction.user.id });
 
                 } else if (label.match(/selectAvatar\|[1-9]*/)) {
 
                     await messageManager.deleteThisMessage();
                     await messageManager.sendDirectMessage(member, messages.msgSelectStarter);
-                    registeringUsers.set(currentUser.id, {...registeringUsers.get(currentUser.id), avatar: label.charAt(label.length - 1) });
+                    registeringUsers.set(interaction.user.id, {...registeringUsers.get(registeringUser.id), avatar: label.charAt(label.length - 1) });
 
                 } else if (label.match(/selectStarter\|[1-9]*/)) {
 
                     await messageManager.deleteThisMessage();
                     let starter1gen = await generatePokemon(label.split("|")[1], 20);
                     starter1gen.currentStats = starter1gen.stats;
-                    queries.insertPokemon(dbClient, { owner_id: currentUser.id, pokemon_id: starter1gen.uuid, pokemon: starter1gen });
-                    registeringUsers.set(currentUser.id, {...registeringUsers.get(currentUser.id), starter: starter1gen });
+                    queries.insertPokemon(dbClient, { owner_id: registeringUser.id, pokemon_id: starter1gen.uuid, pokemon: starter1gen });
+                    registeringUsers.set(interaction.user.id, {...registeringUsers.get(registeringUser.id), starter: starter1gen });
                     await messageManager.sendDirectMessage(member, messages.msgConfirmRegistration);
 
                 } else if (label === 'confirmRegistration') {
 
                     await messageManager.deleteThisMessage();
                     await messageManager.sendLoadingMessage(member);
-                    const finalUser = new User(interaction.user.id, member.user.username, registeringUsers.get(currentUser.id).avatar, registeringUsers.get(currentUser.id).starter);
+                    const finalUser = new User(interaction.user.id, member.user.username, registeringUsers.get(interaction.user.id).avatar, registeringUsers.get(interaction.user.id).starter);
                     await queries.insertUser(dbClient, interaction.user.id, finalUser);
-                    userMap.set(currentUser.id, finalUser);
-                    registeringUsers.delete(currentUser.id);
+                    userMap.set(interaction.user.id, finalUser);
+                    registeringUsers.delete(registeringUser.id);
                     member.roles.add(await getRole(discordClient, "trainer"));
                     await messageManager.deleteLoadingMessage();
                     await messageManager.sendRegisteredMessage(member);

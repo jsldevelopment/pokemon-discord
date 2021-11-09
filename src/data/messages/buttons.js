@@ -133,10 +133,13 @@ const buttonRows = {
     rowSelectAvatar: new MessageActionRow().addComponents(buttons.btnSelectAvatar1, buttons.btnSelectAvatar2),
     rowSelectStarter: new MessageActionRow().addComponents(buttons.btnSelectStarter1, buttons.btnSelectStarter2, buttons.btnSelectStarter3, buttons.btnSelectStarter4),
     rowConfirmRegistration: new MessageActionRow().addComponents(buttons.btnConfirmRegistration),
-    rowBattle: (id) => {
+    rowBattleA: (id) => {
         return new MessageActionRow().addComponents(
             buttons.btnFight(id),
-            buttons.btnParty(id),
+            buttons.btnParty(id))
+    },
+    rowBattleB: (id) => {
+        return new MessageActionRow().addComponents(
             buttons.btnItem(id),
             buttons.btnRun(id))
     },
