@@ -4,7 +4,7 @@ const { MessageAttachment } = require('discord.js');
 const pokeball = new MessageAttachment('./src/data/img/pokeball.png');
 const avatar = new MessageAttachment('./src/data/img/avatar-selection.png');
 const starter = new MessageAttachment('./src/data/img/starter-selection.png');
-
+const file = new MessageAttachment(`./src/data/img/icons/3.png`);
 
 const messages = {
 
@@ -38,7 +38,7 @@ const messages = {
     },
 
     msgShowPokemon: async function(pokemon) {
-        const file = new MessageAttachment(`./src/data/img/icons/${pokemon.id}.png`);
+        // const file = new MessageAttachment(`./src/data/img/icons/${pokemon.id}.png`);
         const embed = [embeds.pokemonEmbed(pokemon)];
         return {
             embeds: embed,
@@ -47,7 +47,6 @@ const messages = {
     },
 
     msgBattle: async function(currentPokemon, opPokemon, id, description, disabled) {
-        const file = new MessageAttachment(`./src/data/img/icons/${opPokemon.id}.png`);
         const embed = [embeds.battleStartEmbed(currentPokemon, opPokemon)];
         const embedRowA = buttons.rowBattleA(id);
         const embedRowB = buttons.rowBattleB(id);
@@ -70,7 +69,7 @@ const messages = {
     },
 
     msgItems: async function(currentPokemon, opPokemon, id, description) {
-        const file = new MessageAttachment(`./src/data/img/icons/${opPokemon.id}.png`);
+        // const file = new MessageAttachment(`./src/data/img/icons/${opPokemon.id}.png`);
         const embed = [embeds.battleStartEmbed(currentPokemon, opPokemon)];
         const embedRows = buttons.rowItem(id);
         if (description) {
@@ -84,7 +83,7 @@ const messages = {
     },
 
     msgParty: async function(curPokemon, party, opPokemon, id, description) {
-        const file = new MessageAttachment(`./src/data/img/icons/${opPokemon.id}.png`);
+        // const file = new MessageAttachment(`./src/data/img/icons/${opPokemon.id}.png`);
         const embed = [embeds.battleStartEmbed(curPokemon, opPokemon)];
         // generate rows based on team members
         const embedRows = buttons.rowParty(party, id);
@@ -99,7 +98,7 @@ const messages = {
     },
 
     msgFight: async function(currentPokemon, opPokemon, id, description) {
-        const file = new MessageAttachment(`./src/data/img/icons/${opPokemon.id}.png`);
+        // const file = new MessageAttachment(`./src/data/img/icons/${opPokemon.id}.png`);
         const embed = [embeds.battleStartEmbed(currentPokemon, opPokemon)];
         // generate rows based on available moves
         const embedRows = buttons.rowFight(currentPokemon, id);
