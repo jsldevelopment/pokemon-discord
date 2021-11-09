@@ -147,10 +147,24 @@ const catchBot = {
 
                 } else if (btnId.match(/catch\|[1-9]*/)) {
 
-                    // implement logic for catch rates etc
-                    await messageManager.deleteThisMessage();
-                    currentUser.party[currentUser.party.length] = currentUser.battling;
-                    await messageManager.sendCapturedBroadcast(currentUser, currentUser.battling);
+                    // do some calculations here
+                    currentUser.inputSelected = true;
+                    interaction.deferUpdate();
+                    await sleep(500);
+                    const message = await messages.msgBattle(curPokemon, opPokemon, currentUser.id, "You toss a pokeball!", true);
+                    await interaction.editReply(message);
+                    await sleep(1500);
+                    const message2 = await messages.msgBattle(curPokemon, opPokemon, currentUser.id, "It wiggles...", true);
+                    await interaction.editReply(message2);
+                    await sleep(1500);
+                    const message3 = await messages.msgBattle(curPokemon, opPokemon, currentUser.id, "It wiggles again...", true);
+                    await interaction.editReply(message3);
+                    await sleep(1500);
+                    const message4 = await messages.msgBattle(curPokemon, opPokemon, currentUser.id, `GOTCHA! ${opPokemon.name} was caught!`, true);
+                    await interaction.editReply(message4);
+                    await this.threadManager.deleteThread(currentUser);
+                    currentUser.party[currentUser.party.length] = currentUser.battling.opponent;
+                    await messageManager.sendCapturedBroadcast(currentUser, currentUser.battling.opponent);
                     resetUser(currentUser);
 
                 }

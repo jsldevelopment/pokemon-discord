@@ -101,6 +101,7 @@ class MessageManager {
     }
 
     async sendRunAwayBroadcast(user, pokemon) {
+        console.log(pokemon);
         (await getChannel(this.client, user.route)).send({ content: `${user.username} has fled from a level ${pokemon.level} ${pokemon.name}` });
     }
 
