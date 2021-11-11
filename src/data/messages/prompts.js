@@ -208,8 +208,8 @@ const battleStartEmbed = (curPokemon, opPokemon) => {
         color: promptColors[opPokemon.types[0]],
         title: `A wild Lvl. ${opPokemon.level} ${opPokemon.name} appears...`,
         description: "The battle begins...",
-        thumbnail: {
-            url: `attachment://${opPokemon.id}.png`,
+        image: {
+            url: 'attachment://3.png',
         },
         fields: [{
                 name: "Your HP: ",

@@ -46,6 +46,14 @@ const messages = {
         }
     },
 
+    msgBattleStart: async function(currentPokemon, opPokemon, id, description) {
+        const battleMessage = await this.msgBattle(currentPokemon, opPokemon, id, description);
+        return {
+            ...battleMessage,
+            files: [file]
+        }
+    },
+
     msgBattle: async function(currentPokemon, opPokemon, id, description, disabled) {
         const embed = [embeds.battleStartEmbed(currentPokemon, opPokemon)];
         const embedRowA = buttons.rowBattleA(id);
@@ -60,11 +68,11 @@ const messages = {
         }
         if (description) {
             embed[0].description = description;
+            console.log(embed[0]);
         }
         return {
             embeds: embed,
-            components: [embedRowA, embedRowB],
-            files: [file]
+            components: [embedRowA, embedRowB]
         }
     },
 
@@ -77,8 +85,7 @@ const messages = {
         }
         return {
             embeds: embed,
-            components: [embedRows],
-            files: [file]
+            components: [embedRows]
         }
     },
 
@@ -92,8 +99,7 @@ const messages = {
         }
         return {
             embeds: embed,
-            components: [embedRows],
-            files: [file]
+            components: [embedRows]
         }
     },
 
@@ -107,8 +113,7 @@ const messages = {
         }
         return {
             embeds: embed,
-            components: [embedRows],
-            files: [file]
+            components: [embedRows]
         }
     }
 }

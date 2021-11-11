@@ -54,7 +54,7 @@ const catchBot = {
 
                     // generate mon and create reply message
                     const generated = await generatePokemon((Math.random() * 10) < 6 ? 10 : 396, 5);
-                    const message = await messages.msgBattle(currentUser.party[0], generated, currentUser.id, "What will you do?");
+                    const message = await messages.msgBattleStart(currentUser.party[0], generated, currentUser.id, "What will you do?");
 
                     // set user battle options here so we can use them on the thread
                     currentUser.route = interaction.channelId;
@@ -97,6 +97,7 @@ const catchBot = {
 
                 if (btnId.match(/fight\|[1-9]*/)) {
 
+                    // await messageManager.deleteThisMessage();
                     const message = await messages.msgFight(curPokemon, opPokemon, currentUser.id, "Pick a move!");
                     await interaction.update(message);
 
