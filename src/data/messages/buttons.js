@@ -104,7 +104,6 @@ const buttons = {
     },
     // MOVES
     btnMove: (id, num, name) => {
-        console.log(`generating move ${name}`);
         return new MessageButton()
             .setCustomId(`move${num}|${id}`)
             .setStyle('PRIMARY')
@@ -153,8 +152,6 @@ const buttonRows = {
         const partyRow = new MessageActionRow();
         let partyNum = 1;
         party.forEach((pokemon) => {
-            // console.log('generating move ' + JSON.stringify(move));
-            console.log(JSON.stringify(pokemon));
             partyRow.addComponents(buttons.btnPartyMember(id, partyNum, pokemon.name));
             partyNum++;
         });
@@ -165,7 +162,6 @@ const buttonRows = {
         const moveRow = new MessageActionRow();
         let moveNum = 1;
         currentPokemon.moves.forEach((move) => {
-            // console.log('generating move ' + JSON.stringify(move));
             moveRow.addComponents(buttons.btnMove(id, moveNum, move.name));
             moveNum++;
         });

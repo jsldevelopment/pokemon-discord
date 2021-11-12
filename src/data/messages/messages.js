@@ -68,7 +68,6 @@ const messages = {
         }
         if (description) {
             embed[0].description = description;
-            console.log(embed[0]);
         }
         return {
             embeds: embed,

@@ -35,7 +35,6 @@ const catchBot = {
             // get all hooks for associated channel
             // TODO: move channel ids to a json property - channel name, value - channel id
             const hooks = await this.webhookManager.getAllHooks("907722445128097805");
-            console.log(hooks.size);
             // if a hook currentyl exist, do NOT create another one
             if (!hooks.size) {
                 await this.webhookManager.createHook("907722445128097805", "Battle:");
@@ -64,7 +63,7 @@ const catchBot = {
 
                     // instantiate battle manager and pass encounter deets
                     const battleId = new uuid();
-                    battleMap.set(battleId, new Battle(currentUser.party[0], generated, "PVE"));
+                    battleMap.set(battleId, new Battle(discordClient, currentUser, generated, "PVE"));
 
                     // set user battle options here so we can use them on the thread
                     // how much of this can be in the battle handler
@@ -92,7 +91,21 @@ const catchBot = {
                 // grab current battle from map
                 const curBattle = battleMap.get(currentUser.battle);
 
-                if (btnId.match(/fight\|[1-9]*/)) {
+                // selections - these are final choices, once selected they are added to the turns list
+                if (btnId.match(/catch\|[1-9]*/)) {
+
+                    interaction.deferUpdate();
+                    curBattle.addMove("catch");
+                    await curBattle.executeTurns(interaction);
+
+                } else if (btnId.match(/run\|[1-9]*/)) {
+
+                    interaction.deferUpdate();
+                    curBattle.addMove("run");
+                    await curBattle.executeTurns(interaction);
+
+                    // menuing - doesn't push anything to the turns list, instead just allows movement between option menus
+                } else if (btnId.match(/fight\|[1-9]*/)) {
 
                     const message = await messages.msgFight(curBattle.currentPokemon, curBattle.opponent, currentUser.id, "Pick a move!");
                     await messageManager.updateMessage(message);
@@ -107,36 +120,11 @@ const catchBot = {
                     const message = await messages.msgItems(curBattle.currentPokemon, curBattle.opponent, currentUser.id, "Use which item?");
                     await messageManager.updateMessage(message);
 
-                } else if (btnId.match(/run\|[1-9]*/)) {
-
-                    interaction.deferUpdate();
-                    curBattle.selections.push("run");
-                    await curBattle.executeTurns(this.interaction, currentUser);
-
+                    // return to the main menu
                 } else if (btnId.match(/back\|[1-9]*/)) {
 
                     const message = await messages.msgBattle(curBattle.currentPokemon, curBattle.opponent, currentUser.id, "What will you do?");
                     await messageManager.updateMessage(message);
-
-                } else if (btnId.match(/catch\|[1-9]*/)) {
-
-                    // do some calculations here
-                    // interaction.deferUpdate();
-                    // await sleep(500);
-                    // const message = await messages.msgBattle(curPokemon, opPokemon, currentUser.id, "You toss a pokeball!", true);
-                    // await interaction.editReply(message);
-                    // await sleep(1500);
-                    // const message2 = await messages.msgBattle(curPokemon, opPokemon, currentUser.id, "It wiggles...", true);
-                    // await interaction.editReply(message2);
-                    // await sleep(1500);
-                    // const message3 = await messages.msgBattle(curPokemon, opPokemon, currentUser.id, "It wiggles again...", true);
-                    // await interaction.editReply(message3);
-                    // await sleep(1500);
-                    // const message4 = await messages.msgBattle(curPokemon, opPokemon, currentUser.id, `GOTCHA! ${opPokemon.name} was caught!`, true);
-                    // await interaction.editReply(message4);
-                    // await this.threadManager.deleteThread(currentUser);
-                    // currentUser.party[currentUser.party.length] = currentUser.battling.opponent;
-                    // await messageManager.sendCapturedBroadcast(currentUser, currentUser.battling.opponent);
 
                 }
             }

@@ -23,12 +23,12 @@ const threadManager = {
      * deletes a thread in this channel
      * @param {String} user the user interacting with th
      */
-    async deleteThread(user) {
+    async deleteThread(battle) {
         if (!this.client) return;
         // TODO: can we find a way to delete the message that point to this thread after the thread is deleted
-        (await getChannel(this.client, user.route)).threads.cache
+        (await getChannel(this.client, battle.player.route)).threads.cache
             .forEach(async(thread) => {
-                if (thread.name === `${user.username} vs. Level ${user.battling.opponent.level} ${user.battling.opponent.name}`) {
+                if (thread.name === `${battle.player.username} vs. Level ${battle.opponent.level} ${battle.opponent.name}`) {
                     await thread.delete();
                 }
             })
