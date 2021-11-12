@@ -4,7 +4,6 @@ const { MessageAttachment } = require('discord.js');
 const pokeball = new MessageAttachment('./src/data/img/pokeball.png');
 const avatar = new MessageAttachment('./src/data/img/avatar-selection.png');
 const starter = new MessageAttachment('./src/data/img/starter-selection.png');
-const file = new MessageAttachment(`./src/data/img/icons/3.png`);
 
 const messages = {
 
@@ -38,7 +37,7 @@ const messages = {
     },
 
     msgShowPokemon: async function(pokemon) {
-        // const file = new MessageAttachment(`./src/data/img/icons/${pokemon.id}.png`);
+        const file = new MessageAttachment(`./src/data/img/icons/${pokemon.id}.png`);
         const embed = [embeds.pokemonEmbed(pokemon)];
         return {
             embeds: embed,
@@ -47,10 +46,12 @@ const messages = {
     },
 
     msgBattleStart: async function(currentPokemon, opPokemon, id, description) {
+        const file = new MessageAttachment(`./src/data/img/icons/${currentPokemon.id}.png`);
+        const file2 = new MessageAttachment(`./src/data/img/icons/${opPokemon.id}.png`);
         const battleMessage = await this.msgBattle(currentPokemon, opPokemon, id, description);
         return {
             ...battleMessage,
-            files: [file]
+            files: [file, file2]
         }
     },
 

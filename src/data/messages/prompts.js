@@ -1,4 +1,3 @@
-const { MessageAttachment } = require('discord.js');
 var moment = require('moment'); // require
 
 const promptBegin = {
@@ -208,8 +207,8 @@ const battleStartEmbed = (curPokemon, opPokemon) => {
         color: promptColors[opPokemon.types[0]],
         title: `A wild Lvl. ${opPokemon.level} ${opPokemon.name} appears...`,
         description: "The battle begins...",
-        image: {
-            url: 'attachment://3.png',
+        thumbnail: {
+            url: `attachment://${opPokemon.id}.png`
         },
         fields: [{
                 name: "Your HP: ",
@@ -222,7 +221,11 @@ const battleStartEmbed = (curPokemon, opPokemon) => {
                 inline: true
             },
         ],
-        timestamp: moment(Date.now()).format('MMMM do YYYY, h:mm')
+        timestamp: moment(Date.now()).format('MMMM do YYYY, h:mm'),
+        footer: {
+            text: "Current Pokemon",
+            icon_url: `attachment://${curPokemon.id}.png`
+        }
     }
 }
 

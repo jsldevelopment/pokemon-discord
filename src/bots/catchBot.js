@@ -6,6 +6,7 @@ const MessageManager = require('../managers/MessageManager');
 const WebhookManager = require('../managers/WebhookManager');
 const threadManager = require('../managers/ThreadManager');
 const Battle = require('../objects/Battle');
+const AIUser = require('../objects/AIUser');
 
 // maps
 const battleMap = require('../data/battleMap.js');
@@ -63,7 +64,9 @@ const catchBot = {
 
                     // instantiate battle manager and pass encounter deets
                     const battleId = new uuid();
-                    battleMap.set(battleId, new Battle(discordClient, currentUser, generated, "PVE"));
+                    // generate ai opponent based on pokemon
+                    const opponent = new AIUser(generated);
+                    battleMap.set(battleId, new Battle(discordClient, currentUser, opponent, "PVE"));
 
                     // set user battle options here so we can use them on the thread
                     // how much of this can be in the battle handler
@@ -75,7 +78,7 @@ const catchBot = {
                     deferMsg.delete();
 
                     // kick off new thread for battle and use webhook to send intiial command
-                    const threadId = await threadManager.createThread(currentUser, generated);
+                    const threadId = await threadManager.createThread(currentUser, opponent);
                     const hook = (await this.webhookManager.getAllHooks(currentUser.route)).first();
                     await hook.send({...message, threadId: threadId });
 
@@ -95,36 +98,36 @@ const catchBot = {
                 if (btnId.match(/catch\|[1-9]*/)) {
 
                     interaction.deferUpdate();
-                    curBattle.addMove("catch");
+                    curBattle.addMove("catch", currentUser.id);
                     await curBattle.executeTurns(interaction);
 
                 } else if (btnId.match(/run\|[1-9]*/)) {
 
                     interaction.deferUpdate();
-                    curBattle.addMove("run");
+                    curBattle.addMove({ selection: "run" }, currentUser.id);
                     await curBattle.executeTurns(interaction);
 
                     // menuing - doesn't push anything to the turns list, instead just allows movement between option menus
-                } else if (btnId.match(/fight\|[1-9]*/)) {
+                    //     } else if (btnId.match(/fight\|[1-9]*/)) {
 
-                    const message = await messages.msgFight(curBattle.currentPokemon, curBattle.opponent, currentUser.id, "Pick a move!");
-                    await messageManager.updateMessage(message);
+                    //         const message = await messages.msgFight(curBattle.currentPokemon, curBattle.opponent.party[0], currentUser.id, "Pick a move!");
+                    //         await messageManager.updateMessage(message);
 
-                } else if (btnId.match(/party\|[1-9]*/)) {
+                    //     } else if (btnId.match(/party\|[1-9]*/)) {
 
-                    const message = await messages.msgParty(curBattle.currentPokemon, currentUser.party.slice(1), opPokemon, currentUser.id, "Select a pokemon!");
-                    await messageManager.updateMessage(message);
+                    //         const message = await messages.msgParty(curBattle.currentPokemon, currentUser.party.slice(1), curBattle.opponent.party[0], currentUser.id, "Select a pokemon!");
+                    //         await messageManager.updateMessage(message);
 
-                } else if (btnId.match(/item\|[1-9]*/)) {
+                    //     } else if (btnId.match(/item\|[1-9]*/)) {
 
-                    const message = await messages.msgItems(curBattle.currentPokemon, curBattle.opponent, currentUser.id, "Use which item?");
-                    await messageManager.updateMessage(message);
+                    //         const message = await messages.msgItems(curBattle.currentPokemon, curBattle.opponent.party[0], currentUser.id, "Use which item?");
+                    //         await messageManager.updateMessage(message);
 
-                    // return to the main menu
-                } else if (btnId.match(/back\|[1-9]*/)) {
+                    //         // return to the main menu
+                    //     } else if (btnId.match(/back\|[1-9]*/)) {
 
-                    const message = await messages.msgBattle(curBattle.currentPokemon, curBattle.opponent, currentUser.id, "What will you do?");
-                    await messageManager.updateMessage(message);
+                    //         const message = await messages.msgBattle(curBattle.currentPokemon, curBattle.opponent.party[0], currentUser.id, "What will you do?");
+                    //         await messageManager.updateMessage(message);
 
                 }
             }
