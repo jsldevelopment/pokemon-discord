@@ -67,9 +67,9 @@ class MessageManager {
 
     }
 
-    async deferReply() {
+    async deferReply(options) {
 
-        await this.interaction.deferReply();
+        return await this.interaction.deferReply(options);
 
     }
 

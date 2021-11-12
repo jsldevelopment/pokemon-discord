@@ -1,11 +1,17 @@
+// ext libs
+const uuid = require('uuid').v4;
+
 // objs
 const MessageManager = require('../managers/MessageManager');
 const WebhookManager = require('../managers/WebhookManager');
-const ThreadManager = require('../managers/ThreadManager');
+const threadManager = require('../managers/ThreadManager');
+const Battle = require('../objects/Battle');
+
+// maps
+const battleMap = require('../data/battleMap.js');
 
 // fxns
 const generatePokemon = require('../util/generatePokemon.js');
-const { sleep } = require('../util/getDiscordInfo');
 
 // data
 const messages = require('../data/messages/messages.js');
@@ -17,6 +23,8 @@ const catchBot = {
 
         discordClient.once('ready', async() => {
 
+            threadManager.setClient(discordClient);
+
             console.log(`catchBot: ready to serve ${userMap.size} users`);
 
             // IMPORTANT: this is a placeholder system for managing hooks in testing
@@ -24,7 +32,6 @@ const catchBot = {
             // in each available channel, as needed
             // instantiate webhooks manager
             this.webhookManager = new WebhookManager(discordClient, guild);
-            this.threadManager = new ThreadManager(discordClient);
             // get all hooks for associated channel
             // TODO: move channel ids to a json property - channel name, value - channel id
             const hooks = await this.webhookManager.getAllHooks("907722445128097805");
@@ -41,7 +48,6 @@ const catchBot = {
 
             // instantiate the message manager and grab the calling user from the map
             const messageManager = new MessageManager({ client: discordClient, interaction: interaction });
-            console.log(interaction.user.id);
             const currentUser = userMap.get(interaction.user.id);
 
             if (interaction.isCommand()) {
@@ -50,28 +56,27 @@ const catchBot = {
 
                 if (cmdId === 'search') {
 
-                    if (currentUser.isInBattle) return messageManager.replyAlreadyInBattle();
+                    if (currentUser.battle) return messageManager.replyAlreadyInBattle();
 
                     // generate mon and create reply message
                     const generated = await generatePokemon((Math.random() * 10) < 6 ? 10 : 396, 5);
                     const message = await messages.msgBattleStart(currentUser.party[0], generated, currentUser.id, "What will you do?");
 
+                    // instantiate battle manager and pass encounter deets
+                    const battleId = new uuid();
+                    battleMap.set(battleId, new Battle(currentUser.party[0], generated, "PVE"));
+
                     // set user battle options here so we can use them on the thread
+                    // how much of this can be in the battle handler
+                    currentUser.battle = battleId;
                     currentUser.route = interaction.channelId;
-                    currentUser.isInBattle = true;
-                    currentUser.inputSelected = false;
-                    currentUser.battling = {
-                        opponent: generated,
-                        turns: 0,
-                        escapes: 0
-                    }
 
                     // deletes the initial bot reply to the command without the command failing
-                    const deferMsg = await interaction.deferReply({ fetchReply: true });
+                    const deferMsg = await messageManager.deferReply({ fetchReply: true });
                     deferMsg.delete();
 
                     // kick off new thread for battle and use webhook to send intiial command
-                    const threadId = await this.threadManager.createThread(currentUser);
+                    const threadId = await threadManager.createThread(currentUser, generated);
                     const hook = (await this.webhookManager.getAllHooks(currentUser.route)).first();
                     await hook.send({...message, threadId: threadId });
 
@@ -79,106 +84,64 @@ const catchBot = {
 
             } else if (interaction.isMessageComponent()) {
 
-                if (currentUser.inputSelected) return;
-
-                // lock btns
                 const btnId = interaction.customId;
-                let curPokemon;
-                let opPokemon;
 
                 // guard clause to prevent users from interacting with prompts they did not initiate
                 if (currentUser.id != btnId.split('|')[1]) return messageManager.replyNotYourBattle();
 
-                // if user is in battle, grab a reference to both pokemon
-                if (currentUser.battling) {
-                    curPokemon = currentUser.party[0];
-                    opPokemon = currentUser.battling.opponent;
-                }
+                // grab current battle from map
+                const curBattle = battleMap.get(currentUser.battle);
 
                 if (btnId.match(/fight\|[1-9]*/)) {
 
-                    // await messageManager.deleteThisMessage();
-                    const message = await messages.msgFight(curPokemon, opPokemon, currentUser.id, "Pick a move!");
-                    await interaction.update(message);
+                    const message = await messages.msgFight(curBattle.currentPokemon, curBattle.opponent, currentUser.id, "Pick a move!");
+                    await messageManager.updateMessage(message);
 
                 } else if (btnId.match(/party\|[1-9]*/)) {
 
-                    console.log('here');
-                    const message = await messages.msgParty(curPokemon, currentUser.party.slice(1), opPokemon, currentUser.id, "Select a pokemon!");
-                    await interaction.update(message);
+                    const message = await messages.msgParty(curBattle.currentPokemon, currentUser.party.slice(1), opPokemon, currentUser.id, "Select a pokemon!");
+                    await messageManager.updateMessage(message);
 
                 } else if (btnId.match(/item\|[1-9]*/)) {
 
-                    const message = await messages.msgItems(curPokemon, opPokemon, currentUser.id, "Use which item?");
-                    await interaction.update(message);
+                    const message = await messages.msgItems(curBattle.currentPokemon, curBattle.opponent, currentUser.id, "Use which item?");
+                    await messageManager.updateMessage(message);
 
                 } else if (btnId.match(/run\|[1-9]*/)) {
 
-                    currentUser.inputSelected = true;
                     interaction.deferUpdate();
-                    await sleep(500);
-                    const message = await messages.msgBattle(curPokemon, opPokemon, currentUser.id, "Attempting to run away...", true);
-                    await interaction.editReply(message);
-
-                    let escaped = (((currentUser.party[0].stats.spd * 128) / currentUser.battling.opponent.stats.spd) + 30 * currentUser.battling.escapes) % 256;
-                    console.log(`Escape attempt ${currentUser.battling.escapes} : ${escaped}`);
-                    await sleep(1500);
-
-                    if (Math.random() * 101 < escaped) {
-
-                        // delete the message as soon as this is available
-                        await this.threadManager.deleteThread(currentUser);
-                        await messageManager.sendRunAwayBroadcast(currentUser, opPokemon);
-                        resetUser(currentUser);
-
-                    } else {
-
-                        currentUser.battling.escapes++;
-                        const message = await messages.msgBattle(curPokemon, opPokemon, currentUser.id, "Couldn't get away!");
-                        await interaction.editReply(message);
-                        // unlock buttons
-                        currentUser.inputSelected = false;
-
-                    }
+                    curBattle.selections.push("run");
+                    await curBattle.executeTurns(this.interaction, currentUser);
 
                 } else if (btnId.match(/back\|[1-9]*/)) {
 
-                    const message = await messages.msgBattle(curPokemon, opPokemon, currentUser.id, "What will you do?");
-                    await interaction.update(message);
+                    const message = await messages.msgBattle(curBattle.currentPokemon, curBattle.opponent, currentUser.id, "What will you do?");
+                    await messageManager.updateMessage(message);
 
                 } else if (btnId.match(/catch\|[1-9]*/)) {
 
                     // do some calculations here
-                    currentUser.inputSelected = true;
-                    interaction.deferUpdate();
-                    await sleep(500);
-                    const message = await messages.msgBattle(curPokemon, opPokemon, currentUser.id, "You toss a pokeball!", true);
-                    await interaction.editReply(message);
-                    await sleep(1500);
-                    const message2 = await messages.msgBattle(curPokemon, opPokemon, currentUser.id, "It wiggles...", true);
-                    await interaction.editReply(message2);
-                    await sleep(1500);
-                    const message3 = await messages.msgBattle(curPokemon, opPokemon, currentUser.id, "It wiggles again...", true);
-                    await interaction.editReply(message3);
-                    await sleep(1500);
-                    const message4 = await messages.msgBattle(curPokemon, opPokemon, currentUser.id, `GOTCHA! ${opPokemon.name} was caught!`, true);
-                    await interaction.editReply(message4);
-                    await this.threadManager.deleteThread(currentUser);
-                    currentUser.party[currentUser.party.length] = currentUser.battling.opponent;
-                    await messageManager.sendCapturedBroadcast(currentUser, currentUser.battling.opponent);
-                    resetUser(currentUser);
+                    // interaction.deferUpdate();
+                    // await sleep(500);
+                    // const message = await messages.msgBattle(curPokemon, opPokemon, currentUser.id, "You toss a pokeball!", true);
+                    // await interaction.editReply(message);
+                    // await sleep(1500);
+                    // const message2 = await messages.msgBattle(curPokemon, opPokemon, currentUser.id, "It wiggles...", true);
+                    // await interaction.editReply(message2);
+                    // await sleep(1500);
+                    // const message3 = await messages.msgBattle(curPokemon, opPokemon, currentUser.id, "It wiggles again...", true);
+                    // await interaction.editReply(message3);
+                    // await sleep(1500);
+                    // const message4 = await messages.msgBattle(curPokemon, opPokemon, currentUser.id, `GOTCHA! ${opPokemon.name} was caught!`, true);
+                    // await interaction.editReply(message4);
+                    // await this.threadManager.deleteThread(currentUser);
+                    // currentUser.party[currentUser.party.length] = currentUser.battling.opponent;
+                    // await messageManager.sendCapturedBroadcast(currentUser, currentUser.battling.opponent);
 
                 }
             }
 
         });
-
-        const resetUser = (user) => {
-
-            user.isInBattle = false;
-            user.battling = {}
-            user.inputSelected = false;
-        }
 
         discordClient.login(token);
 

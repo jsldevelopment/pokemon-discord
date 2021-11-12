@@ -6,7 +6,7 @@ const catchBot = require('./bots/catchBot.js');
 const queries = require('./db/queries.js');
 const userMap = require('./data/userMap.js');
 
-( async () => {
+(async() => {
 
     const dbClient = new cassandra.Client({
         cloud: { secureConnectBundle: './secure-connect-pokemon.zip' },
