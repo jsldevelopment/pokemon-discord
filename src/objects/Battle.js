@@ -9,8 +9,11 @@ class Battle {
     constructor(client, player1, player2, battleType) {
         this.client = client;
         this.battleType = battleType;
-        this.player1 = player1;
-        this.player2 = player2;
+        // player 1 will always refer to the player who initiated the battle
+        this.p1 = player1;
+        this.p1Lead = player1.party[0];
+        this.p2 = player2;
+        this.p2Lead = player2.party[0];
         this.turns = 0;
         this.escapes = 0;
     };
@@ -24,7 +27,7 @@ class Battle {
      */
     addMove = (move, id) => {
         // player 1 always holds the 0 index, player 2 always holds the 1 index
-        if (id === this.player1.id) {
+        if (id === this.p1.id) {
             this.selections[0] = move;
         } else {
             this.selections[1] = move;
@@ -36,45 +39,49 @@ class Battle {
         this.interaction = interaction;
         this.messageManager = new MessageManager({ client: this.client, interaction: this.interaction });
         if (this.battleType === "PVE") {
-            // generate opponent move
-            const moves = this.player2.party[0].moves;
-            const moveNum = Math.floor(Math.random() * moves.length);
-            this.selections[1] = { selection: "move", ...moves[moveNum] };
-            console.log(JSON.stringify(this.selections));
-            // await this.executeMove();
+            this.selections[1] = { selection: "move", ...this.p2Lead.moves[Math.floor(Math.random() * this.p2Lead.moves.length)] };
+            console.log(this.p1Lead.stats.spd);
+            // check for prio + speed then execute the moves in the appropriate order
+            await this.executeMove(this.selections[1])
+            await this.executeMove(this.selections[0]);
         }
         // if (this.battleType === "PVP") return await this.executePVP();
     }
 
-    executeMove = async() => {
-        if (this.selections[0] === 'run') {
-            await this.executeRun(player1, player2)
-                .then(async(escaped) => {
-                    if (escaped) {
-                        // delete the thread, delete the battle, remove battle from user
-                        threadManager.deleteThread(this);
-                        this.messageManager.sendRunAwayBroadcast(this.player1, this.player2);
-                        battleMap.delete(this.player1.battle);
-                        // is there a nicer way to reset this?
-                        this.player.battle = {};
-                    } else {
-                        this.escapes++;
-                        const message = await messages.msgBattle(this.player1.party[0], this.player2, this.player1.id, "Couldn't get away!");
-                        await this.messageManager.editMessage(message);
-                    }
-                })
+    executeMove = async(selection) => {
+        if (selection.selection === 'run') {
+            // await this.executeRun(this.player1, this.player2)
+            //     .then(async(escaped) => {
+            //         if (escaped) {
+            //             // delete the thread, delete the battle, remove battle from user
+            //             threadManager.deleteThread(this);
+            //             this.messageManager.sendRunAwayBroadcast(this.p1, this.p2);
+            //             battleMap.delete(this.p1.battle);
+            //             // is there a nicer way to reset this?
+            //             this.player.battle = {};
+            //         } else {
+            //             this.escapes++;
+            //             const message = await messages.msgBattle(this.p1.party[0], this.p2, this.p1.id, "Couldn't get away!");
+            //             await this.messageManager.editMessage(message);
+            //         }
+            //     })
+            console.log(selection);
+        }
+        if (selection.selection === 'move') {
+            console.log(selection);
         }
     }
 
     executeRun = async(player1, player2) => {
 
+        console.log(player1, player2);
         return new Promise(async(resolve) => {
 
             const player1Pkmn = player1.party[0];
             const player2Pkmn = player2.party[0];
 
             await sleep(500);
-            const message = await messages.msgBattle(player1Pkmn, player2Pkmn, this.player1.id, "Attempting to run away...", true);
+            const message = await messages.msgBattle(player1Pkmn, player2Pkmn, this.p1.id, "Attempting to run away...", true);
             await this.messageManager.editMessage(message);
 
             let escaped = (((player1Pkmn.stats.spd * 128) / player1Pkmn.stats.spd) + 30 * this.escapes) % 256;
