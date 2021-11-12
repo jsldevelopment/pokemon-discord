@@ -56,6 +56,7 @@ const catchBot = {
 
                 if (cmdId === 'search') {
 
+                    console.log(currentUser.battle);
                     if (currentUser.battle) return messageManager.replyAlreadyInBattle();
 
                     // generate mon and create reply message
@@ -103,7 +104,6 @@ const catchBot = {
 
                 } else if (btnId.match(/run\|[1-9]*/)) {
 
-                    interaction.deferUpdate();
                     curBattle.addMove({ selection: "run" }, currentUser.id);
                     await curBattle.executeTurns(interaction);
 

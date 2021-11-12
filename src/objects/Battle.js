@@ -38,47 +38,52 @@ class Battle {
     executeTurns = async(interaction) => {
         this.interaction = interaction;
         this.messageManager = new MessageManager({ client: this.client, interaction: this.interaction });
+        this.messageManager.deferUpdate();
         if (this.battleType === "PVE") {
             this.selections[1] = { selection: "move", ...this.p2Lead.moves[Math.floor(Math.random() * this.p2Lead.moves.length)] };
-            console.log(this.p1Lead.stats.spd);
             // check for prio + speed then execute the moves in the appropriate order
-            await this.executeMove(this.selections[1])
-            await this.executeMove(this.selections[0]);
+            console.log(`${this.p1Lead.stats.spd} : ${this.p2Lead.stats.spd}`);
+            if (this.p1Lead.stats.spd < this.p2Lead.stats.spd) {
+                await this.executeMove(this.selections[1]);
+                await this.executeMove(this.selections[0]);
+            } else {
+                await this.executeMove(this.selections[0]);
+                await this.executeMove(this.selections[1]);
+            }
         }
         // if (this.battleType === "PVP") return await this.executePVP();
     }
 
     executeMove = async(selection) => {
         if (selection.selection === 'run') {
-            // await this.executeRun(this.player1, this.player2)
-            //     .then(async(escaped) => {
-            //         if (escaped) {
-            //             // delete the thread, delete the battle, remove battle from user
-            //             threadManager.deleteThread(this);
-            //             this.messageManager.sendRunAwayBroadcast(this.p1, this.p2);
-            //             battleMap.delete(this.p1.battle);
-            //             // is there a nicer way to reset this?
-            //             this.player.battle = {};
-            //         } else {
-            //             this.escapes++;
-            //             const message = await messages.msgBattle(this.p1.party[0], this.p2, this.p1.id, "Couldn't get away!");
-            //             await this.messageManager.editMessage(message);
-            //         }
-            //     })
-            console.log(selection);
+            await this.executeRun(this.p1, this.p2)
+                .then(async(escaped) => {
+                    if (escaped) {
+                        // delete the thread, delete the battle, remove battle from user
+                        threadManager.deleteThread(this);
+                        this.messageManager.sendRunAwayBroadcast(this.p1, this.p2);
+                        battleMap.delete(this.p1.battle);
+                        // is there a nicer way to reset this?
+                        this.p1.battle = null;
+                    } else {
+                        this.escapes++;
+                        const message = await messages.msgBattle(this.p1Lead, this.p2Lead, this.p1.id, "Couldn't get away!");
+                        await this.messageManager.editMessage(message);
+                    }
+                })
         }
         if (selection.selection === 'move') {
-            console.log(selection);
+            const message = await messages.msgBattle(this.p1Lead, this.p2Lead, this.p1.id, JSON.stringify(selection), true);
+            await this.messageManager.editMessage(message);
         }
     }
 
-    executeRun = async(player1, player2) => {
+    executeRun = async(p1, p2) => {
 
-        console.log(player1, player2);
         return new Promise(async(resolve) => {
 
-            const player1Pkmn = player1.party[0];
-            const player2Pkmn = player2.party[0];
+            const player1Pkmn = p1.party[0];
+            const player2Pkmn = p2.party[0];
 
             await sleep(500);
             const message = await messages.msgBattle(player1Pkmn, player2Pkmn, this.p1.id, "Attempting to run away...", true);
@@ -87,7 +92,8 @@ class Battle {
             let escaped = (((player1Pkmn.stats.spd * 128) / player1Pkmn.stats.spd) + 30 * this.escapes) % 256;
             await sleep(1500);
 
-            if (Math.random() * 101 < escaped) resolve(true);
+            // swtich this back to true it's onyl for testing
+            if (Math.random() * 101 < escaped) resolve(false);
             resolve(false);
 
         });
