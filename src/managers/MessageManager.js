@@ -96,12 +96,12 @@ class MessageManager {
         await member.send({ content: 'You have been succesfully registered.' });
     }
 
-    async sendCapturedBroadcast(user, pokemon) {
-        (await getChannel(this.client, user.route)).send({ content: `${user.username} has caught a level ${pokemon.level} ${pokemon.name}` });
+    async sendCapturedBroadcast(p1, p2Lead) {
+        (await getChannel(this.client, p1.route)).send({ content: `${p1.username} has caught a level ${p2Lead.level} ${p2Lead.name}` });
     }
 
-    async sendRunAwayBroadcast(user, pokemon) {
-        (await getChannel(this.client, user.route)).send({ content: `${user.username} has fled from a level ${pokemon.level} ${pokemon.name}` });
+    async sendRunAwayBroadcast(p1, p2Lead) {
+        (await getChannel(this.client, p1.route)).send({ content: `${p1.username} has fled from a level ${p2Lead.level} ${p2Lead.name}` });
     }
 
     // delete functions

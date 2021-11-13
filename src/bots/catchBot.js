@@ -56,7 +56,6 @@ const catchBot = {
 
                 if (cmdId === 'search') {
 
-                    console.log(currentUser.battle);
                     if (currentUser.battle) return messageManager.replyAlreadyInBattle();
 
                     // generate mon and create reply message
@@ -98,14 +97,11 @@ const catchBot = {
                 // selections - these are final choices, once selected they are added to the turns list
                 if (btnId.match(/catch\|[1-9]*/)) {
 
-                    interaction.deferUpdate();
-                    curBattle.addMove("catch", currentUser.id);
-                    await curBattle.executeTurns(interaction);
+                    curBattle.addMove({ selection: "catch", prio: 5 }, interaction);
 
                 } else if (btnId.match(/run\|[1-9]*/)) {
 
-                    curBattle.addMove({ selection: "run" }, currentUser.id);
-                    await curBattle.executeTurns(interaction);
+                    curBattle.addMove({ selection: "run", prio: 5 }, interaction);
 
                     // menuing - doesn't push anything to the turns list, instead just allows movement between option menus
                     //     } else if (btnId.match(/fight\|[1-9]*/)) {
@@ -118,12 +114,12 @@ const catchBot = {
                     //         const message = await messages.msgParty(curBattle.currentPokemon, currentUser.party.slice(1), curBattle.opponent.party[0], currentUser.id, "Select a pokemon!");
                     //         await messageManager.updateMessage(message);
 
-                    //     } else if (btnId.match(/item\|[1-9]*/)) {
+                } else if (btnId.match(/item\|[1-9]*/)) {
 
-                    //         const message = await messages.msgItems(curBattle.currentPokemon, curBattle.opponent.party[0], currentUser.id, "Use which item?");
-                    //         await messageManager.updateMessage(message);
+                    const message = await messages.msgItems(curBattle.p1Lead, curBattle.p2Lead, currentUser.id, "Use which item?");
+                    await messageManager.updateMessage(message);
 
-                    //         // return to the main menu
+                    // return to the main menu
                     //     } else if (btnId.match(/back\|[1-9]*/)) {
 
                     //         const message = await messages.msgBattle(curBattle.currentPokemon, curBattle.opponent.party[0], currentUser.id, "What will you do?");
