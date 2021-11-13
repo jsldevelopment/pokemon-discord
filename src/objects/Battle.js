@@ -4,6 +4,11 @@ const threadManager = require('../managers/ThreadManager');
 const MessageManager = require('../managers/MessageManager');
 const battleMap = require('../data/battleMap.js');
 
+/**
+ * Battle Object - contains all necessary info for a PVE or PVP battle.
+ * Current available options: Run Away, Toss Pokeball
+ * - TODO: turns/dmg
+ */
 class Battle {
 
     constructor(client, player1, player2, battleType) {
@@ -142,6 +147,8 @@ class Battle {
         await this.messageManager.editMessage(message3);
         await sleep(1500);
         const captured = Math.random() * 10;
+
+        // example 'caught' logic. research pokemon caught formula and integrate it into each **Wiggle** phase of the battle.
         if (captured < 5) {
             return true;
         }
