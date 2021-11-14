@@ -5,8 +5,8 @@ const uuid = require('uuid').v4;
 const MessageManager = require('../managers/MessageManager');
 const WebhookManager = require('../managers/WebhookManager');
 const threadManager = require('../managers/ThreadManager');
-const Battle = require('../objects/Battle');
-const AIUser = require('../objects/AIUser');
+const BattlePve = require('../objects/BattlePve');
+const TrainerAi = require('../objects/TrainerAi');
 
 // maps
 const battleMap = require('../data/battleMap.js');
@@ -65,8 +65,8 @@ const catchBot = {
                     // instantiate battle manager and pass encounter deets
                     const battleId = new uuid();
                     // generate ai opponent based on pokemon
-                    const opponent = new AIUser(generated);
-                    battleMap.set(battleId, new Battle(discordClient, currentUser, opponent, "PVE"));
+                    const aiOpp = new TrainerAi(generated);
+                    battleMap.set(battleId, new BattlePve(discordClient, currentUser, aiOpp));
 
                     // set user battle options here so we can use them on the thread
                     // how much of this can be in the battle handler
@@ -78,7 +78,7 @@ const catchBot = {
                     deferMsg.delete();
 
                     // kick off new thread for battle and use webhook to send intiial command
-                    const threadId = await threadManager.createThread(currentUser, opponent);
+                    const threadId = await threadManager.createThread(currentUser, aiOpp);
                     const hook = (await this.webhookManager.getAllHooks(currentUser.route)).first();
                     await hook.send({...message, threadId: threadId });
 

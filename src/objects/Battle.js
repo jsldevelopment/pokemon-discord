@@ -1,8 +1,4 @@
 const { sleep } = require('../util/getDiscordInfo');
-const messages = require('../data/messages/messages.js');
-const threadManager = require('../managers/ThreadManager');
-const MessageManager = require('../managers/MessageManager');
-const battleMap = require('../data/battleMap.js');
 
 /**
  * Battle Object - contains all necessary info for a PVE or PVP battle.
@@ -11,19 +7,17 @@ const battleMap = require('../data/battleMap.js');
  */
 class Battle {
 
-    constructor(client, player1, player2, battleType) {
+    constructor(client, player1, player2) {
         this.client = client;
-        this.battleType = battleType;
         // player 1 will always refer to the player who initiated the battle
-        this.p1 = player1;
-        this.p1Lead = player1.party[0];
-        this.p2 = player2;
-        this.p2Lead = player2.party[0];
+        this.player1 = player1;
+        this.player2Lead = player1.party[0];
+        this.player2 = player2;
+        this.player2Lead = player2.party[0];
+        this.choices = [];
         this.turns = 0;
-        this.escapes = 0;
     };
 
-    choices = [];
 
     /**
      * TODO: add logic for PVP vs PVE. 
@@ -35,134 +29,26 @@ class Battle {
         this.executeTurns(interaction);
     }
 
-    generateAiMove = () => {
-
+    sortMoves = () => {
+        this.choices.sort((a, b) => {
+            a.spd > b.spd ? 1 : -1
+        });
+        this.choices.sort((a, b) => {
+            a.prio > b.prio ? 1 : -1
+        });
     }
 
-    // is this pve or pvp?
-    executeTurns = async(interaction) => {
-        this.messageManager = new MessageManager({ client: this.client, interaction: interaction });
-        await this.messageManager.deferUpdate();
-        // pve logic
-        // TODO: what if we sorted the array by SPD and then PRIO to always get the correct move order, then execute 0 - 1
-        if (this.battleType === "PVE") {
-            // in pve instances, the opposing pokemon will always use a move
-            this.choices.push({
-                selection: "move",
-                trainer: this.p2,
-                pokemon: this.p2Lead,
-                moveIndex: Math.floor(Math.random() * this.p2Lead.moves.length)
-            });
-            this.choices.sort((a, b) => {
-                a.spd > b.spd ? 1 : -1
-            })
-            this.choices.sort((a, b) => {
-                    a.prio > b.prio ? 1 : -1
-                })
-                // this function resolves false in any event the second move should NOT be executed
-                // i.e. the opponent faints, you successfully run away, etc
-            this.executeSelection(this.choices[0], true)
-                .then(async goAgain => {
+    executeMoves = () => {
+        this.executeSelection(this.choices[0], true)
+            .then(async goAgain => {
+                await sleep(1500);
+                if (goAgain) {
+                    await this.executeSelection(this.choices[1], false);
                     await sleep(1500);
-                    if (goAgain) {
-                        await this.executeSelection(this.choices[1], false);
-                        await sleep(1500);
-                    }
-                });
-        }
-        // pvp logic
-        // if (this.battleType === "PVP") return await this.executePVP();
-        // check for 2 items in list, if not, we wait
-    }
-
-    executeSelection = async(selection, disableButtons) => {
-        // run away
-        if (selection.selection === 'run') {
-            const escaped = await this.executeRun(this.p1, this.p2);
-            return new Promise(async resolve => {
-                if (escaped) {
-                    // delete the thread, delete the battle, remove battle from user
-                    threadManager.deleteThread(this);
-                    this.messageManager.sendRunAwayBroadcast(this.p1, this.p2Lead);
-                    battleMap.delete(this.p1.battle);
-                    // is there a nicer way to reset this?
-                    this.p1.battle = null;
-                    resolve(false);
-                } else {
-                    this.escapes++;
-                    const message = await messages.msgBattle(this.p1Lead, this.p2Lead, this.p1.id, "Couldn't get away!", disableButtons);
-                    await this.messageManager.editMessage(message);
-                    resolve(true);
                 }
             });
-        }
-        // use a move
-        // TODO: this logic is directly related to the 2nd pokemon, and no generalized for any pokemon that uses a move
-        // continuing to write like this will make it impossible to add pvp logic later
-        if (selection.selection === 'move') {
-            return new Promise(async resolve => {
-                const message = await messages.msgBattle(this.p1Lead, this.p2Lead, this.p1.id, `${this.p2Lead.name} used ${selection.name}`, disableButtons);
-                await this.messageManager.editMessage(message);
-                resolve(true);
-            });
-        }
-        // use an item
-        else if (selection.selection === 'catch') {
-            const caught = await this.executeCatch(this.p1, this.p2);
-            return new Promise(async resolve => {
-                if (caught) {
-                    // delete the thread, delete the battle, remove battle from user
-                    threadManager.deleteThread(this);
-                    this.messageManager.sendCapturedBroadcast(this.p1, this.p2Lead);
-                    battleMap.delete(this.p1.battle);
-                    // is there a nicer way to reset this?
-                    this.p1.battle = null;
-                    resolve(false);
-                } else {
-                    const message = await messages.msgBattle(this.p1Lead, this.p2Lead, this.p1.id, "Awe, it appeared to be caught!", disableButtons);
-                    await this.messageManager.editMessage(message);
-                    resolve(true);
-                }
-            });
-        }
-        // swap to a different party member
     }
 
-    executeRun = async(p1, p2) => {
-
-        const player1Pkmn = p1.party[0];
-        const player2Pkmn = p2.party[0];
-
-        const message = await messages.msgBattle(player1Pkmn, player2Pkmn, this.p1.id, "Attempting to run away...", true);
-        await this.messageManager.editMessage(message);
-        await sleep(1000);
-
-        let escaped = (((player1Pkmn.stats.spd * 128) / player1Pkmn.stats.spd) + 30 * this.escapes) % 256;
-
-        if (Math.random() * 101 < escaped) return true;
-        return false;
-
-    };
-
-    executeCatch = async(p1, p2) => {
-
-        const player1Pkmn = p1.party[0];
-        const player2Pkmn = p2.party[0];
-
-        const message = await messages.msgBattle(player1Pkmn, player2Pkmn, this.p1.id, "You toss a pokeball!", true);
-        await this.messageManager.editMessage(message);
-        await sleep(1500);
-        const message2 = await messages.msgBattle(player1Pkmn, player2Pkmn, this.p1.id, "It wiggles...", true);
-        await this.messageManager.editMessage(message2);
-        await sleep(1500);
-        const message3 = await messages.msgBattle(player1Pkmn, player2Pkmn, this.p1.id, "It wiggles again...", true);
-        await this.messageManager.editMessage(message3);
-        await sleep(1500);
-        const captured = Math.random() * 10;
-
-        return true;
-
-    }
 }
 
 module.exports = Battle;

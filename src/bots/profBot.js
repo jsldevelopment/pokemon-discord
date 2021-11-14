@@ -1,6 +1,6 @@
 // objs
 const MessageManager = require('../managers/MessageManager.js');
-const User = require('../objects/User');
+const TrainerHuman = require('../objects/TrainerHuman');
 const { default: Collection } = require('@discordjs/collection');
 
 //fxns
@@ -93,7 +93,7 @@ const profBot = {
 
                     await messageManager.deleteThisMessage();
                     await messageManager.sendLoadingMessage(member);
-                    const finalUser = new User(interaction.user.id, member.user.username, registeringUsers.get(interaction.user.id).avatar, registeringUsers.get(interaction.user.id).starter);
+                    const finalUser = new TrainerHuman(interaction.user.id, member.user.username, registeringUsers.get(interaction.user.id).avatar, registeringUsers.get(interaction.user.id).starter);
                     await queries.insertUser(dbClient, interaction.user.id, finalUser);
                     userMap.set(interaction.user.id, finalUser);
                     registeringUsers.delete(registeringUser.id);

@@ -1,10 +1,16 @@
-class User {
+const Trainer = require("./Trainer");
 
-    constructor(id, username, avatar, pokemon) {
+/**
+ * Represents a Trainer controlled by a human user.
+ * @extends {Trainer}
+ */
+class TrainerHuman extends Trainer {
+
+    constructor(id, username, avatar) {
+        super();
         this.id = id;
         this.username = username;
         this.avatar = avatar;
-        this.party = [pokemon];
         this.money = 5000;
         this.pokedex = {
             caught: 1,
@@ -14,6 +20,7 @@ class User {
         this.isInBattle = false;
         this.battling = {};
     }
+
 }
 
-module.exports = User;
+module.exports = TrainerHuman;

@@ -1,8 +1,9 @@
-class User {
+class Trainer {
 
     constructor(pokemon) {
         this.party = [pokemon];
-    }
+    };
+
 }
 
-module.exports = User;
+module.exports = Trainer;
