@@ -14,7 +14,9 @@ const threadManager = {
     async createThread(user, opponent) {
         if (!this.client) return;
         const thread = (await (await getChannel(this.client, user.route)).threads.create({
-            name: `${user.username} vs. Level ${opponent.party[0].level} ${opponent.party[0].name}`
+            name: `${user.username} vs. Level ${opponent.party[0].level} ${opponent.party[0].name}`,
+            type: 'GUILD_PRIVATE_THREAD',
+            invitable: false
         }));
         return thread.id;
     },

@@ -84,6 +84,7 @@ const catchBot = {
 
                 }
 
+                // TODO: ephemeral menuing or hidden menuing
             } else if (interaction.isMessageComponent()) {
 
                 const btnId = interaction.customId;
@@ -103,27 +104,37 @@ const catchBot = {
 
                     curBattle.addMove({ selection: "run", prio: 5 }, interaction);
 
-                    // menuing - doesn't push anything to the turns list, instead just allows movement between option menus
-                    //     } else if (btnId.match(/fight\|[1-9]*/)) {
+                } else if (btnId.match(/move[1-9]\|[1-9]*/)) {
 
-                    //         const message = await messages.msgFight(curBattle.currentPokemon, curBattle.opponent.party[0], currentUser.id, "Pick a move!");
-                    //         await messageManager.updateMessage(message);
+                    // for pvp, this needs to be revised to check the id of the trainer using the move.
+                    curBattle.addMove({
+                        selection: "move",
+                        trainer: currentUser,
+                        pokemon: currentUser.party[0],
+                        moveIndex: Math.floor(Math.random() * currentUser.party[0].moves.length)
+                    }, interaction);
 
-                    //     } else if (btnId.match(/party\|[1-9]*/)) {
-
-                    //         const message = await messages.msgParty(curBattle.currentPokemon, currentUser.party.slice(1), curBattle.opponent.party[0], currentUser.id, "Select a pokemon!");
-                    //         await messageManager.updateMessage(message);
-
+                    // menuing
                 } else if (btnId.match(/item\|[1-9]*/)) {
 
                     const message = await messages.msgItems(curBattle.p1Lead, curBattle.p2Lead, currentUser.id, "Use which item?");
                     await messageManager.updateMessage(message);
 
-                    // return to the main menu
-                    //     } else if (btnId.match(/back\|[1-9]*/)) {
+                } else if (btnId.match(/fight\|[1-9]*/)) {
 
-                    //         const message = await messages.msgBattle(curBattle.currentPokemon, curBattle.opponent.party[0], currentUser.id, "What will you do?");
-                    //         await messageManager.updateMessage(message);
+                    const message = await messages.msgFight(curBattle.p1Lead, curBattle.p2Lead, currentUser.id, "Pick a move!");
+                    await messageManager.updateMessage(message);
+
+                } else if (btnId.match(/party\|[1-9]*/)) {
+
+                    const message = await messages.msgParty(curBattle.p1Lead, curBattle.p1.party.slice(0), curBattle.p2Lead, currentUser.id, "Select a pokemon!");
+                    await messageManager.updateMessage(message);
+
+                    // return to the main menu
+                } else if (btnId.match(/back\|[1-9]*/)) {
+
+                    const message = await messages.msgBattle(curBattle.p1Lead, curBattle.p2Lead, currentUser.id, currentUser.id, "What will you do?");
+                    await messageManager.updateMessage(message);
 
                 }
             }

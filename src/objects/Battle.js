@@ -35,6 +35,10 @@ class Battle {
         this.executeTurns(interaction);
     }
 
+    generateAiMove = () => {
+
+    }
+
     // is this pve or pvp?
     executeTurns = async(interaction) => {
         this.messageManager = new MessageManager({ client: this.client, interaction: interaction });
@@ -43,7 +47,12 @@ class Battle {
         // TODO: what if we sorted the array by SPD and then PRIO to always get the correct move order, then execute 0 - 1
         if (this.battleType === "PVE") {
             // in pve instances, the opposing pokemon will always use a move
-            this.choices.push({ selection: "move", spd: this.p2Lead.stats.spd, ...this.p2Lead.moves[Math.floor(Math.random() * this.p2Lead.moves.length)] });
+            this.choices.push({
+                selection: "move",
+                trainer: this.p2,
+                pokemon: this.p2Lead,
+                moveIndex: Math.floor(Math.random() * this.p2Lead.moves.length)
+            });
             this.choices.sort((a, b) => {
                 a.spd > b.spd ? 1 : -1
             })
@@ -52,20 +61,21 @@ class Battle {
                 })
                 // this function resolves false in any event the second move should NOT be executed
                 // i.e. the opponent faints, you successfully run away, etc
-            this.executeMove(this.choices[0], true)
+            this.executeSelection(this.choices[0], true)
                 .then(async goAgain => {
                     await sleep(1500);
                     if (goAgain) {
-                        await this.executeMove(this.choices[1], false);
+                        await this.executeSelection(this.choices[1], false);
                         await sleep(1500);
                     }
                 });
         }
         // pvp logic
         // if (this.battleType === "PVP") return await this.executePVP();
+        // check for 2 items in list, if not, we wait
     }
 
-    executeMove = async(selection, disableButtons) => {
+    executeSelection = async(selection, disableButtons) => {
         // run away
         if (selection.selection === 'run') {
             const escaped = await this.executeRun(this.p1, this.p2);
@@ -87,6 +97,8 @@ class Battle {
             });
         }
         // use a move
+        // TODO: this logic is directly related to the 2nd pokemon, and no generalized for any pokemon that uses a move
+        // continuing to write like this will make it impossible to add pvp logic later
         if (selection.selection === 'move') {
             return new Promise(async resolve => {
                 const message = await messages.msgBattle(this.p1Lead, this.p2Lead, this.p1.id, `${this.p2Lead.name} used ${selection.name}`, disableButtons);
@@ -95,7 +107,7 @@ class Battle {
             });
         }
         // use an item
-        if (selection.selection === 'catch') {
+        else if (selection.selection === 'catch') {
             const caught = await this.executeCatch(this.p1, this.p2);
             return new Promise(async resolve => {
                 if (caught) {
@@ -148,11 +160,7 @@ class Battle {
         await sleep(1500);
         const captured = Math.random() * 10;
 
-        // example 'caught' logic. research pokemon caught formula and integrate it into each **Wiggle** phase of the battle.
-        if (captured < 5) {
-            return true;
-        }
-        return false;
+        return true;
 
     }
 }

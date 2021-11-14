@@ -1,0 +1,3 @@
+class PveBattle extends Battle {
+
+}
