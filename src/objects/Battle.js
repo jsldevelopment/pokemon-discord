@@ -1,4 +1,5 @@
 const { sleep } = require('../util/getDiscordInfo');
+const ThreadManager = require('../managers/ThreadManager');
 
 /**
  * Battle Object - contains all necessary info for a PVE or PVP battle.
@@ -7,8 +8,9 @@ const { sleep } = require('../util/getDiscordInfo');
  */
 class Battle {
 
-    constructor(client, player1, player2) {
+    constructor(client, player1, player2, channel) {
         this.client = client;
+        this.channel = channel;
         // player 1 will always refer to the player who initiated the battle
         this.player1 = player1;
         this.player2Lead = player1.party[0];
@@ -16,6 +18,7 @@ class Battle {
         this.player2Lead = player2.party[0];
         this.choices = [];
         this.turns = 0;
+        this.threadManager = new ThreadManager(client);
     };
 
 

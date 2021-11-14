@@ -77,7 +77,7 @@ const messages = {
     },
 
     msgItems: async function(currentPokemon, opPokemon, id, description) {
-        // const file = new MessageAttachment(`./src/data/img/icons/${opPokemon.id}.png`);
+        console.log(opPokemon);
         const embed = [embeds.battleStartEmbed(currentPokemon, opPokemon)];
         const embedRows = buttons.rowItem(id);
         if (description) {
@@ -90,7 +90,6 @@ const messages = {
     },
 
     msgParty: async function(curPokemon, party, opPokemon, id, description) {
-        // const file = new MessageAttachment(`./src/data/img/icons/${opPokemon.id}.png`);
         const embed = [embeds.battleStartEmbed(curPokemon, opPokemon)];
         // generate rows based on team members
         const embedRows = buttons.rowParty(party, id);

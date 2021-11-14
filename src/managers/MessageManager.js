@@ -1,38 +1,14 @@
 const { getChannel } = require('../util/getDiscordInfo');
+const BaseManager = require('./BaseManager');
 
-class MessageManager {
+class MessageManager extends BaseManager {
 
     /**
      * set initial reference to instantiating client and interaction
      * @param {Client|Interaction} param0 
      */
-    constructor(options = {}) {
-        /**
-         * the client that instantiated this manager
-         * @name client
-         */
-        if (options.client) this.client = options.client;
-        /**
-         * the interaction that instantiated this manager
-         * @name interaction
-         */
-        if (options.interaction) {
-
-            this.interaction = options.interaction;
-
-            if (this.interaction.isCommand()) {
-
-                this.channel = this.interaction.channelId
-
-            } else if (this.interaction.isMessageComponent()) {
-
-                this.message = this.interaction.message.id,
-                    this.author = this.interaction.message.author.id,
-                    this.channel = this.interaction.message.channelId
-
-            }
-
-        }
+    constructor(client, interaction) {
+        super(client, interaction);
     }
 
     // general messaging
@@ -96,12 +72,12 @@ class MessageManager {
         await member.send({ content: 'You have been succesfully registered.' });
     }
 
-    async sendCapturedBroadcast(p1, p2Lead) {
-        (await getChannel(this.client, p1.route)).send({ content: `${p1.username} has caught a level ${p2Lead.level} ${p2Lead.name}` });
+    async sendCapturedBroadcast(battle) {
+        (await getChannel(this.client, battle.channel)).send({ content: `captured text` });
     }
 
-    async sendRunAwayBroadcast(p1, p2Lead) {
-        (await getChannel(this.client, p1.route)).send({ content: `${p1.username} has fled from a level ${p2Lead.level} ${p2Lead.name}` });
+    async sendRunAwayBroadcast(battle) {
+        (await getChannel(this.client, battle.channel)).send({ content: `ran away text` });
     }
 
     // delete functions

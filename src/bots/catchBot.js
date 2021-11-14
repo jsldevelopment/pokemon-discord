@@ -4,7 +4,7 @@ const uuid = require('uuid').v4;
 // objs
 const MessageManager = require('../managers/MessageManager');
 const WebhookManager = require('../managers/WebhookManager');
-const threadManager = require('../managers/ThreadManager');
+const ThreadManager = require('../managers/ThreadManager');
 const BattlePve = require('../objects/BattlePve');
 const TrainerAi = require('../objects/TrainerAi');
 
@@ -24,7 +24,7 @@ const catchBot = {
 
         discordClient.once('ready', async() => {
 
-            threadManager.setClient(discordClient);
+            this.threadManager = new ThreadManager(discordClient);
 
             console.log(`catchBot: ready to serve ${userMap.size} users`);
 
@@ -47,7 +47,7 @@ const catchBot = {
         discordClient.on('interactionCreate', async interaction => {
 
             // instantiate the message manager and grab the calling user from the map
-            const messageManager = new MessageManager({ client: discordClient, interaction: interaction });
+            const messageManager = new MessageManager(discordClient, interaction);
             const currentUser = userMap.get(interaction.user.id);
 
             if (interaction.isCommand()) {
@@ -66,20 +66,19 @@ const catchBot = {
                     const battleId = new uuid();
                     // generate ai opponent based on pokemon
                     const aiOpp = new TrainerAi(generated);
-                    battleMap.set(battleId, new BattlePve(discordClient, currentUser, aiOpp));
+                    battleMap.set(battleId, new BattlePve(discordClient, currentUser, aiOpp, interaction.channelId));
 
                     // set user battle options here so we can use them on the thread
                     // how much of this can be in the battle handler
                     currentUser.battle = battleId;
-                    currentUser.route = interaction.channelId;
 
                     // deletes the initial bot reply to the command without the command failing
                     const deferMsg = await messageManager.deferReply({ fetchReply: true });
                     deferMsg.delete();
 
                     // kick off new thread for battle and use webhook to send intiial command
-                    const threadId = await threadManager.createThread(currentUser, aiOpp);
-                    const hook = (await this.webhookManager.getAllHooks(currentUser.route)).first();
+                    const threadId = await this.threadManager.createPveThread(battleMap.get(battleId));
+                    const hook = (await this.webhookManager.getAllHooks(battleMap.get(battleId).channel)).first();
                     await hook.send({...message, threadId: threadId });
 
                 }
@@ -117,23 +116,23 @@ const catchBot = {
                     // menuing
                 } else if (btnId.match(/item\|[1-9]*/)) {
 
-                    const message = await messages.msgItems(curBattle.p1Lead, curBattle.p2Lead, currentUser.id, "Use which item?");
+                    const message = await messages.msgItems(curBattle.player1Lead, curBattle.player2Lead, currentUser.id, "Use which item?");
                     await messageManager.updateMessage(message);
 
                 } else if (btnId.match(/fight\|[1-9]*/)) {
 
-                    const message = await messages.msgFight(curBattle.p1Lead, curBattle.p2Lead, currentUser.id, "Pick a move!");
+                    const message = await messages.msgFight(curBattle.player1Lead, curBattle.player2Lead, currentUser.id, "Pick a move!");
                     await messageManager.updateMessage(message);
 
                 } else if (btnId.match(/party\|[1-9]*/)) {
 
-                    const message = await messages.msgParty(curBattle.p1Lead, curBattle.p1.party.slice(0), curBattle.p2Lead, currentUser.id, "Select a pokemon!");
+                    const message = await messages.msgParty(curBattle.player1Lead, curBattle.player1.party.slice(0), curBattle.player2Lead, currentUser.id, "Select a pokemon!");
                     await messageManager.updateMessage(message);
 
                     // return to the main menu
                 } else if (btnId.match(/back\|[1-9]*/)) {
 
-                    const message = await messages.msgBattle(curBattle.p1Lead, curBattle.p2Lead, currentUser.id, currentUser.id, "What will you do?");
+                    const message = await messages.msgBattle(curBattle.player1Lead, curBattle.player2Lead, currentUser.id, currentUser.id, "What will you do?");
                     await messageManager.updateMessage(message);
 
                 }

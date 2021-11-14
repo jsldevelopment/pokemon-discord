@@ -1,19 +1,14 @@
 const { getChannel } = require('../util/getDiscordInfo');
+const BaseManager = require('./BaseManager');
 
-
-
-class WebhookManager {
+class WebhookManager extends BaseManager {
 
     /**
      * set initial reference to instantiating client
      * @param {Client} client
      */
     constructor(client) {
-        /**
-         * the client that instantiated this manager
-         * @name client
-         */
-        this.client = client;
+        super(client);
     }
 
     /**
@@ -44,8 +39,8 @@ class WebhookManager {
      * gets all hooks from a channel
      * @param {String} id the id of the channel containing the given hooks
      */
-    async getAllHooks(id) {
-        return await (await getChannel(this.client, id)).fetchWebhooks();
+    async getAllHooks(channel) {
+        return await (await getChannel(this.client, channel)).fetchWebhooks();
     }
 }
 

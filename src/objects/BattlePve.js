@@ -1,6 +1,5 @@
 const Battle = require('./Battle');
 const messages = require('../data/messages/messages.js');
-const threadManager = require('../managers/ThreadManager');
 const MessageManager = require('../managers/MessageManager');
 const battleMap = require('../data/battleMap.js');
 const { sleep } = require('../util/getDiscordInfo');
@@ -10,21 +9,23 @@ const { sleep } = require('../util/getDiscordInfo');
  * @extends {Battle}
  */
 class BattlePve extends Battle {
-    constructor(client, player1, player2) {
-        super(client, player1, player2);
+    constructor(client, player1, player2, channel) {
+        super(client, player1, player2, channel);
 
         /** 
          * The number of attempted escapes from this battle
          */
         this.escapes = 0;
+        /** 
+         * The name of this battle, for threading reference.
+         */
+        this.name = `${this.player1.username} vs. Lvl. ${this.player2Lead.level} ${this.player2Lead.name}`;
     }
 
     // is this pve or pvp?
     executeTurns = async(interaction) => {
-        this.messageManager = new MessageManager({ client: this.client, interaction: interaction });
+        this.messageManager = new MessageManager(this.client, interaction);
         await this.messageManager.deferUpdate();
-        // generate opponent move
-        console.log(this.player2);
         this.choices.push(this.player2.generateMove());
         this.sortMoves();
         this.executeMoves();
@@ -37,8 +38,8 @@ class BattlePve extends Battle {
             return new Promise(async resolve => {
                 if (escaped) {
                     // delete the thread, delete the battle, remove battle from user
-                    threadManager.deleteThread(this);
-                    this.messageManager.sendRunAwayBroadcast(this.player1, this.player2Lead);
+                    this.threadManager.deleteThread(this.channel, this.name);
+                    this.messageManager.sendRunAwayBroadcast(this);
                     battleMap.delete(this.player1.battle);
                     // is there a nicer way to reset this?
                     this.player1.battle = null;
@@ -67,8 +68,8 @@ class BattlePve extends Battle {
             return new Promise(async resolve => {
                 if (caught) {
                     // delete the thread, delete the battle, remove battle from user
-                    threadManager.deleteThread(this);
-                    this.messageManager.sendCapturedBroadcast(this.player1, this.player2Lead);
+                    this.threadManager.deleteThread(this);
+                    this.messageManager.sendCapturedBroadcast(this);
                     battleMap.delete(this.player1.battle);
                     // is there a nicer way to reset this?
                     this.player1.battle = null;

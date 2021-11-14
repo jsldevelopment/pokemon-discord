@@ -6,8 +6,8 @@ const Trainer = require("./Trainer");
  */
 class TrainerHuman extends Trainer {
 
-    constructor(id, username, avatar) {
-        super();
+    constructor(id, username, avatar, pokemon) {
+        super(pokemon);
         this.id = id;
         this.username = username;
         this.avatar = avatar;

@@ -34,7 +34,7 @@ const profBot = {
         discordClient.on('interactionCreate', async interaction => {
 
             // instantiate the message manager and grab the calling user from the map
-            const messageManager = new MessageManager({ client: discordClient, interaction: interaction });
+            const messageManager = new MessageManager(discordClient, interaction);
             const currentUser = userMap.get(interaction.user.id);
             const registeringUser = registeringUsers.get(interaction.user.id);
 
