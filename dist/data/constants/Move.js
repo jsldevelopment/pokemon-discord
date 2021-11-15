@@ -1,5 +1,5 @@
 "use strict";
-const { Category, Type } = require('./General');
+const { Category, Type } = require('./Category');
 exports.Move = {
     "Accelerock": {
         "type": Type.Rock,

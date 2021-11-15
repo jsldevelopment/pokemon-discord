@@ -8,30 +8,26 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const config_json_1 = __importDefault(require("../config.json"));
+const { guildId } = require('../config.json');
 exports.getGuild = function (client) {
     return __awaiter(this, void 0, void 0, function* () {
         if (!client)
             return;
-        return yield client.guilds.cache.get(config_json_1.default);
+        return yield client.guilds.cache.get(guildId);
     });
 };
 exports.getMember = function (client, id) {
     return __awaiter(this, void 0, void 0, function* () {
         if (!client)
             return;
-        return yield client.guilds.cache.get(config_json_1.default).members.fetch(id);
+        return yield client.guilds.cache.get(guildId).members.fetch(id);
     });
 };
 exports.getRole = function (client, roleId) {
     return __awaiter(this, void 0, void 0, function* () {
         if (!client)
             return;
-        return yield client.guilds.cache.get(config_json_1.default).roles.cache.find((role) => role.name === roleId);
+        return yield client.guilds.cache.get(guildId).roles.cache.find((role) => role.name === roleId);
     });
 };
 exports.getChannel = function (client, id) {

@@ -1,4 +1,4 @@
-exports.Pokedex = {
+const Pokedex = {
     "1": {
         "name": "Bulbasaur",
         "desc": "It can go for days without eating a single morsel. In the bulb on its back, it stores energy."
@@ -3592,3 +3592,5 @@ exports.Pokedex = {
         "desc": "Legend says that by using its power to see all events from past to future, this Pokémon saved the creatures of a forest from a meteorite strike."
     }
 }
+
+module.exports = Pokedex;

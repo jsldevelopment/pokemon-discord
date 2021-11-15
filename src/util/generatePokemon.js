@@ -2,7 +2,7 @@
 const uuid = require('uuid').v4;
 // constants
 const rawPokemon = require('../data/constants/Pokemon.js');
-const { Nature } = require('../data/constants/General');
+const Nature = require('../data/constants/Nature');
 // objs
 const Pokemon = require('../objects/Pokemon');
 // util fxn

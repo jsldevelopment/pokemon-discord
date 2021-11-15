@@ -1,4 +1,4 @@
-import * as keys from './config.json';
+const keys = require('./config.json');
 const { Client, Intents } = require('discord.js');
 const cassandra = require('cassandra-driver');
 const profBot = require('./bots/profBot.js');
@@ -15,7 +15,7 @@ const userMap = require('./data/userMap.js');
     });
 
     const users = await queries.getAllUsers(dbClient);
-    users.rows.forEach((row: any) => {
+    users.rows.forEach((row) => {
         userMap.set(row.id, JSON.parse(row.data));
     });
 

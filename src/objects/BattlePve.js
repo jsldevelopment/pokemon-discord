@@ -11,18 +11,10 @@ const { sleep } = require('../util/getDiscordInfo');
 class BattlePve extends Battle {
     constructor(client, player1, player2, channel) {
         super(client, player1, player2, channel);
-
-        /** 
-         * The number of attempted escapes from this battle
-         */
         this.escapes = 0;
-        /** 
-         * The name of this battle, for threading reference.
-         */
         this.name = `${this.player1.username} vs. Lvl. ${this.player2Lead.level} ${this.player2Lead.name}`;
     }
 
-    // is this pve or pvp?
     executeTurns = async(interaction) => {
         this.messageManager = new MessageManager(this.client, interaction);
         await this.messageManager.deferUpdate();
@@ -32,16 +24,13 @@ class BattlePve extends Battle {
     }
 
     executeSelection = async(type, disableButtons) => {
-        // run away
         if (type.selection === 'run') {
             const escaped = await this.executeRun(this.player1, this.player2);
             return new Promise(async resolve => {
                 if (escaped) {
-                    // delete the thread, delete the battle, remove battle from user
                     this.threadManager.deleteThread(this.channel, this.name);
                     this.messageManager.sendRunAwayBroadcast(this);
                     battleMap.delete(this.player1.battle);
-                    // is there a nicer way to reset this?
                     this.player1.battle = null;
                     resolve(false);
                 } else {
@@ -52,26 +41,20 @@ class BattlePve extends Battle {
                 }
             });
         }
-        // use a move
-        // TODO: this logic is directly related to the 2nd pokemon, and no generalized for any pokemon that uses a move
-        // continuing to write like this will make it impossible to add pvp logic later
+
         if (type.selection === 'move') {
             return new Promise(async resolve => {
                 const message = await messages.msgBattle(this.player1Lead, this.player2Lead, this.player1.id, `${this.player2Lead.name} used ${selection.name}`, disableButtons);
                 await this.messageManager.editMessage(message);
                 resolve(true);
             });
-        }
-        // use an item
-        else if (type.selection === 'catch') {
+        } else if (type.selection === 'catch') {
             const caught = await this.executeCatch(this.player1, this.player2);
             return new Promise(async resolve => {
                 if (caught) {
-                    // delete the thread, delete the battle, remove battle from user
                     this.threadManager.deleteThread(this);
                     this.messageManager.sendCapturedBroadcast(this);
                     battleMap.delete(this.player1.battle);
-                    // is there a nicer way to reset this?
                     this.player1.battle = null;
                     resolve(false);
                 } else {
@@ -80,10 +63,8 @@ class BattlePve extends Battle {
                     resolve(true);
                 }
             });
-        }
-        // swap to a different party member
-        else if (type.selection === 'swap') {
-            // TODO: implement swap logic
+        } else if (type.selection === 'swap') {
+
         }
     }
 

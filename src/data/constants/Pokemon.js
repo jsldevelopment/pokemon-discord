@@ -1,7 +1,9 @@
-const { Type, Stat, Rate } = require('./General');
-const { Ability } = require('./Ability');
-const { Learnset } = require('./Learnset');
-const { Pokedex } = require('./Pokedex');
+const Type = require('./Type');
+const Stat = require('./Stat');
+const Rate = require('./Rate');
+const Ability = require('./Ability');
+const Learnset = require('./Learnset');
+const Pokedex = require('./Pokedex');
 
 module.exports = {
     // bulbasaur

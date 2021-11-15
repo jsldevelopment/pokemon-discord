@@ -1,5 +1,5 @@
 "use strict";
-const { Type, Stat, Rate } = require('./General');
+const { Type, Stat, Rate } = require('./Category');
 const { Ability } = require('./Ability');
 const { Learnset } = require('./Learnset');
 const { Pokedex } = require('./Pokedex');
