@@ -13,24 +13,13 @@ class Battle {
         this.channel = channel;
         // player 1 will always refer to the player who initiated the battle
         this.player1 = player1;
-        this.player2Lead = player1.party[0];
+        this.player1Lead = player1.party[0];
         this.player2 = player2;
         this.player2Lead = player2.party[0];
         this.choices = [];
         this.turns = 0;
         this.threadManager = new ThreadManager(client);
     };
-
-
-    /**
-     * TODO: add logic for PVP vs PVE. 
-     *  PVE - we always execute turns after the player has selected a move
-     *  PVP - if the opponent has not selected a move, we idle the player until then
-     */
-    addMove = (move, interaction) => {
-        this.choices.push(move);
-        this.executeTurns(interaction);
-    }
 
     sortMoves = () => {
         this.choices.sort((a, b) => {

@@ -24,7 +24,7 @@ const profBot = {
         });
 
         discordClient.on('guildMemberAdd', async(member) => {
-            const messageManager = new MessageManager({ client: discordClient });
+            const messageManager = new MessageManager(discordClient);
             messageManager.sendDirectMessage(
                 member,
                 messages.msgWelcome

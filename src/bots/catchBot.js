@@ -105,13 +105,7 @@ const catchBot = {
 
                 } else if (btnId.match(/move[1-9]\|[1-9]*/)) {
 
-                    // for pvp, this needs to be revised to check the id of the trainer using the move.
-                    curBattle.addMove({
-                        selection: "move",
-                        trainer: currentUser,
-                        pokemon: currentUser.party[0],
-                        moveIndex: Math.floor(Math.random() * currentUser.party[0].moves.length)
-                    }, interaction);
+                    curBattle.addMove(interaction);
 
                     // menuing
                 } else if (btnId.match(/item\|[1-9]*/)) {

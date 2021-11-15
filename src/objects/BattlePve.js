@@ -15,6 +15,18 @@ class BattlePve extends Battle {
         this.name = `${this.player1.username} vs. Lvl. ${this.player2Lead.level} ${this.player2Lead.name}`;
     }
 
+    // how do we write this such that the function knows who the calling user is
+    addMove = (interaction) => {
+        this.choices.push({
+            selection: "move",
+            trainer: this.player1,
+            pokemon: this.player1Lead,
+            move: this.player1Lead.moves[Math.floor(Math.random() * this.player1Lead.moves.length)]
+        });
+        this.executeTurns(interaction);
+    }
+
+    // and the executing move knows who executed it, and who to act on
     executeTurns = async(interaction) => {
         this.messageManager = new MessageManager(this.client, interaction);
         await this.messageManager.deferUpdate();
@@ -43,16 +55,18 @@ class BattlePve extends Battle {
         }
 
         if (type.selection === 'move') {
+
             return new Promise(async resolve => {
-                const message = await messages.msgBattle(this.player1Lead, this.player2Lead, this.player1.id, `${this.player2Lead.name} used ${selection.name}`, disableButtons);
+                const message = await messages.msgBattle(this.player1Lead, this.player2Lead, this.player1.id, `${this.player2Lead.name} used ${type.move.name}`, disableButtons);
                 await this.messageManager.editMessage(message);
                 resolve(true);
             });
+
         } else if (type.selection === 'catch') {
             const caught = await this.executeCatch(this.player1, this.player2);
             return new Promise(async resolve => {
                 if (caught) {
-                    this.threadManager.deleteThread(this);
+                    this.threadManager.deleteThread(this.channel, this.name);
                     this.messageManager.sendCapturedBroadcast(this);
                     battleMap.delete(this.player1.battle);
                     this.player1.battle = null;
