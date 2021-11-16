@@ -160,7 +160,7 @@ const buttonRows = {
     },
     rowFight: (currentPokemon, id) => {
         const moveRow = new MessageActionRow();
-        let moveNum = 1;
+        let moveNum = 0;
         currentPokemon.moves.forEach((move) => {
             moveRow.addComponents(buttons.btnMove(id, moveNum, move.name));
             moveNum++;

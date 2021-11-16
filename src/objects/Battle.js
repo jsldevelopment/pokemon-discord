@@ -31,11 +31,11 @@ class Battle {
     }
 
     executeMoves = () => {
-        this.executeSelection(this.choices[0], true)
+        this.executeSelection(this.choices[0], false)
             .then(async goAgain => {
                 await sleep(1500);
                 if (goAgain) {
-                    await this.executeSelection(this.choices[1], false);
+                    await this.executeSelection(this.choices[1], true);
                     await sleep(1500);
                 }
             });

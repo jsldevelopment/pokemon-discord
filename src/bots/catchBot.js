@@ -105,7 +105,7 @@ const catchBot = {
 
                 } else if (btnId.match(/move[1-9]\|[1-9]*/)) {
 
-                    curBattle.addMove(interaction);
+                    curBattle.addMove(interaction, currentUser, btnId.charAt(4));
 
                     // menuing
                 } else if (btnId.match(/item\|[1-9]*/)) {
@@ -126,7 +126,7 @@ const catchBot = {
                     // return to the main menu
                 } else if (btnId.match(/back\|[1-9]*/)) {
 
-                    const message = await messages.msgBattle(curBattle.player1Lead, curBattle.player2Lead, currentUser.id, currentUser.id, "What will you do?");
+                    const message = await messages.msgBattle(curBattle.player1Lead, curBattle.player2Lead, currentUser.id, currentUser.id, "What will you do?", false);
                     await messageManager.updateMessage(message);
 
                 }

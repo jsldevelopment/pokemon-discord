@@ -18,7 +18,6 @@ class BaseManager {
 
             this.interaction = interaction;
 
-            console.log(this.interaction);
             if (this.interaction.isCommand()) {
 
                 this.channel = this.interaction.channelId
