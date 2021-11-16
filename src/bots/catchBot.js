@@ -36,6 +36,7 @@ const catchBot = {
             // get all hooks for associated channel
             // TODO: move channel ids to a json property - channel name, value - channel id
             const hooks = await this.webhookManager.getAllHooks("907722445128097805");
+            console.log('got hooks');
             // if a hook currentyl exist, do NOT create another one
             if (!hooks.size) {
                 await this.webhookManager.createHook("907722445128097805", "Battle:");
@@ -59,7 +60,9 @@ const catchBot = {
                     if (currentUser.battle) return messageManager.replyAlreadyInBattle();
 
                     // generate mon and create reply message
-                    const generated = await generatePokemon((Math.random() * 10) < 6 ? 10 : 396, 5);
+                    // const generated = await generatePokemon((Math.random() * 10) < 6 ? 10 : 396, 5);
+                    // for testing purposes, we only want to encounter caterpie
+                    const generated = await generatePokemon(10, 5);
                     const message = await messages.msgBattleStart(currentUser.party[0], generated, currentUser.id, "What will you do?");
 
                     // instantiate battle manager and pass encounter deets
@@ -95,38 +98,38 @@ const catchBot = {
                 const curBattle = battleMap.get(currentUser.battle);
 
                 // selections - these are final choices, once selected they are added to the turns list
-                if (btnId.match(/catch\|[1-9]*/)) {
+                if (btnId.match(/catch\|[0-9]*/)) {
 
-                    curBattle.addMove({ selection: "catch", prio: 5 }, interaction);
+                    curBattle.addTurn(interaction, currentUser, "catch");
 
-                } else if (btnId.match(/run\|[1-9]*/)) {
+                } else if (btnId.match(/run\|[0-9]*/)) {
 
-                    curBattle.addMove({ selection: "run", prio: 5 }, interaction);
+                    curBattle.addTurn(interaction, currentUser, "run");
 
-                } else if (btnId.match(/move[1-9]\|[1-9]*/)) {
+                } else if (btnId.match(/move[0-9]\|[0-9]*/)) {
 
-                    curBattle.addMove(interaction, currentUser, btnId.charAt(4));
+                    curBattle.addTurn(interaction, currentUser, "move", btnId.charAt(4));
 
                     // menuing
-                } else if (btnId.match(/item\|[1-9]*/)) {
+                } else if (btnId.match(/item\|[0-9]*/)) {
 
                     const message = await messages.msgItems(curBattle.player1Lead, curBattle.player2Lead, currentUser.id, "Use which item?");
                     await messageManager.updateMessage(message);
 
-                } else if (btnId.match(/fight\|[1-9]*/)) {
+                } else if (btnId.match(/fight\|[0-9]*/)) {
 
                     const message = await messages.msgFight(curBattle.player1Lead, curBattle.player2Lead, currentUser.id, "Pick a move!");
                     await messageManager.updateMessage(message);
 
-                } else if (btnId.match(/party\|[1-9]*/)) {
+                } else if (btnId.match(/party\|[0-9]*/)) {
 
                     const message = await messages.msgParty(curBattle.player1Lead, curBattle.player1.party.slice(0), curBattle.player2Lead, currentUser.id, "Select a pokemon!");
                     await messageManager.updateMessage(message);
 
                     // return to the main menu
-                } else if (btnId.match(/back\|[1-9]*/)) {
+                } else if (btnId.match(/back\|[0-9]*/)) {
 
-                    const message = await messages.msgBattle(curBattle.player1Lead, curBattle.player2Lead, currentUser.id, currentUser.id, "What will you do?", false);
+                    const message = await messages.msgBattle(curBattle.player1Lead, curBattle.player2Lead, currentUser.id, "What will you do?");
                     await messageManager.updateMessage(message);
 
                 }

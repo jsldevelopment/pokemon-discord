@@ -16,21 +16,26 @@ class BattlePve extends Battle {
     }
 
     // how do we write this such that the function knows who the calling user is
-    addMove = (interaction, player, index) => {
+    addTurn = (interaction, player, type, index) => {
+
+        if (type === "move") {
+            var action = { action: player.lead.moves[index] };
+        }
 
         this.choices.push({
-            selection: "move",
+            type: type,
             trainer: player,
-            pokemon: player.lead,
-            move: player.lead.moves[index]
+            ...action
         });
+
         this.choices.push({
-            selection: "move",
+            type: type,
             trainer: this.player2,
-            pokemon: this.player2Lead,
-            move: this.player2.generateMove()
+            action: this.player2.generateMove()
         })
+
         this.executeTurns(interaction);
+
     }
 
     // and the executing move knows who executed it, and who to act on
@@ -41,9 +46,11 @@ class BattlePve extends Battle {
         this.executeMoves();
     }
 
-    executeSelection = async(type, secondTurn) => {
+    executeSelection = async(turn, secondTurn) => {
 
-        if (type.selection === 'run') {
+        console.log(turn);
+
+        if (turn.type === 'run') {
 
             const escaped = await this.executeRun(this.player1, this.player2);
             return new Promise(async resolve => {
@@ -55,35 +62,26 @@ class BattlePve extends Battle {
                     resolve(false);
                 } else {
                     this.escapes++;
-                    const message = await messages.msgBattle(this.player1Lead, this.player2Lead, this.player1.id, "Couldn't get away!", true);
-                    await this.messageManager.editMessage(message);
-                    if (secondTurn) {
-                        await sleep(1500);
-                        const message2 = await messages.msgBattle(this.player1Lead, this.player2Lead, this.player1.id, "What will you do?", false);
-                        await this.messageManager.editMessage(message2);
-                    }
+                    this.updateBattleText("You couldn't get away...");
+                    if (secondTurn) { this.resetTurns(); }
                     resolve(true);
                 }
             });
 
         }
 
-        if (type.selection === 'move') {
+        if (turn.type === 'move') {
 
             return new Promise(async resolve => {
-                const message = await messages.msgBattle(this.player1Lead, this.player2Lead, this.player1.id, `${type.pokemon.name} used ${type.move.name}`, true);
-                await this.messageManager.editMessage(message);
-                if (secondTurn) {
-                    await sleep(1500);
-                    const message2 = await messages.msgBattle(this.player1Lead, this.player2Lead, this.player1.id, "What will you do?", false);
-                    await this.messageManager.editMessage(message2);
-                }
+                this.updateBattleText(`${turn.trainer.party[0].name} used ${turn.action.name}`);
+                if (secondTurn) { this.resetTurns(); }
                 resolve(true);
             });
 
-        } else if (type.selection === 'catch') {
+        } else if (turn.type === 'catch') {
 
-            const caught = await this.executeCatch(this.player1, this.player2);
+            const caught = await this.executeCatch();
+
             return new Promise(async resolve => {
                 if (caught) {
                     this.threadManager.deleteThread(this.channel, this.name);
@@ -92,13 +90,8 @@ class BattlePve extends Battle {
                     this.player1.battle = null;
                     resolve(false);
                 } else {
-                    const message = await messages.msgBattle(this.player1Lead, this.player2Lead, this.player1.id, "Awe, it appeared to be caught!", true);
-                    await this.messageManager.editMessage(message);
-                    if (secondTurn) {
-                        await sleep(1500);
-                        const message2 = await messages.msgBattle(this.player1Lead, this.player2Lead, this.player1.id, "What will you do?", false);
-                        await this.messageManager.editMessage(message2);
-                    }
+                    this.updateBattleText("Awe, it appeared to be caught!");
+                    if (secondTurn) { this.resetTurns(); }
                     resolve(true);
                 }
 
@@ -111,38 +104,38 @@ class BattlePve extends Battle {
 
     executeRun = async(player1, player2) => {
 
-        const player1Pkmn = player1.party[0];
-        const player2Pkmn = player2.party[0];
-
-        const message = await messages.msgBattle(player1Pkmn, player2Pkmn, this.player1.id, "Attempting to run away...", true);
-        await this.messageManager.editMessage(message);
+        this.updateBattleText("Attempting to run away...");
         await sleep(1000);
-
-        let escaped = (((player1Pkmn.stats.spd * 128) / player1Pkmn.stats.spd) + 30 * this.escapes) % 256;
-
+        let escaped = (((this.player1Lead.stats.spd * 128) / this.player2Lead.stats.spd) + 30 * this.escapes) % 256;
         if (Math.random() * 101 < escaped) return true;
         return false;
 
     };
 
-    executeCatch = async(player1, player2) => {
+    executeCatch = async() => {
 
-        const player1Pkmn = player1.party[0];
-        const player2Pkmn = player2.party[0];
-
-        const message = await messages.msgBattle(player1Pkmn, player2Pkmn, this.player1.id, "You toss a pokeball!", true);
-        await this.messageManager.editMessage(message);
+        this.updateBattleText("You toss a pokeball!");
         await sleep(1500);
-        const message2 = await messages.msgBattle(player1Pkmn, player2Pkmn, this.player1.id, "It wiggles...", true);
-        await this.messageManager.editMessage(message2);
+        this.updateBattleText("It wiggles...");
         await sleep(1500);
-        const message3 = await messages.msgBattle(player1Pkmn, player2Pkmn, this.player1.id, "It wiggles again...", true);
-        await this.messageManager.editMessage(message3);
+        this.updateBattleText("It wiggles again...");
         await sleep(1500);
-        const captured = Math.random() * 10;
+        // const captured = Math.random() * 10;
 
         return true;
 
+    }
+
+    resetTurns = async() => {
+        this.choices = [];
+        await sleep(1500);
+        const message2 = await messages.msgBattle(this.player1Lead, this.player2Lead, this.player1.id, "What will you do?", false);
+        await this.messageManager.editMessage(message2);
+    }
+
+    updateBattleText = async(text) => {
+        const message = await messages.msgBattle(this.player1Lead, this.player2Lead, this.player1.id, text, true);
+        await this.messageManager.editMessage(message);
     }
 }
 

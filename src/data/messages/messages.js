@@ -66,13 +66,6 @@ const messages = {
             embedRowB.components.forEach((row) => {
                 row.setDisabled(true);
             })
-        } else {
-            embedRowA.components.forEach((row) => {
-                row.setDisabled(false);
-            })
-            embedRowB.components.forEach((row) => {
-                row.setDisabled(false);
-            })
         }
         if (description) {
             embed[0].description = description;
