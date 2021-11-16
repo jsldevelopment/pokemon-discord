@@ -77,8 +77,6 @@ const messages = {
     },
 
     msgItems: async function(currentPokemon, opPokemon, id, description) {
-        console.log(opPokemon);
-        console.log(currentPokemon);
         const embed = [embeds.battleStartEmbed(currentPokemon, opPokemon)];
         const embedRows = buttons.rowItem(id);
         if (description) {

@@ -48,11 +48,10 @@ class BattlePve extends Battle {
 
     executeSelection = async(turn, secondTurn) => {
 
-        console.log(turn);
-
         if (turn.type === 'run') {
 
-            const escaped = await this.executeRun(this.player1, this.player2);
+            const escaped = await this.executeRun();
+
             return new Promise(async resolve => {
                 if (escaped) {
                     this.threadManager.deleteThread(this.channel, this.name);
@@ -74,6 +73,27 @@ class BattlePve extends Battle {
 
             return new Promise(async resolve => {
                 this.updateBattleText(`${turn.trainer.party[0].name} used ${turn.action.name}`);
+                await sleep(1500);
+
+                // time for some move logic
+                // get a reference to the OTHER trainer
+                const opp = (turn.trainer.id === this.player1.id) ? this.player2 : this.player1;
+
+                console.log(opp);
+                // dmg calc
+                const dmg = 10;
+                this.updateBattleText(`${opp.lead.name} took ${dmg} damage!`);
+                opp.lead.currentStats.hp -= dmg;
+
+                // faint check
+                if (opp.lead.currentStats.hp <= 0) {
+                    this.threadManager.deleteThread(this.channel, this.name);
+                    this.messageManager.sendEnemyDefeatedBroadcast(this);
+                    battleMap.delete(this.player1.battle);
+                    this.player1.battle = null;
+                    resolve(false);
+                }
+
                 if (secondTurn) { this.resetTurns(); }
                 resolve(true);
             });
@@ -102,7 +122,7 @@ class BattlePve extends Battle {
         }
     }
 
-    executeRun = async(player1, player2) => {
+    executeRun = async() => {
 
         this.updateBattleText("Attempting to run away...");
         await sleep(1000);

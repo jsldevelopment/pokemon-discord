@@ -76,6 +76,10 @@ class MessageManager extends BaseManager {
         (await getChannel(this.client, battle.channel)).send({ content: `captured text` });
     }
 
+    async sendEnemyDefeatedBroadcast(battle) {
+        (await getChannel(this.client, battle.channel)).send({ content: `defeated text` });
+    }
+
     async sendRunAwayBroadcast(battle) {
         (await getChannel(this.client, battle.channel)).send({ content: `ran away text` });
     }

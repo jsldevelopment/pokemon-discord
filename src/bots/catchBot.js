@@ -1,5 +1,5 @@
 // ext libs
-const uuid = require('uuid').v4;
+const { v4: uuid } = require('uuid');
 
 // objs
 const MessageManager = require('../managers/MessageManager');
@@ -68,7 +68,7 @@ const catchBot = {
                     // instantiate battle manager and pass encounter deets
                     const battleId = new uuid();
                     // generate ai opponent based on pokemon
-                    const aiOpp = new TrainerAi(generated);
+                    const aiOpp = new TrainerAi(new uuid(), generated);
                     battleMap.set(battleId, new BattlePve(discordClient, currentUser, aiOpp, interaction.channelId));
 
                     // set user battle options here so we can use them on the thread

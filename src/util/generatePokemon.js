@@ -17,7 +17,7 @@ module.exports = async function(id, level) {
 
     const ivs = getIvs();
     const evs = getEvs();
-    const netStats = await calcStats(level, raw.base, nature, ivs, evs);
+    // const netStats = await calcStats(level, raw.base, nature, ivs, evs);
 
     const pokemon = new Pokemon(
         uuid(),
@@ -28,7 +28,8 @@ module.exports = async function(id, level) {
         level,
         raw.evolves,
         raw.base,
-        netStats,
+        await calcStats(level, raw.base, nature, ivs, evs),
+        await calcStats(level, raw.base, nature, ivs, evs),
         Math.floor(Math.random() * 101) < raw.genderRatio ? 1 : 0,
         getAbility(raw),
         nature,

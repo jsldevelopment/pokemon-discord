@@ -6,8 +6,8 @@ const Trainer = require("./Trainer");
  */
 class TrainerAi extends Trainer {
 
-    constructor(pokemon) {
-        super(pokemon);
+    constructor(id, pokemon) {
+        super(id, pokemon);
     }
 
     generateMove = () => {

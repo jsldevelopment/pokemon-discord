@@ -75,7 +75,7 @@ const buttons = {
         return new MessageButton()
             .setCustomId('party|' + id)
             .setStyle('PRIMARY')
-            .setLabel('Party')
+            .setLabel(' Party ')
     },
     btnItem: (id) => {
         return new MessageButton()
