@@ -1,5 +1,5 @@
 "use strict";
-exports.Stat = {
+const Stat = {
     HP: "hp",
     ATK: "atk",
     DEF: "def",
@@ -7,3 +7,4 @@ exports.Stat = {
     SPDEF: "spdef",
     SPD: "spd"
 };
+module.exports = Stat;

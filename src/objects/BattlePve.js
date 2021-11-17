@@ -12,7 +12,7 @@ class BattlePve extends Battle {
     constructor(client, player1, player2, channel) {
         super(client, player1, player2, channel);
         this.escapes = 0;
-        this.name = `${this.player1.username} vs. Lvl. ${this.player2Lead.level} ${this.player2Lead.name}`;
+        this.name = `${this.player1.username} vs. Lvl. ${this.player2.lead.level} ${this.player2.lead.name}`;
     }
 
     // how do we write this such that the function knows who the calling user is
@@ -79,14 +79,15 @@ class BattlePve extends Battle {
                 // get a reference to the OTHER trainer
                 const opp = (turn.trainer.id === this.player1.id) ? this.player2 : this.player1;
 
-                console.log(opp);
                 // dmg calc
-                const dmg = 10;
-                this.updateBattleText(`${opp.lead.name} took ${dmg} damage!`);
+                const dmg = Math.floor(Math.random() * 5) + 1;
                 opp.lead.currentStats.hp -= dmg;
+                console.log(opp.lead.currentStats.hp);
+                this.updateBattleText(`${opp.lead.name} took ${dmg} damage!`);
 
                 // faint check
                 if (opp.lead.currentStats.hp <= 0) {
+                    console.log(`${opp.lead.name} defeated...`);
                     this.threadManager.deleteThread(this.channel, this.name);
                     this.messageManager.sendEnemyDefeatedBroadcast(this);
                     battleMap.delete(this.player1.battle);
@@ -126,7 +127,7 @@ class BattlePve extends Battle {
 
         this.updateBattleText("Attempting to run away...");
         await sleep(1000);
-        let escaped = (((this.player1Lead.stats.spd * 128) / this.player2Lead.stats.spd) + 30 * this.escapes) % 256;
+        let escaped = (((this.player1.lead.stats.spd * 128) / this.player2.lead.stats.spd) + 30 * this.escapes) % 256;
         if (Math.random() * 101 < escaped) return true;
         return false;
 
@@ -149,12 +150,12 @@ class BattlePve extends Battle {
     resetTurns = async() => {
         this.choices = [];
         await sleep(1500);
-        const message2 = await messages.msgBattle(this.player1Lead, this.player2Lead, this.player1.id, "What will you do?", false);
+        const message2 = await messages.msgBattle(this.player1.lead, this.player2.lead, this.player1.id, "What will you do?", false);
         await this.messageManager.editMessage(message2);
     }
 
     updateBattleText = async(text) => {
-        const message = await messages.msgBattle(this.player1Lead, this.player2Lead, this.player1.id, text, true);
+        const message = await messages.msgBattle(this.player1.lead, this.player2.lead, this.player1.id, text, true);
         await this.messageManager.editMessage(message);
     }
 }

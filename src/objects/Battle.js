@@ -13,9 +13,7 @@ class Battle {
         this.channel = channel;
         // player 1 will always refer to the player who initiated the battle
         this.player1 = player1;
-        this.player1Lead = player1.party[0];
         this.player2 = player2;
-        this.player2Lead = player2.party[0];
         this.choices = [];
         this.turns = 0;
         this.threadManager = new ThreadManager(client);

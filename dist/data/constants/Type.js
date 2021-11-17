@@ -1,5 +1,5 @@
 "use strict";
-exports.Type = {
+const Type = {
     Normal: "Normal",
     Fire: "Fire",
     Water: "Water",
@@ -19,3 +19,4 @@ exports.Type = {
     Steel: "Steel",
     Fairy: "Fairy"
 };
+module.exports = Type;

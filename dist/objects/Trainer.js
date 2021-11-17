@@ -1,7 +1,9 @@
 "use strict";
 class Trainer {
-    constructor(pokemon) {
+    constructor(id, pokemon) {
         this.party = [pokemon];
+        this.lead = this.party[0];
+        this.id = id;
     }
     ;
 }

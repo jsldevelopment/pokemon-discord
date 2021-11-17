@@ -74,7 +74,7 @@ const buttons = {
         return new MessageButton()
             .setCustomId('party|' + id)
             .setStyle('PRIMARY')
-            .setLabel('Party');
+            .setLabel(' Party ');
     },
     btnItem: (id) => {
         return new MessageButton()
@@ -149,7 +149,7 @@ const buttonRows = {
     },
     rowFight: (currentPokemon, id) => {
         const moveRow = new MessageActionRow();
-        let moveNum = 1;
+        let moveNum = 0;
         currentPokemon.moves.forEach((move) => {
             moveRow.addComponents(buttons.btnMove(id, moveNum, move.name));
             moveNum++;

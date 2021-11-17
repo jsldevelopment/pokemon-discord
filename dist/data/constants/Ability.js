@@ -1,5 +1,5 @@
 "use strict";
-exports.Ability = {
+const Ability = {
     "Adaptability": {
         "desc": "Powers up moves of the same type as the Pokémon.",
         "name": "Adaptability"
@@ -1069,3 +1069,4 @@ exports.Ability = {
         "name": "Zen Mode"
     }
 };
+module.exports = Ability;

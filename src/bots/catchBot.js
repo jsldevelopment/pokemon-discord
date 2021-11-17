@@ -113,23 +113,23 @@ const catchBot = {
                     // menuing
                 } else if (btnId.match(/item\|[0-9]*/)) {
 
-                    const message = await messages.msgItems(curBattle.player1Lead, curBattle.player2Lead, currentUser.id, "Use which item?");
+                    const message = await messages.msgItems(curBattle.player1.lead, curBattle.player2.lead, currentUser.id, "Use which item?");
                     await messageManager.updateMessage(message);
 
                 } else if (btnId.match(/fight\|[0-9]*/)) {
 
-                    const message = await messages.msgFight(curBattle.player1Lead, curBattle.player2Lead, currentUser.id, "Pick a move!");
+                    const message = await messages.msgFight(curBattle.player1.lead, curBattle.player2.lead, currentUser.id, "Pick a move!");
                     await messageManager.updateMessage(message);
 
                 } else if (btnId.match(/party\|[0-9]*/)) {
 
-                    const message = await messages.msgParty(curBattle.player1Lead, curBattle.player1.party.slice(0), curBattle.player2Lead, currentUser.id, "Select a pokemon!");
+                    const message = await messages.msgParty(curBattle.player1.lead, curBattle.player1.party.slice(0), curBattle.player2.lead, currentUser.id, "Select a pokemon!");
                     await messageManager.updateMessage(message);
 
                     // return to the main menu
                 } else if (btnId.match(/back\|[0-9]*/)) {
 
-                    const message = await messages.msgBattle(curBattle.player1Lead, curBattle.player2Lead, currentUser.id, "What will you do?");
+                    const message = await messages.msgBattle(curBattle.player1.lead, curBattle.player2.lead, currentUser.id, "What will you do?");
                     await messageManager.updateMessage(message);
 
                 }

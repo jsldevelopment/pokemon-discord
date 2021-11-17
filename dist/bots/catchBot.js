@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 // ext libs
-const uuid = require('uuid').v4;
+const { v4: uuid } = require('uuid');
 // objs
 const MessageManager = require('../managers/MessageManager');
 const WebhookManager = require('../managers/WebhookManager');
@@ -36,6 +36,7 @@ const catchBot = {
             // get all hooks for associated channel
             // TODO: move channel ids to a json property - channel name, value - channel id
             const hooks = yield this.webhookManager.getAllHooks("907722445128097805");
+            console.log('got hooks');
             // if a hook currentyl exist, do NOT create another one
             if (!hooks.size) {
                 yield this.webhookManager.createHook("907722445128097805", "Battle:");
@@ -52,12 +53,14 @@ const catchBot = {
                     if (currentUser.battle)
                         return messageManager.replyAlreadyInBattle();
                     // generate mon and create reply message
-                    const generated = yield generatePokemon((Math.random() * 10) < 6 ? 10 : 396, 5);
+                    // const generated = await generatePokemon((Math.random() * 10) < 6 ? 10 : 396, 5);
+                    // for testing purposes, we only want to encounter caterpie
+                    const generated = yield generatePokemon(10, 5);
                     const message = yield messages.msgBattleStart(currentUser.party[0], generated, currentUser.id, "What will you do?");
                     // instantiate battle manager and pass encounter deets
                     const battleId = new uuid();
                     // generate ai opponent based on pokemon
-                    const aiOpp = new TrainerAi(generated);
+                    const aiOpp = new TrainerAi(new uuid(), generated);
                     battleMap.set(battleId, new BattlePve(discordClient, currentUser, aiOpp, interaction.channelId));
                     // set user battle options here so we can use them on the thread
                     // how much of this can be in the battle handler
@@ -80,37 +83,31 @@ const catchBot = {
                 // grab current battle from map
                 const curBattle = battleMap.get(currentUser.battle);
                 // selections - these are final choices, once selected they are added to the turns list
-                if (btnId.match(/catch\|[1-9]*/)) {
-                    curBattle.addMove({ selection: "catch", prio: 5 }, interaction);
+                if (btnId.match(/catch\|[0-9]*/)) {
+                    curBattle.addTurn(interaction, currentUser, "catch");
                 }
-                else if (btnId.match(/run\|[1-9]*/)) {
-                    curBattle.addMove({ selection: "run", prio: 5 }, interaction);
+                else if (btnId.match(/run\|[0-9]*/)) {
+                    curBattle.addTurn(interaction, currentUser, "run");
                 }
-                else if (btnId.match(/move[1-9]\|[1-9]*/)) {
-                    // for pvp, this needs to be revised to check the id of the trainer using the move.
-                    curBattle.addMove({
-                        selection: "move",
-                        trainer: currentUser,
-                        pokemon: currentUser.party[0],
-                        moveIndex: Math.floor(Math.random() * currentUser.party[0].moves.length)
-                    }, interaction);
+                else if (btnId.match(/move[0-9]\|[0-9]*/)) {
+                    curBattle.addTurn(interaction, currentUser, "move", btnId.charAt(4));
                     // menuing
                 }
-                else if (btnId.match(/item\|[1-9]*/)) {
-                    const message = yield messages.msgItems(curBattle.player1Lead, curBattle.player2Lead, currentUser.id, "Use which item?");
+                else if (btnId.match(/item\|[0-9]*/)) {
+                    const message = yield messages.msgItems(curBattle.player1.lead, curBattle.player2.lead, currentUser.id, "Use which item?");
                     yield messageManager.updateMessage(message);
                 }
-                else if (btnId.match(/fight\|[1-9]*/)) {
-                    const message = yield messages.msgFight(curBattle.player1Lead, curBattle.player2Lead, currentUser.id, "Pick a move!");
+                else if (btnId.match(/fight\|[0-9]*/)) {
+                    const message = yield messages.msgFight(curBattle.player1.lead, curBattle.player2.lead, currentUser.id, "Pick a move!");
                     yield messageManager.updateMessage(message);
                 }
-                else if (btnId.match(/party\|[1-9]*/)) {
-                    const message = yield messages.msgParty(curBattle.player1Lead, curBattle.player1.party.slice(0), curBattle.player2Lead, currentUser.id, "Select a pokemon!");
+                else if (btnId.match(/party\|[0-9]*/)) {
+                    const message = yield messages.msgParty(curBattle.player1.lead, curBattle.player1.party.slice(0), curBattle.player2.lead, currentUser.id, "Select a pokemon!");
                     yield messageManager.updateMessage(message);
                     // return to the main menu
                 }
-                else if (btnId.match(/back\|[1-9]*/)) {
-                    const message = yield messages.msgBattle(curBattle.player1Lead, curBattle.player2Lead, currentUser.id, currentUser.id, "What will you do?");
+                else if (btnId.match(/back\|[0-9]*/)) {
+                    const message = yield messages.msgBattle(curBattle.player1.lead, curBattle.player2.lead, currentUser.id, "What will you do?");
                     yield messageManager.updateMessage(message);
                 }
             }

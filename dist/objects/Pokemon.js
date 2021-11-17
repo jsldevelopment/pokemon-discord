@@ -1,6 +1,6 @@
 "use strict";
 class Pokemon {
-    constructor(uuid, captured, name, id, types, level, evolves, base, stats, gender, ability, nature, ivs, evs, moves, learnset) {
+    constructor(uuid, captured, name, id, types, level, evolves, base, stats, currentStats, gender, ability, nature, ivs, evs, moves, learnset) {
         /**
          * @type UUID
          */
@@ -16,7 +16,7 @@ class Pokemon {
         this.evolves = evolves;
         this.base = base;
         this.stats = stats;
-        this.currentStats = stats;
+        this.currentStats = currentStats;
         this.gender = gender;
         this.ability = ability;
         this.nature = nature;

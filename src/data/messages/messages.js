@@ -56,6 +56,7 @@ const messages = {
     },
 
     msgBattle: async function(currentPokemon, opPokemon, id, description, disabled) {
+        // console.log(currentPokemon.currentStats.hp);
         const embed = [embeds.battleStartEmbed(currentPokemon, opPokemon)];
         const embedRowA = buttons.rowBattleA(id);
         const embedRowB = buttons.rowBattleB(id);

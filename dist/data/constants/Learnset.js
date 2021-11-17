@@ -1,6 +1,6 @@
 "use strict";
 const { Move } = require('./Move');
-exports.Learnset = {
+const Learnset = {
     "Bulbasaur": {
         "LevelUp": [{
                 move: Move.Tackle,
@@ -822,3 +822,4 @@ exports.Learnset = {
             }]
     },
 };
+module.exports = Learnset;

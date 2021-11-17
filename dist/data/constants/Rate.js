@@ -1,5 +1,5 @@
 "use strict";
-exports.Rate = {
+const Rate = {
     Erratic: "Erratic",
     Fast: "Fast",
     MediumFast: "Medium Fast",
@@ -7,3 +7,4 @@ exports.Rate = {
     Slow: "Slow",
     Fluctuating: "Fluctuating"
 };
+module.exports = Rate;

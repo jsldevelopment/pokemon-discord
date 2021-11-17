@@ -17,15 +17,6 @@ const ThreadManager = require('../managers/ThreadManager');
  */
 class Battle {
     constructor(client, player1, player2, channel) {
-        /**
-         * TODO: add logic for PVP vs PVE.
-         *  PVE - we always execute turns after the player has selected a move
-         *  PVP - if the opponent has not selected a move, we idle the player until then
-         */
-        this.addMove = (move, interaction) => {
-            this.choices.push(move);
-            this.executeTurns(interaction);
-        };
         this.sortMoves = () => {
             this.choices.sort((a, b) => {
                 a.spd > b.spd ? 1 : -1;
@@ -35,11 +26,11 @@ class Battle {
             });
         };
         this.executeMoves = () => {
-            this.executeSelection(this.choices[0], true)
+            this.executeSelection(this.choices[0], false)
                 .then((goAgain) => __awaiter(this, void 0, void 0, function* () {
                 yield sleep(1500);
                 if (goAgain) {
-                    yield this.executeSelection(this.choices[1], false);
+                    yield this.executeSelection(this.choices[1], true);
                     yield sleep(1500);
                 }
             }));
@@ -48,9 +39,7 @@ class Battle {
         this.channel = channel;
         // player 1 will always refer to the player who initiated the battle
         this.player1 = player1;
-        this.player2Lead = player1.party[0];
         this.player2 = player2;
-        this.player2Lead = player2.party[0];
         this.choices = [];
         this.turns = 0;
         this.threadManager = new ThreadManager(client);

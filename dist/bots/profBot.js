@@ -27,7 +27,7 @@ const profBot = {
             console.log(`profBot: ready to serve ${userMap.size} users`);
         });
         discordClient.on('guildMemberAdd', (member) => __awaiter(this, void 0, void 0, function* () {
-            const messageManager = new MessageManager({ client: discordClient });
+            const messageManager = new MessageManager(discordClient);
             messageManager.sendDirectMessage(member, messages.msgWelcome);
         }));
         discordClient.on('interactionCreate', (interaction) => __awaiter(this, void 0, void 0, function* () {

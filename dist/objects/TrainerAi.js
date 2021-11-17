@@ -5,21 +5,11 @@ const Trainer = require("./Trainer");
  * @extends {Trainer}
  */
 class TrainerAi extends Trainer {
-    constructor(pokemon) {
-        super(pokemon);
-        /**
-         * Generates a move to be used by the AI
-         * @returns Move
-         */
+    constructor(id, pokemon) {
+        super(id, pokemon);
         this.generateMove = () => {
-            return {
-                selection: "move",
-                trainer: this,
-                pokemon: this.lead,
-                move: Math.floor(Math.random() * this.lead.moves.length)
-            };
+            return this.lead.moves[Math.floor(Math.random() * this.lead.moves.length)];
         };
-        this.lead = this.party[0];
     }
 }
 module.exports = TrainerAi;

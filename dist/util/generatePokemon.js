@@ -24,8 +24,8 @@ module.exports = function (id, level) {
         const nature = natures[Math.floor(Math.random() * natures.length)];
         const ivs = getIvs();
         const evs = getEvs();
-        const netStats = yield calcStats(level, raw.base, nature, ivs, evs);
-        const pokemon = new Pokemon(uuid(), Date.now(), raw.name, id, raw.types, level, raw.evolves, raw.base, netStats, Math.floor(Math.random() * 101) < raw.genderRatio ? 1 : 0, getAbility(raw), nature, ivs, evs, getMoves(raw.learnset, level), raw.learnset);
+        // const netStats = await calcStats(level, raw.base, nature, ivs, evs);
+        const pokemon = new Pokemon(uuid(), Date.now(), raw.name, id, raw.types, level, raw.evolves, raw.base, yield calcStats(level, raw.base, nature, ivs, evs), yield calcStats(level, raw.base, nature, ivs, evs), Math.floor(Math.random() * 101) < raw.genderRatio ? 1 : 0, getAbility(raw), nature, ivs, evs, getMoves(raw.learnset, level), raw.learnset);
         return pokemon;
     });
 };

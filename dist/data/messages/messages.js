@@ -61,6 +61,7 @@ const messages = {
     },
     msgBattle: function (currentPokemon, opPokemon, id, description, disabled) {
         return __awaiter(this, void 0, void 0, function* () {
+            // console.log(currentPokemon.currentStats.hp);
             const embed = [embeds.battleStartEmbed(currentPokemon, opPokemon)];
             const embedRowA = buttons.rowBattleA(id);
             const embedRowB = buttons.rowBattleB(id);
@@ -83,7 +84,6 @@ const messages = {
     },
     msgItems: function (currentPokemon, opPokemon, id, description) {
         return __awaiter(this, void 0, void 0, function* () {
-            console.log(opPokemon);
             const embed = [embeds.battleStartEmbed(currentPokemon, opPokemon)];
             const embedRows = buttons.rowItem(id);
             if (description) {

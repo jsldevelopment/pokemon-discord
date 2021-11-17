@@ -77,6 +77,11 @@ class MessageManager extends BaseManager {
             (yield getChannel(this.client, battle.channel)).send({ content: `captured text` });
         });
     }
+    sendEnemyDefeatedBroadcast(battle) {
+        return __awaiter(this, void 0, void 0, function* () {
+            (yield getChannel(this.client, battle.channel)).send({ content: `defeated text` });
+        });
+    }
     sendRunAwayBroadcast(battle) {
         return __awaiter(this, void 0, void 0, function* () {
             (yield getChannel(this.client, battle.channel)).send({ content: `ran away text` });
