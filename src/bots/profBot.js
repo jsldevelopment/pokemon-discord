@@ -83,7 +83,7 @@ const profBot = {
                 } else if (label.match(/selectStarter\|[1-9]*/)) {
 
                     await messageManager.deleteThisMessage();
-                    let starter1gen = await generatePokemon(label.split("|")[1], 20);
+                    let starter1gen = await generatePokemon(label.split("|")[1], 5);
                     starter1gen.currentStats = starter1gen.stats;
                     queries.insertPokemon(dbClient, { owner_id: registeringUser.id, pokemon_id: starter1gen.uuid, pokemon: starter1gen });
                     registeringUsers.set(interaction.user.id, {...registeringUsers.get(registeringUser.id), starter: starter1gen });

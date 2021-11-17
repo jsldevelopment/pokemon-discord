@@ -3,6 +3,8 @@ const messages = require('../data/messages/messages.js');
 const MessageManager = require('../managers/MessageManager');
 const battleMap = require('../data/battleMap.js');
 const { sleep } = require('../util/getDiscordInfo');
+const Category = require('../data/constants/Category');
+const Stat = require('../data/constants/Stat');
 
 /**
  * Represents a PVE Battle occuring between player1: HumanUser and player2: AIUser
@@ -78,12 +80,9 @@ class BattlePve extends Battle {
                 // time for some move logic
                 // get a reference to the OTHER trainer
                 const opp = (turn.trainer.id === this.player1.id) ? this.player2 : this.player1;
-
+                const player = (turn.trainer.id === this.player1.id) ? this.player1 : this.player2;
                 // dmg calc
-                const dmg = Math.floor(Math.random() * 5) + 1;
-                opp.lead.currentStats.hp -= dmg;
-                console.log(opp.lead.currentStats.hp);
-                this.updateBattleText(`${opp.lead.name} took ${dmg} damage!`);
+                const dmg = await this.calculateDmg(turn.action, player.lead, opp.lead);
 
                 // faint check
                 if (opp.lead.currentStats.hp <= 0) {
@@ -158,6 +157,87 @@ class BattlePve extends Battle {
         const message = await messages.msgBattle(this.player1.lead, this.player2.lead, this.player1.id, text, true);
         await this.messageManager.editMessage(message);
     }
+
+    calculateDmg = async(move, player, opp) => {
+
+        // general dmg calc for testing
+        if (move.cat === Category.Status) return await this.calcStatChange(move, player, opp);
+        let dmg = Math.floor((
+            (
+                (((2 * player.level) / 5) + 2) *
+                move.dmg *
+                (
+                    (move.cat === Category.Physical ? player.currentStats.atk : player.currentStats.spatk) /
+                    (move.cat === Category.Physical ? opp.currentStats.def : opp.currentStats.spdef)
+                ) / 50
+            ) + 2
+        ));
+
+        // dmg * crit
+        // dmg * [.85:1]
+        // dmg * STAB
+        dmg *= (player.type === move.type ? 2 : 1);
+        // dmg * Type
+        // rawDmg *= (player.type === move.type ? 2 : 1);
+
+        // we need dmg type vs opp type
+        // STAB
+        // critical hit
+        // user atk/spatk
+        // enemy def/spdef
+
+        player.currentStats.hp - dmg <= 0 ? opp.currentStats.hp = 0 : opp.currentStats.hp -= dmg;
+        this.updateBattleText(`${opp.name} took ${dmg} damage!`);
+
+    }
+
+    calcStatChange = async(move, player, opp) => {
+
+        // "StringShot": {
+        //     "type": Type.Bug,
+        //     "cat": Category.Status,
+        //     "pp": 40,
+        //     "dmg": 0,
+        //     "acc": 95,
+        //     "desc": "Opposing Pokémon are bound with silk blown from the user's mouth that harshly lowers the Speed stat.",
+        //     "name": "String Shot",
+        //     "prio": 0,
+        //     "statChange": {
+        //         self: false,
+        //         stage: 1,
+        //         lower: false,
+        //         stat: [Stat.SPD]
+        //     }
+        // },
+
+        if (move.statChange) {
+            if (move.statChange.self) {
+                if (move.statChange.lower) {
+                    move.statChange.forEach((stat) => {
+                        player.currentStats[stat] *= .5 * move.statChange.stage;
+                    })
+                } else {
+                    move.statChange.forEach((stat) => {
+                        player.currentStats[stat] *= 2 * move.statChange.stage;
+                    })
+                }
+            } else {
+                if (move.statChange.lower) {
+                    move.statChange.stat.forEach(async(stat) => {
+                        player.currentStats[stat] *= .5 * move.statChange.stage;
+                        this.updateBattleText(`${opp.name} speed lowered by ${move.statChange.stage}!`);
+                        await sleep(1500);
+                    })
+                } else {
+                    move.statChange.forEach((stat) => {
+                        player.currentStats[stat] *= 2 * move.statChange.stage;
+                    })
+                }
+            }
+        }
+
+    }
+
 }
 
 module.exports = BattlePve;

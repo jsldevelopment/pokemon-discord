@@ -35,11 +35,11 @@ const catchBot = {
             this.webhookManager = new WebhookManager(discordClient, guild);
             // get all hooks for associated channel
             // TODO: move channel ids to a json property - channel name, value - channel id
-            const hooks = await this.webhookManager.getAllHooks("907722445128097805");
+            const hooks = await this.webhookManager.getAllHooks("910584340688302182");
             console.log('got hooks');
             // if a hook currentyl exist, do NOT create another one
             if (!hooks.size) {
-                await this.webhookManager.createHook("907722445128097805", "Battle:");
+                await this.webhookManager.createHook("910584340688302182", "Battle:");
                 console.log("Hook created.");
             }
 

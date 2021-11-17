@@ -1,5 +1,6 @@
 const Category = require('./Category');
 const Type = require('./Type');
+const Stat = require('./Stat');
 
 exports.Move = {
     "Accelerock": {
@@ -5971,7 +5972,7 @@ exports.Move = {
         "name": "Grassy Terrain"
     },
     "Gravity": {
-        "type": Type.psychic,
+        "type": Type.Psychic,
         "cat": Category.Status,
         "pp": 5,
         "dmg": 0,
@@ -7176,7 +7177,13 @@ exports.Move = {
         "acc": 95,
         "desc": "Opposing Pokémon are bound with silk blown from the user's mouth that harshly lowers the Speed stat.",
         "name": "String Shot",
-        "prio": 0
+        "prio": 0,
+        "statChange": {
+            self: false,
+            stage: 1,
+            lower: true,
+            stat: [Stat.SPD]
+        }
     },
     "StuffCheeks": {
         "type": Type.Normal,

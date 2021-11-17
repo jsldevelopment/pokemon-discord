@@ -73,7 +73,7 @@ class MessageManager extends BaseManager {
     }
 
     async sendCapturedBroadcast(battle) {
-        (await getChannel(this.client, battle.channel)).send({ content: `captured text` });
+        (await getChannel(this.client, battle.channel)).send({ content: `${battle.player1.username} has caught a ${battle.player2.lead.name}!` });
     }
 
     async sendEnemyDefeatedBroadcast(battle) {

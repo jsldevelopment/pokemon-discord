@@ -70,6 +70,8 @@ const getMoves = (learnset, level) => {
     let generated = false;
     let movesArr = [];
 
+    // TODO: if a pokemon has less than 4 moves, don't randomize the output
+
     while (!generated) {
 
         // filter out moves this pokemon cannot learn
