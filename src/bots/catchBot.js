@@ -1,5 +1,5 @@
 // ext libs
-const { v4: uuid } = require('uuid');
+const uuid = require('uuid').v4;
 
 // objs
 const MessageManager = require('../managers/MessageManager');
@@ -59,30 +59,23 @@ const catchBot = {
 
                     if (currentUser.battle) return messageManager.replyAlreadyInBattle();
 
-                    // generate mon and create reply message
-                    // const generated = await generatePokemon((Math.random() * 10) < 6 ? 10 : 396, 5);
-                    // for testing purposes, we only want to encounter caterpie
-                    const generated = await generatePokemon(10, 5);
+                    const generated = await generatePokemon({ id: 10, level: 5 });
                     const message = await messages.msgBattleStart(currentUser.party[0], generated, currentUser.id, "What will you do?");
 
-                    // instantiate battle manager and pass encounter deets
-                    const battleId = new uuid();
-                    // generate ai opponent based on pokemon
-                    const aiOpp = new TrainerAi(new uuid(), generated);
-                    battleMap.set(battleId, new BattlePve(discordClient, currentUser, aiOpp, interaction.channelId));
-
-                    // set user battle options here so we can use them on the thread
-                    // how much of this can be in the battle handler
-                    currentUser.battle = battleId;
+                    // add battle id to user, generate ai opp, create battle & add to map
+                    currentUser.battle = uuid();
+                    const aiOpp = new TrainerAi(uuid(), generated, currentUser.battle);
+                    battleMap.set(currentUser.battle, new BattlePve(discordClient, currentUser, aiOpp, interaction.channelId));
 
                     // deletes the initial bot reply to the command without the command failing
                     const deferMsg = await messageManager.deferReply({ fetchReply: true });
                     deferMsg.delete();
 
                     // kick off new thread for battle and use webhook to send intiial command
-                    const threadId = await this.threadManager.createPveThread(battleMap.get(battleId));
-                    const hook = (await this.webhookManager.getAllHooks(battleMap.get(battleId).channel)).first();
+                    const hook = (await this.webhookManager.getAllHooks(battleMap.get(currentUser.battle).channel)).first();
+                    const threadId = await this.threadManager.createPveThread(battleMap.get(currentUser.battle));
                     await hook.send({...message, threadId: threadId });
+                    // how do we a reference to the message that created the hook???
 
                 }
 

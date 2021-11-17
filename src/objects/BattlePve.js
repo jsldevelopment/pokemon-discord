@@ -100,7 +100,7 @@ class BattlePve extends Battle {
 
         } else if (turn.type === 'catch') {
 
-            const caught = await this.executeCatch();
+            const caught = await this.executeCatch(this.player2.lead);
 
             return new Promise(async resolve => {
                 if (caught) {
@@ -132,18 +132,33 @@ class BattlePve extends Battle {
 
     };
 
-    executeCatch = async() => {
+    executeCatch = async(opp) => {
+
+        // catch calc
+        const caught = await this.calculateCatch(opp);
 
         this.updateBattleText("You toss a pokeball!");
         await sleep(1500);
+        if (!this.shakeCheck(caught)) {
+            return false;
+        }
         this.updateBattleText("It wiggles...");
         await sleep(1500);
+        if (!this.shakeCheck(caught)) {
+            return false;
+        }
         this.updateBattleText("It wiggles again...");
         await sleep(1500);
-        // const captured = Math.random() * 10;
+        if (!this.shakeCheck(caught)) {
+            return false;
+        }
 
-        return true;
+        return Math.floor(Math.random() * 101) < caught ? true : false;
 
+    }
+
+    shakeCheck(a) {
+        return Math.floor(Math.random() * 65536) >= 1048560 / Math.sqrt(Math.sqrt(16711680 / a));
     }
 
     resetTurns = async() => {
@@ -193,23 +208,6 @@ class BattlePve extends Battle {
 
     calcStatChange = async(move, player, opp) => {
 
-        // "StringShot": {
-        //     "type": Type.Bug,
-        //     "cat": Category.Status,
-        //     "pp": 40,
-        //     "dmg": 0,
-        //     "acc": 95,
-        //     "desc": "Opposing Pokémon are bound with silk blown from the user's mouth that harshly lowers the Speed stat.",
-        //     "name": "String Shot",
-        //     "prio": 0,
-        //     "statChange": {
-        //         self: false,
-        //         stage: 1,
-        //         lower: false,
-        //         stat: [Stat.SPD]
-        //     }
-        // },
-
         if (move.statChange) {
             if (move.statChange.self) {
                 if (move.statChange.lower) {
@@ -235,6 +233,20 @@ class BattlePve extends Battle {
                 }
             }
         }
+
+    }
+
+    calculateCatch = async(opp) => {
+
+        // the pokeball used
+        let ball = 1;
+        let status = 1;
+        console.log(opp.stats.hp);
+        console.log(opp.currentStats.hp);
+        console.log(opp.catchRate);
+        let rate = ((((3 * opp.stats.hp) - (2 * opp.currentStats.hp)) * opp.catchRate * ball) / (3 * opp.stats.hp)) * status;
+        console.log(rate);
+        return rate;
 
     }
 

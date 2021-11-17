@@ -8,9 +8,9 @@ const Pokemon = require('../objects/Pokemon');
 // util fxn
 const calcStats = require('../util/calculateStat');
 
-module.exports = async function(id, level) {
+module.exports = async function(options) {
 
-    let raw = rawPokemon[id];
+    let raw = rawPokemon[options.id];
 
     const natures = Object.keys(Nature);
     const nature = natures[Math.floor(Math.random() * natures.length)];
@@ -23,20 +23,21 @@ module.exports = async function(id, level) {
         uuid(),
         Date.now(),
         raw.name,
-        id,
+        options.id,
         raw.types,
-        level,
+        options.level,
         raw.evolves,
         raw.base,
-        await calcStats(level, raw.base, nature, ivs, evs),
-        await calcStats(level, raw.base, nature, ivs, evs),
+        await calcStats(options.level, raw.base, nature, ivs, evs),
+        await calcStats(options.level, raw.base, nature, ivs, evs),
         Math.floor(Math.random() * 101) < raw.genderRatio ? 1 : 0,
         getAbility(raw),
         nature,
         ivs,
         evs,
-        getMoves(raw.learnset, level),
-        raw.learnset
+        getMoves(raw.learnset, options.level),
+        raw.learnset,
+        raw.catchRate
     );
 
     return pokemon;
