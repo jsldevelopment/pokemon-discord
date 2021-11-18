@@ -17,7 +17,7 @@ module.exports = {
         ],
         genderRatio: 88,
         abilities: {
-            ability1: Ability.Overgrow,
+            abilityRegular: [Ability.Overgrow],
             abilityRatio: 100,
             abilitySecret: Ability.Chlorophyll
         },

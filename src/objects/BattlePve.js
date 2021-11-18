@@ -20,6 +20,7 @@ class BattlePve extends Battle {
     // how do we write this such that the function knows who the calling user is
     addTurn = (interaction, player, type, index) => {
 
+        console.log(player);
         if (type === "move") {
             var action = { action: player.lead.moves[index] };
         }

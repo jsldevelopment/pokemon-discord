@@ -1,0 +1,138 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "schema/pokemon.schema.json",
+    "title": "Pokemon",
+    "description": "A Pokemon for catching and battling",
+    "type": "object",
+    "properties": {
+        "id": {
+            "description": "Unique identifier for a pokemon. Matches it's PokeDex number.",
+            "type": "integer"
+        },
+        "dex": {
+            "description": "Defines a PokeDex entry for this Pokemon.",
+            "$ref": "/pokedex.schema.json"
+        },
+        "types": {
+            "description": "A pokemon's type.",
+            "type": "array",
+            "enum": [
+                "Fire", "Water", "Grass", "Bug", "Normal", "Dark", "Dragon",
+                "Electric", "Fairy", "Fighting", "Flying", "Ghost",
+                "Ground", "Ice", "Poison", "Psychic", "Rock", "Steel"
+            ]
+        },
+        "genderRatio": {
+            "description": "Odds that a Pokemon is male.",
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 100
+        },
+        "abilities": {
+            "type": "object",
+            "properties": {
+                "abilities": {
+                    "description": "Possible regularly found abilities for a Pokemon.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "/ability.schema.json"
+                    },
+                    "minimum": 1,
+                    "maximum": 2
+                },
+                "genderRatio": {
+                    "description": "Odds that a Pokemon is male.",
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 100
+                },
+                "abilityHidden": {
+                    "description": "A hidden ability for a Pokemon. Can't be found regularly.",
+                    "type": "object",
+                    "$ref": "/ability.schema.json"
+                }
+            }
+        },
+        "$comment": "// THIS NEEDS WORK - doesn't fit for multiple evos OR evos besides level",
+        "evolution": {
+            "description": "Defines the evolutionary process for a Pokemon.",
+            "type": "object",
+            "properties": {
+                "evolves": {
+                    "description": "Whether or not a Pokemon has an evolution.",
+                    "type": "boolean"
+                },
+                "level": {
+                    "description": "The level a given pokemon evolves at."
+                },
+                "next": {
+                    "description": "The next evolution of this Pokemon."
+                }
+            }
+        },
+        "base": {
+            "description": "The base stats for a Pokemon.",
+            "properties": {
+                "hp": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 255
+                },
+                "atk": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 255
+                },
+                "def": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 255
+                },
+                "spatk": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 255
+                },
+                "spdef": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 255
+                },
+                "spd": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 255
+                }
+            }
+        },
+        "learnset": {
+            "description": "Defines a learnset for this Pokemon.",
+            "$ref": "/pokedex.schema.learnset"
+        },
+        "ev": {
+            "evYield": {
+                "type": "array",
+                "items": {
+                    "properties": {
+                        "stat": {
+                            "enum": ["hp", "atk", "def", "spatk", "spdef", "spd"]
+                        },
+                        "amt": {
+                            "type": "integer",
+                            "minimum": 0,
+                            "maximum": 5
+                        }
+                    }
+                }
+            }
+        },
+        "expRate": {
+            "enum": ["Erratic", "Fast", "Medium Fast", "Medium Slow", "Slow", "Fluctuating"]
+        },
+        "catchRate": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 255
+        }
+    }
+}

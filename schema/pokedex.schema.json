@@ -1,0 +1,17 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "schema/pokedex.schema.json",
+    "title": "Pokedex",
+    "description": "Defines a PokeDex entry for a Pokemon.",
+    "type": "object",
+    "properties": {
+        "name": {
+            "description": "Name of the given Pokemon.",
+            "type": "string"
+        },
+        "description": {
+            "description": "Describes the given Pokemon.",
+            "type": "string"
+        }
+    }
+}
