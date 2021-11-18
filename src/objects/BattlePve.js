@@ -81,8 +81,19 @@ class BattlePve extends Battle {
                 // get a reference to the OTHER trainer
                 const opp = (turn.trainer.id === this.player1.id) ? this.player2 : this.player1;
                 const player = (turn.trainer.id === this.player1.id) ? this.player1 : this.player2;
+
+                console.log(`${player.lead.name}'s turn START -------'`);
                 // dmg calc
-                const dmg = await this.calculateDmg(turn.action, player.lead, opp.lead);
+                if (turn.action.cat !== Category.Status) {
+                    console.log('executing dmg phase');
+                    await this.calculateDmg(turn.action, player.lead, opp.lead);
+                }
+                // general dmg calc for testing
+                if (turn.action.cat === Category.Status) {
+                    console.log('executing state change');
+                    await this.calcStatChange(turn.action, player.lead, opp.lead);
+                }
+                console.log(`${player.lead.name}'s turn END -------'`);
 
                 // faint check
                 if (opp.lead.currentStats.hp <= 0) {
@@ -175,8 +186,6 @@ class BattlePve extends Battle {
 
     calculateDmg = async(move, player, opp) => {
 
-        // general dmg calc for testing
-        if (move.cat === Category.Status) return await this.calcStatChange(move, player, opp);
         let dmg = Math.floor((
             (
                 (((2 * player.level) / 5) + 2) *
@@ -208,6 +217,7 @@ class BattlePve extends Battle {
 
     calcStatChange = async(move, player, opp) => {
 
+        console.log(move);
         if (move.statChange) {
             if (move.statChange.self) {
                 if (move.statChange.lower) {
@@ -222,6 +232,7 @@ class BattlePve extends Battle {
             } else {
                 if (move.statChange.lower) {
                     move.statChange.stat.forEach(async(stat) => {
+                        console.log(stat);
                         player.currentStats[stat] *= .5 * move.statChange.stage;
                         this.updateBattleText(`${opp.name} speed lowered by ${move.statChange.stage}!`);
                         await sleep(1500);

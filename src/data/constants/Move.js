@@ -5988,7 +5988,13 @@ exports.Move = {
         "acc": 100,
         "desc": "The user growls in an endearing way, making opposing Pokémon less wary. This lowers their Attack stats.",
         "name": "Growl",
-        "prio": 0
+        "prio": 0,
+        "statChange": {
+            self: false,
+            stage: 1,
+            lower: true,
+            stat: [Stat.ATK]
+        }
     },
     "Growth": {
         "type": Type.Normal,
