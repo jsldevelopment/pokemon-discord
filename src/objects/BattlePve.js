@@ -1,10 +1,10 @@
 const Battle = require('./Battle');
 const messages = require('../data/messages/messages.js');
 const MessageManager = require('../managers/MessageManager');
-const battleMap = require('../data/battleMap.js');
+const battleMap = require('../data/map/battleMap.js');
 const { sleep } = require('../util/getDiscordInfo');
-const Category = require('../data/constants/Category');
-const Stat = require('../data/constants/Stat');
+const Category = require('../data/enum/Category');
+const Stat = require('../data/enum/Stat');
 
 /**
  * Represents a PVE Battle occuring between player1: HumanUser and player2: AIUser

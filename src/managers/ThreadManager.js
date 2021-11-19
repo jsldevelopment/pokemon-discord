@@ -1,4 +1,4 @@
-const { constructor } = require('../data/battleMap');
+const { constructor } = require('../data/map/battleMap');
 const { getChannel } = require('../util/getDiscordInfo');
 const BaseManager = require('./BaseManager');
 

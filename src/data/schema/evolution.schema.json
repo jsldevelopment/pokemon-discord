@@ -1,0 +1,25 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "schema/evolution.schema.json",
+    "title": "Evolution",
+    "description": "Defines the array of possible evolutionary processes for a Pokemon.",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "method": {
+                "description": "Describes the method for evolving a Pokemon.",
+                "enum": ["LEVEL", "STONE"]
+            },
+            "level": {
+                "description": "Describes the level a pokemon evolves.",
+                "type": "string"
+            },
+            "next": {
+                "description": "Describes the next Pokemon in the evolution chain.",
+                "type": "string"
+            }
+        }
+    },
+    "required": ["method"]
+}

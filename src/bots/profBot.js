@@ -10,7 +10,7 @@ const { getRole, getMember } = require('../util/getDiscordInfo.js');
 
 // data
 const messages = require('../data/messages/messages.js');
-const userMap = require('../data/userMap.js');
+const userMap = require('../data/map/userMap.js');
 
 const profBot = {
 

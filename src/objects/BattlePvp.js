@@ -2,7 +2,7 @@ const Battle = require('./Battle');
 const messages = require('../data/messages/messages.js');
 const threadManager = require('../managers/ThreadManager');
 const MessageManager = require('../managers/MessageManager');
-const battleMap = require('../data/battleMap.js');
+const battleMap = require('../data/map/battleMap.js');
 
 class BattlePvp extends Battle {
 

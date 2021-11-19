@@ -1,4 +1,4 @@
-exports.Nature = {
+const Nature = {
     Hardy: "Hardy",
     Lonely: "Lonely",
     Brave: "Brave",
@@ -25,3 +25,5 @@ exports.Nature = {
     Careful: "Careful",
     Quirky: "Quirky"
 }
+
+module.exports = Nature;

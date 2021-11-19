@@ -1,9 +1,13 @@
 class Trainer {
 
-    constructor(id, pokemon) {
+    constructor(id, username, avatar, pokemon) {
+        this.id = id;
+        this.username = username;
+        this.avatar = avatar;
         this.party = [pokemon];
         this.lead = this.party[0];
-        this.id = id;
+        this.isInBattle = false;
+        this.battling = {};
     };
 
 }

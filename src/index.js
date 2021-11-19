@@ -4,7 +4,7 @@ const cassandra = require('cassandra-driver');
 const profBot = require('./bots/profBot.js');
 const catchBot = require('./bots/catchBot.js');
 const queries = require('./db/queries.js');
-const userMap = require('./data/userMap.js');
+const userMap = require('./data/map/userMap.js');
 
 (async() => {
 

@@ -14,13 +14,17 @@
             "$ref": "/pokedex.schema.json"
         },
         "types": {
-            "description": "A pokemon's type.",
+            "description": "Up to 2 types given for a Pokemon.",
             "type": "array",
-            "enum": [
-                "Fire", "Water", "Grass", "Bug", "Normal", "Dark", "Dragon",
-                "Electric", "Fairy", "Fighting", "Flying", "Ghost",
-                "Ground", "Ice", "Poison", "Psychic", "Rock", "Steel"
-            ]
+            "items": {
+                "enum": [
+                    "Fire", "Water", "Grass", "Bug", "Normal", "Dark", "Dragon",
+                    "Electric", "Fairy", "Fighting", "Flying", "Ghost",
+                    "Ground", "Ice", "Poison", "Psychic", "Rock", "Steel"
+                ]
+            },
+            "minimum": 1,
+            "maximum": 2
         },
         "genderRatio": {
             "description": "Odds that a Pokemon is male.",
@@ -31,7 +35,7 @@
         "abilities": {
             "type": "object",
             "properties": {
-                "abilities": {
+                "abilityRegular": {
                     "description": "Possible regularly found abilities for a Pokemon.",
                     "type": "array",
                     "items": {
@@ -53,22 +57,9 @@
                 }
             }
         },
-        "$comment": "// THIS NEEDS WORK - doesn't fit for multiple evos OR evos besides level",
         "evolution": {
             "description": "Defines the evolutionary process for a Pokemon.",
-            "type": "object",
-            "properties": {
-                "evolves": {
-                    "description": "Whether or not a Pokemon has an evolution.",
-                    "type": "boolean"
-                },
-                "level": {
-                    "description": "The level a given pokemon evolves at."
-                },
-                "next": {
-                    "description": "The next evolution of this Pokemon."
-                }
-            }
+            "$ref": "/evolution.schema.json"
         },
         "base": {
             "description": "The base stats for a Pokemon.",
@@ -110,18 +101,16 @@
             "$ref": "/pokedex.schema.learnset"
         },
         "ev": {
-            "evYield": {
-                "type": "array",
-                "items": {
-                    "properties": {
-                        "stat": {
-                            "enum": ["hp", "atk", "def", "spatk", "spdef", "spd"]
-                        },
-                        "amt": {
-                            "type": "integer",
-                            "minimum": 0,
-                            "maximum": 5
-                        }
+            "type": "array",
+            "items": {
+                "properties": {
+                    "stat": {
+                        "enum": ["hp", "atk", "def", "spatk", "spdef", "spd"]
+                    },
+                    "amt": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 5
                     }
                 }
             }

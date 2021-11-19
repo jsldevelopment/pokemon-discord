@@ -9,14 +9,14 @@ const BattlePve = require('../objects/BattlePve');
 const TrainerAi = require('../objects/TrainerAi');
 
 // maps
-const battleMap = require('../data/battleMap.js');
+const battleMap = require('../data/map/battleMap.js');
 
 // fxns
 const generatePokemon = require('../util/generatePokemon.js');
 
 // data
 const messages = require('../data/messages/messages.js');
-const userMap = require('../data/userMap.js');
+const userMap = require('../data/map/userMap.js');
 
 const catchBot = {
 
