@@ -1,5 +1,5 @@
 // ext libs
-const uuid = require('uuid').v4;
+const { v4: uuidv4 } = require('uuid')
 
 // objs
 const MessageManager = require('../managers/MessageManager');
@@ -7,15 +7,14 @@ const WebhookManager = require('../managers/WebhookManager');
 const ThreadManager = require('../managers/ThreadManager');
 const BattlePve = require('../objects/BattlePve');
 const TrainerAi = require('../objects/TrainerAi');
+const Pokemon = require('../objects/Pokemon');
+const RawPokemon = require('../data/Pokemon')
 
 // maps
 const battleMap = require('../data/map/battleMap.js');
 
-// fxns
-const generatePokemon = require('../util/generatePokemon.js');
-
 // data
-const messages = require('../data/messages/messages.js');
+const messages = require('../messages/messages.js');
 const userMap = require('../data/map/userMap.js');
 
 const catchBot = {
@@ -51,11 +50,13 @@ const catchBot = {
 
                     if (currentUser.battle) return messageManager.replyAlreadyInBattle();
 
-                    const generated = await generatePokemon({ id: 10, level: 5 });
-                    const message = await messages.msgBattleStart(currentUser.party[0], generated, currentUser.id, "What will you do?");
+                    const pkmn = new Pokemon(RawPokemon[10], 5);
+                    // TODO: recreate pokemon creation
+                    const message = await messages.msgBattleStart(currentUser.party[0], pkmn, currentUser.id, "What will you do?");
 
-                    currentUser.battle = uuid();
-                    const aiOpp = new TrainerAi(uuid(), generated, currentUser.battle);
+                    currentUser.battle = uuidv4();
+                    const aiOpp = new TrainerAi(uuidv4(), "testuser", "testava", pkmn);
+                    console.log(aiOpp);
                     battleMap.set(currentUser.battle, new BattlePve(discordClient, currentUser, aiOpp, interaction.channelId));
 
                     const deferMsg = await messageManager.deferReply({ fetchReply: true });

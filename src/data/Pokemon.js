@@ -1,6 +1,6 @@
-const Type = require('../enum/Type');
-const Stat = require('../enum/Stat');
-const Rate = require('../enum/Rate');
+const Type = require('./enum/Type');
+const Stat = require('./enum/Stat');
+const Rate = require('./enum/Rate');
 const Ability = require('./Ability');
 const Learnset = require('./Learnset');
 const Pokedex = require('./Pokedex');
@@ -10,56 +10,51 @@ module.exports = {
     // bulbasaur
     1: {
         id: 1,
-        dex: Pokedex[id],
+        dex: Pokedex[1],
         types: [
             Type.Grass,
             Type.Poison
         ],
         genderRatio: 88,
         abilities: {
-            abilityRegular: [Ability.Overgrow],
+            regular: [Ability.Overgrow],
             abilityRatio: 100,
-            abilityHidden: Ability.Chlorophyll
+            hidden: Ability.Chlorophyll
         },
-        evolution: Evolution[id],
-        base: {
-            hp: 45,
-            atk: 49,
-            def: 49,
-            spatk: 65,
-            spdef: 65,
-            spd: 45
+        evolution: Evolution[1],
+        stats: {
+            base: {
+                hp: 45,
+                atk: 49,
+                def: 49,
+                spatk: 65,
+                spdef: 65,
+                spd: 45
+            }
         },
         learnset: Learnset.Bulbasaur.LevelUp,
-        ev: {
+        ev: [{
             stat: [Stat.SPATK],
             amt: 1
-        },
+        }],
         expRate: Rate.MediumSlow,
         catchRate: 45
     },
     // ivysaur
     // 2: {
     //     id: 2,
-    //     name: Pokedex[2].name,
-    //     desc: Pokedex[2].desc,
+    //     dex: Pokedex[2],
     //     types: [
     //         Type.Grass,
     //         Type.Poison
     //     ],
     //     genderRatio: 88,
     //     abilities: {
-    //         ability1: Ability.Overgrow,
+    //         regular: [Ability.Overgrow],
     //         abilityRatio: 100,
-    //         abilitySecret: Ability.Chlorophyll
+    //         hidden: Ability.Chlorophyll
     //     },
-    //     evolution: {
-    //         evolves: true,
-    //         method: {
-    //             level: 32,
-    //             next: 3
-    //         }
-    //     },
+    //     evolution: Evolution[2],
     //     base: {
     //         hp: 60,
     //         atk: 62,
@@ -69,10 +64,15 @@ module.exports = {
     //         spd: 60
     //     },
     //     learnset: Learnset.Ivysaur.LevelUp,
-    //     evYield: {
-    //         evYield: [{ stat: Stat.SPATK, amt: 1 }, { stat: Stat.SPDEF, amt: 1 }],
-    //         amt: 1
-    //     },
+    //     ev: [{
+    //             stat: [Stat.SPATK],
+    //             amt: 1
+    //         },
+    //         {
+    //             stat: [Stat.SPDEF],
+    //             amt: 1
+    //         }
+    //     ],
     //     expRate: Rate.MediumSlow,
     //     catchRate: 45
     // },
@@ -300,36 +300,37 @@ module.exports = {
     //     catchRate: 45
     // },
     // //caterpie
-    // 10: {
-    //     id: 10,
-    //     name: Pokedex[10].name,
-    //     desc: Pokedex[10].desc,
-    //     types: [
-    //         Type.Bug
-    //     ],
-    //     genderRatio: 50,
-    //     abilities: {
-    //         ability1: Ability.ShieldDust,
-    //         abilityRatio: 100,
-    //         abilitySecret: Ability.RunAway
-    //     },
-    //     evolves: 7,
-    //     base: {
-    //         hp: 45,
-    //         atk: 30,
-    //         def: 35,
-    //         spatk: 20,
-    //         spdef: 20,
-    //         spd: 45
-    //     },
-    //     learnset: Learnset.Caterpie.LevelUp,
-    //     evYield: [{
-    //         stat: Stat.HP,
-    //         amt: 1
-    //     }],
-    //     expRate: Rate.MediumFast,
-    //     catchRate: 255
-    // },
+    10: {
+        id: 10,
+        dex: Pokedex[10],
+        types: [
+            Type.Bug
+        ],
+        genderRatio: 50,
+        abilities: {
+            regular: [Ability.ShieldDust],
+            abilityRatio: 100,
+            hidden: Ability.RunAway
+        },
+        evolution: Evolution[7],
+        stats: {
+            base: {
+                hp: 45,
+                atk: 30,
+                def: 35,
+                spatk: 20,
+                spdef: 20,
+                spd: 45
+            }
+        },
+        learnset: Learnset.Caterpie.LevelUp,
+        ev: [{
+            stat: [Stat.HP],
+            amt: 1
+        }],
+        expRate: Rate.MediumFast,
+        catchRate: 255
+    },
     // //metapod
     // 11: {
     //     id: 10,

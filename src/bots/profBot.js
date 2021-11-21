@@ -1,16 +1,17 @@
 // objs
 const MessageManager = require('../managers/MessageManager.js');
 const TrainerHuman = require('../objects/TrainerHuman');
+const Pokemon = require('../objects/Pokemon');
 const { default: Collection } = require('@discordjs/collection');
 
 //fxns
-const generatePokemon = require('../util/generatePokemon.js');
 const queries = require('../db/queries.js');
 const { getRole, getMember } = require('../util/getDiscordInfo.js');
 
 // data
-const messages = require('../data/messages/messages.js');
+const messages = require('../messages/messages.js');
 const userMap = require('../data/map/userMap.js');
+const RawPokemon = require('../data/Pokemon')
 
 const profBot = {
 
@@ -83,7 +84,7 @@ const profBot = {
                 } else if (label.match(/selectStarter\|[1-9]*/)) {
 
                     await messageManager.deleteThisMessage();
-                    let starter1gen = await generatePokemon({ id: label.split("|")[1], level: 5 });
+                    let starter1gen = new Pokemon(RawPokemon[label.split("|")[1]], 5);
                     starter1gen.currentStats = starter1gen.stats;
                     queries.insertPokemon(dbClient, { owner_id: registeringUser.id, pokemon_id: starter1gen.uuid, pokemon: starter1gen });
                     registeringUsers.set(interaction.user.id, {...registeringUsers.get(registeringUser.id), starter: starter1gen });

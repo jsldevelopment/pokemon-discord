@@ -1,6 +1,6 @@
-const Category = require('../enum/Category');
-const Type = require('../enum/Type');
-const Stat = require('../enum/Stat');
+const Category = require('./enum/Category');
+const Type = require('./enum/Type');
+const Stat = require('./enum/Stat');
 
 exports.Move = {
     "Accelerock": {

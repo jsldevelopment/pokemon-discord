@@ -1,5 +1,5 @@
 const Battle = require('./Battle');
-const messages = require('../data/messages/messages.js');
+const messages = require('../messages/messages.js');
 const MessageManager = require('../managers/MessageManager');
 const battleMap = require('../data/map/battleMap.js');
 const { sleep } = require('../util/getDiscordInfo');
@@ -97,7 +97,7 @@ class BattlePve extends Battle {
                 console.log(`${player.lead.name}'s turn END -------'`);
 
                 // faint check
-                if (opp.lead.currentStats.hp <= 0) {
+                if (opp.lead.stats.current.hp <= 0) {
                     console.log(`${opp.lead.name} defeated...`);
                     this.threadManager.deleteThread(this.channel, this.name);
                     this.messageManager.sendEnemyDefeatedBroadcast(this);
@@ -192,8 +192,8 @@ class BattlePve extends Battle {
                 (((2 * player.level) / 5) + 2) *
                 move.dmg *
                 (
-                    (move.cat === Category.Physical ? player.currentStats.atk : player.currentStats.spatk) /
-                    (move.cat === Category.Physical ? opp.currentStats.def : opp.currentStats.spdef)
+                    (move.cat === Category.Physical ? player.stats.current.atk : player.stats.current.spatk) /
+                    (move.cat === Category.Physical ? opp.stats.current.def : opp.stats.current.spdef)
                 ) / 50
             ) + 2
         ));
@@ -211,7 +211,7 @@ class BattlePve extends Battle {
         // user atk/spatk
         // enemy def/spdef
 
-        player.currentStats.hp - dmg <= 0 ? opp.currentStats.hp = 0 : opp.currentStats.hp -= dmg;
+        player.stats.current.hp - dmg <= 0 ? opp.stats.current.hp = 0 : opp.stats.current.hp -= dmg;
         this.updateBattleText(`${opp.name} took ${dmg} damage!`);
 
     }
@@ -223,24 +223,24 @@ class BattlePve extends Battle {
             if (move.statChange.self) {
                 if (move.statChange.lower) {
                     move.statChange.forEach((stat) => {
-                        player.currentStats[stat] *= .5 * move.statChange.stage;
+                        player.stats.current[stat] *= .5 * move.statChange.stage;
                     })
                 } else {
                     move.statChange.forEach((stat) => {
-                        player.currentStats[stat] *= 2 * move.statChange.stage;
+                        player.stats.current[stat] *= 2 * move.statChange.stage;
                     })
                 }
             } else {
                 if (move.statChange.lower) {
                     move.statChange.stat.forEach(async(stat) => {
                         console.log(stat);
-                        player.currentStats[stat] *= .5 * move.statChange.stage;
+                        player.stats.current[stat] *= .5 * move.statChange.stage;
                         this.updateBattleText(`${opp.name} speed lowered by ${move.statChange.stage}!`);
                         await sleep(1500);
                     })
                 } else {
                     move.statChange.forEach((stat) => {
-                        player.currentStats[stat] *= 2 * move.statChange.stage;
+                        player.stats.current[stat] *= 2 * move.statChange.stage;
                     })
                 }
             }
@@ -253,10 +253,7 @@ class BattlePve extends Battle {
         // the pokeball used
         let ball = 1;
         let status = 1;
-        console.log(opp.stats.hp);
-        console.log(opp.currentStats.hp);
-        console.log(opp.catchRate);
-        let rate = ((((3 * opp.stats.hp) - (2 * opp.currentStats.hp)) * opp.catchRate * ball) / (3 * opp.stats.hp)) * status;
+        let rate = ((((3 * opp.stats.hp) - (2 * opp.stats.current.hp)) * opp.catchRate * ball) / (3 * opp.stats.net.hp)) * status;
         console.log(rate);
         return rate;
 
