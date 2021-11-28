@@ -56,15 +56,19 @@ const catchBot = {
 
                     currentUser.battle = uuidv4();
                     const aiOpp = new TrainerAi(uuidv4(), "testuser", "testava", pkmn);
-                    console.log(aiOpp);
                     battleMap.set(currentUser.battle, new BattlePve(discordClient, currentUser, aiOpp, interaction.channelId));
 
                     const deferMsg = await messageManager.deferReply({ fetchReply: true });
                     deferMsg.delete();
 
                     const hook = (await this.webhookManager.getAllHooks(battleMap.get(currentUser.battle).channel)).first();
-                    const threadId = await this.threadManager.createPveThread(battleMap.get(currentUser.battle));
-                    await hook.send({...message, threadId: threadId });
+                    const thread = await this.threadManager.createPveThread(battleMap.get(currentUser.battle));
+                    await hook.send({...message, threadId: thread.id });
+                    thread.send({
+                        content: '------- Battle Start -------',
+                        threadId: thread.id
+                    });
+                    battleMap.get(currentUser.battle).thread = thread;
                     // how do we a reference to the message that created the hook???
 
                 }

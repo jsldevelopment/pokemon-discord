@@ -24,9 +24,9 @@ class Pokemon {
         this.nature = getNature();
         this.ivs = getIvs();
         this.evs = getEvs();
-        this.stats.base = this.stats.base;
+        this.stats.base = pokemon.stats.base;
         this.stats.net = calcStats(level, pokemon.stats.base, this.nature, this.ivs, this.evs);
-        this.stats.current = calcStats(level, pokemon.stats.base, this.nature, this.ivs, this.evs);
+        this.stats.current = Object.assign({}, this.stats.net);
         this.gender = Math.floor(Math.random() * 101) < pokemon.genderRatio ? 1 : 0;
         this.ability = getAbility(pokemon);
         this.moves = getMoves(pokemon.learnset, level);

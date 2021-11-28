@@ -203,7 +203,6 @@ const pokemonEmbed = (pokemon) => {
 
 // create prompt for pokemon
 const battleStartEmbed = (curPokemon, opPokemon) => {
-    console.log(opPokemon);
     return {
         color: promptColors[opPokemon.types[0]],
         title: `A wild Lvl. ${opPokemon.level} ${opPokemon.name} appears...`,
@@ -213,12 +212,12 @@ const battleStartEmbed = (curPokemon, opPokemon) => {
         },
         fields: [{
                 name: "Your HP: ",
-                value: `${curPokemon.stats.current.hp}/${curPokemon.stats.current.hp}`,
+                value: `${curPokemon.stats.current.hp}/${curPokemon.stats.net.hp}`,
                 inline: true
             },
             {
                 name: "Enemy HP: ",
-                value: `${opPokemon.stats.current.hp}/${opPokemon.stats.current.hp}`,
+                value: `${opPokemon.stats.current.hp}/${opPokemon.stats.net.hp}`,
                 inline: true
             },
         ],

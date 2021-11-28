@@ -13,31 +13,29 @@ const restProf = new REST({ version: '9' }).setToken(profToken);
 const restCatch = new REST({ version: '9' }).setToken(catchToken);
 
 for (const file of profCommands) {
-	const command = require(`./src/commands/profCommands/${file}`);
-	profCommandsList.push(command.data.toJSON());
+    const command = require(`./src/commands/profCommands/${file}`);
+    profCommandsList.push(command.data.toJSON());
 }
 
 for (const file of catchCommands) {
-	const command = require(`./src/commands/catchCommands/${file}`);
-	catchCommandsList.push(command.data.toJSON());
+    const command = require(`./src/commands/catchCommands/${file}`);
+    catchCommandsList.push(command.data.toJSON());
 }
 
 
-(async () => {
-	try {
-		console.log('Started refreshing application (/) commands.');
+(async() => {
+    try {
+        console.log('Started refreshing application (/) commands.');
 
-		await restProf.put(
-			Routes.applicationGuildCommands(profClientId, guildId),
-			{ body: profCommandsList },
-		);
-		await restCatch.put(
-			Routes.applicationGuildCommands(catchClientId, guildId),
-			{ body: catchCommandsList },
-		);
+        await restProf.put(
+            Routes.applicationGuildCommands(profClientId, guildId), { body: profCommandsList },
+        );
+        await restCatch.put(
+            Routes.applicationGuildCommands(catchClientId, guildId), { body: catchCommandsList },
+        );
 
-		console.log('Successfully reloaded application (/) commands.');
-	} catch (error) {
-		console.error(error);
-	}
+        console.log('Successfully reloaded application (/) commands.');
+    } catch (error) {
+        console.error(error);
+    }
 })();

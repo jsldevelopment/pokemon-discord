@@ -20,7 +20,6 @@ class BattlePve extends Battle {
     // how do we write this such that the function knows who the calling user is
     addTurn = (interaction, player, type, index) => {
 
-        console.log(player);
         if (type === "move") {
             var action = { action: player.lead.moves[index] };
         }
@@ -50,6 +49,9 @@ class BattlePve extends Battle {
     }
 
     executeSelection = async(turn, secondTurn) => {
+
+        // remove first index from arr
+        this.choices.shift();
 
         if (turn.type === 'run') {
 
@@ -174,7 +176,6 @@ class BattlePve extends Battle {
     }
 
     resetTurns = async() => {
-        this.choices = [];
         await sleep(1500);
         const message2 = await messages.msgBattle(this.player1.lead, this.player2.lead, this.player1.id, "What will you do?", false);
         await this.messageManager.editMessage(message2);
@@ -183,6 +184,7 @@ class BattlePve extends Battle {
     updateBattleText = async(text) => {
         const message = await messages.msgBattle(this.player1.lead, this.player2.lead, this.player1.id, text, true);
         await this.messageManager.editMessage(message);
+        this.updateLog(text);
     }
 
     calculateDmg = async(move, player, opp) => {
@@ -211,14 +213,14 @@ class BattlePve extends Battle {
         // user atk/spatk
         // enemy def/spdef
 
-        player.stats.current.hp - dmg <= 0 ? opp.stats.current.hp = 0 : opp.stats.current.hp -= dmg;
+        // TODO: this still displays the -x amount of hp, not 0
+        (player.stats.current.hp - dmg <= 0) ? opp.stats.current.hp = 0: opp.stats.current.hp -= dmg;
         this.updateBattleText(`${opp.name} took ${dmg} damage!`);
 
     }
 
     calcStatChange = async(move, player, opp) => {
 
-        console.log(move);
         if (move.statChange) {
             if (move.statChange.self) {
                 if (move.statChange.lower) {
@@ -233,7 +235,6 @@ class BattlePve extends Battle {
             } else {
                 if (move.statChange.lower) {
                     move.statChange.stat.forEach(async(stat) => {
-                        console.log(stat);
                         player.stats.current[stat] *= .5 * move.statChange.stage;
                         this.updateBattleText(`${opp.name} speed lowered by ${move.statChange.stage}!`);
                         await sleep(1500);
@@ -254,9 +255,17 @@ class BattlePve extends Battle {
         let ball = 1;
         let status = 1;
         let rate = ((((3 * opp.stats.hp) - (2 * opp.stats.current.hp)) * opp.catchRate * ball) / (3 * opp.stats.net.hp)) * status;
-        console.log(rate);
         return rate;
 
+    }
+
+    updateLog = async(text) => {
+        this.thread.messages.fetch({ limit: 10 })
+            .then((messages) => {
+                const logMessage = messages.first();
+                const newContent = logMessage.content + "\n" + text;
+                messages.first().edit({ content: newContent });
+            });
     }
 
 }

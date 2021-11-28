@@ -23,7 +23,7 @@ class ThreadManager extends BaseManager {
         const thread = (await (await getChannel(this.client, battle.channel)).threads.create({
             name: battle.name
         }));
-        return thread.id;
+        return thread;
     }
 
     /**
@@ -41,6 +41,20 @@ class ThreadManager extends BaseManager {
             })
     }
 
+    /**
+     * deletes a thread in this channel
+     * @param {String} user the user interacting with th
+     */
+    async getThread(channel, threadName) {
+        if (!this.client) return;
+        // TODO: can we find a way to delete the message that point to this thread after the thread is deleted
+        (await getChannel(this.client, channel)).threads.cache
+            .forEach(async(thread) => {
+                if (thread.name === threadName) {
+                    return thread;
+                }
+            })
+    }
 }
 
 module.exports = ThreadManager;

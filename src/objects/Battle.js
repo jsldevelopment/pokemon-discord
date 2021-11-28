@@ -33,7 +33,7 @@ class Battle {
             .then(async goAgain => {
                 await sleep(1500);
                 if (goAgain) {
-                    await this.executeSelection(this.choices[1], true);
+                    await this.executeSelection(this.choices[0], true);
                     await sleep(1500);
                 }
             });
