@@ -33,11 +33,17 @@ module.exports = {
             }
         },
         learnset: Learnset.Bulbasaur.LevelUp,
-        ev: [{
-            stat: [Stat.SPATK],
-            amt: 1
-        }],
-        expRate: Rate.MediumSlow,
+        yield: {
+            ev: [{
+                stat: [Stat.SPATK],
+                amt: 1
+            }],
+            exp: 64
+        },
+        exp: {
+            rate: Rate.MediumSlow,
+            current: 0
+        },
         catchRate: 45
     },
     // ivysaur
@@ -324,11 +330,17 @@ module.exports = {
             }
         },
         learnset: Learnset.Caterpie.LevelUp,
-        ev: [{
-            stat: [Stat.HP],
-            amt: 1
-        }],
-        expRate: Rate.MediumFast,
+        yield: {
+            ev: [{
+                stat: [Stat.HP],
+                amt: 1
+            }],
+            exp: 39
+        },
+        exp: {
+            rate: Rate.MediumFast,
+            current: 0
+        },
         catchRate: 255
     },
     // //metapod

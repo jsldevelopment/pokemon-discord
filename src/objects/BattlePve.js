@@ -105,6 +105,8 @@ class BattlePve extends Battle {
                     this.messageManager.sendEnemyDefeatedBroadcast(this);
                     battleMap.delete(this.player1.battle);
                     this.player1.battle = null;
+                    // do exp addition
+                    console.log(this.expGained(player.lead, opp.lead));
                     resolve(false);
                 }
 
@@ -266,6 +268,11 @@ class BattlePve extends Battle {
                 const newContent = logMessage.content + "\n" + text;
                 messages.first().edit({ content: newContent });
             });
+    }
+
+    expGained = (player, enemy) => {
+        console.log(enemy);
+        return (enemy.yield.exp * enemy.level / 5) * Math.pow((2 * enemy.level + 10) / (enemy.level + player.level + 10), 2.5);
     }
 
 }

@@ -51,6 +51,7 @@ const catchBot = {
                     if (currentUser.battle) return messageManager.replyAlreadyInBattle();
 
                     const pkmn = new Pokemon(RawPokemon[10], 5);
+                    console.log(pkmn);
                     // TODO: recreate pokemon creation
                     const message = await messages.msgBattleStart(currentUser.party[0], pkmn, currentUser.id, "What will you do?");
 

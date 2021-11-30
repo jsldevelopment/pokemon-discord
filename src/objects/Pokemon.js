@@ -32,6 +32,11 @@ class Pokemon {
         this.moves = getMoves(pokemon.learnset, level);
         this.learnset = pokemon.learnset;
         this.catchRate = pokemon.catchRate;
+        this.exp = {
+            rate: pokemon.exp.rate,
+            current: pokemon.exp.rate[level - 1]
+        };
+        this.yield = pokemon.yield;
 
         /**
          * @type integer
